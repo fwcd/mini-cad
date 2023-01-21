@@ -51,7 +51,9 @@ class StageViewModel: ObservableObject {
         camera.usesOrthographicProjection = options.usesOrthographicProjection
         let cameraNode = SCNNode()
         cameraNode.camera = camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 5)
+        cameraNode.position = SCNVector3(x: 1, y: 1, z: 5)
+        cameraNode.eulerAngles.x = -.pi / 16
+        cameraNode.eulerAngles.y = .pi / 16
         scene.rootNode.addChildNode(cameraNode)
         
         self.cameraNode = cameraNode
