@@ -3,24 +3,20 @@ import SceneKit
 
 class StageViewModel: ObservableObject {
     @Published private(set) var scene: SCNScene
-    @Published private(set) var cameraNode: SCNNode
-    
-    private var camera: SCNCamera {
-        cameraNode.camera!
+    @Published private(set) var cameraNode: SCNNode? = nil
+    @Published var options: Options = .init() {
+        didSet {
+            updateCamera()
+        }
     }
-    var usesOrthoProjection: Bool {
-        get { camera.usesOrthographicProjection }
-        set { camera.usesOrthographicProjection = newValue }
+    
+    private var camera: SCNCamera? {
+        cameraNode?.camera
     }
     
     init() {
-        scene = SCNScene(named: "Stage.scn")!
-        
-        let camera = SCNCamera()
-        cameraNode = SCNNode()
-        cameraNode.camera = camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 5)
-        scene.rootNode.addChildNode(cameraNode)
+        let scene = SCNScene(named: "Stage.scn")!
+        self.scene = scene
         
         let dirLight = SCNLight()
         dirLight.type = .directional
@@ -42,5 +38,23 @@ class StageViewModel: ObservableObject {
         let cube = SCNNode(geometry: cubeBox)
         cube.position = SCNVector3(x: 0, y: 0, z: 0)
         scene.rootNode.addChildNode(cube)
+        
+        updateCamera()
+    }
+    
+    private func updateCamera() {
+        if let cameraNode = cameraNode {
+            cameraNode.removeFromParentNode()
+        }
+        
+        let camera = SCNCamera()
+        camera.usesOrthographicProjection = options.usesOrthographicProjection
+        let cameraNode = SCNNode()
+        cameraNode.camera = camera
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 5)
+        scene.rootNode.addChildNode(cameraNode)
+        
+        self.cameraNode = cameraNode
+        print("Updated camera node")
     }
 }

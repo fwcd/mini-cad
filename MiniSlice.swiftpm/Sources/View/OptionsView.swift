@@ -5,7 +5,7 @@ struct OptionsView: View {
     
     var body: some View {
         VStack {
-            Toggle("Orthographic Camera", isOn: $stage.usesOrthoProjection)
+            Toggle("Orthographic Camera", isOn: $stage.options.usesOrthographicProjection)
         }
     }
 }
