@@ -8,6 +8,7 @@ private let patterns: [(String, (Substring) -> Token?, String)] = [
     ("rightParen", { _ in .rightParen }, "\\)"),
     ("leftCurly", { _ in .leftCurly }, "\\{"),
     ("rightCury", { _ in .rightCurly }, "\\}"),
+    ("comma", { _ in .comma }, ","),
     ("float", { raw in Double(raw).map { .float($0) } }, "-?\\d+\\.\\d+"),
     ("int", { raw in Int(raw).map { .int($0) } }, "-?\\d+"),
     ("identifier", { raw in .identifier(String(raw)) }, "\\w+"),
