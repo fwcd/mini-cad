@@ -4,7 +4,7 @@ struct EditorView: View {
     @EnvironmentObject private var editor: EditorViewModel
     
     var body: some View {
-        TextEditor(text: .constant(editor.recipe.description))
+        TextEditor(text: .constant("\(tokenize(editor.recipe.description))"))
             .font(.body.monospaced())
     }
 }
