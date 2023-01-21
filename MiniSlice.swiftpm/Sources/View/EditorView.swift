@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct EditorView: View {
-    @State private var text = ""
+    @EnvironmentObject private var editor: EditorViewModel
     
     var body: some View {
-        TextEditor(text: $text)
+        TextEditor(text: .constant(editor.recipe.description))
     }
 }
 
