@@ -5,6 +5,7 @@ struct EditorView: View {
     
     var body: some View {
         TextEditor(text: .constant(editor.recipe.description))
+            .font(.body.monospaced())
     }
 }
 
