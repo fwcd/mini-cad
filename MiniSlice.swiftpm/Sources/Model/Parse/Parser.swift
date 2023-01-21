@@ -4,21 +4,26 @@ func parseRecipe(from raw: String) throws -> Recipe {
 }
 
 func parseRecipe(from tokens: inout TokenIterator) throws -> Recipe {
+    let statements = try parseStatements(from: &tokens)
+    return Recipe(statements: statements)
+}
+
+func parseStatements(from tokens: inout TokenIterator, until end: Token? = nil) throws -> [Statement] {
     var statements: [Statement] = []
     
-    while tokens.hasNext {
+    while tokens.peek() != end {
         let statement = try parseStatement(from: &tokens)
         statements.append(statement)
-        if tokens.hasNext {
+        if tokens.peek() != end {
             try tokens.expect(.newline)
-            if tokens.peek() == .newline {
+            while tokens.peek() == .newline {
                 tokens.next()
                 statements.append(.blank)
             }
         }
     }
     
-    return Recipe(statements: statements)
+    return statements
 }
 
 func parseStatement(from tokens: inout TokenIterator) throws -> Statement {
