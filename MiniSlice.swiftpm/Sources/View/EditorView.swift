@@ -8,7 +8,7 @@ struct EditorView: View {
             TextEditor(text: $editor.rawRecipe)
                 .font(.body.monospaced())
             if let error = editor.error {
-                Text("Could not parse program: \(String(describing: error))")
+                ParseErrorView(error: error)
             }
             Text(String(describing: editor.parsedRecipe))
         }

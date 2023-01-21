@@ -5,6 +5,9 @@ struct ParseErrorView: View {
     
     var body: some View {
         Text(String(describing: error))
+            .foregroundColor(.white)
+            .padding(10)
+            .background(Color(red: 0.6, green: 0, blue: 0))
     }
 }
 
