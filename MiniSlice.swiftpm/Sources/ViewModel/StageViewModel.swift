@@ -34,7 +34,7 @@ class StageViewModel: ObservableObject {
         scene.rootNode.addChildNode(ambientLightNode)
         
         let cubeBox = SCNBox()
-        cubeBox.firstMaterial?.diffuse.contents = UIColor.orange
+        cubeBox.firstMaterial?.diffuse.contents = UIColor.tintColor
         let cube = SCNNode(geometry: cubeBox)
         cube.position = SCNVector3(x: 0, y: 0, z: 0)
         scene.rootNode.addChildNode(cube)
