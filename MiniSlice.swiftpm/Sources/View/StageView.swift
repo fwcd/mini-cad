@@ -5,7 +5,7 @@ struct StageView: View {
     @EnvironmentObject var viewModel: StageViewModel
     
     var body: some View {
-        SceneView(scene: viewModel.scene)
+        SceneView(scene: viewModel.scene, options: .allowsCameraControl)
     }
 }
 
