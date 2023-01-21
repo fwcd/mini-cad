@@ -1,6 +1,7 @@
 enum Value: Hashable, CustomStringConvertible {
     case int(Int)
     case float(Double)
+    case cuboid(Cuboid)
     
     var description: String {
         switch self {
@@ -8,6 +9,8 @@ enum Value: Hashable, CustomStringConvertible {
             return String(value)
         case .float(let value):
             return String(value)
+        case .cuboid(let value):
+            return String(describing: value)
         }
     }
 }
