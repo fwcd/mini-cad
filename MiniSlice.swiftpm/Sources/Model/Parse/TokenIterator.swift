@@ -2,6 +2,8 @@ struct TokenIterator: IteratorProtocol {
     private var iterator: Array<Token>.Iterator
     private var peeked: Token? = nil
     
+    private(set) var current: Token? = nil
+    
     var hasNext: Bool {
         mutating get { peek() != nil }
     }
@@ -11,8 +13,9 @@ struct TokenIterator: IteratorProtocol {
     }
     
     mutating func expect(_ token: Token) throws {
-        guard next() == token else {
-            throw ParseError.expected([token])
+        let actual = next()
+        guard actual == token else {
+            throw ParseError.expected(token, actual: actual)
         }
     }
     
@@ -36,9 +39,10 @@ struct TokenIterator: IteratorProtocol {
     mutating func next() -> Token? {
         if let peeked = peeked {
             self.peeked = nil
-            return peeked
+            current = peeked
         } else {
-            return iterator.next()
+            current = iterator.next()
         }
+        return current
     }
 }
