@@ -1,17 +1,14 @@
 enum Expression: Hashable, CustomStringConvertible {
     case identifier(String)
-    case intLiteral(Int)
-    case floatLiteral(Double)
+    case literal(Value)
     case call(String, [Expression])
     
     var description: String {
         switch self {
         case .identifier(let ident):
             return ident
-        case .intLiteral(let value):
-            return String(value)
-        case .floatLiteral(let value):
-            return String(value)
+        case .literal(let value):
+            return "\(value)"
         case .call(let name, let args):
             return "\(name)(\(args.map { "\($0)" }.joined(separator: ", ")))"
         }
@@ -26,12 +23,12 @@ extension Expression: ExpressibleByStringLiteral {
 
 extension Expression: ExpressibleByIntegerLiteral {
     init(integerLiteral value: Int) {
-        self = .intLiteral(value)
+        self = .literal(.int(value))
     }
 }
 
 extension Expression: ExpressibleByFloatLiteral {
     init(floatLiteral value: Double) {
-        self = .floatLiteral(value)
+        self = .literal(.float(value))
     }
 }

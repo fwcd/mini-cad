@@ -2,6 +2,7 @@ enum ParseError: Error, CustomStringConvertible {
     case expected(Token, actual: Token?)
     case expectedIdentifier(actual: Token?)
     case expectedExpression(actual: Token?)
+    case expectedValue(actual: Token?)
     
     var description: String {
         switch self {
@@ -11,6 +12,8 @@ enum ParseError: Error, CustomStringConvertible {
             return "Expected identifier but got \(actual.map { "\($0)" } ?? "nil")"
         case let .expectedExpression(actual: actual):
             return "Expected expression but got \(actual.map { "\($0)" } ?? "nil")"
+        case let .expectedValue(actual: actual):
+            return "Expected value but got \(actual.map { "\($0)" } ?? "nil")"
         }
     }
 }

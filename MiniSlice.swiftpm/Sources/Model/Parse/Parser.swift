@@ -47,10 +47,10 @@ func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
     switch tokens.peek() {
     case .int(let value):
         tokens.next()
-        return .intLiteral(value)
+        return .literal(.int(value))
     case .float(let value):
         tokens.next()
-        return .floatLiteral(value)
+        return .literal(.float(value))
     case .identifier(let ident):
         tokens.next()
         switch tokens.peek() {
@@ -73,3 +73,4 @@ func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
         throw ParseError.expectedExpression(actual: tokens.next())
     }
 }
+
