@@ -4,8 +4,14 @@ struct EditorView: View {
     @EnvironmentObject private var editor: EditorViewModel
     
     var body: some View {
-        TextEditor(text: .constant("\(tokenize(editor.recipe.description))"))
-            .font(.body.monospaced())
+        VStack {
+            TextEditor(text: $editor.rawRecipe)
+                .font(.body.monospaced())
+            if let error = editor.error {
+                Text("Could not parse program: \(String(describing: error))")
+            }
+            Text(String(describing: editor.parsedRecipe))
+        }
     }
 }
 
