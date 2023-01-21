@@ -10,19 +10,24 @@ struct EditorView: View {
             if let error = editor.error {
                 ErrorView(error: error)
             }
-            // FIXME: Remove the following debug views
+            // FIXME: Remove (or prettify) the following debug views
             HStack(alignment: .top, spacing: 20) {
-                Text(String(describing: editor.parsedRecipe))
+                ScrollView(.vertical) {
+                    Text(String(describing: editor.parsedRecipe))
+                }
                 Group {
                     switch Result(catching: { try interpret(recipe: editor.parsedRecipe) }) {
                     case .success(let values):
-                        Text(String(describing: values))
+                        List(values.map { Identified(value: $0) }) {
+                            Text(String(describing: $0.value))
+                        }
                     case .failure(let error):
                         ErrorView(error: error)
                     }
                 }
                 .frame(maxWidth: .infinity)
             }
+            .frame(maxHeight: 200)
             .padding(10)
         }
     }
