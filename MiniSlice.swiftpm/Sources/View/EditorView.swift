@@ -8,9 +8,22 @@ struct EditorView: View {
             TextEditor(text: $editor.rawRecipe)
                 .font(.body.monospaced())
             if let error = editor.error {
-                ParseErrorView(error: error)
+                ErrorView(error: error)
             }
-            Text(String(describing: editor.parsedRecipe))
+            // FIXME: Remove the following debug views
+            HStack(alignment: .top, spacing: 20) {
+                Text(String(describing: editor.parsedRecipe))
+                Group {
+                    switch Result(catching: { try interpret(recipe: editor.parsedRecipe) }) {
+                    case .success(let values):
+                        Text(String(describing: values))
+                    case .failure(let error):
+                        ErrorView(error: error)
+                    }
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .padding(10)
         }
     }
 }

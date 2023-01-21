@@ -52,3 +52,8 @@ struct Interpreter {
         }
     }
 }
+
+func interpret(recipe: Recipe) throws -> [Value] {
+    var interpreter = Interpreter()
+    return try interpreter.interpret(recipe: recipe)
+}
