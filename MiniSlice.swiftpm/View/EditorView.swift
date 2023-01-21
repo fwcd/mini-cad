@@ -1,10 +1,3 @@
-//
-//  SwiftUIView.swift
-//  
-//
-//  Created by Fredrik on 21.01.23.
-//
-
 import SwiftUI
 
 struct EditorView: View {
