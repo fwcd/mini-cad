@@ -2,11 +2,22 @@ import Combine
 import SceneKit
 
 class StageViewModel: ObservableObject {
-    @Published var scene = SCNScene(named: "Stage.scn")!
+    @Published private(set) var scene: SCNScene
+    @Published private(set) var cameraNode: SCNNode
+    
+    private var camera: SCNCamera {
+        cameraNode.camera!
+    }
+    var usesOrthoProjection: Bool {
+        get { camera.usesOrthographicProjection }
+        set { camera.usesOrthographicProjection = newValue }
+    }
     
     init() {
+        scene = SCNScene(named: "Stage.scn")!
+        
         let camera = SCNCamera()
-        let cameraNode = SCNNode()
+        cameraNode = SCNNode()
         cameraNode.camera = camera
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 5)
         scene.rootNode.addChildNode(cameraNode)

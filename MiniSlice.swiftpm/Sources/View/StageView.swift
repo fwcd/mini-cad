@@ -5,7 +5,16 @@ struct StageView: View {
     @EnvironmentObject var viewModel: StageViewModel
     
     var body: some View {
-        SceneView(scene: viewModel.scene, options: .allowsCameraControl)
+        ZStack(alignment: .topTrailing) {
+            SceneView(
+                scene: viewModel.scene,
+                pointOfView: viewModel.cameraNode,
+                options: .allowsCameraControl
+            )
+            OptionsView()
+                .frame(maxWidth: 300)
+                .padding(10)
+        }
     }
 }
 
