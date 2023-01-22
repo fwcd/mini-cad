@@ -1,8 +1,4 @@
-struct VarBinding: Hashable, CustomStringConvertible {
+struct VarBinding: Hashable {
     let name: String
     let value: Expression
-    
-    var description: String {
-        "let \(name) = \(value)"
-    }
 }

@@ -1,5 +1,5 @@
 /// A value within the language of recipes.
-enum Value: Hashable, CustomStringConvertible {
+enum Value: Hashable {
     case int(Int)
     case float(Double)
     case intRange(Range<Int>)
@@ -7,25 +7,6 @@ enum Value: Hashable, CustomStringConvertible {
     case closedIntRange(ClosedRange<Int>)
     case closedFloatRange(ClosedRange<Double>)
     case cuboid(Cuboid)
-    
-    var description: String {
-        switch self {
-        case .int(let value):
-            return String(value)
-        case .float(let value):
-            return String(value)
-        case .intRange(let range):
-            return "\(range.lowerBound)..<\(range.upperBound)"
-        case .floatRange(let range):
-            return "\(range.lowerBound)..<\(range.upperBound)"
-        case .closedIntRange(let range):
-            return "\(range.lowerBound)...\(range.upperBound)"
-        case .closedFloatRange(let range):
-            return "\(range.lowerBound)...\(range.upperBound)"
-        case .cuboid(let value):
-            return String(describing: value)
-        }
-    }
     
     var asInt: Int? {
         // TODO: Should we do implicit narrowing casts from float -> int?
