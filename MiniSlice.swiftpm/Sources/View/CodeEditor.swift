@@ -9,6 +9,7 @@ struct CodeEditor: UIViewRepresentable {
     @Binding var text: String
     var highlightColor: Color = .accentColor
     var textColor: Color = .primary
+    var fontSize: CGFloat = 16
     
     var highlightedText: NSAttributedString {
         // We use NSString directly here to avoid costly linear-time index conversions
@@ -44,7 +45,7 @@ struct CodeEditor: UIViewRepresentable {
     
     func updateUIView(_ uiView: UITextView, context: Context) {
         uiView.attributedText = highlightedText
-        uiView.font = .monospacedSystemFont(ofSize: 16, weight: .regular)
+        uiView.font = .monospacedSystemFont(ofSize: fontSize, weight: .regular)
     }
 }
 
