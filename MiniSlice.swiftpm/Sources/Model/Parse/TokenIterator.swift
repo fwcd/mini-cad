@@ -30,6 +30,13 @@ struct TokenIterator: IteratorProtocol {
         }
     }
     
+    /// Consumes the next token while it matches the given token.
+    mutating func skipAll(_ token: Token) {
+        while peek() == token {
+            next()
+        }
+    }
+    
     /// Peeks the next token without advancing the iteration.
     mutating func peek() -> Token? {
         if let peeked = peeked {
