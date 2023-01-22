@@ -7,6 +7,8 @@ private let highlightRegex = try! NSRegularExpression(
 
 struct CodeEditor: UIViewRepresentable {
     @Binding var text: String
+    var highlightColor: Color = .accentColor
+    var textColor: Color = .primary
     
     var highlightedText: NSAttributedString {
         // We use NSString directly here to avoid costly linear-time index conversions
@@ -17,19 +19,19 @@ struct CodeEditor: UIViewRepresentable {
             let range = match.range
             if lastIndex < range.lowerBound {
                 let chunk = NSAttributedString(string: nsString.substring(with: NSRange(lastIndex..<range.lowerBound)), attributes: [
-                    .foregroundColor: UIColor(.primary),
+                    .foregroundColor: UIColor(textColor),
                 ])
                 attributed.append(chunk)
             }
             let keyword = NSAttributedString(string: nsString.substring(with: range), attributes: [
-                .foregroundColor: UIColor.tintColor,
+                .foregroundColor: UIColor(highlightColor),
             ])
             attributed.append(keyword)
             lastIndex = range.upperBound
         }
         if lastIndex < nsString.length {
             let chunk = NSAttributedString(string: nsString.substring(from: lastIndex), attributes: [
-                .foregroundColor: UIColor(.primary),
+                .foregroundColor: UIColor(textColor),
             ])
             attributed.append(chunk)
         }
