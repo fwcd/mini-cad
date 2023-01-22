@@ -44,8 +44,30 @@ struct CodeEditor: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
+        uiView.delegate = context.coordinator
+        
+        // Make sure to restore the selected text range since the cursor will otherwise move to the end
+        let selected = uiView.selectedTextRange
         uiView.attributedText = highlightedText
+        uiView.selectedTextRange = selected
+        
         uiView.font = .monospacedSystemFont(ofSize: fontSize, weight: .regular)
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(text: $text)
+    }
+    
+    class Coordinator: NSObject, UITextViewDelegate {
+        @Binding var text: String
+        
+        init(text: Binding<String>) {
+            _text = text
+        }
+        
+        func textViewDidChange(_ textView: UITextView) {
+            text = textView.text
+        }
     }
 }
 
