@@ -74,21 +74,21 @@ struct CodeEditor: UIViewRepresentable {
         
         func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
             // TODO: Can we be sure that range corresponds to selectedTextRange?
-            if text == "\n" {
-                let nsString = textView.text as NSString
-                let isAtEndOfLine = range.upperBound == nsString.length
-                    || nsString.character(at: range.upperBound) == "\n".utf16.first!
-                if let selected = textView.selectedTextRange,
-                   let lineStart = textView.tokenizer.position(from: selected.start, toBoundary: .line, inDirection: .storage(.backward)),
-                   let linePrefixRange = textView.textRange(from: lineStart, to: selected.start),
-                   let linePrefix = textView.text(in: linePrefixRange) {
-                    let lineIndent = linePrefix.prefix { $0.isWhitespace }
-                    // TODO: Increase indent as needed
-                    if isAtEndOfLine {
-                        textView.replace(selected, withText: "\(text)\(lineIndent)")
-                        return false
-                    }
+            if text == "\n",
+               let autoIndent = autoIndent,
+               let selectedRange = textView.selectedTextRange,
+               let lineStart = textView.tokenizer.position(from: selectedRange.start, toBoundary: .line, inDirection: .storage(.backward)),
+               let linePrefixRange = textView.textRange(from: lineStart, to: selectedRange.start),
+               let linePrefix = textView.text(in: linePrefixRange) {
+                let lineIndent = linePrefix.prefix { $0.isWhitespace }
+                var newIndent = lineIndent
+                
+                if linePrefix.last == "{" {
+                    newIndent += String(repeating: " ", count: autoIndent)
                 }
+                
+                textView.replace(selectedRange, withText: "\(text)\(newIndent)")
+                return false
             }
             return true
         }
