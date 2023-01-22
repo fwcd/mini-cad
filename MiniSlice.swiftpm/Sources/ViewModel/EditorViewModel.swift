@@ -13,13 +13,7 @@ class EditorViewModel: ObservableObject {
         didSet {
             do {
                 let values = try interpret(recipe: parsedRecipe)
-                cuboids = values.compactMap {
-                    if case let .cuboid(cuboid) = $0 {
-                        return cuboid
-                    } else {
-                        return nil
-                    }
-                }
+                cuboids = values.compactMap(\.asCuboid)
                 interpretError = nil
             } catch let error as InterpretError {
                 interpretError = error

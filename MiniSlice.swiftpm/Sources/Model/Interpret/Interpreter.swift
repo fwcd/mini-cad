@@ -1,6 +1,14 @@
 struct Interpreter {
     private static let builtIns: [String: ([Value]) -> Value] = [
-        "Cuboid": { _ in .cuboid(Cuboid()) },
+        "Cuboid": { args in
+            // TODO: Should we pass vector/tuple-ish types?
+            let size = Vec3(
+                x: args[safely: 0]?.asFloat ?? 1,
+                y: args[safely: 1]?.asFloat ?? 1,
+                z: args[safely: 2]?.asFloat ?? 1
+            )
+            return .cuboid(Cuboid(size: size))
+        },
     ]
     
     private var variables: [String: Value] = [:]

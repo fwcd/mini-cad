@@ -13,6 +13,36 @@ enum Value: Hashable, CustomStringConvertible {
             return String(describing: value)
         }
     }
+    
+    var asInt: Int? {
+        // TODO: Should we do implicit narrowing casts from float -> int?
+        switch self {
+        case .int(let value):
+            return value
+        default:
+            return nil
+        }
+    }
+    
+    var asFloat: Double? {
+        switch self {
+        case .int(let value):
+            return Double(value)
+        case .float(let value):
+            return value
+        default:
+            return nil
+        }
+    }
+    
+    var asCuboid: Cuboid? {
+        switch self {
+        case .cuboid(let value):
+            return value
+        default:
+            return nil
+        }
+    }
 }
 
 extension Value: ExpressibleByIntegerLiteral {
