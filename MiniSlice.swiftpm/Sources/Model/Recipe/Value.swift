@@ -2,6 +2,10 @@
 enum Value: Hashable, CustomStringConvertible {
     case int(Int)
     case float(Double)
+    case intRange(Range<Int>)
+    case floatRange(Range<Double>)
+    case closedIntRange(ClosedRange<Int>)
+    case closedFloatRange(ClosedRange<Double>)
     case cuboid(Cuboid)
     
     var description: String {
@@ -10,6 +14,14 @@ enum Value: Hashable, CustomStringConvertible {
             return String(value)
         case .float(let value):
             return String(value)
+        case .intRange(let range):
+            return "\(range.lowerBound)..<\(range.upperBound)"
+        case .floatRange(let range):
+            return "\(range.lowerBound)..<\(range.upperBound)"
+        case .closedIntRange(let range):
+            return "\(range.lowerBound)...\(range.upperBound)"
+        case .closedFloatRange(let range):
+            return "\(range.lowerBound)...\(range.upperBound)"
         case .cuboid(let value):
             return String(describing: value)
         }
@@ -40,6 +52,44 @@ enum Value: Hashable, CustomStringConvertible {
         switch self {
         case .cuboid(let value):
             return value
+        default:
+            return nil
+        }
+    }
+    
+    // TODO: Should we coerce between closed and half-open ranges?
+    
+    var asIntRange: Range<Int>? {
+        switch self {
+        case .intRange(let range):
+            return range
+        default:
+            return nil
+        }
+    }
+    
+    var asFloatRange: Range<Double>? {
+        switch self {
+        case .floatRange(let range):
+            return range
+        default:
+            return nil
+        }
+    }
+    
+    var asClosedIntRange: ClosedRange<Int>? {
+        switch self {
+        case .closedIntRange(let range):
+            return range
+        default:
+            return nil
+        }
+    }
+    
+    var asClosedFloatRange: ClosedRange<Double>? {
+        switch self {
+        case .closedFloatRange(let range):
+            return range
         default:
             return nil
         }
