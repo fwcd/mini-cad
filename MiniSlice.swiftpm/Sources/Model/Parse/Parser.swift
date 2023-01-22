@@ -73,11 +73,11 @@ func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
     switch tokens.peek() {
     case .toExclusive:
         tokens.next()
-        let upper = try parsePrimaryExpression(from: &tokens)
+        let upper = try parsePrimaryExpression(from: &tokens, allowTrailing: false)
         return .binary(.range(primary, upper))
     case .toInclusive:
         tokens.next()
-        let upper = try parsePrimaryExpression(from: &tokens)
+        let upper = try parsePrimaryExpression(from: &tokens, allowTrailing: false)
         return .binary(.closedRange(primary, upper))
     default:
         return primary
@@ -85,7 +85,7 @@ func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
 }
     
 /// Statefully parses a non-operated-on expression from the given tokens. Throws a `ParseError` if unsuccessful.
-func parsePrimaryExpression(from tokens: inout TokenIterator) throws -> Expression {
+func parsePrimaryExpression(from tokens: inout TokenIterator, allowTrailing: Bool = true) throws -> Expression {
     switch tokens.peek() {
     case .int(_):
         let value = try tokens.expectInt()
@@ -103,7 +103,7 @@ func parsePrimaryExpression(from tokens: inout TokenIterator) throws -> Expressi
                 trailingBlock = try parseBlock(from: &tokens)
             }
             return .call(ident, args: args, trailingBlock: trailingBlock)
-        case .leftCurly:
+        case .leftCurly where allowTrailing:
             let trailingBlock = try parseBlock(from: &tokens)
             return .call(ident, args: [], trailingBlock: trailingBlock)
         default:
