@@ -4,7 +4,11 @@ import OSLog
 private let log = Logger(subsystem: "EditorViewModel", category: "MiniSlice")
 
 class EditorViewModel: ObservableObject {
-    @Published private(set) var cuboids: [Cuboid] = []
+    @Published private(set) var cuboids: [Cuboid] = [] {
+        didSet {
+            stage.update(cuboids: cuboids)
+        }
+    }
     @Published private(set) var parsedRecipe: Recipe = .init() {
         didSet {
             do {
@@ -40,7 +44,11 @@ class EditorViewModel: ObservableObject {
     @Published private(set) var parseError: ParseError? = nil
     @Published private(set) var interpretError: InterpretError? = nil
     
-    init() {
+    private var stage: StageViewModel
+    
+    init(stage: StageViewModel) {
+        self.stage = stage
+        
         let recipe = demoRecipe
         rawRecipe = "\(recipe)"
     }

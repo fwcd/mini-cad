@@ -1,3 +1,5 @@
+import SceneKit
+
 struct Vec3: CustomStringConvertible, Hashable, AdditiveArithmetic {
     static var zero = Self()
     
@@ -33,5 +35,17 @@ struct Vec3: CustomStringConvertible, Hashable, AdditiveArithmetic {
     
     static prefix func -(lhs: Self) -> Self {
         lhs.map { -$0 }
+    }
+}
+
+extension SCNVector3 {
+    init(_ vec3: Vec3) {
+        self.init(x: Float(vec3.x), y: Float(vec3.y), z: Float(vec3.z))
+    }
+}
+
+extension Vec3 {
+    init(_ scnVec: SCNVector3) {
+        self.init(x: Double(scnVec.x), y: Double(scnVec.y), z: Double(scnVec.z))
     }
 }

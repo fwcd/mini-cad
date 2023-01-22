@@ -3,12 +3,14 @@ import SceneKit
 
 class StageViewModel: ObservableObject {
     @Published private(set) var scene: SCNScene
-    @Published private(set) var cameraNode: SCNNode? = nil
     @Published var options: Options = .init() {
         didSet {
             updateCamera()
         }
     }
+    
+    @Published private(set) var cameraNode: SCNNode? = nil
+    private var cuboidsNode: SCNNode
     
     private var camera: SCNCamera? {
         cameraNode?.camera
@@ -33,13 +35,31 @@ class StageViewModel: ObservableObject {
         ambientLightNode.light = ambientLight
         scene.rootNode.addChildNode(ambientLightNode)
         
-        let cubeBox = SCNBox()
-        cubeBox.firstMaterial?.diffuse.contents = UIColor.tintColor
-        let cube = SCNNode(geometry: cubeBox)
-        cube.position = SCNVector3(x: 0, y: 0, z: 0)
-        scene.rootNode.addChildNode(cube)
+        cuboidsNode = SCNNode()
+        scene.rootNode.addChildNode(cuboidsNode)
         
         updateCamera()
+    }
+    
+    func update(cuboids: [Cuboid]) {
+        // TODO: Be smarter about this, e.g. by adding identity to cuboids and diffing them
+        
+        cuboidsNode.enumerateChildNodes { (node, _) in
+            node.removeFromParentNode()
+        }
+        
+        for cuboid in cuboids {
+            cuboidsNode.addChildNode(makeNode(for: cuboid))
+        }
+    }
+    
+    private func makeNode(for cuboid: Cuboid) -> SCNNode {
+        let box = SCNBox()
+        box.firstMaterial?.diffuse.contents = UIColor.tintColor
+        let cube = SCNNode(geometry: box)
+        cube.position = SCNVector3(cuboid.center)
+        cube.scale = SCNVector3(cuboid.size)
+        return cube
     }
     
     private func updateCamera() {
