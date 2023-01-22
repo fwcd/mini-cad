@@ -1,9 +1,10 @@
 /// A (possibly nested) variable scope in which recipes, statements and expressions can be interpreted.
 class Interpreter {
-    private var variables: [String: [Value]] = [:]
+    private var variables: [String: [Value]]
     private var parent: Interpreter?
     
-    init(parent: Interpreter? = nil) {
+    init(variables: [String: [Value]] = [:], parent: Interpreter? = nil) {
+        self.variables = variables
         self.parent = parent
     }
     
@@ -30,10 +31,29 @@ class Interpreter {
         var values: [Value] = []
         
         switch statement {
-        case .varBinding(let binding):
+        case let .varBinding(binding):
             variables[binding.name] = try evaluate(expression: binding.value)
-        case .expression(let expression):
+        case let .expression(expression):
             values += try evaluate(expression: expression)
+        case let .forLoop(name, collection, block):
+            let evaluatedCollection = try evaluate(expression: collection)
+            guard evaluatedCollection.count == 1 else {
+                throw InterpretError.cannotIterate(collection)
+            }
+            switch evaluatedCollection[0] {
+            case let .intRange(range):
+                for value in range {
+                    let blockInterpreter = Interpreter(variables: [name: [.int(value)]], parent: self)
+                    values += try blockInterpreter.interpret(statements: block)
+                }
+            case let .closedIntRange(range):
+                for value in range {
+                    let blockInterpreter = Interpreter(variables: [name: [.int(value)]], parent: self)
+                    values += try blockInterpreter.interpret(statements: block)
+                }
+            default:
+                throw InterpretError.cannotIterate(collection)
+            }
         case .blank:
             break
         }
