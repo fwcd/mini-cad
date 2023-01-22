@@ -66,11 +66,11 @@ func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
             let args = try parseArgs(from: &tokens)
             var trailingBlock: [Statement] = []
             if tokens.peek() == .leftCurly {
-                trailingBlock = try parseTrailingBlock(from: &tokens)
+                trailingBlock = try parseBlock(from: &tokens)
             }
             return .call(ident, args: args, trailingBlock: trailingBlock)
         case .leftCurly:
-            let trailingBlock = try parseTrailingBlock(from: &tokens)
+            let trailingBlock = try parseBlock(from: &tokens)
             return .call(ident, args: [], trailingBlock: trailingBlock)
         default:
             return .identifier(ident)
@@ -97,8 +97,8 @@ func parseArgs(from tokens: inout TokenIterator) throws -> [Expression] {
     return args
 }
 
-/// Statefully parses a trailing block of statements from the given tokens. Throws a `ParseError` if unsuccessful.
-func parseTrailingBlock(from tokens: inout TokenIterator) throws -> [Statement] {
+/// Statefully parses a block of statements from the given tokens. Throws a `ParseError` if unsuccessful.
+func parseBlock(from tokens: inout TokenIterator) throws -> [Statement] {
     try tokens.expect(.leftCurly)
     tokens.skipAll(.newline)
     
