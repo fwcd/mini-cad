@@ -1,16 +1,4 @@
 struct Interpreter {
-    private static let builtIns: [String: ([Value]) -> Value] = [
-        "Cuboid": { args in
-            // TODO: Should we pass vector/tuple-ish types?
-            let size = Vec3(
-                x: args[safely: 0]?.asFloat ?? 1,
-                y: args[safely: 1]?.asFloat ?? 1,
-                z: args[safely: 2]?.asFloat ?? 1
-            )
-            return .cuboid(Cuboid(size: size))
-        },
-    ]
-    
     private var variables: [String: Value] = [:]
     
     mutating func interpret(recipe: Recipe) throws -> [Value] {
@@ -37,7 +25,7 @@ struct Interpreter {
             break
         }
         
-        return values
+        return values.compactMap(\.nonNil)
     }
     
     mutating func evaluate(expression: Expression) throws -> Value {
@@ -52,7 +40,7 @@ struct Interpreter {
             }
         case .call(let funcName, let args):
             let evaluatedArgs = try args.map { try evaluate(expression: $0) }
-            if let builtIn = Self.builtIns[funcName] {
+            if let builtIn = builtIns[funcName] {
                 return builtIn(evaluatedArgs)
             } else {
                 throw InterpretError.functionNotInScope(funcName)
