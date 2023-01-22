@@ -11,7 +11,7 @@ struct EditorView: View {
                 if let error = editor.parseError {
                     ErrorView(error: error)
                 } else if let error = editor.interpretError {
-                    ErrorView(error: error)
+                    ErrorView(error: error, background: Color(red: 0.4, green: 0, blue: 0.4))
                 }
             }
             // FIXME: Remove (or prettify) the following debug views
