@@ -2,6 +2,8 @@ import Foundation
 
 private let patterns: [(String, (Substring) -> Token?, String)] = [
     ("let", { _ in .let }, "let"),
+    ("for", { _ in .for }, "for"),
+    ("in", { _ in .in }, "in"),
     ("assign", { _ in .assign }, "="),
     ("newline", { _ in .newline }, "\n"),
     ("leftParen", { _ in .leftParen }, "\\("),

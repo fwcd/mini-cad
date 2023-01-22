@@ -35,24 +35,24 @@ class Interpreter {
             variables[binding.name] = try evaluate(expression: binding.value)
         case let .expression(expression):
             values += try evaluate(expression: expression)
-        case let .forLoop(name, collection, block):
-            let evaluatedCollection = try evaluate(expression: collection)
+        case let .forLoop(loop):
+            let evaluatedCollection = try evaluate(expression: loop.sequence)
             guard evaluatedCollection.count == 1 else {
-                throw InterpretError.cannotIterate(collection)
+                throw InterpretError.cannotIterate(loop.sequence)
             }
             switch evaluatedCollection[0] {
             case let .intRange(range):
                 for value in range {
-                    let blockInterpreter = Interpreter(variables: [name: [.int(value)]], parent: self)
-                    values += try blockInterpreter.interpret(statements: block)
+                    let blockInterpreter = Interpreter(variables: [loop.name: [.int(value)]], parent: self)
+                    values += try blockInterpreter.interpret(statements: loop.block)
                 }
             case let .closedIntRange(range):
                 for value in range {
-                    let blockInterpreter = Interpreter(variables: [name: [.int(value)]], parent: self)
-                    values += try blockInterpreter.interpret(statements: block)
+                    let blockInterpreter = Interpreter(variables: [loop.name: [.int(value)]], parent: self)
+                    values += try blockInterpreter.interpret(statements: loop.block)
                 }
             default:
-                throw InterpretError.cannotIterate(collection)
+                throw InterpretError.cannotIterate(loop.sequence)
             }
         case .blank:
             break

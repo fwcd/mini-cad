@@ -34,6 +34,8 @@ func parseStatement(from tokens: inout TokenIterator) throws -> Statement {
     switch tokens.peek() {
     case .let:
         return .varBinding(try parseVarBinding(from: &tokens))
+    case .for:
+        return .forLoop(try parseForLoop(from: &tokens))
     default:
         return .expression(try parseExpression(from: &tokens))
     }
@@ -42,12 +44,28 @@ func parseStatement(from tokens: inout TokenIterator) throws -> Statement {
 /// Statefully parses a variable binding from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseVarBinding(from tokens: inout TokenIterator) throws -> VarBinding {
     try tokens.expect(.let)
-    guard case let .identifier(name) = tokens.next() else { throw ParseError.expectedIdentifier(actual: tokens.current) }
+    let name = try parseIdentifier(from: &tokens)
     try tokens.expect(.assign)
     let value = try parseExpression(from: &tokens)
     return VarBinding(name: name, value: value)
 }
 
+/// Statefully parses a for-loop from the given tokens. Throws a `ParseError` if unsuccessful.
+func parseForLoop(from tokens: inout TokenIterator) throws -> ForLoop {
+    try tokens.expect(.for)
+    let name = try parseIdentifier(from: &tokens)
+    try tokens.expect(.in)
+    let sequence = try parseExpression(from: &tokens)
+    let block = try parseBlock(from: &tokens)
+    return ForLoop(name: name, sequence: sequence, block: block)
+}
+
+/// Statefully parses an identifier from the given tokens. Throws a `ParseError` if unsuccessful.
+func parseIdentifier(from tokens: inout TokenIterator) throws -> String {
+    guard case let .identifier(ident) = tokens.next() else { throw ParseError.expectedIdentifier(actual: tokens.current) }
+    return ident
+}
+    
 /// Statefully parses an expression from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
     switch tokens.peek() {

@@ -1,6 +1,8 @@
 /// A lexical token. Before parsing the program/recipe is preprocessed into a sequence of tokens.
 enum Token: Hashable {
     case `let`
+    case `for`
+    case `in`
     case assign
     case newline
     case leftParen
