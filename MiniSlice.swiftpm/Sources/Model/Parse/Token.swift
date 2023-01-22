@@ -3,6 +3,8 @@ enum Token: Hashable {
     case `let`
     case `for`
     case `in`
+    case toExclusive
+    case toInclusive
     case assign
     case newline
     case leftParen

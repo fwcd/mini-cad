@@ -23,6 +23,20 @@ struct TokenIterator: IteratorProtocol {
         }
     }
     
+    /// Consumes and parses an integer literal.
+    mutating func expectInt() throws -> Int {
+        guard case let .int(rawValue) = next(),
+              let value = Int(rawValue) else { throw ParseError.couldNotParseIntLiteral }
+        return value
+    }
+    
+    /// Consumes and parses a float literal.
+    mutating func expectFloat() throws -> Double {
+        guard case let .float(rawValue) = next(),
+              let value = Double(rawValue) else { throw ParseError.couldNotParseFloatLiteral }
+        return value
+    }
+    
     /// Consumes the next token if it matches the given token.
     mutating func skip(_ token: Token) {
         if peek() == token {

@@ -69,14 +69,36 @@ func parseIdentifier(from tokens: inout TokenIterator) throws -> String {
 /// Statefully parses an expression from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
     switch tokens.peek() {
-    case .int(let rawValue):
-        tokens.next()
-        guard let value = Int(rawValue) else { throw ParseError.couldNotParseIntLiteral }
-        return .literal(.int(value))
-    case .float(let rawValue):
-        tokens.next()
-        guard let value = Double(rawValue) else { throw ParseError.couldNotParseFloatLiteral }
-        return .literal(.float(value))
+    case .int(_):
+        let value = try tokens.expectInt()
+        // TODO: Add proper infix operator parsing instead of this ad-hoc special case for ranges
+        switch tokens.peek() {
+        case .toExclusive:
+            tokens.next()
+            let end = try tokens.expectInt()
+            return .literal(.intRange(value..<end))
+        case .toInclusive:
+            tokens.next()
+            let end = try tokens.expectInt()
+            return .literal(.closedIntRange(value...end))
+        default:
+            return .literal(.int(value))
+        }
+    case .float(_):
+        let value = try tokens.expectFloat()
+        // TODO: Add proper infix operator parsing instead of this ad-hoc special case for ranges
+        switch tokens.peek() {
+        case .toExclusive:
+            tokens.next()
+            let end = try tokens.expectFloat()
+            return .literal(.floatRange(value..<end))
+        case .toInclusive:
+            tokens.next()
+            let end = try tokens.expectFloat()
+            return .literal(.closedFloatRange(value...end))
+        default:
+            return .literal(.float(value))
+        }
     case .identifier(let ident):
         tokens.next()
         switch tokens.peek() {
