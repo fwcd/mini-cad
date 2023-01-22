@@ -1,13 +1,18 @@
-struct Interpreter {
+class Interpreter {
     private var variables: [String: [Value]] = [:]
+    private var parent: Interpreter?
     
-    mutating func interpret(recipe: Recipe) throws -> [Value] {
+    init(parent: Interpreter? = nil) {
+        self.parent = parent
+    }
+    
+    func interpret(recipe: Recipe) throws -> [Value] {
         try interpret(statements: recipe.statements)
     }
     
     // TODO: We could probably also use interpret(statement:) to make a nice REPL
     
-    mutating func interpret(statements: [Statement]) throws -> [Value] {
+    func interpret(statements: [Statement]) throws -> [Value] {
         var values: [Value] = []
         
         for statement in statements {
@@ -17,7 +22,7 @@ struct Interpreter {
         return values
     }
     
-    mutating func interpret(statement: Statement) throws -> [Value] {
+    func interpret(statement: Statement) throws -> [Value] {
         var values: [Value] = []
         
         switch statement {
@@ -32,20 +37,16 @@ struct Interpreter {
         return values
     }
     
-    mutating func evaluate(expression: Expression) throws -> [Value] {
+    func evaluate(expression: Expression) throws -> [Value] {
         switch expression {
         case .literal(let value):
             return [value]
-        case .identifier(let ident):
-            if let values = variables[ident] {
-                return values
-            } else {
-                throw InterpretError.variableNotInScope(ident)
-            }
+        case .identifier(let name):
+            return try resolve(name: name)
         case let .call(funcName, args, trailingBlock):
             let evaluatedArgs = try args.flatMap { try evaluate(expression: $0) }
             
-            var blockInterpreter = Interpreter() // TODO: Make this a parented interpreter to preserve the scope
+            let blockInterpreter = Interpreter(parent: self)
             let evaluatedBlock = try blockInterpreter.interpret(statements: trailingBlock)
             
             if let builtIn = builtIns[funcName] {
@@ -55,9 +56,18 @@ struct Interpreter {
             }
         }
     }
+    
+    func resolve(name: String) throws -> [Value] {
+        if let values = variables[name] {
+            return values
+        } else if let parent = parent {
+            return try parent.resolve(name: name)
+        } else {
+            throw InterpretError.variableNotInScope(name)
+        }
+    }
 }
 
 func interpret(recipe: Recipe) throws -> [Value] {
-    var interpreter = Interpreter()
-    return try interpreter.interpret(recipe: recipe)
+    try Interpreter().interpret(recipe: recipe)
 }
