@@ -9,25 +9,26 @@ struct CodeEditor: UIViewRepresentable {
     @Binding var text: String
     
     var highlightedText: NSAttributedString {
+        // We use NSString directly here to avoid costly linear-time index conversions
+        let nsString = text as NSString
         let attributed = NSMutableAttributedString()
-        var lastIndex = text.startIndex
-        for match in highlightRegex.matches(in: text, range: NSRange(text.startIndex..., in: text)) {
-            if let range = Range(match.range, in: text) {
-                if lastIndex < range.lowerBound {
-                    let chunk = NSAttributedString(string: String(text[lastIndex..<range.lowerBound]), attributes: [
-                        .foregroundColor: UIColor(.primary),
-                    ])
-                    attributed.append(chunk)
-                }
-                let keyword = NSAttributedString(string: String(text[range]), attributes: [
-                    .foregroundColor: UIColor.tintColor,
+        var lastIndex = 0
+        for match in highlightRegex.matches(in: text, range: NSRange(0..<nsString.length)) {
+            let range = match.range
+            if lastIndex < range.lowerBound {
+                let chunk = NSAttributedString(string: nsString.substring(with: NSRange(lastIndex..<range.lowerBound)), attributes: [
+                    .foregroundColor: UIColor(.primary),
                 ])
-                attributed.append(keyword)
-                lastIndex = range.upperBound
+                attributed.append(chunk)
             }
+            let keyword = NSAttributedString(string: nsString.substring(with: range), attributes: [
+                .foregroundColor: UIColor.tintColor,
+            ])
+            attributed.append(keyword)
+            lastIndex = range.upperBound
         }
-        if lastIndex < text.endIndex {
-            let chunk = NSAttributedString(string: String(text[lastIndex...]), attributes: [
+        if lastIndex < nsString.length {
+            let chunk = NSAttributedString(string: nsString.substring(from: lastIndex), attributes: [
                 .foregroundColor: UIColor(.primary),
             ])
             attributed.append(chunk)
