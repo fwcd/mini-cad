@@ -45,6 +45,10 @@ struct CodeEditor: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
+        uiView.autocorrectionType = .no
+        uiView.autocapitalizationType = .none
+        uiView.spellCheckingType = .no
+        
         uiView.delegate = context.coordinator
         
         // Make sure to restore the selected text range since the cursor will otherwise move to the end
