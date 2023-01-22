@@ -2,6 +2,8 @@ enum InterpretError: Error, CustomStringConvertible {
     case variableNotInScope(String)
     case functionNotInScope(String)
     case cannotIterate(Expression)
+    case binaryOperationTypesMismatch(Value, Value)
+    case ambiguousExpression(Expression, [Value])
     
     var description: String {
         switch self {
@@ -11,6 +13,10 @@ enum InterpretError: Error, CustomStringConvertible {
             return "The function \(name) is not in scope"
         case .cannotIterate(let expr):
             return "Cannot iterate over \(expr)"
+        case .binaryOperationTypesMismatch(let lhs, let rhs):
+            return "The types in the binary operation don't match: \(lhs) vs \(rhs)"
+        case .ambiguousExpression(let expr, let values):
+            return "The expression \(expr) does not uniquely evaluate to one result: \(values)"
         }
     }
 }

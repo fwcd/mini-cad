@@ -65,40 +65,34 @@ func parseIdentifier(from tokens: inout TokenIterator) throws -> String {
     guard case let .identifier(ident) = tokens.next() else { throw ParseError.expectedIdentifier(actual: tokens.current) }
     return ident
 }
-    
+
 /// Statefully parses an expression from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
+    let primary = try parsePrimaryExpression(from: &tokens)
+    // TODO: Add proper infix operator parsing instead of this ad-hoc special case for ranges
+    switch tokens.peek() {
+    case .toExclusive:
+        tokens.next()
+        let upper = try parseExpression(from: &tokens)
+        return .binary(.range(primary, upper))
+    case .toInclusive:
+        tokens.next()
+        let upper = try parseExpression(from: &tokens)
+        return .binary(.closedRange(primary, upper))
+    default:
+        return primary
+    }
+}
+    
+/// Statefully parses a non-operated-on expression from the given tokens. Throws a `ParseError` if unsuccessful.
+func parsePrimaryExpression(from tokens: inout TokenIterator) throws -> Expression {
     switch tokens.peek() {
     case .int(_):
         let value = try tokens.expectInt()
-        // TODO: Add proper infix operator parsing instead of this ad-hoc special case for ranges
-        switch tokens.peek() {
-        case .toExclusive:
-            tokens.next()
-            let end = try tokens.expectInt()
-            return .literal(.intRange(value..<end))
-        case .toInclusive:
-            tokens.next()
-            let end = try tokens.expectInt()
-            return .literal(.closedIntRange(value...end))
-        default:
-            return .literal(.int(value))
-        }
+        return .literal(.int(value))
     case .float(_):
         let value = try tokens.expectFloat()
-        // TODO: Add proper infix operator parsing instead of this ad-hoc special case for ranges
-        switch tokens.peek() {
-        case .toExclusive:
-            tokens.next()
-            let end = try tokens.expectFloat()
-            return .literal(.floatRange(value..<end))
-        case .toInclusive:
-            tokens.next()
-            let end = try tokens.expectFloat()
-            return .literal(.closedFloatRange(value...end))
-        default:
-            return .literal(.float(value))
-        }
+        return .literal(.float(value))
     case .identifier(let ident):
         tokens.next()
         switch tokens.peek() {

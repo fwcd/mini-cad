@@ -36,11 +36,8 @@ class Interpreter {
         case let .expression(expression):
             values += try evaluate(expression: expression)
         case let .forLoop(loop):
-            let evaluatedCollection = try evaluate(expression: loop.sequence)
-            guard evaluatedCollection.count == 1 else {
-                throw InterpretError.cannotIterate(loop.sequence)
-            }
-            switch evaluatedCollection[0] {
+            let evaluatedCollection = try evaluateUniquely(expression: loop.sequence)
+            switch evaluatedCollection {
             case let .intRange(range):
                 for value in range {
                     let blockInterpreter = Interpreter(variables: [loop.name: [.int(value)]], parent: self)
@@ -68,6 +65,8 @@ class Interpreter {
             return [value]
         case .identifier(let name):
             return try resolve(name: name)
+        case .binary(let binaryExpr):
+            return try evaluate(binaryExpression: binaryExpr)
         case let .call(funcName, args, trailingBlock):
             // Evaluate the arguments (strictly)
             let evaluatedArgs = try args.flatMap { try evaluate(expression: $0) }
@@ -84,6 +83,43 @@ class Interpreter {
                 throw InterpretError.functionNotInScope(funcName)
             }
         }
+    }
+    
+    /// Evaluates the given binary expression. Throws an `InterpretError` if unsuccessful.
+    func evaluate(binaryExpression: BinaryExpression) throws -> [Value] {
+        switch binaryExpression {
+        case let .range(lowerExpr, upperExpr):
+            let lower = try evaluateUniquely(expression: lowerExpr)
+            let upper = try evaluateUniquely(expression: upperExpr)
+            switch (lower, upper) {
+            case let (.int(lowerValue), .int(upperValue)):
+                return [.intRange(lowerValue..<upperValue)]
+            case let (.float(lowerValue), .float(upperValue)):
+                return [.floatRange(lowerValue..<upperValue)]
+            default:
+                throw InterpretError.binaryOperationTypesMismatch(lower, upper)
+            }
+        case let .closedRange(lowerExpr, upperExpr):
+            let lower = try evaluateUniquely(expression: lowerExpr)
+            let upper = try evaluateUniquely(expression: upperExpr)
+            switch (lower, upper) {
+            case let (.int(lowerValue), .int(upperValue)):
+                return [.closedIntRange(lowerValue...upperValue)]
+            case let (.float(lowerValue), .float(upperValue)):
+                return [.closedFloatRange(lowerValue...upperValue)]
+            default:
+                throw InterpretError.binaryOperationTypesMismatch(lower, upper)
+            }
+        }
+    }
+    
+    /// Evaluates the given expression uniquely. Throws an `InterpretError` if unsuccessful.
+    func evaluateUniquely(expression: Expression) throws -> Value {
+        let values = try evaluate(expression: expression)
+        guard values.count == 1 else {
+            throw InterpretError.ambiguousExpression(expression, values)
+        }
+        return values[0]
     }
     
     /// Resolves the given variable name. Starts in the current scope and works its way up the chain of parent scopes, eventually throwing a `.variableNotInScope` if the variable is unbound.
