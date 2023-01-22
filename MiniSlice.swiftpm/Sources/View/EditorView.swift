@@ -31,8 +31,3 @@ struct EditorView: View {
     }
 }
 
-struct EditorViewPreviews: PreviewProvider {
-    static var previews: some View {
-        EditorView()
-    }
-}

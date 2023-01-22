@@ -95,3 +95,8 @@ struct CodeEditor: UIViewRepresentable {
     }
 }
 
+struct CodeEditor_Previews: PreviewProvider {
+    static var previews: some View {
+        CodeEditor(text: .constant("\(demoRecipe)"))
+    }
+}

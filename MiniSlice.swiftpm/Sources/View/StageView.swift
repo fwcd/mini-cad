@@ -19,8 +19,3 @@ struct StageView: View {
     }
 }
 
-struct StageView_Previews: PreviewProvider {
-    static var previews: some View {
-        StageView()
-    }
-}
