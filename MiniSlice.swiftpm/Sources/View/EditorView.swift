@@ -7,8 +7,12 @@ struct EditorView: View {
         VStack {
             TextEditor(text: $editor.rawRecipe)
                 .font(.body.monospaced())
-            if let error = editor.error {
-                ErrorView(error: error)
+            HStack {
+                if let error = editor.parseError {
+                    ErrorView(error: error)
+                } else if let error = editor.interpretError {
+                    ErrorView(error: error)
+                }
             }
             // FIXME: Remove (or prettify) the following debug views
             HStack(alignment: .top, spacing: 20) {
@@ -16,13 +20,8 @@ struct EditorView: View {
                     Text(String(describing: editor.parsedRecipe))
                 }
                 Group {
-                    switch Result(catching: { try interpret(recipe: editor.parsedRecipe) }) {
-                    case .success(let values):
-                        List(values.map { Identified(value: $0) }) {
-                            Text(String(describing: $0.value))
-                        }
-                    case .failure(let error):
-                        ErrorView(error: error)
+                    List(editor.cuboids.map { Identified(value: $0) }) {
+                        Text(String(describing: $0.value))
                     }
                 }
                 .frame(maxWidth: .infinity)
