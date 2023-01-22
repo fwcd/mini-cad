@@ -73,11 +73,11 @@ func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
     switch tokens.peek() {
     case .toExclusive:
         tokens.next()
-        let upper = try parseExpression(from: &tokens)
+        let upper = try parsePrimaryExpression(from: &tokens)
         return .binary(.range(primary, upper))
     case .toInclusive:
         tokens.next()
-        let upper = try parseExpression(from: &tokens)
+        let upper = try parsePrimaryExpression(from: &tokens)
         return .binary(.closedRange(primary, upper))
     default:
         return primary
