@@ -78,12 +78,24 @@ struct CodeEditor: UIViewRepresentable {
         
         func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
             // TODO: Can we be sure that range corresponds to selectedTextRange?
-            if text == "\n",
-               let autoIndent = autoIndent,
-               let selectedRange = textView.selectedTextRange,
-               let lineStart = textView.tokenizer.position(from: selectedRange.start, toBoundary: .line, inDirection: .storage(.backward)),
-               let linePrefixRange = textView.textRange(from: lineStart, to: selectedRange.start),
-               let linePrefix = textView.text(in: linePrefixRange) {
+            guard let autoIndent = autoIndent,
+                  let selectedRange = textView.selectedTextRange else {
+                return true
+            }
+            
+            let isEnter = text == "\n"
+            let isTab = text == "\t"
+            let isBackspace = text.isEmpty && selectedRange.start == selectedRange.end
+            
+            guard isEnter || isTab || isBackspace,
+                  let lineStart = textView.tokenizer.position(from: selectedRange.start, toBoundary: .line, inDirection: .storage(.backward)),
+                  let linePrefixRange = textView.textRange(from: lineStart, to: selectedRange.start),
+                let linePrefix = textView.text(in: linePrefixRange) else {
+                return true
+            }
+                      
+            if isEnter {
+                // Perform indented line break
                 let lineIndent = linePrefix.prefix { $0.isWhitespace }
                 var newIndent = lineIndent
                 
@@ -91,9 +103,21 @@ struct CodeEditor: UIViewRepresentable {
                     newIndent += String(repeating: " ", count: autoIndent)
                 }
                 
-                textView.replace(selectedRange, withText: "\(text)\(newIndent)")
+                let indented = "\(text)\(newIndent)"
+                textView.replace(selectedRange, withText: indented)
+                return false
+            } else if isBackspace && !linePrefix.isEmpty && linePrefix.allSatisfy(\.isWhitespace) {
+                // Dedent on backspace
+                let dedented = String(linePrefix.dropLast(autoIndent))
+                textView.replace(linePrefixRange, withText: dedented)
+                return false
+            } else if isTab {
+                // Indent with spaces on tab
+                let indent = String(repeating: " ", count: autoIndent)
+                textView.replace(selectedRange, withText: indent)
                 return false
             }
+            
             return true
         }
     }
