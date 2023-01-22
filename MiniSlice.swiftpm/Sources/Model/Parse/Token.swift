@@ -7,8 +7,8 @@ enum Token: Hashable {
     case leftCurly
     case rightCurly
     case comma
-    case float(Double)
-    case int(Int)
+    case float(String)
+    case int(String)
     case identifier(String)
 }
 

@@ -3,6 +3,8 @@ enum ParseError: Error, CustomStringConvertible {
     case expectedIdentifier(actual: Token?)
     case expectedExpression(actual: Token?)
     case expectedValue(actual: Token?)
+    case couldNotParseIntLiteral
+    case couldNotParseFloatLiteral
     
     var description: String {
         switch self {
@@ -14,6 +16,10 @@ enum ParseError: Error, CustomStringConvertible {
             return "Expected expression but got \(actual.map { "\($0)" } ?? "nil")"
         case let .expectedValue(actual: actual):
             return "Expected value but got \(actual.map { "\($0)" } ?? "nil")"
+        case .couldNotParseIntLiteral:
+            return "Could not parse int literal"
+        case .couldNotParseFloatLiteral:
+            return "Could not parse float literal"
         }
     }
 }

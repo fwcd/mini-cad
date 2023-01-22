@@ -9,8 +9,8 @@ private let patterns: [(String, (Substring) -> Token?, String)] = [
     ("leftCurly", { _ in .leftCurly }, "\\{"),
     ("rightCury", { _ in .rightCurly }, "\\}"),
     ("comma", { _ in .comma }, ","),
-    ("float", { raw in Double(raw).map { .float($0) } }, "-?\\d+\\.\\d+"),
-    ("int", { raw in Int(raw).map { .int($0) } }, "-?\\d+"),
+    ("float", { raw in .float(String(raw)) }, "-?\\d+\\.\\d+"),
+    ("int", { raw in .int(String(raw)) }, "-?\\d+"),
     ("identifier", { raw in .identifier(String(raw)) }, "\\w+"),
 ]
 private let regex = try! NSRegularExpression(

@@ -45,11 +45,13 @@ func parseVarBinding(from tokens: inout TokenIterator) throws -> VarBinding {
 
 func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
     switch tokens.peek() {
-    case .int(let value):
+    case .int(let rawValue):
         tokens.next()
+        guard let value = Int(rawValue) else { throw ParseError.couldNotParseIntLiteral }
         return .literal(.int(value))
-    case .float(let value):
+    case .float(let rawValue):
         tokens.next()
+        guard let value = Double(rawValue) else { throw ParseError.couldNotParseFloatLiteral }
         return .literal(.float(value))
     case .identifier(let ident):
         tokens.next()
