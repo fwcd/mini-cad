@@ -1,6 +1,12 @@
-let demoRecipe = Recipe(statements: [
-    .varBinding(.init(name: "x", value: 3)),
-    .varBinding(.init(name: "y", value: 4.3)),
+let demoRecipe: Recipe = Recipe(statements: [
+    .varBinding(.init(name: "w", value: 3)),
+    .varBinding(.init(name: "h", value: 4)),
     .blank,
-    .expression(.call("Cuboid", args: [], trailingBlock: [])),
+    .forLoop(.init(name: "i", sequence: .binary(.range(0, "w")), block: [
+        .forLoop(.init(name: "j", sequence: .binary(.range(0, "h")), block: [
+            .expression(.call("Translate", args: [], trailingBlock: [
+                .expression(.call("Cuboid", args: [], trailingBlock: [])),
+            ])),
+        ])),
+    ])),
 ])

@@ -93,8 +93,10 @@ class Interpreter {
             let upper = try evaluateUniquely(expression: upperExpr)
             switch (lower, upper) {
             case let (.int(lowerValue), .int(upperValue)):
+                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lower, upper) }
                 return [.intRange(lowerValue..<upperValue)]
             case let (.float(lowerValue), .float(upperValue)):
+                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lower, upper) }
                 return [.floatRange(lowerValue..<upperValue)]
             default:
                 throw InterpretError.binaryOperationTypesMismatch(lower, upper)
@@ -104,8 +106,10 @@ class Interpreter {
             let upper = try evaluateUniquely(expression: upperExpr)
             switch (lower, upper) {
             case let (.int(lowerValue), .int(upperValue)):
+                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lower, upper) }
                 return [.closedIntRange(lowerValue...upperValue)]
             case let (.float(lowerValue), .float(upperValue)):
+                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lower, upper) }
                 return [.closedFloatRange(lowerValue...upperValue)]
             default:
                 throw InterpretError.binaryOperationTypesMismatch(lower, upper)
