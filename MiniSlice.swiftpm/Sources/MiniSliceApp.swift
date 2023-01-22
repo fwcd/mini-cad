@@ -6,8 +6,11 @@ private var editor = EditorViewModel(preview: preview)
 @main
 struct MiniSliceApp: App {
     var body: some Scene {
-        WindowGroup {
+        DocumentGroup(newDocument: RecipeDocument()) { configuration in
             ContentView()
+                .onAppear {
+                    editor.rawRecipe = configuration.document.raw
+                }
                 .environmentObject(preview)
                 .environmentObject(editor)
         }
