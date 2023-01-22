@@ -67,7 +67,8 @@ func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
                 }
             }
             try tokens.expect(.rightParen)
-            return .call(ident, args)
+            // TODO: Parse trailing blocks
+            return .call(ident, args: args, trailingBlock: [])
         default:
             return .identifier(ident)
         }

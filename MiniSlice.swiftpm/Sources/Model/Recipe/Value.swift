@@ -2,7 +2,6 @@ enum Value: Hashable, CustomStringConvertible {
     case int(Int)
     case float(Double)
     case cuboid(Cuboid)
-    case `nil`
     
     var description: String {
         switch self {
@@ -12,8 +11,6 @@ enum Value: Hashable, CustomStringConvertible {
             return String(value)
         case .cuboid(let value):
             return String(describing: value)
-        case .nil:
-            return "nil"
         }
     }
     
@@ -45,14 +42,6 @@ enum Value: Hashable, CustomStringConvertible {
         default:
             return nil
         }
-    }
-    
-    var isNil: Bool {
-        self == .nil
-    }
-    
-    var nonNil: Self? {
-        isNil ? nil : self
     }
 }
 

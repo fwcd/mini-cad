@@ -1,17 +1,21 @@
 struct Interpreter {
-    private var variables: [String: Value] = [:]
+    private var variables: [String: [Value]] = [:]
     
     mutating func interpret(recipe: Recipe) throws -> [Value] {
+        try interpret(statements: recipe.statements)
+    }
+    
+    // TODO: We could probably also use interpret(statement:) to make a nice REPL
+    
+    mutating func interpret(statements: [Statement]) throws -> [Value] {
         var values: [Value] = []
         
-        for statement in recipe.statements {
+        for statement in statements {
             values += try interpret(statement: statement)
         }
         
         return values
     }
-    
-    // TODO: We could probably also use interpret(statement:) to make a nice REPL
     
     mutating func interpret(statement: Statement) throws -> [Value] {
         var values: [Value] = []
@@ -20,28 +24,32 @@ struct Interpreter {
         case .varBinding(let binding):
             variables[binding.name] = try evaluate(expression: binding.value)
         case .expression(let expression):
-            values.append(try evaluate(expression: expression))
+            values += try evaluate(expression: expression)
         case .blank:
             break
         }
         
-        return values.compactMap(\.nonNil)
+        return values
     }
     
-    mutating func evaluate(expression: Expression) throws -> Value {
+    mutating func evaluate(expression: Expression) throws -> [Value] {
         switch expression {
         case .literal(let value):
-            return value
+            return [value]
         case .identifier(let ident):
-            if let value = variables[ident] {
-                return value
+            if let values = variables[ident] {
+                return values
             } else {
                 throw InterpretError.variableNotInScope(ident)
             }
-        case .call(let funcName, let args):
-            let evaluatedArgs = try args.map { try evaluate(expression: $0) }
+        case let .call(funcName, args, trailingBlock):
+            let evaluatedArgs = try args.flatMap { try evaluate(expression: $0) }
+            
+            var blockInterpreter = Interpreter() // TODO: Make this a parented interpreter to preserve the scope
+            let evaluatedBlock = try blockInterpreter.interpret(statements: trailingBlock)
+            
             if let builtIn = builtIns[funcName] {
-                return builtIn(evaluatedArgs)
+                return builtIn(evaluatedArgs, evaluatedBlock)
             } else {
                 throw InterpretError.functionNotInScope(funcName)
             }

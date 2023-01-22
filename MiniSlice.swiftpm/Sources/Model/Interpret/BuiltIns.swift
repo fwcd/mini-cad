@@ -1,14 +1,17 @@
-let builtIns: [String: ([Value]) -> Value] = [
-    "Cuboid": { args in
+let builtIns: [String: ([Value], [Value]) -> [Value]] = [
+    "Cuboid": { args, _ in
         // TODO: Should we pass vector/tuple-ish types?
         let size = parseVec3(from: args, default: .init(x: 1, y: 1, z: 1))
-        return .cuboid(Cuboid(size: size))
+        return [.cuboid(Cuboid(size: size))]
     },
-    "Translate": { args in
+    "Translate": { args, trailingBlock in
         let offset = parseVec3(from: args)
-        guard var cuboid = args[safely: 3]?.asCuboid else { return .nil }
-        cuboid.center = cuboid.center + offset
-        return .cuboid(cuboid)
+        let cuboids = trailingBlock.compactMap(\.asCuboid)
+        return cuboids.map {
+            var cuboid = $0
+            cuboid.center = cuboid.center + offset
+            return .cuboid(cuboid)
+        }
     },
 ]
 

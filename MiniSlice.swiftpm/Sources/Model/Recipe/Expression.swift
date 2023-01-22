@@ -1,16 +1,23 @@
 enum Expression: Hashable, CustomStringConvertible {
     case identifier(String)
     case literal(Value)
-    case call(String, [Expression])
+    case call(String, args: [Expression], trailingBlock: [Statement])
     
     var description: String {
         switch self {
-        case .identifier(let ident):
+        case let .identifier(ident):
             return ident
-        case .literal(let value):
+        case let .literal(value):
             return "\(value)"
-        case .call(let name, let args):
-            return "\(name)(\(args.map { "\($0)" }.joined(separator: ", ")))"
+        case let .call(name, args, trailingBlock):
+            var formatted = name
+            if !args.isEmpty || trailingBlock.isEmpty {
+                formatted += "(\(args.map { "\($0)" }.joined(separator: ", ")))"
+            }
+            if !trailingBlock.isEmpty {
+                formatted += ([" {"] + trailingBlock.map { $0.description } + ["}"]).joined(separator: "\n")
+            }
+            return formatted
         }
     }
 }
