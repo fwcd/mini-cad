@@ -63,16 +63,7 @@ func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
         tokens.next()
         switch tokens.peek() {
         case .leftParen:
-            tokens.next()
-            var args: [Expression] = []
-            while tokens.peek() != .rightParen {
-                let arg = try parseExpression(from: &tokens)
-                args.append(arg)
-                if tokens.peek() != .rightParen {
-                    try tokens.expect(.comma)
-                }
-            }
-            try tokens.expect(.rightParen)
+            let args = try parseArgs(from: &tokens)
             // TODO: Parse trailing blocks
             return .call(ident, args: args, trailingBlock: [])
         default:
@@ -83,3 +74,19 @@ func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
     }
 }
 
+/// Statefully parses a function argument list from the given tokens. Throws a `ParseError` if unsuccessful.
+func parseArgs(from tokens: inout TokenIterator) throws -> [Expression] {
+    try tokens.expect(.leftParen)
+    
+    var args: [Expression] = []
+    while tokens.peek() != .rightParen {
+        let arg = try parseExpression(from: &tokens)
+        args.append(arg)
+        if tokens.peek() != .rightParen {
+            try tokens.expect(.comma)
+        }
+    }
+    
+    try tokens.expect(.rightParen)
+    return args
+}
