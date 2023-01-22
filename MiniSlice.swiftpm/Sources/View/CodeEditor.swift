@@ -10,6 +10,7 @@ struct CodeEditor: UIViewRepresentable {
     var highlightColor: Color = .accentColor
     var textColor: Color = .primary
     var fontSize: CGFloat = 16
+    var autoIndent: Int? = 2
     
     var highlightedText: NSAttributedString {
         // We use NSString directly here to avoid costly linear-time index conversions
@@ -55,18 +56,41 @@ struct CodeEditor: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(text: $text)
+        Coordinator(text: $text, autoIndent: autoIndent)
     }
     
     class Coordinator: NSObject, UITextViewDelegate {
-        @Binding var text: String
+        @Binding private var text: String
+        private let autoIndent: Int?
         
-        init(text: Binding<String>) {
+        init(text: Binding<String>, autoIndent: Int?) {
             _text = text
+            self.autoIndent = autoIndent
         }
         
         func textViewDidChange(_ textView: UITextView) {
             text = textView.text
+        }
+        
+        func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+            // TODO: Can we be sure that range corresponds to selectedTextRange?
+            if text == "\n" {
+                let nsString = textView.text as NSString
+                let isAtEndOfLine = range.upperBound == nsString.length
+                    || nsString.character(at: range.upperBound) == "\n".utf16.first!
+                if let selected = textView.selectedTextRange,
+                   let lineStart = textView.tokenizer.position(from: selected.start, toBoundary: .line, inDirection: .storage(.backward)),
+                   let linePrefixRange = textView.textRange(from: lineStart, to: selected.start),
+                   let linePrefix = textView.text(in: linePrefixRange) {
+                    let lineIndent = linePrefix.prefix { $0.isWhitespace }
+                    // TODO: Increase indent as needed
+                    if isAtEndOfLine {
+                        textView.replace(selected, withText: "\(text)\(lineIndent)")
+                        return false
+                    }
+                }
+            }
+            return true
         }
     }
 }
