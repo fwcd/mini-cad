@@ -1,3 +1,4 @@
+/// A recipe syntax tree.
 struct Recipe: Hashable, CustomStringConvertible {
     var statements: [Statement] = []
     

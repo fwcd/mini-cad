@@ -1,3 +1,4 @@
+/// A value within the language of recipes.
 enum Value: Hashable, CustomStringConvertible {
     case int(Int)
     case float(Double)

@@ -19,6 +19,7 @@ private let regex = try! NSRegularExpression(
         .joined(separator: "|")
 )
 
+/// Lexes the given raw recipe/program into a series of tokens.
 func tokenize(_ raw: String) -> [Token] {
     regex.matches(in: raw, range: NSRange(raw.startIndex..., in: raw))
         .compactMap { match in

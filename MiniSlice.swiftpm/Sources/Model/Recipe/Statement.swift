@@ -1,3 +1,4 @@
+/// A statement syntax tree.
 enum Statement: Hashable, CustomStringConvertible {
     case varBinding(VarBinding)
     case expression(Expression)

@@ -1,13 +1,16 @@
+/// Parses a recipe from the given string. Throws a `ParseError` if unsuccessful.
 func parseRecipe(from raw: String) throws -> Recipe {
     var tokens = TokenIterator(tokenize(raw))
     return try parseRecipe(from: &tokens)
 }
 
+/// Statefully parses and consumes a recipe from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseRecipe(from tokens: inout TokenIterator) throws -> Recipe {
     let statements = try parseStatements(from: &tokens)
     return Recipe(statements: statements)
 }
 
+/// Statefully parses and consumes statements from the given tokens until the given end token is reached. Throws a `ParseError` if unsuccessful.
 func parseStatements(from tokens: inout TokenIterator, until end: Token? = nil) throws -> [Statement] {
     var statements: [Statement] = []
     
@@ -26,6 +29,7 @@ func parseStatements(from tokens: inout TokenIterator, until end: Token? = nil) 
     return statements
 }
 
+/// Statefully parses a statement from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseStatement(from tokens: inout TokenIterator) throws -> Statement {
     switch tokens.peek() {
     case .let:
@@ -35,6 +39,7 @@ func parseStatement(from tokens: inout TokenIterator) throws -> Statement {
     }
 }
 
+/// Statefully parses a variable binding from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseVarBinding(from tokens: inout TokenIterator) throws -> VarBinding {
     try tokens.expect(.let)
     guard case let .identifier(name) = tokens.next() else { throw ParseError.expectedIdentifier(actual: tokens.current) }
@@ -43,6 +48,7 @@ func parseVarBinding(from tokens: inout TokenIterator) throws -> VarBinding {
     return VarBinding(name: name, value: value)
 }
 
+/// Statefully parses an expression from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
     switch tokens.peek() {
     case .int(let rawValue):

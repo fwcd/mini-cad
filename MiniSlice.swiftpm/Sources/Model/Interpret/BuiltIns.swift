@@ -1,3 +1,4 @@
+/// The built-in functions.
 let builtIns: [String: ([Value], [Value]) -> [Value]] = [
     "Cuboid": { args, _ in
         // TODO: Should we pass vector/tuple-ish types?

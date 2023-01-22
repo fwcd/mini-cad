@@ -1,9 +1,12 @@
+/// A peekable iterator over a sequence of tokens with a few convenience functions that are useful for parsing.
 struct TokenIterator: IteratorProtocol {
     private var iterator: Array<Token>.Iterator
     private var peeked: Token? = nil
     
+    /// The token returned by the most recent `.next()` call.
     private(set) var current: Token? = nil
     
+    /// Whether the iterator has not reached the end yet.
     var hasNext: Bool {
         mutating get { peek() != nil }
     }
@@ -12,6 +15,7 @@ struct TokenIterator: IteratorProtocol {
         iterator = tokens.makeIterator()
     }
     
+    /// Consumes the next token and throws an error if it doesn't match the given token.
     mutating func expect(_ token: Token) throws {
         let actual = next()
         guard actual == token else {
@@ -19,12 +23,14 @@ struct TokenIterator: IteratorProtocol {
         }
     }
     
+    /// Consumes the next token if it matches the given token.
     mutating func skip(_ token: Token) {
         if peek() == token {
             next()
         }
     }
     
+    /// Peeks the next token without advancing the iteration.
     mutating func peek() -> Token? {
         if let peeked = peeked {
             return peeked
@@ -35,6 +41,7 @@ struct TokenIterator: IteratorProtocol {
         }
     }
     
+    /// Consumes and returns the next token.
     @discardableResult
     mutating func next() -> Token? {
         if let peeked = peeked {

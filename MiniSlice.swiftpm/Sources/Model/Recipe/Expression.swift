@@ -1,3 +1,4 @@
+/// An expression syntax tree.
 enum Expression: Hashable, CustomStringConvertible {
     case identifier(String)
     case literal(Value)
