@@ -20,23 +20,29 @@ class PreviewViewModel: ObservableObject {
         let scene = SCNScene(named: "Preview.scn")!
         self.scene = scene
         
+        let root = scene.rootNode
+        
         let dirLight = SCNLight()
         dirLight.type = .directional
         let dirLightNode = SCNNode()
         dirLightNode.light = dirLight
         dirLightNode.eulerAngles.x = .pi / 8
         dirLightNode.eulerAngles.y = .pi / 8
-        scene.rootNode.addChildNode(dirLightNode)
+        root.addChildNode(dirLightNode)
         
         let ambientLight = SCNLight()
         ambientLight.type = .ambient
         ambientLight.color = UIColor.gray
         let ambientLightNode = SCNNode()
         ambientLightNode.light = ambientLight
-        scene.rootNode.addChildNode(ambientLightNode)
+        root.addChildNode(ambientLightNode)
         
         cuboidsNode = SCNNode()
-        scene.rootNode.addChildNode(cuboidsNode)
+        root.addChildNode(cuboidsNode)
+        
+        root.addChildNode(AxisNode(direction: .init(x: 1)))
+        root.addChildNode(AxisNode(direction: .init(y: 1)))
+        root.addChildNode(AxisNode(direction: .init(z: 1)))
         
         updateCamera()
     }

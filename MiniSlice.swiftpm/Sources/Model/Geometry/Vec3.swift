@@ -18,6 +18,18 @@ struct Vec3: CustomStringConvertible, Hashable, AdditiveArithmetic {
         Self(x: f(x), y: f(y), z: f(z))
     }
     
+    func dot(_ rhs: Self) -> Double {
+        x * rhs.x + y * rhs.y + z * rhs.z
+    }
+    
+    func cross(_ rhs: Self) -> Self {
+        Self(
+            x: y * rhs.z - rhs.y * z,
+            y: rhs.x * z - x * rhs.z,
+            z: x * rhs.y - rhs.x * y
+        )
+    }
+    
     static func +(lhs: Self, rhs: Self) -> Self {
         lhs.zip(rhs, +)
     }
@@ -45,8 +57,18 @@ extension SCNVector3 {
     }
 }
 
+extension SCNVector4 {
+    init(_ vec3: Vec3, w: Double = 0) {
+        self.init(x: Float(vec3.x), y: Float(vec3.y), z: Float(vec3.z), w: Float(w))
+    }
+}
+
 extension Vec3 {
     init(_ scnVec: SCNVector3) {
+        self.init(x: Double(scnVec.x), y: Double(scnVec.y), z: Double(scnVec.z))
+    }
+    
+    init(_ scnVec: SCNVector4) {
         self.init(x: Double(scnVec.x), y: Double(scnVec.y), z: Double(scnVec.z))
     }
 }
