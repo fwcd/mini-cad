@@ -1,15 +1,15 @@
 import SwiftUI
 import SceneKit
 
-struct PreviewSceneView: UIViewRepresentable {
+struct PreviewSceneView: UIViewControllerRepresentable {
     @EnvironmentObject var viewModel: PreviewViewModel
     
-    func makeUIView(context: Context) -> SCNView {
-        SCNView()
+    func makeUIViewController(context: Context) -> PreviewSceneViewController {
+        PreviewSceneViewController()
     }
     
-    func updateUIView(_ uiView: SCNView, context: Context) {
-        uiView.scene = viewModel.scene
-        uiView.pointOfView = viewModel.cameraNode
+    func updateUIViewController(_ uiViewController: PreviewSceneViewController, context: Context) {
+        uiViewController.scene = viewModel.scene
+        uiViewController.cameraNode = viewModel.cameraNode
     }
 }
