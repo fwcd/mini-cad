@@ -6,7 +6,7 @@ private let log = Logger(subsystem: "EditorViewModel", category: "MiniSlice")
 class EditorViewModel: ObservableObject {
     @Published private(set) var cuboids: [Cuboid] = [] {
         didSet {
-            stage.update(cuboids: cuboids)
+            preview.update(cuboids: cuboids)
         }
     }
     @Published private(set) var parsedRecipe: Recipe = .init() {
@@ -38,10 +38,10 @@ class EditorViewModel: ObservableObject {
     @Published private(set) var parseError: ParseError? = nil
     @Published private(set) var interpretError: InterpretError? = nil
     
-    private var stage: StageViewModel
+    private var preview: PreviewViewModel
     
-    init(stage: StageViewModel) {
-        self.stage = stage
+    init(preview: PreviewViewModel) {
+        self.preview = preview
         
         let recipe = demoRecipe
         rawRecipe = "\(recipe)"

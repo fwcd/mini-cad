@@ -1,8 +1,8 @@
 import SwiftUI
 import SceneKit
 
-struct StageView: View {
-    @EnvironmentObject var viewModel: StageViewModel
+struct PreviewView: View {
+    @EnvironmentObject var viewModel: PreviewViewModel
     
     var body: some View {
         ZStack(alignment: .topTrailing) {

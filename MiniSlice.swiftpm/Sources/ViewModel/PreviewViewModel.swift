@@ -1,7 +1,7 @@
 import Combine
 import SceneKit
 
-class StageViewModel: ObservableObject {
+class PreviewViewModel: ObservableObject {
     @Published private(set) var scene: SCNScene
     @Published var options: Options = .init() {
         didSet {
@@ -17,7 +17,7 @@ class StageViewModel: ObservableObject {
     }
     
     init() {
-        let scene = SCNScene(named: "Stage.scn")!
+        let scene = SCNScene(named: "Preview.scn")!
         self.scene = scene
         
         let dirLight = SCNLight()

@@ -1,14 +1,14 @@
 import SwiftUI
 
-private var stage = StageViewModel()
-private var editor = EditorViewModel(stage: stage)
+private var preview = PreviewViewModel()
+private var editor = EditorViewModel(preview: preview)
 
 @main
 struct MiniSliceApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(stage)
+                .environmentObject(preview)
                 .environmentObject(editor)
         }
     }

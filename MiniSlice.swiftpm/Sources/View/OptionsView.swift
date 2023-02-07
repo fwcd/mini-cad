@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct OptionsView: View {
-    @EnvironmentObject var stage: StageViewModel
+    @EnvironmentObject var preview: PreviewViewModel
     
     var body: some View {
         VStack {
-            Toggle("Orthographic Camera", isOn: $stage.options.usesOrthographicProjection)
+            Toggle("Orthographic Camera", isOn: $preview.options.usesOrthographicProjection)
         }
     }
 }
