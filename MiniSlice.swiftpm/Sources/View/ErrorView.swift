@@ -8,7 +8,7 @@ struct ErrorView<Error>: View {
         Text(String(describing: error))
             .foregroundColor(.white)
             .padding(10)
-            .background(background)
+            .background(background, in: RoundedRectangle(cornerRadius: ViewConstants.cornerRadius))
     }
 }
 
