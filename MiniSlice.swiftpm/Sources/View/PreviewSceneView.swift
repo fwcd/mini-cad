@@ -12,6 +12,6 @@ struct PreviewSceneView: UIViewRepresentable {
     
     func updateUIView(_ uiView: SCNView, context: Context) {
         uiView.scene = viewModel.scene
-        uiView.pointOfView = viewModel.cameraNode
+        uiView.pointOfView?.camera?.usesOrthographicProjection = viewModel.options.usesOrthographicProjection
     }
 }

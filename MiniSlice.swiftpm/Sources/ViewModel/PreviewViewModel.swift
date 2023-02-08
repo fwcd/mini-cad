@@ -3,18 +3,9 @@ import SceneKit
 
 class PreviewViewModel: ObservableObject {
     @Published private(set) var scene: SCNScene
-    @Published var options: Options = .init() {
-        didSet {
-            updateCamera()
-        }
-    }
+    @Published var options: Options = .init()
     
-    @Published private(set) var cameraNode: SCNNode? = nil
     private var cuboidsNode: SCNNode
-    
-    private var camera: SCNCamera? {
-        cameraNode?.camera
-    }
     
     init() {
         let scene = SCNScene(named: "Preview.scn")!
@@ -40,11 +31,19 @@ class PreviewViewModel: ObservableObject {
         cuboidsNode = SCNNode()
         root.addChildNode(cuboidsNode)
         
+        let camera = SCNCamera()
+        camera.usesOrthographicProjection = options.usesOrthographicProjection
+        camera.orthographicScale = 8
+        let cameraNode = SCNNode()
+        cameraNode.camera = camera
+        cameraNode.position = SCNVector3(x: 14, y: 10, z: 14)
+        cameraNode.eulerAngles.x = -.pi / 8
+        cameraNode.eulerAngles.y = .pi / 4
+        root.addChildNode(cameraNode)
+        
         root.addChildNode(AxisNode(direction: .init(x: 1)))
         root.addChildNode(AxisNode(direction: .init(y: 1)))
         root.addChildNode(AxisNode(direction: .init(z: 1)))
-        
-        updateCamera()
     }
     
     func update(cuboids: [Cuboid]) {
@@ -66,23 +65,5 @@ class PreviewViewModel: ObservableObject {
         cube.position = SCNVector3(cuboid.center)
         cube.scale = SCNVector3(cuboid.size)
         return cube
-    }
-    
-    private func updateCamera() {
-        if let cameraNode = cameraNode {
-            cameraNode.removeFromParentNode()
-        }
-        
-        let camera = SCNCamera()
-        camera.usesOrthographicProjection = options.usesOrthographicProjection
-        let cameraNode = SCNNode()
-        cameraNode.camera = camera
-        cameraNode.position = SCNVector3(x: 1, y: 1, z: 5)
-        cameraNode.eulerAngles.x = -.pi / 16
-        cameraNode.eulerAngles.y = .pi / 16
-        scene.rootNode.addChildNode(cameraNode)
-        
-        self.cameraNode = cameraNode
-        print("Updated camera node")
     }
 }
