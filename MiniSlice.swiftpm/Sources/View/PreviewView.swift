@@ -10,7 +10,9 @@ struct PreviewView: View {
             PreviewSceneView()
             OptionsView()
                 .frame(maxWidth: 300)
-                .padding(10)
+                .padding(8)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12.0))
+                .padding(8)
         }
     }
 }
