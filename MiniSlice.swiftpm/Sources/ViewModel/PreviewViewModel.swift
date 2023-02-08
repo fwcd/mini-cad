@@ -13,14 +13,6 @@ class PreviewViewModel: ObservableObject {
         
         let root = scene.rootNode
         
-        let dirLight = SCNLight()
-        dirLight.type = .directional
-        let dirLightNode = SCNNode()
-        dirLightNode.light = dirLight
-        dirLightNode.eulerAngles.x = .pi / 8
-        dirLightNode.eulerAngles.y = .pi / 8
-        root.addChildNode(dirLightNode)
-        
         let ambientLight = SCNLight()
         ambientLight.type = .ambient
         ambientLight.color = UIColor.gray
@@ -40,6 +32,14 @@ class PreviewViewModel: ObservableObject {
         cameraNode.eulerAngles.x = -.pi / 8
         cameraNode.eulerAngles.y = .pi / 4
         root.addChildNode(cameraNode)
+        
+        let dirLight = SCNLight()
+        dirLight.type = .directional
+        let dirLightNode = SCNNode()
+        dirLightNode.light = dirLight
+        dirLightNode.eulerAngles.x = .pi / 8
+        dirLightNode.eulerAngles.y = .pi / 8
+        cameraNode.addChildNode(dirLightNode)
         
         root.addChildNode(AxisNode(direction: .init(x: 1)))
         root.addChildNode(AxisNode(direction: .init(y: 1)))
