@@ -39,6 +39,32 @@ final class ParserTests: XCTestCase {
         try assert("for i in 0..<4 {}", parsesTo: [.forLoop(.init(name: "i", sequence: .binary(.range(0, 4))))])
     }
     
+    func testFullPrograms() throws {
+        try assert("""
+            let w = 3
+            let h = 4
+
+            for i in 0..<w {
+              for j in 0..<h {
+                Translate(i, i, j) {
+                  Cuboid()
+                }
+              }
+            }
+        """, parsesTo: [
+            .varBinding(.init(name: "w", value: 3)),
+            .varBinding(.init(name: "h", value: 4)),
+            .blank,
+            .forLoop(.init(name: "i", sequence: .binary(.range(0, "w")), block: [
+                .forLoop(.init(name: "j", sequence: .binary(.range(0, "h")), block: [
+                    .expression(.call("Translate", args: ["i", "i", "j"], trailingBlock: [
+                        .expression(.call("Cuboid", args: [], trailingBlock: []))
+                    ])),
+                ])),
+            ])),
+        ])
+    }
+    
     private func assert(_ raw: String, parsesTo recipe: Recipe, line: UInt = #line) throws {
         XCTAssertEqual(try parseRecipe(from: raw), recipe, line: line)
     }
