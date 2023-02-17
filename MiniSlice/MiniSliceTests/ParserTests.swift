@@ -19,12 +19,23 @@ final class ParserTests: XCTestCase {
             ("..<", { .range($0, $1) }),
             ("...", { .closedRange($0, $1) })
         ]
-        for (raw, op) in ops {
-            try assert("0\(raw)0", parsesTo: [.expression(.binary(op(0, 0)))])
-            try assert("0\(raw)2", parsesTo: [.expression(.binary(op(0, 2)))])
-            try assert("-9\(raw)4", parsesTo: [.expression(.binary(op(-9, 4)))])
-            try assert("b\(raw)c", parsesTo: [.expression(.binary(op("b", "c")))])
+        for (raw, makeBinaryExpr) in ops {
+            try assert("0\(raw)0", parsesTo: [.expression(.binary(makeBinaryExpr(0, 0)))])
+            try assert("0\(raw)2", parsesTo: [.expression(.binary(makeBinaryExpr(0, 2)))])
+            try assert("-9\(raw)4", parsesTo: [.expression(.binary(makeBinaryExpr(-9, 4)))])
+            try assert("b\(raw)c", parsesTo: [.expression(.binary(makeBinaryExpr("b", "c")))])
             // try assert("a\(raw)-2.3", parsesTo: [.expression(.binary(op("a", -2.3)))])
+        }
+    }
+    
+    func testBinaryExpressions() throws {
+        let ops: [(String, (Expression, Expression) -> BinaryExpression)] = [
+            ("+", { .add($0, $1) }),
+            ("-", { .subtract($0, $1) })
+        ]
+        for (raw, makeBinaryExpr) in ops {
+            try assert("0 \(raw) 0", parsesTo: [.expression(.binary(makeBinaryExpr(0, 0)))])
+            try assert("91 \(raw) 34", parsesTo: [.expression(.binary(makeBinaryExpr(91, 34)))])
         }
     }
     

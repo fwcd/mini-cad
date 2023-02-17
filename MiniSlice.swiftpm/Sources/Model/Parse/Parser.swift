@@ -94,6 +94,10 @@ func parseExpression(from tokens: inout TokenIterator, lhs: Expression, minPrece
             lhs = .binary(.closedRange(lhs, rhs))
         case .toExclusive:
             lhs = .binary(.range(lhs, rhs))
+        case .add:
+            lhs = .binary(.add(lhs, rhs))
+        case .subtract:
+            lhs = .binary(.subtract(lhs, rhs))
         default:
             throw ParseError.unimplementedOperator(op)
         }

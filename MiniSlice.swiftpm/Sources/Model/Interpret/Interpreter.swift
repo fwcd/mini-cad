@@ -87,7 +87,30 @@ class Interpreter {
     
     /// Evaluates the given binary expression. Throws an `InterpretError` if unsuccessful.
     func evaluate(binaryExpression: BinaryExpression) throws -> [Value] {
+        // TODO: We should probably abstract this boilerplate away
         switch binaryExpression {
+        case let .add(lhsExpr, rhsExpr):
+            let lhs = try evaluateUniquely(expression: lhsExpr)
+            let rhs = try evaluateUniquely(expression: rhsExpr)
+            switch (lhs, rhs) {
+            case let (.int(lhsValue), .int(rhsValue)):
+                return [.int(lhsValue + rhsValue)]
+            case let (.float(lhsValue), .float(rhsValue)):
+                return [.float(lhsValue + rhsValue)]
+            default:
+                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
+            }
+        case let .subtract(lhsExpr, rhsExpr):
+            let lhs = try evaluateUniquely(expression: lhsExpr)
+            let rhs = try evaluateUniquely(expression: rhsExpr)
+            switch (lhs, rhs) {
+            case let (.int(lhsValue), .int(rhsValue)):
+                return [.int(lhsValue - rhsValue)]
+            case let (.float(lhsValue), .float(rhsValue)):
+                return [.float(lhsValue - rhsValue)]
+            default:
+                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
+            }
         case let .range(lowerExpr, upperExpr):
             let lower = try evaluateUniquely(expression: lowerExpr)
             let upper = try evaluateUniquely(expression: upperExpr)
