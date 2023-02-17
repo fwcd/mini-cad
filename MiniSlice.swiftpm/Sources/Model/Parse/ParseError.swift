@@ -5,6 +5,7 @@ enum ParseError: Error, CustomStringConvertible, Hashable {
     case expectedValue(actual: Token?)
     case couldNotParseIntLiteral
     case couldNotParseFloatLiteral
+    case unimplementedOperator(BinaryOperator)
     
     var description: String {
         switch self {
@@ -20,6 +21,8 @@ enum ParseError: Error, CustomStringConvertible, Hashable {
             return "Could not parse int literal"
         case .couldNotParseFloatLiteral:
             return "Could not parse float literal"
+        case let .unimplementedOperator(op):
+            return "Operator \(op) has not been implemented yet"
         }
     }
 }
