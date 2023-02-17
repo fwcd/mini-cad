@@ -1,5 +1,5 @@
 /// A binary operator token.
-enum BinaryOperator: Hashable, CustomStringConvertible {
+enum BinaryOperator: Hashable, CustomStringConvertible, CaseIterable {
     case multiply    // *
     case divide      // /
     case remainder   // %

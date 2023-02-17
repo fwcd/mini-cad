@@ -1,11 +1,9 @@
 import Foundation
 
-private let patterns: [(String, (Substring) -> Token?, String)] = [
+private let basePatterns: [(String, (Substring) -> Token?, String)] = [
     ("let", { _ in .let }, "\\blet\\b"),
     ("for", { _ in .for }, "\\bfor\\b"),
     ("in", { _ in .in }, "\\bin\\b"),
-    ("toExclusive", { _ in .binaryOperator(.toExclusive) }, "\\b\\.\\.<\\b"),
-    ("toInclusive", { _ in .binaryOperator(.toInclusive) }, "\\b\\.\\.\\.\\b"),
     ("assign", { _ in .assign }, "\\s=\\s"),
     ("newline", { _ in .newline }, "\n"),
     ("leftParen", { _ in .leftParen }, "\\("),
@@ -17,6 +15,13 @@ private let patterns: [(String, (Substring) -> Token?, String)] = [
     ("int", { raw in .int(String(raw)) }, "-?\\d+"),
     ("identifier", { raw in .identifier(String(raw)) }, "\\w+"),
 ]
+
+private let operatorPatterns: [(String, (Substring) -> Token?, String)] = BinaryOperator.allCases.enumerated().map { (i, op) in
+    ("op\(i)", { _ in .binaryOperator(op) }, "\\b\(NSRegularExpression.escapedPattern(for: "\(op)"))\\b")
+}
+
+private let patterns: [(String, (Substring) -> Token?, String)] = basePatterns + operatorPatterns
+
 private let regex = try! NSRegularExpression(
     pattern: patterns
         .map { (k, _, v) in "(?<\(k)>\(v))" }
