@@ -55,6 +55,7 @@
 		35E7581B299FC3A6006043C3 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A415329932FA3004EA933 /* ParserTests.swift */; };
 		35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581C299FC84A006043C3 /* CallExpression.swift */; };
 		35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581E299FE671006043C3 /* BinaryOperator.swift */; };
+		35E75821299FF0E7006043C3 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E75820299FF0E7006043C3 /* TokenizerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		354A4208299330E0004EA933 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		35E7581C299FC84A006043C3 /* CallExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallExpression.swift; sourceTree = "<group>"; };
 		35E7581E299FE671006043C3 /* BinaryOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperator.swift; sourceTree = "<group>"; };
+		35E75820299FF0E7006043C3 /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				354A415329932FA3004EA933 /* ParserTests.swift */,
+				35E75820299FF0E7006043C3 /* TokenizerTests.swift */,
 			);
 			path = MiniSliceTests;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35E7581B299FC3A6006043C3 /* ParserTests.swift in Sources */,
+				35E75821299FF0E7006043C3 /* TokenizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

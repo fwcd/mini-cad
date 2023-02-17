@@ -17,7 +17,7 @@ private let basePatterns: [(String, (Substring) -> Token?, String)] = [
 ]
 
 private let operatorPatterns: [(String, (Substring) -> Token?, String)] = BinaryOperator.allCases.enumerated().map { (i, op) in
-    ("op\(i)", { _ in .binaryOperator(op) }, "\\b\(NSRegularExpression.escapedPattern(for: "\(op)"))\\b")
+    ("op\(i)", { _ in .binaryOperator(op) }, NSRegularExpression.escapedPattern(for: "\(op)"))
 }
 
 private let patterns: [(String, (Substring) -> Token?, String)] = basePatterns + operatorPatterns
