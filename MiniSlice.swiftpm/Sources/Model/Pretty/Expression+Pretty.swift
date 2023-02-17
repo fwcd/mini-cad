@@ -7,15 +7,15 @@ extension Expression {
             return value.pretty(formatter: formatter)
         case let .binary(binary):
             return binary.pretty(formatter: formatter)
-        case let .call(name, args, trailingBlock):
-            var formatted = name
-            if !args.isEmpty || trailingBlock.isEmpty {
-                formatted += "(\(args.map { $0.pretty(formatter: formatter) }.joined(separator: ", ")))"
+        case let .call(call):
+            var formatted = call.identifier
+            if !call.args.isEmpty || call.trailingBlock.isEmpty {
+                formatted += "(\(call.args.map { $0.pretty(formatter: formatter) }.joined(separator: ", ")))"
             }
-            if !trailingBlock.isEmpty {
+            if !call.trailingBlock.isEmpty {
                 formatted += " "
                     + formatter.blockOpener
-                + trailingBlock.map { $0.pretty(formatter: formatter.indented) }.joined(separator: formatter.indented.lineBreak)
+                    + call.trailingBlock.map { $0.pretty(formatter: formatter.indented) }.joined(separator: formatter.indented.lineBreak)
                     + formatter.blockCloser
             }
             return formatted

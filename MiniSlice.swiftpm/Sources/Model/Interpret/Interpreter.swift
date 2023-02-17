@@ -67,20 +67,20 @@ class Interpreter {
             return try resolve(name: name)
         case .binary(let binaryExpr):
             return try evaluate(binaryExpression: binaryExpr)
-        case let .call(funcName, args, trailingBlock):
+        case .call(let callExpr):
             // Evaluate the arguments (strictly)
-            let evaluatedArgs = try args.flatMap { try evaluate(expression: $0) }
+            let evaluatedArgs = try callExpr.args.flatMap { try evaluate(expression: $0) }
             
             // Interpret the trailing block in its own interpreter that
             // inherits the current scope but cannot change it.
             let blockInterpreter = Interpreter(parent: self)
-            let evaluatedBlock = try blockInterpreter.interpret(statements: trailingBlock)
+            let evaluatedBlock = try blockInterpreter.interpret(statements: callExpr.trailingBlock)
             
             // Invoke the function if it exists
-            if let builtIn = builtIns[funcName] {
+            if let builtIn = builtIns[callExpr.identifier] {
                 return builtIn(evaluatedArgs, evaluatedBlock)
             } else {
-                throw InterpretError.functionNotInScope(funcName)
+                throw InterpretError.functionNotInScope(callExpr.identifier)
             }
         }
     }

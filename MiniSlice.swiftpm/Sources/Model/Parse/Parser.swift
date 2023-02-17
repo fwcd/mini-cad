@@ -102,10 +102,10 @@ func parsePrimaryExpression(from tokens: inout TokenIterator, allowTrailing: Boo
             if tokens.peek() == .leftCurly {
                 trailingBlock = try parseBlock(from: &tokens)
             }
-            return .call(ident, args: args, trailingBlock: trailingBlock)
+            return .call(.init(identifier: ident, args: args, trailingBlock: trailingBlock))
         case .leftCurly where allowTrailing:
             let trailingBlock = try parseBlock(from: &tokens)
-            return .call(ident, args: [], trailingBlock: trailingBlock)
+            return .call(.init(identifier: ident, trailingBlock: trailingBlock))
         default:
             return .identifier(ident)
         }

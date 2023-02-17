@@ -3,7 +3,7 @@ enum Expression: Hashable {
     case identifier(String)
     case literal(Value)
     case binary(BinaryExpression)
-    case call(String, args: [Expression], trailingBlock: [Statement])
+    case call(CallExpression)
 }
 
 extension Expression: ExpressibleByStringLiteral {
