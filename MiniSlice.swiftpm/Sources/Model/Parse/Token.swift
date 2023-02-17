@@ -3,8 +3,7 @@ enum Token: Hashable {
     case `let`
     case `for`
     case `in`
-    case toExclusive
-    case toInclusive
+    case binaryOperator(BinaryOperator)
     case assign
     case newline
     case leftParen

@@ -66,26 +66,41 @@ func parseIdentifier(from tokens: inout TokenIterator) throws -> String {
     return ident
 }
 
+// We use the operator precedence parser from Wikipedia to parse expressions:
+// https://en.wikipedia.org/wiki/Operator-precedence_parser#Pseudocode
+
 /// Statefully parses an expression from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
-    let primary = try parsePrimaryExpression(from: &tokens)
-    // TODO: Add proper infix operator parsing instead of this ad-hoc special case for ranges
-    switch tokens.peek() {
-    case .toExclusive:
-        tokens.next()
-        let upper = try parsePrimaryExpression(from: &tokens, allowTrailing: false)
-        return .binary(.range(primary, upper))
-    case .toInclusive:
-        tokens.next()
-        let upper = try parsePrimaryExpression(from: &tokens, allowTrailing: false)
-        return .binary(.closedRange(primary, upper))
-    default:
-        return primary
+    let lhs = try parsePrimaryExpression(from: &tokens, allowTrailing: true)
+    if case .call(let call) = lhs, !call.trailingBlock.isEmpty {
+        // We are done parsing this expression after a trailing block
+        return lhs
     }
+    return try parseExpression(from: &tokens, lhs: lhs, minPrecedence: 0)
+}
+
+/// Statefully parses an infix expression starting at the operator. Throws a `ParseError` if unsuccessful.
+func parseExpression(from tokens: inout TokenIterator, lhs: Expression, minPrecedence: Int) throws -> Expression {
+    var lhs = lhs
+    while case let .binaryOperator(op)? = tokens.peek(), op.precedence >= minPrecedence {
+        tokens.next()
+        var rhs = try parsePrimaryExpression(from: &tokens, allowTrailing: false)
+        while case let .binaryOperator(nextOp)? = tokens.peek(),
+              nextOp.precedence > op.precedence || (nextOp.associativity == .right && nextOp.precedence == op.precedence) {
+            rhs = try parseExpression(from: &tokens, lhs: rhs, minPrecedence: op.precedence + (nextOp.precedence - op.precedence).signum())
+        }
+        switch op {
+        case .toInclusive:
+            lhs = .binary(.closedRange(lhs, rhs))
+        case .toExclusive:
+            lhs = .binary(.range(lhs, rhs))
+        }
+    }
+    return lhs
 }
     
 /// Statefully parses a non-operated-on expression from the given tokens. Throws a `ParseError` if unsuccessful.
-func parsePrimaryExpression(from tokens: inout TokenIterator, allowTrailing: Bool = true) throws -> Expression {
+func parsePrimaryExpression(from tokens: inout TokenIterator, allowTrailing: Bool) throws -> Expression {
     switch tokens.peek() {
     case .int(_):
         let value = try tokens.expectInt()
