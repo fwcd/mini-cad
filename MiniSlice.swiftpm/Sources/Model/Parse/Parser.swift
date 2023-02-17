@@ -108,6 +108,11 @@ func parseExpression(from tokens: inout TokenIterator, lhs: Expression, minPrece
 /// Statefully parses a non-operated-on expression from the given tokens. Throws a `ParseError` if unsuccessful.
 func parsePrimaryExpression(from tokens: inout TokenIterator, allowTrailing: Bool) throws -> Expression {
     switch tokens.peek() {
+    case .leftParen:
+        tokens.next()
+        let expr = try parseExpression(from: &tokens)
+        try tokens.expect(.rightParen)
+        return expr
     case .int(_):
         let value = try tokens.expectInt()
         return .literal(.int(value))
