@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		354A414629932FA3004EA933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354A414529932FA3004EA933 /* Assets.xcassets */; };
 		354A414A29932FA3004EA933 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354A414929932FA3004EA933 /* Preview Assets.xcassets */; };
-		354A415429932FA3004EA933 /* MiniSliceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A415329932FA3004EA933 /* MiniSliceTests.swift */; };
-		354A415E29932FA3004EA933 /* MiniSliceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A415D29932FA3004EA933 /* MiniSliceUITests.swift */; };
-		354A416029932FA3004EA933 /* MiniSliceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A415F29932FA3004EA933 /* MiniSliceUITestsLaunchTests.swift */; };
 		354A4209299330E0004EA933 /* Preview.scn in Resources */ = {isa = PBXBuildFile; fileRef = 354A41D3299330E0004EA933 /* Preview.scn */; };
 		354A420A299330E0004EA933 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41D6299330E0004EA933 /* Options.swift */; };
 		354A420B299330E0004EA933 /* PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41D7299330E0004EA933 /* PreviewViewModel.swift */; };
@@ -55,17 +52,11 @@
 		354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4206299330E0004EA933 /* PreviewSceneView.swift */; };
 		354A4232299330E0004EA933 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4207299330E0004EA933 /* ContentView.swift */; };
 		354A4233299330E0004EA933 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4208299330E0004EA933 /* ErrorView.swift */; };
+		35E7581B299FC3A6006043C3 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A415329932FA3004EA933 /* ParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		354A415029932FA3004EA933 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 354A413629932FA2004EA933 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 354A413D29932FA2004EA933;
-			remoteInfo = MiniSlice;
-		};
-		354A415A29932FA3004EA933 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 354A413629932FA2004EA933 /* Project object */;
 			proxyType = 1;
@@ -80,10 +71,7 @@
 		354A414729932FA3004EA933 /* MiniSlice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniSlice.entitlements; sourceTree = "<group>"; };
 		354A414929932FA3004EA933 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		354A414F29932FA3004EA933 /* MiniSliceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniSliceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		354A415329932FA3004EA933 /* MiniSliceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniSliceTests.swift; sourceTree = "<group>"; };
-		354A415929932FA3004EA933 /* MiniSliceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniSliceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		354A415D29932FA3004EA933 /* MiniSliceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniSliceUITests.swift; sourceTree = "<group>"; };
-		354A415F29932FA3004EA933 /* MiniSliceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniSliceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		354A415329932FA3004EA933 /* ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 		354A41D3299330E0004EA933 /* Preview.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Preview.scn; sourceTree = "<group>"; };
 		354A41D6299330E0004EA933 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		354A41D7299330E0004EA933 /* PreviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewModel.swift; sourceTree = "<group>"; };
@@ -144,13 +132,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		354A415629932FA3004EA933 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -159,7 +140,6 @@
 			children = (
 				354A414029932FA2004EA933 /* MiniSlice */,
 				354A415229932FA3004EA933 /* MiniSliceTests */,
-				354A415C29932FA3004EA933 /* MiniSliceUITests */,
 				354A413F29932FA2004EA933 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,7 +149,6 @@
 			children = (
 				354A413E29932FA2004EA933 /* MiniSlice.app */,
 				354A414F29932FA3004EA933 /* MiniSliceTests.xctest */,
-				354A415929932FA3004EA933 /* MiniSliceUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,18 +176,9 @@
 		354A415229932FA3004EA933 /* MiniSliceTests */ = {
 			isa = PBXGroup;
 			children = (
-				354A415329932FA3004EA933 /* MiniSliceTests.swift */,
+				354A415329932FA3004EA933 /* ParserTests.swift */,
 			);
 			path = MiniSliceTests;
-			sourceTree = "<group>";
-		};
-		354A415C29932FA3004EA933 /* MiniSliceUITests */ = {
-			isa = PBXGroup;
-			children = (
-				354A415D29932FA3004EA933 /* MiniSliceUITests.swift */,
-				354A415F29932FA3004EA933 /* MiniSliceUITestsLaunchTests.swift */,
-			);
-			path = MiniSliceUITests;
 			sourceTree = "<group>";
 		};
 		354A41D2299330E0004EA933 /* Resources */ = {
@@ -388,24 +358,6 @@
 			productReference = 354A414F29932FA3004EA933 /* MiniSliceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		354A415829932FA3004EA933 /* MiniSliceUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 354A416929932FA3004EA933 /* Build configuration list for PBXNativeTarget "MiniSliceUITests" */;
-			buildPhases = (
-				354A415529932FA3004EA933 /* Sources */,
-				354A415629932FA3004EA933 /* Frameworks */,
-				354A415729932FA3004EA933 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				354A415B29932FA3004EA933 /* PBXTargetDependency */,
-			);
-			name = MiniSliceUITests;
-			productName = MiniSliceUITests;
-			productReference = 354A415929932FA3004EA933 /* MiniSliceUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -421,10 +373,6 @@
 						LastSwiftMigration = 1420;
 					};
 					354A414E29932FA3004EA933 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 354A413D29932FA2004EA933;
-					};
-					354A415829932FA3004EA933 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 354A413D29932FA2004EA933;
 					};
@@ -445,7 +393,6 @@
 			targets = (
 				354A413D29932FA2004EA933 /* MiniSlice */,
 				354A414E29932FA3004EA933 /* MiniSliceTests */,
-				354A415829932FA3004EA933 /* MiniSliceUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -462,13 +409,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		354A414D29932FA3004EA933 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		354A415729932FA3004EA933 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -531,16 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				354A415429932FA3004EA933 /* MiniSliceTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		354A415529932FA3004EA933 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				354A416029932FA3004EA933 /* MiniSliceUITestsLaunchTests.swift in Sources */,
-				354A415E29932FA3004EA933 /* MiniSliceUITests.swift in Sources */,
+				35E7581B299FC3A6006043C3 /* ParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,11 +482,6 @@
 			isa = PBXTargetDependency;
 			target = 354A413D29932FA2004EA933 /* MiniSlice */;
 			targetProxy = 354A415029932FA3004EA933 /* PBXContainerItemProxy */;
-		};
-		354A415B29932FA3004EA933 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 354A413D29932FA2004EA933 /* MiniSlice */;
-			targetProxy = 354A415A29932FA3004EA933 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -757,6 +683,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SS8V8UGLY8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -764,7 +691,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fwcd.MiniSliceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -779,6 +708,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SS8V8UGLY8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -786,53 +716,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fwcd.MiniSliceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiniSlice.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MiniSlice";
-			};
-			name = Release;
-		};
-		354A416A29932FA3004EA933 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.fwcd.MiniSliceUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MiniSlice;
-			};
-			name = Debug;
-		};
-		354A416B29932FA3004EA933 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.fwcd.MiniSliceUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MiniSlice;
 			};
 			name = Release;
 		};
@@ -862,15 +752,6 @@
 			buildConfigurations = (
 				354A416729932FA3004EA933 /* Debug */,
 				354A416829932FA3004EA933 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		354A416929932FA3004EA933 /* Build configuration list for PBXNativeTarget "MiniSliceUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				354A416A29932FA3004EA933 /* Debug */,
-				354A416B29932FA3004EA933 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
