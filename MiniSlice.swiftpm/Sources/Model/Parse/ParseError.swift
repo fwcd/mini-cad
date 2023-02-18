@@ -10,13 +10,13 @@ enum ParseError: Error, CustomStringConvertible, Hashable {
     var description: String {
         switch self {
         case let .expected(expected, actual: actual):
-            return "Expected \(expected) but got \(actual.map { "\($0)" } ?? "nil")"
+            return "Expected \(expected) but got \(actual.map { "\($0.kind)" } ?? "nil")"
         case let .expectedIdentifier(actual: actual):
-            return "Expected identifier but got \(actual.map { "\($0)" } ?? "nil")"
+            return "Expected identifier but got \(actual.map { "\($0.kind)" } ?? "nil")"
         case let .expectedExpression(actual: actual):
-            return "Expected expression but got \(actual.map { "\($0)" } ?? "nil")"
+            return "Expected expression but got \(actual.map { "\($0.kind)" } ?? "nil")"
         case let .expectedValue(actual: actual):
-            return "Expected value but got \(actual.map { "\($0)" } ?? "nil")"
+            return "Expected value but got \(actual.map { "\($0.kind)" } ?? "nil")"
         case .couldNotParseIntLiteral:
             return "Could not parse int literal"
         case .couldNotParseFloatLiteral:
