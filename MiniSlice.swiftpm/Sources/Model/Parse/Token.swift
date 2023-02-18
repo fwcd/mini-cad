@@ -14,5 +14,7 @@ enum Token: Hashable {
     case float(String)
     case int(String)
     case identifier(String)
+    case comment(String)
+    case string(String)
 }
 

@@ -1,6 +1,8 @@
 import Foundation
 
 private let basePatterns: [(String, (Substring) -> Token?, String)] = [
+    ("comment", { raw in .comment(String(raw)) }, "//.*"),
+    ("string", { raw in .string(String(raw.dropFirst().dropLast())) }, #""[^"]*""#),
     ("let", { _ in .let }, "\\blet\\b"),
     ("for", { _ in .for }, "\\bfor\\b"),
     ("in", { _ in .in }, "\\bin\\b"),
