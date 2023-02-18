@@ -1,6 +1,11 @@
 /// Parses a recipe from the given string. Throws a `ParseError` if unsuccessful.
 func parseRecipe(from raw: String) throws -> Recipe {
-    var tokens = TokenIterator(tokenize(raw))
+    return try parseRecipe(from: tokenize(raw))
+}
+
+/// Parses a recipe from the given tokens. Throws a `ParseError` if unsuccessful.
+func parseRecipe(from tokens: [Token]) throws -> Recipe {
+    var tokens = TokenIterator(tokens)
     return try parseRecipe(from: &tokens)
 }
 
