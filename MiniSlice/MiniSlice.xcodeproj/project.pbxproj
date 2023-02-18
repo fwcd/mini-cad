@@ -56,6 +56,7 @@
 		35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581C299FC84A006043C3 /* CallExpression.swift */; };
 		35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581E299FE671006043C3 /* BinaryOperator.swift */; };
 		35E75821299FF0E7006043C3 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E75820299FF0E7006043C3 /* TokenizerTests.swift */; };
+		35E7582329A12D2B006043C3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582229A12D2B006043C3 /* Box.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		35E7581C299FC84A006043C3 /* CallExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallExpression.swift; sourceTree = "<group>"; };
 		35E7581E299FE671006043C3 /* BinaryOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperator.swift; sourceTree = "<group>"; };
 		35E75820299FF0E7006043C3 /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
+		35E7582229A12D2B006043C3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 				354A41E0299330E0004EA933 /* Expression.swift */,
 				354A41E1299330E0004EA933 /* DemoRecipe.swift */,
 				354A41E2299330E0004EA933 /* BinaryExpression.swift */,
+				35E7581E299FE671006043C3 /* BinaryOperator.swift */,
 				35E7581C299FC84A006043C3 /* CallExpression.swift */,
 				354A41E3299330E0004EA933 /* ForLoop.swift */,
 				354A41E4299330E0004EA933 /* Statement.swift */,
@@ -265,7 +268,6 @@
 				354A41E9299330E0004EA933 /* Tokenizer.swift */,
 				354A41EA299330E0004EA933 /* Parser.swift */,
 				354A41EB299330E0004EA933 /* Token.swift */,
-				35E7581E299FE671006043C3 /* BinaryOperator.swift */,
 			);
 			path = Parse;
 			sourceTree = "<group>";
@@ -275,6 +277,7 @@
 			children = (
 				354A41ED299330E0004EA933 /* Array+Extensions.swift */,
 				354A41EE299330E0004EA933 /* Identified.swift */,
+				35E7582229A12D2B006043C3 /* Box.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				354A420C299330E0004EA933 /* EditorViewModel.swift in Sources */,
 				354A420E299330E0004EA933 /* MiniSliceApp.swift in Sources */,
 				354A4215299330E0004EA933 /* Statement.swift in Sources */,
+				35E7582329A12D2B006043C3 /* Box.swift in Sources */,
 				354A4228299330E0004EA933 /* Expression+Pretty.swift in Sources */,
 				354A422A299330E0004EA933 /* Cuboid.swift in Sources */,
 				354A421F299330E0004EA933 /* BuiltIns.swift in Sources */,
