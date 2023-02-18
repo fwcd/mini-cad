@@ -1,5 +1,5 @@
 enum ParseError: Error, CustomStringConvertible, Hashable {
-    case expected(Token, actual: Token?)
+    case expected(Token.Kind, actual: Token?)
     case expectedIdentifier(actual: Token?)
     case expectedExpression(actual: Token?)
     case expectedValue(actual: Token?)

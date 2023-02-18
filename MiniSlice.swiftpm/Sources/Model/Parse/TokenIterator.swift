@@ -16,23 +16,23 @@ struct TokenIterator: IteratorProtocol {
     }
     
     /// Consumes the next token and throws an error if it doesn't match the given token.
-    mutating func expect(_ token: Token) throws {
+    mutating func expect(_ kind: Token.Kind) throws {
         let actual = next()
-        guard actual == token else {
-            throw ParseError.expected(token, actual: actual)
+        guard actual?.kind == kind else {
+            throw ParseError.expected(kind, actual: actual)
         }
     }
     
     /// Consumes and parses an integer literal.
     mutating func expectInt() throws -> Int {
-        guard case let .int(rawValue) = next(),
+        guard case let .int(rawValue) = next()?.kind,
               let value = Int(rawValue) else { throw ParseError.couldNotParseIntLiteral }
         return value
     }
     
     /// Consumes and parses a float literal.
     mutating func expectFloat() throws -> Double {
-        guard case let .float(rawValue) = next(),
+        guard case let .float(rawValue) = next()?.kind,
               let value = Double(rawValue) else { throw ParseError.couldNotParseFloatLiteral }
         return value
     }
@@ -45,8 +45,8 @@ struct TokenIterator: IteratorProtocol {
     }
     
     /// Consumes the next token while it matches the given token.
-    mutating func skipAll(_ token: Token) {
-        while peek() == token {
+    mutating func skipAll(_ kind: Token.Kind) {
+        while peek()?.kind == kind {
             next()
         }
     }

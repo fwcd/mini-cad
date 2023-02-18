@@ -1,7 +1,9 @@
 import Foundation
 
-private let basePatterns: [(String, (Substring) -> Token?, String)] = [
-    ("comment", { raw in .comment(String(raw)) }, "//.*"),
+private typealias TokenPattern = (String, (Substring) -> Token.Kind, String)
+
+private let basePatterns: [TokenPattern] = [
+    ("comment", { _ in .comment }, "//.*"),
     ("string", { raw in .string(String(raw.dropFirst().dropLast())) }, #""[^"]*""#),
     ("let", { _ in .let }, "\\blet\\b"),
     ("for", { _ in .for }, "\\bfor\\b"),
@@ -18,11 +20,11 @@ private let basePatterns: [(String, (Substring) -> Token?, String)] = [
     ("identifier", { raw in .identifier(String(raw)) }, "\\w+"),
 ]
 
-private let operatorPatterns: [(String, (Substring) -> Token?, String)] = BinaryOperator.allCases.enumerated().map { (i, op) in
+private let operatorPatterns: [TokenPattern] = BinaryOperator.allCases.enumerated().map { (i, op) in
     ("op\(i)", { _ in .binaryOperator(op) }, NSRegularExpression.escapedPattern(for: op.pretty()))
 }
 
-private let patterns: [(String, (Substring) -> Token?, String)] = basePatterns + operatorPatterns
+private let patterns: [TokenPattern] = basePatterns + operatorPatterns
 
 private let regex = try! NSRegularExpression(
     pattern: patterns
@@ -34,10 +36,11 @@ private let regex = try! NSRegularExpression(
 func tokenize(_ raw: String) -> [Token] {
     regex.matches(in: raw, range: NSRange(raw.startIndex..., in: raw))
         .compactMap { match in
-            for (name, makeToken, _) in patterns {
+            for (name, makeTokenKind, _) in patterns {
                 let group = match.range(withName: name)
                 if group.length > 0, let range = Range(group, in: raw) {
-                    return makeToken(raw[range])
+                    let kind = makeTokenKind(raw[range])
+                    return Token(kind: kind, range: range)
                 }
             }
             return nil

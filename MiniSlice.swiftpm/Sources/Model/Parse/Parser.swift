@@ -16,15 +16,15 @@ func parseRecipe(from tokens: inout TokenIterator) throws -> Recipe {
 }
 
 /// Statefully parses and consumes statements from the given tokens until the given end token is reached. Throws a `ParseError` if unsuccessful.
-func parseStatements(from tokens: inout TokenIterator, until end: Token? = nil) throws -> [Statement] {
+func parseStatements(from tokens: inout TokenIterator, until end: Token.Kind? = nil) throws -> [Statement] {
     var statements: [Statement] = []
     
-    while tokens.peek() != end {
+    while tokens.peek()?.kind != end {
         let statement = try parseStatement(from: &tokens)
         statements.append(statement)
-        if tokens.peek() != end {
+        if tokens.peek()?.kind != end {
             try tokens.expect(.newline)
-            while tokens.peek() == .newline {
+            while tokens.peek()?.kind == .newline {
                 tokens.next()
                 statements.append(.blank)
             }
@@ -36,7 +36,7 @@ func parseStatements(from tokens: inout TokenIterator, until end: Token? = nil) 
 
 /// Statefully parses a statement from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseStatement(from tokens: inout TokenIterator) throws -> Statement {
-    switch tokens.peek() {
+    switch tokens.peek()?.kind {
     case .let:
         return .varBinding(try parseVarBinding(from: &tokens))
     case .for:
@@ -67,7 +67,7 @@ func parseForLoop(from tokens: inout TokenIterator) throws -> ForLoop {
 
 /// Statefully parses an identifier from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseIdentifier(from tokens: inout TokenIterator) throws -> String {
-    guard case let .identifier(ident) = tokens.next() else { throw ParseError.expectedIdentifier(actual: tokens.current) }
+    guard case let .identifier(ident) = tokens.next()?.kind else { throw ParseError.expectedIdentifier(actual: tokens.current) }
     return ident
 }
 
@@ -87,10 +87,10 @@ func parseExpression(from tokens: inout TokenIterator) throws -> Expression {
 /// Statefully parses an infix expression starting at the operator. Throws a `ParseError` if unsuccessful.
 func parseExpression(from tokens: inout TokenIterator, lhs: Expression, minPrecedence: Int) throws -> Expression {
     var lhs = lhs
-    while case let .binaryOperator(op)? = tokens.peek(), op.precedence >= minPrecedence {
+    while case let .binaryOperator(op)? = tokens.peek()?.kind, op.precedence >= minPrecedence {
         tokens.next()
         var rhs = try parsePrimaryExpression(from: &tokens, allowTrailing: false)
-        while case let .binaryOperator(nextOp)? = tokens.peek(),
+        while case let .binaryOperator(nextOp)? = tokens.peek()?.kind,
               nextOp.precedence > op.precedence || (nextOp.associativity == .right && nextOp.precedence == op.precedence) {
             rhs = try parseExpression(from: &tokens, lhs: rhs, minPrecedence: op.precedence + (nextOp.precedence - op.precedence).signum())
         }
@@ -101,7 +101,7 @@ func parseExpression(from tokens: inout TokenIterator, lhs: Expression, minPrece
     
 /// Statefully parses a non-operated-on expression from the given tokens. Throws a `ParseError` if unsuccessful.
 func parsePrimaryExpression(from tokens: inout TokenIterator, allowTrailing: Bool) throws -> Expression {
-    switch tokens.peek() {
+    switch tokens.peek()?.kind {
     case .leftParen:
         tokens.next()
         let expr = try parseExpression(from: &tokens)
@@ -115,11 +115,11 @@ func parsePrimaryExpression(from tokens: inout TokenIterator, allowTrailing: Boo
         return .literal(.float(value))
     case .identifier(let ident):
         tokens.next()
-        switch tokens.peek() {
+        switch tokens.peek()?.kind {
         case .leftParen:
             let args = try parseArgs(from: &tokens)
             var trailingBlock: [Statement] = []
-            if tokens.peek() == .leftCurly {
+            if tokens.peek()?.kind == .leftCurly {
                 trailingBlock = try parseBlock(from: &tokens)
             }
             return .call(.init(identifier: ident, args: args, trailingBlock: trailingBlock))
@@ -139,10 +139,10 @@ func parseArgs(from tokens: inout TokenIterator) throws -> [Expression] {
     try tokens.expect(.leftParen)
     
     var args: [Expression] = []
-    while tokens.peek() != .rightParen {
+    while tokens.peek()?.kind != .rightParen {
         let arg = try parseExpression(from: &tokens)
         args.append(arg)
-        if tokens.peek() != .rightParen {
+        if tokens.peek()?.kind != .rightParen {
             try tokens.expect(.comma)
         }
     }
@@ -157,7 +157,7 @@ func parseBlock(from tokens: inout TokenIterator) throws -> [Statement] {
     tokens.skipAll(.newline)
     
     var statements: [Statement] = []
-    if tokens.peek() != .rightCurly {
+    if tokens.peek()?.kind != .rightCurly {
         statements = try parseStatements(from: &tokens, until: .rightCurly)
     }
     
