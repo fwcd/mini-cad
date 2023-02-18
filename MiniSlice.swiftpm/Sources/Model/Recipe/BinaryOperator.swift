@@ -7,8 +7,8 @@ enum BinaryOperator: Hashable, CaseIterable {
     case remainder   // %
     case add         // +
     case subtract    // -
-    case toInclusive // ..<
-    case toExclusive // ...
+    case toInclusive // ...
+    case toExclusive // ..<
     case lessOrEqual // <=
     case lessThan    // <
     case greaterOrEqual // >=
