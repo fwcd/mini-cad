@@ -20,7 +20,7 @@ final class TokenizerTests: XCTestCase {
     
     func testBinaryOperators() throws {
         for op in BinaryOperator.allCases {
-            try assert("\(op)", tokenizesTo: [.binaryOperator(op)])
+            try assert(op.pretty(), tokenizesTo: [.binaryOperator(op)])
         }
     }
     

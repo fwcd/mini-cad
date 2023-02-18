@@ -88,10 +88,10 @@ class Interpreter {
     /// Evaluates the given binary expression. Throws an `InterpretError` if unsuccessful.
     func evaluate(binaryExpression: BinaryExpression) throws -> [Value] {
         // TODO: We should probably abstract this boilerplate away
-        switch binaryExpression {
-        case let .add(lhsExpr, rhsExpr):
-            let lhs = try evaluateUniquely(expression: lhsExpr)
-            let rhs = try evaluateUniquely(expression: rhsExpr)
+        let lhs = try evaluateUniquely(expression: binaryExpression.lhs)
+        let rhs = try evaluateUniquely(expression: binaryExpression.rhs)
+        switch binaryExpression.op {
+        case .add:
             switch (lhs, rhs) {
             case let (.int(lhsValue), .int(rhsValue)):
                 return [.int(lhsValue + rhsValue)]
@@ -100,9 +100,7 @@ class Interpreter {
             default:
                 throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
             }
-        case let .subtract(lhsExpr, rhsExpr):
-            let lhs = try evaluateUniquely(expression: lhsExpr)
-            let rhs = try evaluateUniquely(expression: rhsExpr)
+        case .subtract:
             switch (lhs, rhs) {
             case let (.int(lhsValue), .int(rhsValue)):
                 return [.int(lhsValue - rhsValue)]
@@ -111,32 +109,30 @@ class Interpreter {
             default:
                 throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
             }
-        case let .range(lowerExpr, upperExpr):
-            let lower = try evaluateUniquely(expression: lowerExpr)
-            let upper = try evaluateUniquely(expression: upperExpr)
-            switch (lower, upper) {
+        case .toExclusive:
+            switch (lhs, rhs) {
             case let (.int(lowerValue), .int(upperValue)):
-                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lower, upper) }
+                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lhs, rhs) }
                 return [.intRange(lowerValue..<upperValue)]
             case let (.float(lowerValue), .float(upperValue)):
-                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lower, upper) }
+                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lhs, rhs) }
                 return [.floatRange(lowerValue..<upperValue)]
             default:
-                throw InterpretError.binaryOperationTypesMismatch(lower, upper)
+                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
             }
-        case let .closedRange(lowerExpr, upperExpr):
-            let lower = try evaluateUniquely(expression: lowerExpr)
-            let upper = try evaluateUniquely(expression: upperExpr)
-            switch (lower, upper) {
+        case .toInclusive:
+            switch (lhs, rhs) {
             case let (.int(lowerValue), .int(upperValue)):
-                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lower, upper) }
+                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lhs, rhs) }
                 return [.closedIntRange(lowerValue...upperValue)]
             case let (.float(lowerValue), .float(upperValue)):
-                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lower, upper) }
+                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lhs, rhs) }
                 return [.closedFloatRange(lowerValue...upperValue)]
             default:
-                throw InterpretError.binaryOperationTypesMismatch(lower, upper)
+                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
             }
+        default:
+            throw InterpretError.binaryOperatorNotImplemented(binaryExpression.op)
         }
     }
     

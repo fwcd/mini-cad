@@ -89,18 +89,7 @@ func parseExpression(from tokens: inout TokenIterator, lhs: Expression, minPrece
               nextOp.precedence > op.precedence || (nextOp.associativity == .right && nextOp.precedence == op.precedence) {
             rhs = try parseExpression(from: &tokens, lhs: rhs, minPrecedence: op.precedence + (nextOp.precedence - op.precedence).signum())
         }
-        switch op {
-        case .toInclusive:
-            lhs = .binary(.closedRange(lhs, rhs))
-        case .toExclusive:
-            lhs = .binary(.range(lhs, rhs))
-        case .add:
-            lhs = .binary(.add(lhs, rhs))
-        case .subtract:
-            lhs = .binary(.subtract(lhs, rhs))
-        default:
-            throw ParseError.unimplementedOperator(op)
-        }
+        lhs = .binary(.init(lhs: lhs, op: op, rhs: rhs))
     }
     return lhs
 }

@@ -22,7 +22,7 @@ enum ParseError: Error, CustomStringConvertible, Hashable {
         case .couldNotParseFloatLiteral:
             return "Could not parse float literal"
         case let .unimplementedOperator(op):
-            return "Operator \(op) has not been implemented yet"
+            return "Operator \(op.pretty()) has not been implemented yet"
         }
     }
 }

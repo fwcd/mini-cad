@@ -57,6 +57,7 @@
 		35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581E299FE671006043C3 /* BinaryOperator.swift */; };
 		35E75821299FF0E7006043C3 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E75820299FF0E7006043C3 /* TokenizerTests.swift */; };
 		35E7582329A12D2B006043C3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582229A12D2B006043C3 /* Box.swift */; };
+		35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		35E7581E299FE671006043C3 /* BinaryOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperator.swift; sourceTree = "<group>"; };
 		35E75820299FF0E7006043C3 /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
 		35E7582229A12D2B006043C3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryOperator+Pretty.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 				354A41F7299330E0004EA933 /* ForLoop+Pretty.swift */,
 				354A41F8299330E0004EA933 /* Value+Pretty.swift */,
 				354A41F9299330E0004EA933 /* BinaryExpression+Pretty.swift */,
+				35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */,
 				354A41FA299330E0004EA933 /* Formatter.swift */,
 				354A41FB299330E0004EA933 /* Expression+Pretty.swift */,
 			);
@@ -456,6 +459,7 @@
 				354A421E299330E0004EA933 /* InterpretError.swift in Sources */,
 				354A422C299330E0004EA933 /* CodeEditor.swift in Sources */,
 				354A420F299330E0004EA933 /* Recipe.swift in Sources */,
+				35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */,
 				354A421B299330E0004EA933 /* Token.swift in Sources */,
 				354A4224299330E0004EA933 /* ForLoop+Pretty.swift in Sources */,
 				354A4230299330E0004EA933 /* EditorView.swift in Sources */,

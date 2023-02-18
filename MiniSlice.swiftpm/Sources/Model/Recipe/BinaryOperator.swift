@@ -1,5 +1,5 @@
 /// A binary operator token.
-enum BinaryOperator: Hashable, CustomStringConvertible, CaseIterable {
+enum BinaryOperator: Hashable, CaseIterable {
     // Note: Case ordering matters, prefixes of other operators (e.g. > and >=) must always come later to ensure correct tokenization.
     
     case multiply    // *
@@ -70,31 +70,6 @@ enum BinaryOperator: Hashable, CustomStringConvertible, CaseIterable {
         case .logicalAnd: return .left
             
         case .logicalOr: return .left
-        }
-    }
-    
-    var description: String {
-        switch self {
-        case .multiply: return "*"
-        case .divide: return "/"
-        case .remainder: return "%"
-            
-        case .add: return "+"
-        case .subtract: return "-"
-            
-        case .toInclusive: return "..."
-        case .toExclusive: return "..<"
-            
-        case .lessOrEqual: return "<="
-        case .lessThan: return "<"
-        case .greaterOrEqual: return ">="
-        case .greaterThan: return ">"
-        case .equal: return "=="
-        case .notEqual: return "!="
-            
-        case .logicalAnd: return "&&"
-            
-        case .logicalOr: return "||"
         }
     }
     
