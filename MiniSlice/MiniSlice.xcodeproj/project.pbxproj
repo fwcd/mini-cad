@@ -34,7 +34,7 @@
 		354A421F299330E0004EA933 /* BuiltIns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F1299330E0004EA933 /* BuiltIns.swift */; };
 		354A4220299330E0004EA933 /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F2299330E0004EA933 /* Interpreter.swift */; };
 		354A4221299330E0004EA933 /* Recipe+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F4299330E0004EA933 /* Recipe+Pretty.swift */; };
-		354A4222299330E0004EA933 /* VarBinding+Pretfy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F5299330E0004EA933 /* VarBinding+Pretfy.swift */; };
+		354A4222299330E0004EA933 /* VarBinding+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F5299330E0004EA933 /* VarBinding+Pretty.swift */; };
 		354A4223299330E0004EA933 /* Statement+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F6299330E0004EA933 /* Statement+Pretty.swift */; };
 		354A4224299330E0004EA933 /* ForLoop+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F7299330E0004EA933 /* ForLoop+Pretty.swift */; };
 		354A4225299330E0004EA933 /* Value+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F8299330E0004EA933 /* Value+Pretty.swift */; };
@@ -100,7 +100,7 @@
 		354A41F1299330E0004EA933 /* BuiltIns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuiltIns.swift; sourceTree = "<group>"; };
 		354A41F2299330E0004EA933 /* Interpreter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
 		354A41F4299330E0004EA933 /* Recipe+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipe+Pretty.swift"; sourceTree = "<group>"; };
-		354A41F5299330E0004EA933 /* VarBinding+Pretfy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VarBinding+Pretfy.swift"; sourceTree = "<group>"; };
+		354A41F5299330E0004EA933 /* VarBinding+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VarBinding+Pretty.swift"; sourceTree = "<group>"; };
 		354A41F6299330E0004EA933 /* Statement+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Statement+Pretty.swift"; sourceTree = "<group>"; };
 		354A41F7299330E0004EA933 /* ForLoop+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ForLoop+Pretty.swift"; sourceTree = "<group>"; };
 		354A41F8299330E0004EA933 /* Value+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+Pretty.swift"; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				354A41F4299330E0004EA933 /* Recipe+Pretty.swift */,
-				354A41F5299330E0004EA933 /* VarBinding+Pretfy.swift */,
+				354A41F5299330E0004EA933 /* VarBinding+Pretty.swift */,
 				354A41F6299330E0004EA933 /* Statement+Pretty.swift */,
 				354A41F7299330E0004EA933 /* ForLoop+Pretty.swift */,
 				354A41F8299330E0004EA933 /* Value+Pretty.swift */,
@@ -434,7 +434,7 @@
 				354A4226299330E0004EA933 /* BinaryExpression+Pretty.swift in Sources */,
 				35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */,
 				354A422E299330E0004EA933 /* PreviewOverlay.swift in Sources */,
-				354A4222299330E0004EA933 /* VarBinding+Pretfy.swift in Sources */,
+				354A4222299330E0004EA933 /* VarBinding+Pretty.swift in Sources */,
 				354A420D299330E0004EA933 /* AxisNode.swift in Sources */,
 				354A4218299330E0004EA933 /* TokenIterator.swift in Sources */,
 				354A420C299330E0004EA933 /* EditorViewModel.swift in Sources */,
