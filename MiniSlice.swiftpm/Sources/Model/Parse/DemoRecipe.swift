@@ -14,7 +14,7 @@ let rawDemoRecipe: String = """
     let scale = 5.0
     
     for i in 0..<n {
-      let theta = (Float(i) / Float(n)) * TAU
+      let theta = (Float(i) / n) * TAU
       Translate(cos(theta) * scale, 0, sin(theta) * scale) {
         let radius = 0.3
         let height = 0.5
