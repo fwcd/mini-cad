@@ -78,7 +78,7 @@ class Interpreter {
             
             // Invoke the function if it exists
             if let builtIn = builtIns[callExpr.identifier] {
-                return builtIn(evaluatedArgs, evaluatedBlock)
+                return try builtIn(evaluatedArgs, evaluatedBlock)
             } else {
                 throw InterpretError.functionNotInScope(callExpr.identifier)
             }

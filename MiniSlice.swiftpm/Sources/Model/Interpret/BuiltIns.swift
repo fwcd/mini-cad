@@ -1,5 +1,7 @@
+import Foundation
+
 /// The built-in functions.
-let builtIns: [String: ([Value], [Value]) -> [Value]] = [
+let builtIns: [String: ([Value], [Value]) throws -> [Value]] = [
     // TODO: Should we pass vector/tuple-ish types?
     "Cuboid": { args, _ in
         let size = parseVec3(from: args, default: .init(x: 1, y: 1, z: 1))
@@ -15,6 +17,36 @@ let builtIns: [String: ([Value], [Value]) -> [Value]] = [
         let offset = parseVec3(from: args)
         let meshes = trailingBlock.compactMap(\.asMesh)
         return meshes.map { .mesh($0 + offset) }
+    },
+    "sin": { args, _ in
+        guard let x = args[safely: 0]?.asFloat else {
+            throw InterpretError.invalidArguments("sin", expected: "1 float", actual: "\(args)")
+        }
+        return [.float(sin(x))]
+    },
+    "cos": { args, _ in
+        guard let x = args[safely: 0]?.asFloat else {
+            throw InterpretError.invalidArguments("cos", expected: "1 float", actual: "\(args)")
+        }
+        return [.float(cos(x))]
+    },
+    "exp": { args, _ in
+        guard let x = args[safely: 0]?.asFloat else {
+            throw InterpretError.invalidArguments("exp", expected: "1 float", actual: "\(args)")
+        }
+        return [.float(exp(x))]
+    },
+    "log": { args, _ in
+        guard let x = args[safely: 0]?.asFloat else {
+            throw InterpretError.invalidArguments("log", expected: "1 float", actual: "\(args)")
+        }
+        return [.float(log(x))]
+    },
+    "sqrt": { args, _ in
+        guard let x = args[safely: 0]?.asFloat else {
+            throw InterpretError.invalidArguments("sqrt", expected: "1 float", actual: "\(args)")
+        }
+        return [.float(sqrt(x))]
     },
 ]
 

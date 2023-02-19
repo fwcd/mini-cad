@@ -6,6 +6,7 @@ enum InterpretError: Error, CustomStringConvertible {
     case binaryOperatorNotImplemented(BinaryOperator)
     case ambiguousExpression(Expression<Any>, [Value])
     case invalidRange(Value, Value)
+    case invalidArguments(String, expected: String, actual: String)
     
     var description: String {
         switch self {
@@ -23,6 +24,8 @@ enum InterpretError: Error, CustomStringConvertible {
             return "The expression \(expr) does not uniquely evaluate to one result: \(values)"
         case .invalidRange(let lower, let upper):
             return "Cannot form a range between \(lower) and \(upper)"
+        case .invalidArguments(let funcName, let expected, let actual):
+            return "\(funcName) expected \(expected), but got \(actual)"
         }
     }
 }
