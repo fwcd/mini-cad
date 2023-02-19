@@ -5,7 +5,7 @@ func parseRecipe(from raw: String) throws -> Recipe {
 
 /// Parses a recipe from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseRecipe(from tokens: [Token]) throws -> Recipe {
-    var tokens = TokenIterator(tokens)
+    var tokens = TokenIterator(tokens.filter { !$0.kind.isComment })
     return try parseRecipe(from: &tokens)
 }
 
