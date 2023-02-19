@@ -1,5 +1,5 @@
-extension Value {
-    func pretty(formatter: Formatter = .init()) -> String {
+extension Value: Pretty {
+    func pretty(formatter: Formatter) -> String {
         switch self {
         case .int(let value):
             return String(value)

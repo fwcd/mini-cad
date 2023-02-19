@@ -61,6 +61,7 @@
 		35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */; };
 		35E7582929A1AE58006043C3 /* Ranged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582829A1AE58006043C3 /* Ranged.swift */; };
 		35E7582B29A1AFEF006043C3 /* SourceRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582A29A1AFEF006043C3 /* SourceRange.swift */; };
+		35E7582D29A1B657006043C3 /* Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582C29A1B656006043C3 /* Pretty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+HighlightColor.swift"; sourceTree = "<group>"; };
 		35E7582829A1AE58006043C3 /* Ranged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranged.swift; sourceTree = "<group>"; };
 		35E7582A29A1AFEF006043C3 /* SourceRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceRange.swift; sourceTree = "<group>"; };
+		35E7582C29A1B656006043C3 /* Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 		354A41F3299330E0004EA933 /* Pretty */ = {
 			isa = PBXGroup;
 			children = (
+				35E7582C29A1B656006043C3 /* Pretty.swift */,
 				354A41F4299330E0004EA933 /* Recipe+Pretty.swift */,
 				354A41F5299330E0004EA933 /* VarBinding+Pretty.swift */,
 				354A41F6299330E0004EA933 /* Statement+Pretty.swift */,
@@ -453,6 +456,7 @@
 				354A420D299330E0004EA933 /* AxisNode.swift in Sources */,
 				354A4218299330E0004EA933 /* TokenIterator.swift in Sources */,
 				354A420C299330E0004EA933 /* EditorViewModel.swift in Sources */,
+				35E7582D29A1B657006043C3 /* Pretty.swift in Sources */,
 				354A420E299330E0004EA933 /* MiniSliceApp.swift in Sources */,
 				35E7582929A1AE58006043C3 /* Ranged.swift in Sources */,
 				35E7582B29A1AFEF006043C3 /* SourceRange.swift in Sources */,

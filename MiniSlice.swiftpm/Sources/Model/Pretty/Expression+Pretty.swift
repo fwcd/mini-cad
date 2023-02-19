@@ -1,5 +1,5 @@
-extension Expression {
-    func pretty(formatter: Formatter = .init()) -> String {
+extension Expression: Pretty {
+    func pretty(formatter: Formatter) -> String {
         switch self {
         case let .identifier(ident):
             return ident

@@ -1,5 +1,5 @@
-extension BinaryOperator {
-    func pretty(formatter: Formatter = .init()) -> String {
+extension BinaryOperator: Pretty {
+    func pretty(formatter: Formatter) -> String {
         switch self {
         case .multiply: return "*"
         case .divide: return "/"

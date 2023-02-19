@@ -1,5 +1,5 @@
-extension Statement {
-    func pretty(formatter: Formatter = .init()) -> String {
+extension Statement: Pretty {
+    func pretty(formatter: Formatter) -> String {
         switch self {
         case let .varBinding(binding):
             return binding.pretty(formatter: formatter)
