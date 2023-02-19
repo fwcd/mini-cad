@@ -13,8 +13,8 @@ let builtInOperators: [BinaryOperator: ([Value], [Value]) throws -> [Value]] = [
     .multiply: binaryFloatOrIntOperator(name: "multiply", *, *),
     .divide: binaryFloatOrIntOperator(name: "divide", /, /),
     .remainder: binaryIntOperator(name: "remainder", %),
-    .equal: binaryValueOperator(name: "equal") { .bool($0 == $1) },
-    .notEqual: binaryValueOperator(name: "notEqual") { .bool($0 != $1) },
+    .equal: binaryValueOperator(name: "equal", ==),
+    .notEqual: binaryValueOperator(name: "notEqual", !=),
     // TODO: Add logical and range operators
 ]
 
@@ -63,54 +63,54 @@ private func parseVec3(from args: [Value], default: Vec3 = .zero) -> Vec3 {
     )
 }
 
-private func unaryFloatOperator(name: String, _ f: @escaping (Double) -> Double) -> ([Value], [Value]) throws -> [Value] {
+private func unaryFloatOperator<T>(name: String, _ f: @escaping (Double) -> T) -> ([Value], [Value]) throws -> [Value] where T: ValueConvertible {
     return { args, _ in
         guard let x = args[safely: 0]?.asFloat else {
             throw InterpretError.invalidArguments(name, expected: "1 float", actual: "\(args)")
         }
-        return [.float(f(x))]
+        return [Value(f(x))]
     }
 }
 
-private func binaryFloatOperator(name: String, _ f: @escaping (Double, Double) -> Double) -> ([Value], [Value]) throws -> [Value] {
+private func binaryFloatOperator<T>(name: String, _ f: @escaping (Double, Double) -> T) -> ([Value], [Value]) throws -> [Value] where T: ValueConvertible {
     return { args, _ in
         guard let x = args[safely: 0]?.asFloat,
               let y = args[safely: 1]?.asFloat else {
             throw InterpretError.invalidArguments(name, expected: "2 floats", actual: "\(args)")
         }
-        return [.float(f(x, y))]
+        return [Value(f(x, y))]
     }
 }
 
-private func binaryFloatOrIntOperator(name: String, _ f: @escaping (Double, Double) -> Double, _ g: @escaping (Int, Int) -> Int) -> ([Value], [Value]) throws -> [Value] {
+private func binaryFloatOrIntOperator<T, U>(name: String, _ f: @escaping (Double, Double) -> T, _ g: @escaping (Int, Int) -> U) -> ([Value], [Value]) throws -> [Value] where T: ValueConvertible, U: ValueConvertible {
     return { args, _ in
         switch (args[safely: 0], args[safely: 1]) {
         case let (.float(x)?, .float(y)?):
-            return [.float(f(x, y))]
+            return [Value(f(x, y))]
         case let (.int(x)?, .int(y)?):
-            return [.int(g(x, y))]
+            return [Value(g(x, y))]
         default:
             throw InterpretError.invalidArguments(name, expected: "2 floats or ints", actual: "\(args)")
         }
     }
 }
 
-private func binaryIntOperator(name: String, _ f: @escaping (Int, Int) -> Int) -> ([Value], [Value]) throws -> [Value] {
+private func binaryIntOperator<T>(name: String, _ f: @escaping (Int, Int) -> T) -> ([Value], [Value]) throws -> [Value] where T: ValueConvertible {
     return { args, _ in
         guard let x = args[safely: 0]?.asInt,
               let y = args[safely: 1]?.asInt else {
             throw InterpretError.invalidArguments(name, expected: "2 ints", actual: "\(args)")
         }
-        return [.int(f(x, y))]
+        return [Value(f(x, y))]
     }
 }
 
-private func binaryValueOperator(name: String, _ f: @escaping (Value, Value) -> Value) -> ([Value], [Value]) throws -> [Value] {
+private func binaryValueOperator<T>(name: String, _ f: @escaping (Value, Value) -> T) -> ([Value], [Value]) throws -> [Value] where T: ValueConvertible {
     return { args, _ in
         guard let x = args[safely: 0],
               let y = args[safely: 1] else {
             throw InterpretError.invalidArguments(name, expected: "2 values", actual: "\(args)")
         }
-        return [f(x, y)]
+        return [Value(f(x, y))]
     }
 }

@@ -10,3 +10,13 @@ extension Value {
         self = x.asValue
     }
 }
+
+extension Value: ValueConvertible {
+    init?(_ value: Value) {
+        self = value
+    }
+    
+    var asValue: Value {
+        self
+    }
+}
