@@ -7,7 +7,20 @@ enum ParseError: Error, CustomStringConvertible, Hashable {
     case couldNotParseFloatLiteral(token: Token?)
     case unimplementedOperator(BinaryOperator, token: Token?)
     
-    var description: String {
+    var token: Token? {
+        switch self {
+        case let .expected(_, actual: token),
+             let .expectedIdentifier(actual: token),
+             let .expectedExpression(actual: token),
+             let .expectedValue(actual: token),
+             let .couldNotParseIntLiteral(token: token),
+             let .couldNotParseFloatLiteral(token: token),
+             let .unimplementedOperator(_, token: token):
+            return token
+        }
+    }
+    
+    var baseDescription: String {
         switch self {
         case let .expected(expected, actual: actual):
             return "Expected \(expected) but got \(actual.map { "\($0.kind)" } ?? "nil")"
@@ -24,5 +37,9 @@ enum ParseError: Error, CustomStringConvertible, Hashable {
         case let .unimplementedOperator(op, token: _):
             return "Operator \(op.pretty()) has not been implemented yet"
         }
+    }
+    
+    var description: String {
+        (token?.sourceRange.lines.lowerBound).map { "\(baseDescription) at line \($0 + 1)" } ?? baseDescription
     }
 }
