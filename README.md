@@ -1,6 +1,6 @@
 # MiniSlice
 
-Parameteric 3D modeller and slicer.
+A parameteric 3D modeller and slicer for macOS and iOS featuring a Swift-inspired Domain Specific Language (DSL) for modeling.
 
 ## See also
 
