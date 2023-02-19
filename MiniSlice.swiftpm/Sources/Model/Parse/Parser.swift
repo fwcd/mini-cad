@@ -48,7 +48,7 @@ func parseStatement(from tokens: inout TokenIterator) throws -> Statement {
 
 /// Statefully parses a variable binding from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseVarBinding(from tokens: inout TokenIterator) throws -> VarBinding {
-    try tokens.expect(.let)
+    let start = try tokens.expect(.let)
     let name = try parseIdentifier(from: &tokens)
     try tokens.expect(.assign)
     let value = try parseExpression(from: &tokens)

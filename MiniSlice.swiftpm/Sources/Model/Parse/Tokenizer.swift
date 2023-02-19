@@ -40,7 +40,7 @@ func tokenize(_ raw: String) -> [Token] {
                 let group = match.range(withName: name)
                 if group.length > 0, let range = Range(group, in: raw) {
                     let kind = makeTokenKind(raw[range])
-                    return Token(kind: kind, range: range, nsRange: group)
+                    return Token(kind: kind, sourceRange: SourceRange(range: range, nsRange: group))
                 }
             }
             return nil

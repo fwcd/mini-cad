@@ -59,6 +59,8 @@
 		35E7582329A12D2B006043C3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582229A12D2B006043C3 /* Box.swift */; };
 		35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */; };
 		35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */; };
+		35E7582929A1AE58006043C3 /* Ranged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582829A1AE58006043C3 /* Ranged.swift */; };
+		35E7582B29A1AFEF006043C3 /* SourceRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582A29A1AFEF006043C3 /* SourceRange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,8 @@
 		35E7582229A12D2B006043C3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryOperator+Pretty.swift"; sourceTree = "<group>"; };
 		35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+HighlightColor.swift"; sourceTree = "<group>"; };
+		35E7582829A1AE58006043C3 /* Ranged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranged.swift; sourceTree = "<group>"; };
+		35E7582A29A1AFEF006043C3 /* SourceRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceRange.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +286,8 @@
 				354A41ED299330E0004EA933 /* Array+Extensions.swift */,
 				354A41EE299330E0004EA933 /* Identified.swift */,
 				35E7582229A12D2B006043C3 /* Box.swift */,
+				35E7582A29A1AFEF006043C3 /* SourceRange.swift */,
+				35E7582829A1AE58006043C3 /* Ranged.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -448,6 +454,8 @@
 				354A4218299330E0004EA933 /* TokenIterator.swift in Sources */,
 				354A420C299330E0004EA933 /* EditorViewModel.swift in Sources */,
 				354A420E299330E0004EA933 /* MiniSliceApp.swift in Sources */,
+				35E7582929A1AE58006043C3 /* Ranged.swift in Sources */,
+				35E7582B29A1AFEF006043C3 /* SourceRange.swift in Sources */,
 				354A4215299330E0004EA933 /* Statement.swift in Sources */,
 				35E7582329A12D2B006043C3 /* Box.swift in Sources */,
 				354A4228299330E0004EA933 /* Expression+Pretty.swift in Sources */,

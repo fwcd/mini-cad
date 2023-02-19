@@ -1,4 +1,4 @@
 struct VarBinding: Hashable {
-    let name: String
-    let value: Expression
+    var name: String
+    var value: Expression
 }

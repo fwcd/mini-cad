@@ -15,7 +15,7 @@ struct CodeEditor: UIViewRepresentable {
         var lastIndex = 0
         for token in tokens {
             guard let color = token.kind.highlightColor else { continue }
-            let range = token.nsRange
+            let range = NSRange(token.sourceRange)
             if lastIndex < range.lowerBound {
                 let chunk = NSAttributedString(string: nsString.substring(with: NSRange(lastIndex..<range.lowerBound)), attributes: [
                     .foregroundColor: UIColor(textColor),

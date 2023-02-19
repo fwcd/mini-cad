@@ -4,8 +4,9 @@ import Foundation
 struct Token: Hashable {
     var kind: Kind
     
-    var range: Range<String.Index>
-    var nsRange: NSRange // We store the NSRange too to avoid costly index conversions during NSAttributedString construction
+    // TODO: Investigate whether we could just express tokens as `Ranged<Token.Kind>` or similar?
+    
+    var sourceRange: SourceRange
     
     enum Kind: Hashable {
         case `let`

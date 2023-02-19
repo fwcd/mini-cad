@@ -16,11 +16,13 @@ struct TokenIterator: IteratorProtocol {
     }
     
     /// Consumes the next token and throws an error if it doesn't match the given token.
-    mutating func expect(_ kind: Token.Kind) throws {
+    @discardableResult
+    mutating func expect(_ kind: Token.Kind) throws -> Token {
         let actual = next()
         guard actual?.kind == kind else {
             throw ParseError.expected(kind, actual: actual)
         }
+        return actual!
     }
     
     /// Consumes and parses an integer literal.

@@ -1,12 +1,12 @@
-let demoRecipe: Recipe = [
-    .varBinding(.init(name: "w", value: 3)),
-    .varBinding(.init(name: "h", value: 4)),
-    .blank,
-    .forLoop(.init(name: "i", sequence: .binary(.range(0, "w")), block: [
-        .forLoop(.init(name: "j", sequence: .binary(.range(0, "h")), block: [
-            .expression(.call(.init(identifier: "Translate", args: ["i", "i", "j"], trailingBlock: [
-                .expression(.call("Cuboid")),
-            ]))),
-        ])),
-    ])),
-]
+let demoRecipe: Recipe = try! parseRecipe(from: """
+    let w = 3
+    let h = 4
+    
+    for i in 0..<w {
+      for j in 0..<h {
+        Translate(i, i, j) {
+          Cuboid()
+        }
+      }
+    }
+    """)
