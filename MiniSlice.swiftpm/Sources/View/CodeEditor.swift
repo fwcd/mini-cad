@@ -1,14 +1,9 @@
 import SwiftUI
 import UIKit
 
-private let highlightRegex = try! NSRegularExpression(
-    pattern: "\\b(?:let|for|in)\\b"
-)
-
 struct CodeEditor: UIViewRepresentable {
     @Binding var text: String
     var tokens: [Token]
-    var highlightColor: Color = .accentColor
     var textColor: Color = .primary
     var fontSize: CGFloat = 16
     var autoIndent: Int? = 2
@@ -18,18 +13,19 @@ struct CodeEditor: UIViewRepresentable {
         let nsString = text as NSString
         let attributed = NSMutableAttributedString()
         var lastIndex = 0
-        for match in highlightRegex.matches(in: text, range: NSRange(0..<nsString.length)) {
-            let range = match.range
+        for token in tokens {
+            guard let color = token.kind.highlightColor else { continue }
+            let range = token.nsRange
             if lastIndex < range.lowerBound {
                 let chunk = NSAttributedString(string: nsString.substring(with: NSRange(lastIndex..<range.lowerBound)), attributes: [
                     .foregroundColor: UIColor(textColor),
                 ])
                 attributed.append(chunk)
             }
-            let keyword = NSAttributedString(string: nsString.substring(with: range), attributes: [
-                .foregroundColor: UIColor(highlightColor),
+            let highlighted = NSAttributedString(string: nsString.substring(with: range), attributes: [
+                .foregroundColor: UIColor(color),
             ])
-            attributed.append(keyword)
+            attributed.append(highlighted)
             lastIndex = range.upperBound
         }
         if lastIndex < nsString.length {

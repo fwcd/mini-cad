@@ -58,6 +58,7 @@
 		35E75821299FF0E7006043C3 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E75820299FF0E7006043C3 /* TokenizerTests.swift */; };
 		35E7582329A12D2B006043C3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582229A12D2B006043C3 /* Box.swift */; };
 		35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */; };
+		35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		35E75820299FF0E7006043C3 /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
 		35E7582229A12D2B006043C3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryOperator+Pretty.swift"; sourceTree = "<group>"; };
+		35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+HighlightColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +326,7 @@
 			children = (
 				354A4207299330E0004EA933 /* ContentView.swift */,
 				354A4201299330E0004EA933 /* CodeEditor.swift */,
+				35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */,
 				354A4202299330E0004EA933 /* PreviewView.swift */,
 				354A4203299330E0004EA933 /* PreviewOverlay.swift */,
 				354A4204299330E0004EA933 /* OptionsView.swift */,
@@ -467,6 +470,7 @@
 				354A4217299330E0004EA933 /* ParseError.swift in Sources */,
 				354A4233299330E0004EA933 /* ErrorView.swift in Sources */,
 				354A4214299330E0004EA933 /* ForLoop.swift in Sources */,
+				35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */,
 				354A4220299330E0004EA933 /* Interpreter.swift in Sources */,
 				354A4232299330E0004EA933 /* ContentView.swift in Sources */,
 				354A4229299330E0004EA933 /* Vec3.swift in Sources */,
