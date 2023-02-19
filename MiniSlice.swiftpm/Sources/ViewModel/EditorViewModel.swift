@@ -9,7 +9,7 @@ class EditorViewModel: ObservableObject {
             preview.update(cuboids: cuboids)
         }
     }
-    @Published private(set) var parsedRecipe: Recipe = .init() {
+    @Published private(set) var parsedRecipe: Recipe<SourceRange?> = .init() {
         didSet {
             do {
                 let values = try interpret(recipe: parsedRecipe)

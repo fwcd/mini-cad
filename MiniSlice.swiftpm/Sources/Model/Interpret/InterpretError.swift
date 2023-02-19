@@ -1,10 +1,10 @@
 enum InterpretError: Error, CustomStringConvertible {
     case variableNotInScope(String)
     case functionNotInScope(String)
-    case cannotIterate(Expression)
+    case cannotIterate(Expression<Any>)
     case binaryOperationTypesMismatch(Value, Value)
     case binaryOperatorNotImplemented(BinaryOperator)
-    case ambiguousExpression(Expression, [Value])
+    case ambiguousExpression(Expression<Any>, [Value])
     case invalidRange(Value, Value)
     
     var description: String {

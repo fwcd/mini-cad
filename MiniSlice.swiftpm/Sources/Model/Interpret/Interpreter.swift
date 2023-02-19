@@ -9,19 +9,14 @@ class Interpreter {
     }
     
     /// Interprets the given recipe. Throws an `InterpretError` if unsuccessful.
-    func interpret(recipe: Recipe) throws -> [Value] {
+    func interpret<T>(recipe: Recipe<T>) throws -> [Value] {
         try interpret(statements: recipe.statements)
     }
     
     // TODO: We could probably also use interpret(statement:) to make a nice REPL
     
-    /// Interprets the given ranged statements. Throws an `InterpretError` if unsuccessful.
-    func interpret(statements: [Ranged<Statement>]) throws -> [Value] {
-        try interpret(statements: statements.map(\.wrappedValue))
-    }
-    
     /// Interprets the given statements. Throws an `InterpretError` if unsuccessful.
-    func interpret(statements: [Statement]) throws -> [Value] {
+    func interpret<T>(statements: [Statement<T>]) throws -> [Value] {
         var values: [Value] = []
         
         for statement in statements {
@@ -32,7 +27,7 @@ class Interpreter {
     }
     
     /// Interprets the given statement. Throws an `InterpretError` if unsuccessful.
-    func interpret(statement: Statement) throws -> [Value] {
+    func interpret<T>(statement: Statement<T>) throws -> [Value] {
         var values: [Value] = []
         
         switch statement {
@@ -54,7 +49,7 @@ class Interpreter {
                     values += try blockInterpreter.interpret(statements: loop.block)
                 }
             default:
-                throw InterpretError.cannotIterate(loop.sequence)
+                throw InterpretError.cannotIterate(loop.sequence.map { $0 as Any })
             }
         case .blank:
             break
@@ -64,7 +59,7 @@ class Interpreter {
     }
     
     /// Evaluates the given expression. Throws an `InterpretError` if unsuccessful.
-    func evaluate(expression: Expression) throws -> [Value] {
+    func evaluate<T>(expression: Expression<T>) throws -> [Value] {
         switch expression {
         case .literal(let value):
             return [value]
@@ -91,7 +86,7 @@ class Interpreter {
     }
     
     /// Evaluates the given binary expression. Throws an `InterpretError` if unsuccessful.
-    func evaluate(binaryExpression: BinaryExpression) throws -> [Value] {
+    func evaluate<T>(binaryExpression: BinaryExpression<T>) throws -> [Value] {
         // TODO: We might want to find a way to make this less boilerplatey for int/float operations
         let lhs = try evaluateUniquely(expression: binaryExpression.lhs)
         let rhs = try evaluateUniquely(expression: binaryExpression.rhs)
@@ -213,10 +208,10 @@ class Interpreter {
     }
     
     /// Evaluates the given expression uniquely. Throws an `InterpretError` if unsuccessful.
-    func evaluateUniquely(expression: Expression) throws -> Value {
+    func evaluateUniquely<T>(expression: Expression<T>) throws -> Value {
         let values = try evaluate(expression: expression)
         guard values.count == 1 else {
-            throw InterpretError.ambiguousExpression(expression, values)
+            throw InterpretError.ambiguousExpression(expression.map { $0 as Any }, values)
         }
         return values[0]
     }
@@ -233,6 +228,6 @@ class Interpreter {
     }
 }
 
-func interpret(recipe: Recipe) throws -> [Value] {
+func interpret<T>(recipe: Recipe<T>) throws -> [Value] {
     try Interpreter().interpret(recipe: recipe)
 }
