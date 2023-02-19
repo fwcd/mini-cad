@@ -67,6 +67,9 @@
 		35F03FFB29A27A8E00947124 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F03FFA29A27A8E00947124 /* Mesh.swift */; };
 		35F03FFF29A27B8B00947124 /* SCNNode+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F03FFE29A27B8B00947124 /* SCNNode+Mesh.swift */; };
 		35F0400129A27DA300947124 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400029A27DA300947124 /* Quad.swift */; };
+		35F0400329A2835600947124 /* STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400229A2835600947124 /* STLConvertible.swift */; };
+		35F0400529A2839100947124 /* Mesh+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400429A2839100947124 /* Mesh+STLConvertible.swift */; };
+		35F0400729A284AD00947124 /* Vec3+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400629A284AD00947124 /* Vec3+STLConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +146,9 @@
 		35F03FFA29A27A8E00947124 /* Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
 		35F03FFE29A27B8B00947124 /* SCNNode+Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Mesh.swift"; sourceTree = "<group>"; };
 		35F0400029A27DA300947124 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		35F0400229A2835600947124 /* STLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLConvertible.swift; sourceTree = "<group>"; };
+		35F0400429A2839100947124 /* Mesh+STLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+STLConvertible.swift"; sourceTree = "<group>"; };
+		35F0400629A284AD00947124 /* Vec3+STLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vec3+STLConvertible.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +347,9 @@
 				354A41FE299330E0004EA933 /* Cuboid.swift */,
 				35F0400029A27DA300947124 /* Quad.swift */,
 				35F03FFA29A27A8E00947124 /* Mesh.swift */,
+				35F0400229A2835600947124 /* STLConvertible.swift */,
+				35F0400629A284AD00947124 /* Vec3+STLConvertible.swift */,
+				35F0400429A2839100947124 /* Mesh+STLConvertible.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -478,8 +487,10 @@
 				35E7582B29A1AFEF006043C3 /* SourceRange.swift in Sources */,
 				35F03FFF29A27B8B00947124 /* SCNNode+Mesh.swift in Sources */,
 				354A4215299330E0004EA933 /* Statement.swift in Sources */,
+				35F0400729A284AD00947124 /* Vec3+STLConvertible.swift in Sources */,
 				35F03FFB29A27A8E00947124 /* Mesh.swift in Sources */,
 				35E7582329A12D2B006043C3 /* Box.swift in Sources */,
+				35F0400529A2839100947124 /* Mesh+STLConvertible.swift in Sources */,
 				354A4228299330E0004EA933 /* Expression+Pretty.swift in Sources */,
 				354A422A299330E0004EA933 /* Cuboid.swift in Sources */,
 				354A421F299330E0004EA933 /* BuiltIns.swift in Sources */,
@@ -487,6 +498,7 @@
 				354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */,
 				354A4211299330E0004EA933 /* Expression.swift in Sources */,
 				354A4212299330E0004EA933 /* DemoRecipe.swift in Sources */,
+				35F0400329A2835600947124 /* STLConvertible.swift in Sources */,
 				35E7582F29A1B6D7006043C3 /* Ranged+Pretty.swift in Sources */,
 				354A4221299330E0004EA933 /* Recipe+Pretty.swift in Sources */,
 				354A4227299330E0004EA933 /* Formatter.swift in Sources */,
