@@ -72,6 +72,7 @@
 		35F0400729A284AD00947124 /* Vec3+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400629A284AD00947124 /* Vec3+STLConvertible.swift */; };
 		35F0400929A28DBC00947124 /* HashableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400829A28DBC00947124 /* HashableVoid.swift */; };
 		35F0400B29A28FB600947124 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400A29A28FB600947124 /* STLTests.swift */; };
+		35F0400D29A294E000947124 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400C29A294E000947124 /* Vec3Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		35F0400629A284AD00947124 /* Vec3+STLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vec3+STLConvertible.swift"; sourceTree = "<group>"; };
 		35F0400829A28DBC00947124 /* HashableVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashableVoid.swift; sourceTree = "<group>"; };
 		35F0400A29A28FB600947124 /* STLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
+		35F0400C29A294E000947124 /* Vec3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				354A415329932FA3004EA933 /* ParserTests.swift */,
 				35F0400A29A28FB600947124 /* STLTests.swift */,
 				35E75820299FF0E7006043C3 /* TokenizerTests.swift */,
+				35F0400C29A294E000947124 /* Vec3Tests.swift */,
 			);
 			path = MiniSliceTests;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35E7581B299FC3A6006043C3 /* ParserTests.swift in Sources */,
+				35F0400D29A294E000947124 /* Vec3Tests.swift in Sources */,
 				35E75821299FF0E7006043C3 /* TokenizerTests.swift in Sources */,
 				35F0400929A28DBC00947124 /* HashableVoid.swift in Sources */,
 				35F0400B29A28FB600947124 /* STLTests.swift in Sources */,

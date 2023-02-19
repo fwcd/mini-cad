@@ -8,6 +8,14 @@ struct Vec3: CustomStringConvertible, Hashable, AdditiveArithmetic {
     var y: Double = 0
     var z: Double = 0
     
+    var magnitude: Double {
+        (x * x + y * y + z * z).squareRoot()
+    }
+    
+    var normalized: Vec3 {
+        self / magnitude
+    }
+    
     var description: String { "(\(x), \(y), \(z))" }
     
     func zip(_ rhs: Self, _ f: (Double, Double) -> Double) -> Self {
