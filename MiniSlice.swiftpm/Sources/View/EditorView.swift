@@ -19,7 +19,7 @@ struct EditorView: View {
                     Text(String(describing: editor.parsedRecipe))
                 }
                 Group {
-                    List(editor.cuboids.map { Identified(value: $0) }) {
+                    List(editor.meshes.map { Identified(value: $0) }) {
                         Text(String(describing: $0.value))
                     }
                 }

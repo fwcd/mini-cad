@@ -5,7 +5,7 @@ class PreviewViewModel: ObservableObject {
     @Published private(set) var scene: SCNScene
     @Published var options: Options = .init()
     
-    private var cuboidsNode: SCNNode
+    private var meshesNode: SCNNode
     
     init() {
         let scene = SCNScene(named: "Preview.scn")!
@@ -20,8 +20,8 @@ class PreviewViewModel: ObservableObject {
         ambientLightNode.light = ambientLight
         root.addChildNode(ambientLightNode)
         
-        cuboidsNode = SCNNode()
-        root.addChildNode(cuboidsNode)
+        meshesNode = SCNNode()
+        root.addChildNode(meshesNode)
         
         let camera = SCNCamera()
         camera.usesOrthographicProjection = options.usesOrthographicProjection
@@ -46,24 +46,22 @@ class PreviewViewModel: ObservableObject {
         root.addChildNode(AxisNode(direction: .init(z: 1)))
     }
     
-    func update(cuboids: [Cuboid]) {
+    func update(meshes: [Mesh]) {
         // TODO: Be smarter about this, e.g. by adding identity to cuboids and diffing them
         
-        cuboidsNode.enumerateChildNodes { (node, _) in
+        meshesNode.enumerateChildNodes { (node, _) in
             node.removeFromParentNode()
         }
         
-        for cuboid in cuboids {
-            cuboidsNode.addChildNode(makeNode(for: cuboid))
+        for mesh in meshes {
+            meshesNode.addChildNode(makeNode(for: mesh))
         }
     }
     
-    private func makeNode(for cuboid: Cuboid) -> SCNNode {
+    private func makeNode(for mesh: Mesh) -> SCNNode {
         let box = SCNBox()
         box.firstMaterial?.diffuse.contents = UIColor.tintColor
-        let cube = SCNNode(geometry: box)
-        cube.position = SCNVector3(cuboid.center)
-        cube.scale = SCNVector3(cuboid.size)
+        let cube = SCNNode(mesh: mesh)
         return cube
     }
 }

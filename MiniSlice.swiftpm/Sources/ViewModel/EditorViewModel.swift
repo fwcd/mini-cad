@@ -4,16 +4,16 @@ import OSLog
 private let log = Logger(subsystem: "EditorViewModel", category: "MiniSlice")
 
 class EditorViewModel: ObservableObject {
-    @Published private(set) var cuboids: [Cuboid] = [] {
+    @Published private(set) var meshes: [Mesh] = [] {
         didSet {
-            preview.update(cuboids: cuboids)
+            preview.update(meshes: meshes)
         }
     }
     @Published private(set) var parsedRecipe: Recipe<SourceRange?> = .init() {
         didSet {
             do {
                 let values = try interpret(recipe: parsedRecipe)
-                cuboids = values.compactMap(\.asCuboid)
+                meshes = values.compactMap(\.asCuboid).map { Mesh($0) } // TODO: Represent meshes directly in Value
                 interpretError = nil
             } catch let error as InterpretError {
                 interpretError = error
