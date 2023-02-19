@@ -75,4 +75,13 @@ struct TokenIterator: IteratorProtocol {
         }
         return current
     }
+    
+    /// Records the consumed range of tokens.
+    mutating func recordRange<T>(_ action: (inout Self) throws -> T) rethrows -> Ranged<T> {
+        let startRange = peek()?.sourceRange
+        let value = try action(&self)
+        let endRange = current?.sourceRange
+        let sourceRange = startRange.flatMap { s in endRange.map { e in s.merging(e) } }
+        return Ranged(wrappedValue: value, sourceRange: sourceRange)
+    }
 }

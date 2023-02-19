@@ -1,6 +1,6 @@
 extension Recipe {
     func pretty(formatter: Formatter = .init()) -> String {
-        statements.map { $0.pretty(formatter: formatter) }.joined(separator: formatter.lineBreak)
+        statements.map { $0.wrappedValue.pretty(formatter: formatter) }.joined(separator: formatter.lineBreak)
     }
 }
 

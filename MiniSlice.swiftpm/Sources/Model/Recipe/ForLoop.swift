@@ -2,5 +2,5 @@
 struct ForLoop: Hashable {
     var name: String
     var sequence: Expression
-    var block: [Statement] = []
+    var block: [Ranged<Statement>] = []
 }

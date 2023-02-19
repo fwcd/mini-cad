@@ -2,7 +2,7 @@
 struct CallExpression: Hashable {
     var identifier: String
     var args: [Expression] = []
-    var trailingBlock: [Statement] = []
+    var trailingBlock: [Ranged<Statement>] = []
 }
 
 extension CallExpression: ExpressibleByStringLiteral {

@@ -16,17 +16,19 @@ func parseRecipe(from tokens: inout TokenIterator) throws -> Recipe {
 }
 
 /// Statefully parses and consumes statements from the given tokens until the given end token is reached. Throws a `ParseError` if unsuccessful.
-func parseStatements(from tokens: inout TokenIterator, until end: Token.Kind? = nil) throws -> [Statement] {
-    var statements: [Statement] = []
+func parseStatements(from tokens: inout TokenIterator, until end: Token.Kind? = nil) throws -> [Ranged<Statement>] {
+    var statements: [Ranged<Statement>] = []
     
     while tokens.peek()?.kind != end {
-        let statement = try parseStatement(from: &tokens)
+        let statement = try tokens.recordRange { tokens in
+            try parseStatement(from: &tokens)
+        }
         statements.append(statement)
         if tokens.peek()?.kind != end {
             try tokens.expect(.newline)
-            while tokens.peek()?.kind == .newline {
+            while let token = tokens.peek(), token.kind == .newline {
                 tokens.next()
-                statements.append(.blank)
+                statements.append(.init(wrappedValue: .blank, sourceRange: token.sourceRange))
             }
         }
     }
@@ -48,7 +50,7 @@ func parseStatement(from tokens: inout TokenIterator) throws -> Statement {
 
 /// Statefully parses a variable binding from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseVarBinding(from tokens: inout TokenIterator) throws -> VarBinding {
-    let start = try tokens.expect(.let)
+    try tokens.expect(.let)
     let name = try parseIdentifier(from: &tokens)
     try tokens.expect(.assign)
     let value = try parseExpression(from: &tokens)
@@ -118,7 +120,7 @@ func parsePrimaryExpression(from tokens: inout TokenIterator, allowTrailing: Boo
         switch tokens.peek()?.kind {
         case .leftParen:
             let args = try parseArgs(from: &tokens)
-            var trailingBlock: [Statement] = []
+            var trailingBlock: [Ranged<Statement>] = []
             if tokens.peek()?.kind == .leftCurly {
                 trailingBlock = try parseBlock(from: &tokens)
             }
@@ -152,11 +154,11 @@ func parseArgs(from tokens: inout TokenIterator) throws -> [Expression] {
 }
 
 /// Statefully parses a block of statements from the given tokens. Throws a `ParseError` if unsuccessful.
-func parseBlock(from tokens: inout TokenIterator) throws -> [Statement] {
+func parseBlock(from tokens: inout TokenIterator) throws -> [Ranged<Statement>] {
     try tokens.expect(.leftCurly)
     tokens.skipAll(.newline)
     
-    var statements: [Statement] = []
+    var statements: [Ranged<Statement>] = []
     if tokens.peek()?.kind != .rightCurly {
         statements = try parseStatements(from: &tokens, until: .rightCurly)
     }

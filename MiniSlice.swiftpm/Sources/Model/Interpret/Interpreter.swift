@@ -15,6 +15,11 @@ class Interpreter {
     
     // TODO: We could probably also use interpret(statement:) to make a nice REPL
     
+    /// Interprets the given ranged statements. Throws an `InterpretError` if unsuccessful.
+    func interpret(statements: [Ranged<Statement>]) throws -> [Value] {
+        try interpret(statements: statements.map(\.wrappedValue))
+    }
+    
     /// Interprets the given statements. Throws an `InterpretError` if unsuccessful.
     func interpret(statements: [Statement]) throws -> [Value] {
         var values: [Value] = []

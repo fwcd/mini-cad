@@ -1,10 +1,10 @@
 /// A recipe syntax tree.
 struct Recipe: Hashable {
-    var statements: [Statement] = []
+    var statements: [Ranged<Statement>] = []
 }
 
 extension Recipe: ExpressibleByArrayLiteral {
-    init(arrayLiteral elements: Statement...) {
+    init(arrayLiteral elements: Ranged<Statement>...) {
         self.init(statements: elements)
     }
 }

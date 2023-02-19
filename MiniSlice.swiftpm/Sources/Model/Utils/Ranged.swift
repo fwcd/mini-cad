@@ -4,11 +4,11 @@ import Foundation
 @propertyWrapper
 struct Ranged<Wrapped> {
     var wrappedValue: Wrapped
-    var sourceRange: SourceRange
+    var sourceRange: SourceRange?
     
     var projectedValue: Self { self }
     
-    init(wrappedValue: Wrapped, sourceRange: SourceRange) {
+    init(wrappedValue: Wrapped, sourceRange: SourceRange? = nil) {
         self.wrappedValue = wrappedValue
         self.sourceRange = sourceRange
     }

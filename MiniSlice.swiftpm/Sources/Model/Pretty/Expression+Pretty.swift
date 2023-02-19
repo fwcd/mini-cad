@@ -15,7 +15,7 @@ extension Expression {
             if !call.trailingBlock.isEmpty {
                 formatted += " "
                     + formatter.blockOpener
-                    + call.trailingBlock.map { $0.pretty(formatter: formatter.indented) }.joined(separator: formatter.indented.lineBreak)
+                + call.trailingBlock.map { $0.wrappedValue.pretty(formatter: formatter.indented) }.joined(separator: formatter.indented.lineBreak)
                     + formatter.blockCloser
             }
             return formatted
