@@ -2,10 +2,10 @@
 
 extension Range: ValueConvertible {
     init?(_ value: Value) {
-        switch (value, String(describing: Bound.self)) {
-        case (.intRange(let range), "Int"):
+        switch value {
+        case .intRange(let range) where Bound.self == Int.self:
             self = range as! Range<Bound>
-        case (.floatRange(let range), "Double"):
+        case .floatRange(let range) where Bound.self == Double.self:
             self = range as! Range<Bound>
         default:
             return nil
@@ -13,12 +13,11 @@ extension Range: ValueConvertible {
     }
     
     var asValue: Value {
-        switch String(describing: Bound.self) {
-        case "Int":
-            return .intRange(self as! Range<Int>)
-        case "Double":
-            return .floatRange(self as! Range<Double>)
-        default:
+        if let self = self as? Range<Int> {
+            return .intRange(self)
+        } else if let self = self as? Range<Double> {
+            return .floatRange(self)
+        } else {
             fatalError("ValueConvertible.asValue is not implemented for \(type(of: self))")
         }
     }

@@ -81,6 +81,7 @@
 		35F0401929A2AFAB00947124 /* String+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401829A2AFAB00947124 /* String+ValueConvertible.swift */; };
 		35F0401C29A2B05B00947124 /* Bool+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401B29A2B05B00947124 /* Bool+ValueConvertible.swift */; };
 		35F0401E29A2B20700947124 /* Range+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401D29A2B20600947124 /* Range+ValueConvertible.swift */; };
+		35F0402029A2B23C00947124 /* ValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401F29A2B23C00947124 /* ValueTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		35F0401829A2AFAB00947124 /* String+ValueConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ValueConvertible.swift"; sourceTree = "<group>"; };
 		35F0401B29A2B05B00947124 /* Bool+ValueConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+ValueConvertible.swift"; sourceTree = "<group>"; };
 		35F0401D29A2B20600947124 /* Range+ValueConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Range+ValueConvertible.swift"; sourceTree = "<group>"; };
+		35F0401F29A2B23C00947124 /* ValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			children = (
 				35F0400829A28DBC00947124 /* HashableVoid.swift */,
 				354A415329932FA3004EA933 /* ParserTests.swift */,
+				35F0401F29A2B23C00947124 /* ValueTests.swift */,
 				35F0400A29A28FB600947124 /* STLTests.swift */,
 				35E75820299FF0E7006043C3 /* TokenizerTests.swift */,
 				35F0400C29A294E000947124 /* Vec3Tests.swift */,
@@ -589,6 +592,7 @@
 			files = (
 				35E7581B299FC3A6006043C3 /* ParserTests.swift in Sources */,
 				35F0400D29A294E000947124 /* Vec3Tests.swift in Sources */,
+				35F0402029A2B23C00947124 /* ValueTests.swift in Sources */,
 				35E75821299FF0E7006043C3 /* TokenizerTests.swift in Sources */,
 				35F0400929A28DBC00947124 /* HashableVoid.swift in Sources */,
 				35F0400B29A28FB600947124 /* STLTests.swift in Sources */,

@@ -5,3 +5,8 @@ protocol ValueConvertible {
     var asValue: Value { get }
 }
 
+extension Value {
+    init<T>(_ x: T) where T: ValueConvertible {
+        self = x.asValue
+    }
+}
