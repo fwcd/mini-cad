@@ -64,6 +64,7 @@
 		35E7582D29A1B657006043C3 /* Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582C29A1B656006043C3 /* Pretty.swift */; };
 		35E7582F29A1B6D7006043C3 /* Ranged+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */; };
 		35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583029A1B78E006043C3 /* Array+Pretty.swift */; };
+		35F03FFB29A27A8E00947124 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F03FFA29A27A8E00947124 /* Mesh.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		35E7582C29A1B656006043C3 /* Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretty.swift; sourceTree = "<group>"; };
 		35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ranged+Pretty.swift"; sourceTree = "<group>"; };
 		35E7583029A1B78E006043C3 /* Array+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Pretty.swift"; sourceTree = "<group>"; };
+		35F03FFA29A27A8E00947124 /* Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +334,7 @@
 			children = (
 				354A41FD299330E0004EA933 /* Vec3.swift */,
 				354A41FE299330E0004EA933 /* Cuboid.swift */,
+				35F03FFA29A27A8E00947124 /* Mesh.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				35E7582929A1AE58006043C3 /* Ranged.swift in Sources */,
 				35E7582B29A1AFEF006043C3 /* SourceRange.swift in Sources */,
 				354A4215299330E0004EA933 /* Statement.swift in Sources */,
+				35F03FFB29A27A8E00947124 /* Mesh.swift in Sources */,
 				35E7582329A12D2B006043C3 /* Box.swift in Sources */,
 				354A4228299330E0004EA933 /* Expression+Pretty.swift in Sources */,
 				354A422A299330E0004EA933 /* Cuboid.swift in Sources */,
