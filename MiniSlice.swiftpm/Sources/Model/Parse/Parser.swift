@@ -26,7 +26,7 @@ func parseStatements(from tokens: inout TokenIterator, until end: Token.Kind? = 
             try tokens.expect(.newline)
             while let token = tokens.peek(), token.kind == .newline {
                 tokens.next()
-                statements.append(statement)
+                statements.append(.blank)
             }
         }
     }
