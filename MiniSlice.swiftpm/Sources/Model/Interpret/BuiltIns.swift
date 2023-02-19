@@ -1,9 +1,15 @@
 /// The built-in functions.
 let builtIns: [String: ([Value], [Value]) -> [Value]] = [
+    // TODO: Should we pass vector/tuple-ish types?
     "Cuboid": { args, _ in
-        // TODO: Should we pass vector/tuple-ish types?
         let size = parseVec3(from: args, default: .init(x: 1, y: 1, z: 1))
         return [.mesh(Mesh(Cuboid(size: size)))]
+    },
+    "Cylinder": { args, _ in
+        let radius = args[safely: 0]?.asFloat ?? 1
+        let height = args[safely: 1]?.asFloat ?? 1
+        let sides = args[safely: 2]?.asInt ?? 8
+        return [.mesh(Mesh(Cylinder(radius: radius, height: height, sides: sides)))]
     },
     "Translate": { args, trailingBlock in
         let offset = parseVec3(from: args)
