@@ -64,6 +64,7 @@
 		35E7582D29A1B657006043C3 /* Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582C29A1B656006043C3 /* Pretty.swift */; };
 		35E7582F29A1B6D7006043C3 /* Ranged+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */; };
 		35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583029A1B78E006043C3 /* Array+Pretty.swift */; };
+		35E7583729A1BFED006043C3 /* RecipeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583629A1BFED006043C3 /* RecipeDocument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		35E7582C29A1B656006043C3 /* Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretty.swift; sourceTree = "<group>"; };
 		35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ranged+Pretty.swift"; sourceTree = "<group>"; };
 		35E7583029A1B78E006043C3 /* Array+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Pretty.swift"; sourceTree = "<group>"; };
+		35E7583629A1BFED006043C3 /* RecipeDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDocument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 				354A41D9299330E0004EA933 /* Node */,
 				354A41D6299330E0004EA933 /* Options.swift */,
 				354A41D7299330E0004EA933 /* PreviewViewModel.swift */,
+				35E7583629A1BFED006043C3 /* RecipeDocument.swift */,
 				354A41D8299330E0004EA933 /* EditorViewModel.swift */,
 			);
 			path = ViewModel;
@@ -493,6 +496,7 @@
 				354A4220299330E0004EA933 /* Interpreter.swift in Sources */,
 				354A4232299330E0004EA933 /* ContentView.swift in Sources */,
 				354A4229299330E0004EA933 /* Vec3.swift in Sources */,
+				35E7583729A1BFED006043C3 /* RecipeDocument.swift in Sources */,
 				354A4210299330E0004EA933 /* VarBinding.swift in Sources */,
 				35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */,
 				354A420A299330E0004EA933 /* Options.swift in Sources */,
