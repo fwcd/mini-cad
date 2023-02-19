@@ -54,8 +54,6 @@ final class ParserTests: XCTestCase {
     }
     
     func testFullPrograms() throws {
-        // TODO: Add program again
-        /*
         try assert("""
             let w = 3
             let h = 4
@@ -79,11 +77,10 @@ final class ParserTests: XCTestCase {
                 ])),
             ])),
         ])
-         */
     }
     
-    private func assert(_ raw: String, parsesTo statements: [Statement], line: UInt = #line) throws {
-        XCTAssertEqual(try parseRecipe(from: raw).statements.map(\.wrappedValue), statements, line: line)
+    private func assert(_ raw: String, parsesTo recipe: Recipe<Void>, line: UInt = #line) throws {
+        XCTAssertEqual(try parseRecipe(from: raw).map { _ in HashableVoid() }, recipe.map { _ in HashableVoid() }, line: line)
     }
     
     private func assert(_ raw: String, throws expectedError: ParseError, line: UInt = #line) throws {

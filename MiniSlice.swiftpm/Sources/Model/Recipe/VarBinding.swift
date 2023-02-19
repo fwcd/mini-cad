@@ -12,7 +12,12 @@ struct VarBinding<Attachment> {
     }
 }
 
-
 extension VarBinding: Equatable where Attachment: Equatable {}
 
 extension VarBinding: Hashable where Attachment: Hashable {}
+
+extension VarBinding where Attachment == Void {
+    init(name: String, value: Expression<Void>) {
+        self.init(name: name, value: value, attachment: ())
+    }
+}

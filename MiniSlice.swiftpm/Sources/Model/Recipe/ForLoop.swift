@@ -18,3 +18,9 @@ struct ForLoop<Attachment> {
 extension ForLoop: Equatable where Attachment: Equatable {}
 
 extension ForLoop: Hashable where Attachment: Hashable {}
+
+extension ForLoop where Attachment == Void {
+    init(name: String, sequence: Expression<Void>, block: [Statement<Void>] = []) {
+        self.init(name: name, sequence: sequence, block: block, attachment: ())
+    }
+}

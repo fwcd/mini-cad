@@ -70,6 +70,7 @@
 		35F0400329A2835600947124 /* STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400229A2835600947124 /* STLConvertible.swift */; };
 		35F0400529A2839100947124 /* Mesh+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400429A2839100947124 /* Mesh+STLConvertible.swift */; };
 		35F0400729A284AD00947124 /* Vec3+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400629A284AD00947124 /* Vec3+STLConvertible.swift */; };
+		35F0400929A28DBC00947124 /* HashableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400829A28DBC00947124 /* HashableVoid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		35F0400229A2835600947124 /* STLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLConvertible.swift; sourceTree = "<group>"; };
 		35F0400429A2839100947124 /* Mesh+STLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+STLConvertible.swift"; sourceTree = "<group>"; };
 		35F0400629A284AD00947124 /* Vec3+STLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vec3+STLConvertible.swift"; sourceTree = "<group>"; };
+		35F0400829A28DBC00947124 /* HashableVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashableVoid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 		354A415229932FA3004EA933 /* MiniSliceTests */ = {
 			isa = PBXGroup;
 			children = (
+				35F0400829A28DBC00947124 /* HashableVoid.swift */,
 				354A415329932FA3004EA933 /* ParserTests.swift */,
 				35E75820299FF0E7006043C3 /* TokenizerTests.swift */,
 			);
@@ -540,6 +543,7 @@
 			files = (
 				35E7581B299FC3A6006043C3 /* ParserTests.swift in Sources */,
 				35E75821299FF0E7006043C3 /* TokenizerTests.swift in Sources */,
+				35F0400929A28DBC00947124 /* HashableVoid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,3 +29,9 @@ extension CallExpression: ExpressibleByStringLiteral where Attachment == Void {
     }
 }
 
+extension CallExpression where Attachment == Void {
+    init(identifier: String, args: [Expression<Void>], trailingBlock: [Statement<Void>]) {
+        self.init(identifier: identifier, args: args, trailingBlock: trailingBlock, attachment: ())
+    }
+}
+
