@@ -8,14 +8,17 @@ let builtInConstants: [String: [Value]] = [
 
 /// The built-in operators.
 let builtInOperators: [BinaryOperator: ([Value], [Value]) throws -> [Value]] = [
-    .add: binaryFloatOrIntOperator(name: "add", +, +), // TODO: Add string concatenation again
-    .subtract: binaryFloatOrIntOperator(name: "subtract", -, -),
-    .multiply: binaryFloatOrIntOperator(name: "multiply", *, *),
-    .divide: binaryFloatOrIntOperator(name: "divide", /, /),
-    .remainder: binaryIntOperator(name: "remainder", %),
-    .equal: binaryValueOperator(name: "equal", ==),
-    .notEqual: binaryValueOperator(name: "notEqual", !=),
-    // TODO: Add logical and range operators
+    .add: binaryFloatOrIntOperator(name: "+", +, +), // TODO: Add string concatenation again
+    .subtract: binaryFloatOrIntOperator(name: "-", -, -),
+    .multiply: binaryFloatOrIntOperator(name: "*", *, *),
+    .divide: binaryFloatOrIntOperator(name: "/", /, /),
+    .remainder: binaryIntOperator(name: "%", %),
+    .equal: binaryValueOperator(name: "==", ==),
+    .notEqual: binaryValueOperator(name: "!=", !=),
+    .greaterThan: binaryFloatOrIntOperator(name: ">", >, >),
+    .greaterOrEqual: binaryFloatOrIntOperator(name: ">=", >=, >=),
+    .lessThan: binaryFloatOrIntOperator(name: "<", <, <),
+    .lessOrEqual: binaryFloatOrIntOperator(name: "<=", <=, <=),
 ]
 
 /// The built-in functions.
