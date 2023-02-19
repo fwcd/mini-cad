@@ -3,6 +3,7 @@ enum Value: Hashable {
     case int(Int)
     case float(Double)
     case string(String)
+    case bool(Bool)
     case intRange(Range<Int>)
     case floatRange(Range<Double>)
     case closedIntRange(ClosedRange<Int>)
@@ -24,6 +25,24 @@ enum Value: Hashable {
         case .int(let value):
             return Double(value)
         case .float(let value):
+            return value
+        default:
+            return nil
+        }
+    }
+    
+    var asString: String? {
+        switch self {
+        case .string(let value):
+            return value
+        default:
+            return nil
+        }
+    }
+    
+    var asBool: Bool? {
+        switch self {
+        case .bool(let value):
             return value
         default:
             return nil

@@ -7,6 +7,8 @@ extension Value: Pretty {
             return String(value)
         case .string(let value):
             return "\"\(value)\""
+        case .bool(let value):
+            return value ? "true" : "false"
         case .intRange(let range):
             return "\(range.lowerBound)..<\(range.upperBound)"
         case .floatRange(let range):
