@@ -43,7 +43,7 @@ struct Vec3: CustomStringConvertible, Hashable, AdditiveArithmetic {
     }
     
     static func -(lhs: Self, rhs: Self) -> Self {
-        lhs.zip(rhs, +)
+        lhs.zip(rhs, -)
     }
     
     static func *(lhs: Self, rhs: Double) -> Self {

@@ -7,7 +7,7 @@ extension Mesh: STLConvertible {
             solid \(name)
             \(faces.map { face in
             """
-                facet normal 0 0 0
+                facet normal \((vertices[face.a] - vertices[face.b]).cross(vertices[face.c] - vertices[face.b]).normalized.asSTL)
                     outer loop
                         vertex \(vertices[face.a].asSTL)
                         vertex \(vertices[face.b].asSTL)
