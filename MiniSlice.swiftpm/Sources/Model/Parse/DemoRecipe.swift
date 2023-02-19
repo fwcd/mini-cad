@@ -1,4 +1,4 @@
-let demoRecipe: Recipe = try! parseRecipe(from: """
+let rawDemoRecipe: String = """
     let w = 3
     let h = 4
     
@@ -9,4 +9,5 @@ let demoRecipe: Recipe = try! parseRecipe(from: """
         }
       }
     }
-    """)
+    """
+let demoRecipe: Recipe = try! parseRecipe(from: rawDemoRecipe)

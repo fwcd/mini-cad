@@ -263,7 +263,6 @@
 				354A41DE299330E0004EA933 /* Recipe.swift */,
 				354A41DF299330E0004EA933 /* VarBinding.swift */,
 				354A41E0299330E0004EA933 /* Expression.swift */,
-				354A41E1299330E0004EA933 /* DemoRecipe.swift */,
 				354A41E2299330E0004EA933 /* BinaryExpression.swift */,
 				35E7581E299FE671006043C3 /* BinaryOperator.swift */,
 				35E7581C299FC84A006043C3 /* CallExpression.swift */,
@@ -282,6 +281,7 @@
 				354A41E9299330E0004EA933 /* Tokenizer.swift */,
 				354A41EA299330E0004EA933 /* Parser.swift */,
 				354A41EB299330E0004EA933 /* Token.swift */,
+				354A41E1299330E0004EA933 /* DemoRecipe.swift */,
 			);
 			path = Parse;
 			sourceTree = "<group>";

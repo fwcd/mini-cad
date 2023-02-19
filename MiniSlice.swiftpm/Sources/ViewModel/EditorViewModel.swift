@@ -48,7 +48,6 @@ class EditorViewModel: ObservableObject {
     init(preview: PreviewViewModel) {
         self.preview = preview
         
-        let recipe = demoRecipe
-        rawRecipe = "\(recipe)"
+        rawRecipe = rawDemoRecipe
     }
 }

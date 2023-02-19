@@ -122,6 +122,6 @@ struct CodeEditor: UIViewRepresentable {
 
 struct CodeEditor_Previews: PreviewProvider {
     static var previews: some View {
-        CodeEditor(text: .constant("\(demoRecipe)"), tokens: tokenize("\(demoRecipe)"))
+        CodeEditor(text: .constant(rawDemoRecipe), tokens: tokenize(rawDemoRecipe))
     }
 }
