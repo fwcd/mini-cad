@@ -3,9 +3,9 @@ enum ParseError: Error, CustomStringConvertible, Hashable {
     case expectedIdentifier(actual: Token?)
     case expectedExpression(actual: Token?)
     case expectedValue(actual: Token?)
-    case couldNotParseIntLiteral
-    case couldNotParseFloatLiteral
-    case unimplementedOperator(BinaryOperator)
+    case couldNotParseIntLiteral(token: Token?)
+    case couldNotParseFloatLiteral(token: Token?)
+    case unimplementedOperator(BinaryOperator, token: Token?)
     
     var description: String {
         switch self {
@@ -17,11 +17,11 @@ enum ParseError: Error, CustomStringConvertible, Hashable {
             return "Expected expression but got \(actual.map { "\($0.kind)" } ?? "nil")"
         case let .expectedValue(actual: actual):
             return "Expected value but got \(actual.map { "\($0.kind)" } ?? "nil")"
-        case .couldNotParseIntLiteral:
+        case .couldNotParseIntLiteral(_):
             return "Could not parse int literal"
-        case .couldNotParseFloatLiteral:
+        case .couldNotParseFloatLiteral(_):
             return "Could not parse float literal"
-        case let .unimplementedOperator(op):
+        case let .unimplementedOperator(op, token: _):
             return "Operator \(op.pretty()) has not been implemented yet"
         }
     }

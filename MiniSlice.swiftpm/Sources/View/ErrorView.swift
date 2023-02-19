@@ -14,6 +14,6 @@ struct ErrorView<Error>: View {
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView(error: ParseError.unimplementedOperator(.greaterOrEqual))
+        ErrorView(error: ParseError.unimplementedOperator(.greaterOrEqual, token: nil))
     }
 }

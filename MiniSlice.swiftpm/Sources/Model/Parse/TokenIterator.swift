@@ -27,15 +27,19 @@ struct TokenIterator: IteratorProtocol {
     
     /// Consumes and parses an integer literal.
     mutating func expectInt() throws -> Int {
-        guard case let .int(rawValue) = next()?.kind,
-              let value = Int(rawValue) else { throw ParseError.couldNotParseIntLiteral }
+        let token = next()
+        guard let token,
+              case let .int(rawValue) = token.kind,
+              let value = Int(rawValue) else { throw ParseError.couldNotParseIntLiteral(token: token) }
         return value
     }
     
     /// Consumes and parses a float literal.
     mutating func expectFloat() throws -> Double {
-        guard case let .float(rawValue) = next()?.kind,
-              let value = Double(rawValue) else { throw ParseError.couldNotParseFloatLiteral }
+        let token = next()
+        guard let token,
+              case let .float(rawValue) = token.kind,
+              let value = Double(rawValue) else { throw ParseError.couldNotParseFloatLiteral(token: token) }
         return value
     }
     
