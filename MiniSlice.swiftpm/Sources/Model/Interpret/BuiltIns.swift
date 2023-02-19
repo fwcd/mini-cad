@@ -19,6 +19,8 @@ let builtInOperators: [BinaryOperator: ([Value], [Value]) throws -> [Value]] = [
     .greaterOrEqual: binaryFloatOrIntOperator(name: ">=", >=, >=),
     .lessThan: binaryFloatOrIntOperator(name: "<", <, <),
     .lessOrEqual: binaryFloatOrIntOperator(name: "<=", <=, <=),
+    .toExclusive: binaryFloatOrIntOperator(name: "..<", ..<, ..<),
+    .toInclusive: binaryFloatOrIntOperator(name: "...", ..., ...),
 ]
 
 /// The built-in functions.

@@ -87,124 +87,12 @@ class Interpreter {
     
     /// Evaluates the given binary expression. Throws an `InterpretError` if unsuccessful.
     func evaluate<T>(binaryExpression: BinaryExpression<T>) throws -> [Value] {
-        // TODO: We might want to find a way to make this less boilerplatey for int/float operations
         let lhs = try evaluateUniquely(expression: binaryExpression.lhs)
         let rhs = try evaluateUniquely(expression: binaryExpression.rhs)
-        switch binaryExpression.op {
-        case .add:
-            switch (lhs, rhs) {
-            case let (.int(lhsValue), .int(rhsValue)):
-                return [.int(lhsValue + rhsValue)]
-            case let (.float(lhsValue), .float(rhsValue)):
-                return [.float(lhsValue + rhsValue)]
-            case let (.string(lhsValue), .string(rhsValue)):
-                return [.string(lhsValue + rhsValue)]
-            case let (.string(lhsValue), _):
-                return [.string(lhsValue + rhs.pretty())]
-            case let (_, .string(rhsValue)):
-                return [.string(lhs.pretty() + rhsValue)]
-            default:
-                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
-            }
-        case .subtract:
-            switch (lhs, rhs) {
-            case let (.int(lhsValue), .int(rhsValue)):
-                return [.int(lhsValue - rhsValue)]
-            case let (.float(lhsValue), .float(rhsValue)):
-                return [.float(lhsValue - rhsValue)]
-            default:
-                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
-            }
-        case .multiply:
-            switch (lhs, rhs) {
-            case let (.int(lhsValue), .int(rhsValue)):
-                return [.int(lhsValue * rhsValue)]
-            case let (.float(lhsValue), .float(rhsValue)):
-                return [.float(lhsValue * rhsValue)]
-            default:
-                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
-            }
-        case .divide:
-            switch (lhs, rhs) {
-            case let (.int(lhsValue), .int(rhsValue)):
-                return [.int(lhsValue / rhsValue)]
-            case let (.float(lhsValue), .float(rhsValue)):
-                return [.float(lhsValue / rhsValue)]
-            default:
-                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
-            }
-        case .remainder:
-            switch (lhs, rhs) {
-            case let (.int(lhsValue), .int(rhsValue)):
-                return [.int(lhsValue % rhsValue)]
-            default:
-                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
-            }
-        case .lessThan:
-            switch (lhs, rhs) {
-            case let (.int(lhsValue), .int(rhsValue)):
-                return [.bool(lhsValue < rhsValue)]
-            case let (.float(lhsValue), .float(rhsValue)):
-                return [.bool(lhsValue < rhsValue)]
-            default:
-                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
-            }
-        case .lessOrEqual:
-            switch (lhs, rhs) {
-            case let (.int(lhsValue), .int(rhsValue)):
-                return [.bool(lhsValue <= rhsValue)]
-            case let (.float(lhsValue), .float(rhsValue)):
-                return [.bool(lhsValue <= rhsValue)]
-            default:
-                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
-            }
-        case .greaterThan:
-            switch (lhs, rhs) {
-            case let (.int(lhsValue), .int(rhsValue)):
-                return [.bool(lhsValue > rhsValue)]
-            case let (.float(lhsValue), .float(rhsValue)):
-                return [.bool(lhsValue > rhsValue)]
-            default:
-                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
-            }
-        case .greaterOrEqual:
-            switch (lhs, rhs) {
-            case let (.int(lhsValue), .int(rhsValue)):
-                return [.bool(lhsValue >= rhsValue)]
-            case let (.float(lhsValue), .float(rhsValue)):
-                return [.bool(lhsValue >= rhsValue)]
-            default:
-                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
-            }
-        case .equal:
-            return [.bool(lhs == rhs)]
-        case .notEqual:
-            return [.bool(lhs != rhs)]
-        case .toExclusive:
-            switch (lhs, rhs) {
-            case let (.int(lowerValue), .int(upperValue)):
-                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lhs, rhs) }
-                return [.intRange(lowerValue..<upperValue)]
-            case let (.float(lowerValue), .float(upperValue)):
-                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lhs, rhs) }
-                return [.floatRange(lowerValue..<upperValue)]
-            default:
-                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
-            }
-        case .toInclusive:
-            switch (lhs, rhs) {
-            case let (.int(lowerValue), .int(upperValue)):
-                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lhs, rhs) }
-                return [.closedIntRange(lowerValue...upperValue)]
-            case let (.float(lowerValue), .float(upperValue)):
-                guard lowerValue <= upperValue else { throw InterpretError.invalidRange(lhs, rhs) }
-                return [.closedFloatRange(lowerValue...upperValue)]
-            default:
-                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
-            }
-        default:
+        guard let builtIn = builtInOperators[binaryExpression.op] else {
             throw InterpretError.binaryOperatorNotImplemented(binaryExpression.op)
         }
+        return try builtIn([lhs, rhs], [])
     }
     
     /// Evaluates the given expression uniquely. Throws an `InterpretError` if unsuccessful.
