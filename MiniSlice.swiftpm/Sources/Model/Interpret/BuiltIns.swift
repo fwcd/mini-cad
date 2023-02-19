@@ -1,7 +1,13 @@
 import Foundation
 
+/// The built-in constants
+let builtInConstants: [String: [Value]] = [
+    "PI": [.float(.pi)],
+    "TAU": [.float(2 * .pi)],
+]
+
 /// The built-in functions.
-let builtIns: [String: ([Value], [Value]) throws -> [Value]] = [
+let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
     // TODO: Should we pass vector/tuple-ish types?
     "Cuboid": { args, _ in
         let size = parseVec3(from: args, default: .init(x: 1, y: 1, z: 1))

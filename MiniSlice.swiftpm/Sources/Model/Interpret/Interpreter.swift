@@ -77,7 +77,7 @@ class Interpreter {
             let evaluatedBlock = try blockInterpreter.interpret(statements: callExpr.trailingBlock)
             
             // Invoke the function if it exists
-            if let builtIn = builtIns[callExpr.identifier] {
+            if let builtIn = builtInFunctions[callExpr.identifier] {
                 return try builtIn(evaluatedArgs, evaluatedBlock)
             } else {
                 throw InterpretError.functionNotInScope(callExpr.identifier)
@@ -222,6 +222,8 @@ class Interpreter {
             return values
         } else if let parent = parent {
             return try parent.resolve(name: name)
+        } else if let constant = builtInConstants[name] {
+            return constant
         } else {
             throw InterpretError.variableNotInScope(name)
         }
