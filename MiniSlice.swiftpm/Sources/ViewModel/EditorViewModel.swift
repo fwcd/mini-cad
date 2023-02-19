@@ -13,7 +13,7 @@ class EditorViewModel: ObservableObject {
         didSet {
             do {
                 let values = try interpret(recipe: parsedRecipe)
-                meshes = values.compactMap(\.asCuboid).map { Mesh($0) } // TODO: Represent meshes directly in Value
+                meshes = values.compactMap(\.asMesh)
                 interpretError = nil
             } catch let error as InterpretError {
                 interpretError = error

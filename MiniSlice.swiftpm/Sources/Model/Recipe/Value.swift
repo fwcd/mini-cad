@@ -8,7 +8,7 @@ enum Value: Hashable {
     case floatRange(Range<Double>)
     case closedIntRange(ClosedRange<Int>)
     case closedFloatRange(ClosedRange<Double>)
-    case cuboid(Cuboid)
+    case mesh(Mesh)
     
     var asInt: Int? {
         // TODO: Should we do implicit narrowing casts from float -> int?
@@ -49,9 +49,9 @@ enum Value: Hashable {
         }
     }
     
-    var asCuboid: Cuboid? {
+    var asMesh: Mesh? {
         switch self {
-        case .cuboid(let value):
+        case .mesh(let value):
             return value
         default:
             return nil
