@@ -59,9 +59,8 @@ class PreviewViewModel: ObservableObject {
     }
     
     private func makeNode(for mesh: Mesh) -> SCNNode {
-        let box = SCNBox()
-        box.firstMaterial?.diffuse.contents = UIColor.tintColor
-        let cube = SCNNode(mesh: mesh)
-        return cube
+        let geometry = SCNGeometry(mesh: mesh)
+        geometry.firstMaterial?.diffuse.contents = UIColor.tintColor
+        return SCNNode(geometry: geometry)
     }
 }
