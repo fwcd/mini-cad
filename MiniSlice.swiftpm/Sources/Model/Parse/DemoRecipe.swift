@@ -1,4 +1,6 @@
 let rawDemoRecipe: String = """
+    // Generate staircase
+    
     let w = 3
     let h = 4
     
@@ -9,6 +11,8 @@ let rawDemoRecipe: String = """
         }
       }
     }
+    
+    // Generate pillars
     
     let n = 8
     let scale = 5.0

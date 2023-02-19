@@ -11,6 +11,7 @@ func parseRecipe(from tokens: [Token]) throws -> Recipe<SourceRange?> {
 
 /// Statefully parses and consumes a recipe from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseRecipe(from tokens: inout TokenIterator) throws -> Recipe<SourceRange?> {
+    tokens.skipAll(.newline)
     let statements = try parseStatements(from: &tokens)
     return Recipe(statements: statements)
 }
