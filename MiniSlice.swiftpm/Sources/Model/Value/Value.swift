@@ -10,6 +10,8 @@ enum Value: Hashable {
     case closedFloatRange(ClosedRange<Double>)
     case mesh(Mesh)
     
+    // TODO: Move the convenience properties below into the T+ValueConvertible source files or (ideally) remove them alltogether
+    
     var asInt: Int? {
         // TODO: Should we do implicit narrowing casts from float -> int?
         switch self {
