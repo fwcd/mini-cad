@@ -15,7 +15,7 @@ extension Expression: Pretty {
             if !call.trailingBlock.isEmpty {
                 formatted += " "
                     + formatter.blockOpener
-                + call.trailingBlock.map { $0.wrappedValue.pretty(formatter: formatter.indented) }.joined(separator: formatter.indented.lineBreak)
+                    + call.trailingBlock.pretty(formatter: formatter.indented)
                     + formatter.blockCloser
             }
             return formatted

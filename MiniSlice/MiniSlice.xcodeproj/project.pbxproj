@@ -62,6 +62,8 @@
 		35E7582929A1AE58006043C3 /* Ranged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582829A1AE58006043C3 /* Ranged.swift */; };
 		35E7582B29A1AFEF006043C3 /* SourceRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582A29A1AFEF006043C3 /* SourceRange.swift */; };
 		35E7582D29A1B657006043C3 /* Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582C29A1B656006043C3 /* Pretty.swift */; };
+		35E7582F29A1B6D7006043C3 /* Ranged+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */; };
+		35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583029A1B78E006043C3 /* Array+Pretty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +135,8 @@
 		35E7582829A1AE58006043C3 /* Ranged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranged.swift; sourceTree = "<group>"; };
 		35E7582A29A1AFEF006043C3 /* SourceRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceRange.swift; sourceTree = "<group>"; };
 		35E7582C29A1B656006043C3 /* Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretty.swift; sourceTree = "<group>"; };
+		35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ranged+Pretty.swift"; sourceTree = "<group>"; };
+		35E7583029A1B78E006043C3 /* Array+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Pretty.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,15 +312,17 @@
 			isa = PBXGroup;
 			children = (
 				35E7582C29A1B656006043C3 /* Pretty.swift */,
+				354A41FA299330E0004EA933 /* Formatter.swift */,
+				35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */,
+				35E7583029A1B78E006043C3 /* Array+Pretty.swift */,
 				354A41F4299330E0004EA933 /* Recipe+Pretty.swift */,
 				354A41F5299330E0004EA933 /* VarBinding+Pretty.swift */,
 				354A41F6299330E0004EA933 /* Statement+Pretty.swift */,
 				354A41F7299330E0004EA933 /* ForLoop+Pretty.swift */,
 				354A41F8299330E0004EA933 /* Value+Pretty.swift */,
+				354A41FB299330E0004EA933 /* Expression+Pretty.swift */,
 				354A41F9299330E0004EA933 /* BinaryExpression+Pretty.swift */,
 				35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */,
-				354A41FA299330E0004EA933 /* Formatter.swift */,
-				354A41FB299330E0004EA933 /* Expression+Pretty.swift */,
 			);
 			path = Pretty;
 			sourceTree = "<group>";
@@ -469,6 +475,7 @@
 				354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */,
 				354A4211299330E0004EA933 /* Expression.swift in Sources */,
 				354A4212299330E0004EA933 /* DemoRecipe.swift in Sources */,
+				35E7582F29A1B6D7006043C3 /* Ranged+Pretty.swift in Sources */,
 				354A4221299330E0004EA933 /* Recipe+Pretty.swift in Sources */,
 				354A4227299330E0004EA933 /* Formatter.swift in Sources */,
 				354A421E299330E0004EA933 /* InterpretError.swift in Sources */,
@@ -487,6 +494,7 @@
 				354A4232299330E0004EA933 /* ContentView.swift in Sources */,
 				354A4229299330E0004EA933 /* Vec3.swift in Sources */,
 				354A4210299330E0004EA933 /* VarBinding.swift in Sources */,
+				35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */,
 				354A420A299330E0004EA933 /* Options.swift in Sources */,
 				354A420B299330E0004EA933 /* PreviewViewModel.swift in Sources */,
 				354A421D299330E0004EA933 /* Identified.swift in Sources */,
