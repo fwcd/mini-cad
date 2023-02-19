@@ -115,6 +115,9 @@ func parsePrimaryExpression(from tokens: inout TokenIterator, allowTrailing: Boo
     case .float(_):
         let value = try tokens.expectFloat()
         return .literal(.float(value))
+    case .string(let value):
+        tokens.next()
+        return .literal(.string(value))
     case .identifier(let ident):
         tokens.next()
         switch tokens.peek()?.kind {
