@@ -119,6 +119,31 @@ class Interpreter {
             default:
                 throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
             }
+        case .multiply:
+            switch (lhs, rhs) {
+            case let (.int(lhsValue), .int(rhsValue)):
+                return [.int(lhsValue * rhsValue)]
+            case let (.float(lhsValue), .float(rhsValue)):
+                return [.float(lhsValue * rhsValue)]
+            default:
+                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
+            }
+        case .divide:
+            switch (lhs, rhs) {
+            case let (.int(lhsValue), .int(rhsValue)):
+                return [.int(lhsValue / rhsValue)]
+            case let (.float(lhsValue), .float(rhsValue)):
+                return [.float(lhsValue / rhsValue)]
+            default:
+                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
+            }
+        case .remainder:
+            switch (lhs, rhs) {
+            case let (.int(lhsValue), .int(rhsValue)):
+                return [.int(lhsValue % rhsValue)]
+            default:
+                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
+            }
         case .toExclusive:
             switch (lhs, rhs) {
             case let (.int(lowerValue), .int(upperValue)):
