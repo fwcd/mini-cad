@@ -90,6 +90,10 @@ private func binaryFloatOperator<T>(name: String, _ f: @escaping (Double, Double
 private func binaryFloatOrIntOperator<T, U>(name: String, _ f: @escaping (Double, Double) -> T, _ g: @escaping (Int, Int) -> U) -> ([Value], [Value]) throws -> [Value] where T: ValueConvertible, U: ValueConvertible {
     return { args, _ in
         switch (args[safely: 0], args[safely: 1]) {
+        case let (.int(x)?, .float(y)?):
+            return [Value(f(Double(x), y))]
+        case let (.float(x)?, .int(y)?):
+            return [Value(f(x, Double(y)))]
         case let (.float(x)?, .float(y)?):
             return [Value(f(x, y))]
         case let (.int(x)?, .int(y)?):
