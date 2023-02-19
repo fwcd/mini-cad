@@ -32,7 +32,7 @@ extension Mesh {
             Mesh.Face(a: 2, b: 7, c: 6),
             // negative z
             Mesh.Face(a: 6, b: 4, c: 0),
-            Mesh.Face(a: 6, b: 0, c: 5),
+            Mesh.Face(a: 6, b: 0, c: 2),
             // positive z
             Mesh.Face(a: 5, b: 7, c: 3),
             Mesh.Face(a: 5, b: 3, c: 1),
