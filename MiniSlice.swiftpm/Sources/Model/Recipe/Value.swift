@@ -2,6 +2,7 @@
 enum Value: Hashable {
     case int(Int)
     case float(Double)
+    case string(String)
     case intRange(Range<Int>)
     case floatRange(Range<Double>)
     case closedIntRange(ClosedRange<Int>)

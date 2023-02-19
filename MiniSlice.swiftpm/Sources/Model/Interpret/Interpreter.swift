@@ -92,7 +92,6 @@ class Interpreter {
     
     /// Evaluates the given binary expression. Throws an `InterpretError` if unsuccessful.
     func evaluate(binaryExpression: BinaryExpression) throws -> [Value] {
-        // TODO: We should probably abstract this boilerplate away
         let lhs = try evaluateUniquely(expression: binaryExpression.lhs)
         let rhs = try evaluateUniquely(expression: binaryExpression.rhs)
         switch binaryExpression.op {
@@ -102,6 +101,10 @@ class Interpreter {
                 return [.int(lhsValue + rhsValue)]
             case let (.float(lhsValue), .float(rhsValue)):
                 return [.float(lhsValue + rhsValue)]
+            case let (.string(lhsValue), _):
+                return [.string(lhsValue + rhs.pretty())]
+            case let (_, .string(rhsValue)):
+                return [.string(lhs.pretty() + rhsValue)]
             default:
                 throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
             }
