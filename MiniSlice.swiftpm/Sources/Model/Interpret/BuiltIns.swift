@@ -24,6 +24,18 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         let meshes = trailingBlock.compactMap(\.asMesh)
         return meshes.map { .mesh($0 + offset) }
     },
+    "Float": { args, _ in
+        guard let x = args[safely: 0]?.asInt else {
+            throw InterpretError.invalidArguments("Float", expected: "1 int", actual: "\(args)")
+        }
+        return [.float(Double(x))]
+    },
+    "Int": { args, _ in
+        guard let x = args[safely: 0]?.asFloat else {
+            throw InterpretError.invalidArguments("Int", expected: "1 float", actual: "\(args)")
+        }
+        return [.int(Int(x))]
+    },
     "sin": { args, _ in
         guard let x = args[safely: 0]?.asFloat else {
             throw InterpretError.invalidArguments("sin", expected: "1 float", actual: "\(args)")

@@ -6,10 +6,19 @@ let rawDemoRecipe: String = """
       for j in 0..<h {
         Translate(i, i, j) {
           Cuboid()
-          Translate(0, 1, 0) {
-            Cylinder(0.5, 1, 6)
-          }
         }
+      }
+    }
+    
+    let n = 8
+    let scale = 5.0
+    
+    for i in 0..<n {
+      let theta = (Float(i) / Float(i)) * TAU
+      Translate(cos(theta) * scale, 0, sin(theta) * scale) {
+        let radius = 0.3
+        let height = 0.5
+        Cylinder(radius, height)
       }
     }
     """
