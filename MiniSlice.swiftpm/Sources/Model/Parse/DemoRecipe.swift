@@ -5,7 +5,10 @@ let rawDemoRecipe: String = """
     for i in 0..<w {
       for j in 0..<h {
         Translate(i, i, j) {
-          Cylinder()
+          Cuboid()
+          Translate(0, 1, 0) {
+            Cylinder(0.5, 1, 6)
+          }
         }
       }
     }

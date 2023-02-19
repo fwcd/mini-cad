@@ -17,7 +17,8 @@ extension Mesh {
         let baseVertices = [.zero] + (0..<sides)
             .map { i -> Double in 2 * .pi * Double(i) / Double(sides) }
             .map { theta in Vec3(x: cos(theta) * radius, z: sin(theta) * radius) }
-        let topVertices = baseVertices.map { $0 + Vec3(y: height) }
+        let bottomVertices = baseVertices.map { $0 - Vec3(y: height / 2) }
+        let topVertices = baseVertices.map { $0 + Vec3(y: height / 2) }
         
         let baseFaces = (0..<sides).map { i in Mesh.Face(a: 0, b: i + 1, c: (i + 1) % sides + 1) }
         let topFaces = baseFaces.map { ($0 + baseVertices.count).flipped }
@@ -32,7 +33,7 @@ extension Mesh {
             ]
         }
         
-        let vertices = baseVertices + topVertices
+        let vertices = bottomVertices + topVertices
         let faces = baseFaces + topFaces + sideFaces
         
         self.init(vertices: vertices, faces: faces)
