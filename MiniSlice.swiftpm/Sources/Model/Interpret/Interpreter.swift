@@ -92,6 +92,7 @@ class Interpreter {
     
     /// Evaluates the given binary expression. Throws an `InterpretError` if unsuccessful.
     func evaluate(binaryExpression: BinaryExpression) throws -> [Value] {
+        // TODO: We might want to find a way to make this less boilerplatey for int/float operations
         let lhs = try evaluateUniquely(expression: binaryExpression.lhs)
         let rhs = try evaluateUniquely(expression: binaryExpression.rhs)
         switch binaryExpression.op {
@@ -144,6 +145,46 @@ class Interpreter {
             default:
                 throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
             }
+        case .lessThan:
+            switch (lhs, rhs) {
+            case let (.int(lhsValue), .int(rhsValue)):
+                return [.bool(lhsValue < rhsValue)]
+            case let (.float(lhsValue), .float(rhsValue)):
+                return [.bool(lhsValue < rhsValue)]
+            default:
+                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
+            }
+        case .lessOrEqual:
+            switch (lhs, rhs) {
+            case let (.int(lhsValue), .int(rhsValue)):
+                return [.bool(lhsValue <= rhsValue)]
+            case let (.float(lhsValue), .float(rhsValue)):
+                return [.bool(lhsValue <= rhsValue)]
+            default:
+                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
+            }
+        case .greaterThan:
+            switch (lhs, rhs) {
+            case let (.int(lhsValue), .int(rhsValue)):
+                return [.bool(lhsValue > rhsValue)]
+            case let (.float(lhsValue), .float(rhsValue)):
+                return [.bool(lhsValue > rhsValue)]
+            default:
+                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
+            }
+        case .greaterOrEqual:
+            switch (lhs, rhs) {
+            case let (.int(lhsValue), .int(rhsValue)):
+                return [.bool(lhsValue >= rhsValue)]
+            case let (.float(lhsValue), .float(rhsValue)):
+                return [.bool(lhsValue >= rhsValue)]
+            default:
+                throw InterpretError.binaryOperationTypesMismatch(lhs, rhs)
+            }
+        case .equal:
+            return [.bool(lhs == rhs)]
+        case .notEqual:
+            return [.bool(lhs != rhs)]
         case .toExclusive:
             switch (lhs, rhs) {
             case let (.int(lowerValue), .int(upperValue)):
