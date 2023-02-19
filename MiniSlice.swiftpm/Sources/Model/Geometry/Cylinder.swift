@@ -19,9 +19,18 @@ extension Mesh {
             .map { theta in Vec3(x: cos(theta) * radius, z: sin(theta) * radius) }
         let topVertices = baseVertices.map { $0 + Vec3(y: height) }
         
-        let baseFaces = (0..<sides).map { i -> Mesh.Face in .init(a: 0, b: i + 1, c: (i + 1) % sides + 1) }
+        let baseFaces = (0..<sides).map { i in Mesh.Face(a: 0, b: i + 1, c: (i + 1) % sides + 1) }
         let topFaces = baseFaces.map { ($0 + baseVertices.count).flipped }
-        let sideFaces: [Mesh.Face] = [] // TODO: Generate side faces
+        let sideFaces = (0..<sides).flatMap { i in
+            let a = i + 1
+            let b = (i + 1) % sides + 1
+            let c = a + baseVertices.count
+            let d = b + baseVertices.count
+            return [
+                Mesh.Face(a: a, b: c, c: d),
+                Mesh.Face(a: a, b: d, c: b),
+            ]
+        }
         
         let vertices = baseVertices + topVertices
         let faces = baseFaces + topFaces + sideFaces
