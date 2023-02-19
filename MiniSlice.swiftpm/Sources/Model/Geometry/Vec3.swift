@@ -46,6 +46,10 @@ struct Vec3: CustomStringConvertible, Hashable, AdditiveArithmetic {
         rhs.map { lhs * $0 }
     }
     
+    static func /(lhs: Self, rhs: Double) -> Self {
+        lhs.map { $0 / rhs }
+    }
+    
     static prefix func -(lhs: Self) -> Self {
         lhs.map { -$0 }
     }

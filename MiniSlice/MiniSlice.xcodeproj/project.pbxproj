@@ -66,6 +66,7 @@
 		35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583029A1B78E006043C3 /* Array+Pretty.swift */; };
 		35F03FFB29A27A8E00947124 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F03FFA29A27A8E00947124 /* Mesh.swift */; };
 		35F03FFF29A27B8B00947124 /* SCNNode+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F03FFE29A27B8B00947124 /* SCNNode+Mesh.swift */; };
+		35F0400129A27DA300947124 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400029A27DA300947124 /* Quad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		35E7583029A1B78E006043C3 /* Array+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Pretty.swift"; sourceTree = "<group>"; };
 		35F03FFA29A27A8E00947124 /* Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
 		35F03FFE29A27B8B00947124 /* SCNNode+Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Mesh.swift"; sourceTree = "<group>"; };
+		35F0400029A27DA300947124 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +339,7 @@
 			children = (
 				354A41FD299330E0004EA933 /* Vec3.swift */,
 				354A41FE299330E0004EA933 /* Cuboid.swift */,
+				35F0400029A27DA300947124 /* Quad.swift */,
 				35F03FFA29A27A8E00947124 /* Mesh.swift */,
 			);
 			path = Geometry;
@@ -463,6 +466,7 @@
 			files = (
 				354A4226299330E0004EA933 /* BinaryExpression+Pretty.swift in Sources */,
 				35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */,
+				35F0400129A27DA300947124 /* Quad.swift in Sources */,
 				354A422E299330E0004EA933 /* PreviewOverlay.swift in Sources */,
 				354A4222299330E0004EA933 /* VarBinding+Pretty.swift in Sources */,
 				354A420D299330E0004EA933 /* AxisNode.swift in Sources */,

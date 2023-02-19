@@ -8,10 +8,21 @@ struct Mesh: Hashable {
     /// A flat representation of the faces.
     var facesFlat: [Int] { faces.flatMap { [$0.a, $0.b, $0.c] } }
     
-    /// A triangular face defined by its 3 vertex indices.
+    /// A triangular face defined by its 3 vertex indices. Per standard convention, the vertices are wound in counter-clockwise order (from the viewing direction).
     struct Face: Hashable {
         let a: Int
         let b: Int
         let c: Int
+        
+        static func +(lhs: Self, rhs: Int) -> Self {
+            Self(a: lhs.a + rhs, b: lhs.b + rhs, c: lhs.c + rhs)
+        }
+    }
+    
+    func union(_ rhs: Self) -> Self {
+        Mesh(
+            vertices: vertices + rhs.vertices,
+            faces: faces + rhs.faces.map { $0 + faces.count }
+        )
     }
 }
