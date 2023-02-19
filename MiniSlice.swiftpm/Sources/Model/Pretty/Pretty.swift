@@ -1,4 +1,4 @@
-/// A value that can be formatted using a `Formatter`.
+/// A value that can be pretty-printed using a `Formatter`.
 protocol Pretty {
     func pretty(formatter: Formatter) -> String
 }
