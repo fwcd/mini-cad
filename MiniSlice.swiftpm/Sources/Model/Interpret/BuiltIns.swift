@@ -6,6 +6,18 @@ let builtInConstants: [String: [Value]] = [
     "TAU": [.float(2 * .pi)],
 ]
 
+/// The built-in operators.
+let builtInOperators: [BinaryOperator: ([Value], [Value]) throws -> [Value]] = [
+    .add: binaryFloatOrIntOperator(name: "add", +, +), // TODO: Add string concatenation again
+    .subtract: binaryFloatOrIntOperator(name: "subtract", -, -),
+    .multiply: binaryFloatOrIntOperator(name: "multiply", *, *),
+    .divide: binaryFloatOrIntOperator(name: "divide", /, /),
+    .remainder: binaryIntOperator(name: "remainder", %),
+    .equal: binaryValueOperator(name: "equal") { .bool($0 == $1) },
+    .notEqual: binaryValueOperator(name: "notEqual") { .bool($0 != $1) },
+    // TODO: Add logical and range operators
+]
+
 /// The built-in functions.
 let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
     // TODO: Should we pass vector/tuple-ish types?
@@ -36,36 +48,11 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         }
         return [.int(Int(x))]
     },
-    "sin": { args, _ in
-        guard let x = args[safely: 0]?.asFloat else {
-            throw InterpretError.invalidArguments("sin", expected: "1 float", actual: "\(args)")
-        }
-        return [.float(sin(x))]
-    },
-    "cos": { args, _ in
-        guard let x = args[safely: 0]?.asFloat else {
-            throw InterpretError.invalidArguments("cos", expected: "1 float", actual: "\(args)")
-        }
-        return [.float(cos(x))]
-    },
-    "exp": { args, _ in
-        guard let x = args[safely: 0]?.asFloat else {
-            throw InterpretError.invalidArguments("exp", expected: "1 float", actual: "\(args)")
-        }
-        return [.float(exp(x))]
-    },
-    "log": { args, _ in
-        guard let x = args[safely: 0]?.asFloat else {
-            throw InterpretError.invalidArguments("log", expected: "1 float", actual: "\(args)")
-        }
-        return [.float(log(x))]
-    },
-    "sqrt": { args, _ in
-        guard let x = args[safely: 0]?.asFloat else {
-            throw InterpretError.invalidArguments("sqrt", expected: "1 float", actual: "\(args)")
-        }
-        return [.float(sqrt(x))]
-    },
+    "sin": unaryFloatOperator(name: "sin", sin),
+    "cos": unaryFloatOperator(name: "cos", cos),
+    "exp": unaryFloatOperator(name: "exp", exp),
+    "log": unaryFloatOperator(name: "log", log),
+    "sqrt": unaryFloatOperator(name: "sqrt", sqrt),
 ]
 
 private func parseVec3(from args: [Value], default: Vec3 = .zero) -> Vec3 {
@@ -74,4 +61,56 @@ private func parseVec3(from args: [Value], default: Vec3 = .zero) -> Vec3 {
         y: args[safely: 1]?.asFloat ?? `default`.y,
         z: args[safely: 2]?.asFloat ?? `default`.z
     )
+}
+
+private func unaryFloatOperator(name: String, _ f: @escaping (Double) -> Double) -> ([Value], [Value]) throws -> [Value] {
+    return { args, _ in
+        guard let x = args[safely: 0]?.asFloat else {
+            throw InterpretError.invalidArguments(name, expected: "1 float", actual: "\(args)")
+        }
+        return [.float(f(x))]
+    }
+}
+
+private func binaryFloatOperator(name: String, _ f: @escaping (Double, Double) -> Double) -> ([Value], [Value]) throws -> [Value] {
+    return { args, _ in
+        guard let x = args[safely: 0]?.asFloat,
+              let y = args[safely: 1]?.asFloat else {
+            throw InterpretError.invalidArguments(name, expected: "2 floats", actual: "\(args)")
+        }
+        return [.float(f(x, y))]
+    }
+}
+
+private func binaryFloatOrIntOperator(name: String, _ f: @escaping (Double, Double) -> Double, _ g: @escaping (Int, Int) -> Int) -> ([Value], [Value]) throws -> [Value] {
+    return { args, _ in
+        switch (args[safely: 0], args[safely: 1]) {
+        case let (.float(x)?, .float(y)?):
+            return [.float(f(x, y))]
+        case let (.int(x)?, .int(y)?):
+            return [.int(g(x, y))]
+        default:
+            throw InterpretError.invalidArguments(name, expected: "2 floats or ints", actual: "\(args)")
+        }
+    }
+}
+
+private func binaryIntOperator(name: String, _ f: @escaping (Int, Int) -> Int) -> ([Value], [Value]) throws -> [Value] {
+    return { args, _ in
+        guard let x = args[safely: 0]?.asInt,
+              let y = args[safely: 1]?.asInt else {
+            throw InterpretError.invalidArguments(name, expected: "2 ints", actual: "\(args)")
+        }
+        return [.int(f(x, y))]
+    }
+}
+
+private func binaryValueOperator(name: String, _ f: @escaping (Value, Value) -> Value) -> ([Value], [Value]) throws -> [Value] {
+    return { args, _ in
+        guard let x = args[safely: 0],
+              let y = args[safely: 1] else {
+            throw InterpretError.invalidArguments(name, expected: "2 values", actual: "\(args)")
+        }
+        return [f(x, y)]
+    }
 }
