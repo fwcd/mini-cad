@@ -4,6 +4,19 @@ import Foundation
 struct SourceRange: Hashable {
     let range: Range<String.Index>
     let nsRange: NSRange
+    
+    /// Combines the smallest range containing both this and the given range.
+    func merging(_ rhs: Self) -> Self {
+        let startIndex = min(range.lowerBound, rhs.range.lowerBound)
+        let startUTF16 = min(nsRange.lowerBound, rhs.nsRange.lowerBound)
+        let endIndex = max(range.upperBound, rhs.range.upperBound)
+        let endUTF16 = max(nsRange.upperBound, rhs.nsRange.upperBound)
+        
+        return Self(
+            range: startIndex..<endIndex,
+            nsRange: NSRange(location: startUTF16, length: endUTF16 - startUTF16)
+        )
+    }
 }
 
 extension Range where Bound == String.Index {
