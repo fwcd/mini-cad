@@ -5,7 +5,7 @@ struct ErrorView<Error>: View {
     var background: Color = Color(red: 0.6, green: 0, blue: 0)
     
     var body: some View {
-        Text(String(describing: error))
+        Text(String(describing: type(of: error)) + ": " + String(describing: error))
             .foregroundColor(.white)
             .padding(10)
             .background(background, in: RoundedRectangle(cornerRadius: ViewConstants.cornerRadius))
