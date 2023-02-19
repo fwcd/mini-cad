@@ -14,6 +14,11 @@ struct Mesh: Hashable {
         let b: Int
         let c: Int
         
+        /// The face with its winding order/orientation flipped.
+        var flipped: Self {
+            Self(a: a, b: c, c: b)
+        }
+        
         static func +(lhs: Self, rhs: Int) -> Self {
             Self(a: lhs.a + rhs, b: lhs.b + rhs, c: lhs.c + rhs)
         }

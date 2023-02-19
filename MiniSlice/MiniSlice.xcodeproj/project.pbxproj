@@ -73,6 +73,7 @@
 		35F0400929A28DBC00947124 /* HashableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400829A28DBC00947124 /* HashableVoid.swift */; };
 		35F0400B29A28FB600947124 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400A29A28FB600947124 /* STLTests.swift */; };
 		35F0400D29A294E000947124 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400C29A294E000947124 /* Vec3Tests.swift */; };
+		35F0400F29A299BA00947124 /* Cylinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400E29A299BA00947124 /* Cylinder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		35F0400829A28DBC00947124 /* HashableVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashableVoid.swift; sourceTree = "<group>"; };
 		35F0400A29A28FB600947124 /* STLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
 		35F0400C29A294E000947124 /* Vec3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
+		35F0400E29A299BA00947124 /* Cylinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cylinder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +356,7 @@
 			children = (
 				354A41FD299330E0004EA933 /* Vec3.swift */,
 				354A41FE299330E0004EA933 /* Cuboid.swift */,
+				35F0400E29A299BA00947124 /* Cylinder.swift */,
 				35F0400029A27DA300947124 /* Quad.swift */,
 				35F03FFA29A27A8E00947124 /* Mesh.swift */,
 				35F0400229A2835600947124 /* STLConvertible.swift */,
@@ -504,6 +507,7 @@
 				354A422A299330E0004EA933 /* Cuboid.swift in Sources */,
 				354A421F299330E0004EA933 /* BuiltIns.swift in Sources */,
 				354A4219299330E0004EA933 /* Tokenizer.swift in Sources */,
+				35F0400F29A299BA00947124 /* Cylinder.swift in Sources */,
 				354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */,
 				354A4211299330E0004EA933 /* Expression.swift in Sources */,
 				354A4212299330E0004EA933 /* DemoRecipe.swift in Sources */,
