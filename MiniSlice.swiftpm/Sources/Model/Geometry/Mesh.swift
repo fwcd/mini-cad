@@ -19,6 +19,16 @@ struct Mesh: Hashable {
         }
     }
     
+    static func +(lhs: Self, rhs: Vec3) -> Self {
+        Self(vertices: lhs.vertices.map { $0 + rhs }, faces: lhs.faces)
+    }
+    
+    static func +=(lhs: inout Self, rhs: Vec3) {
+        for i in lhs.vertices.indices {
+            lhs.vertices[i] += rhs
+        }
+    }
+    
     func union(_ rhs: Self) -> Self {
         Mesh(
             vertices: vertices + rhs.vertices,

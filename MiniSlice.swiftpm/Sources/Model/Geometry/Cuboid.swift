@@ -38,5 +38,6 @@ extension Mesh {
             Mesh.Face(a: 5, b: 3, c: 1),
         ]
         self.init(vertices: vertices, faces: faces)
+        self += cuboid.center
     }
 }
