@@ -20,7 +20,7 @@ extension Mesh {
         let topVertices = baseVertices.map { $0 + Vec3(y: height) }
         
         let baseFaces = (0..<sides).map { i -> Mesh.Face in .init(a: 0, b: i + 1, c: (i + 1) % sides + 1) }
-        let topFaces = baseFaces.map { $0 + baseVertices.count }
+        let topFaces = baseFaces.map { ($0 + baseVertices.count).flipped }
         let sideFaces: [Mesh.Face] = [] // TODO: Generate side faces
         
         let vertices = baseVertices + topVertices
