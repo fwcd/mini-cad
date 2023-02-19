@@ -101,6 +101,8 @@ class Interpreter {
                 return [.int(lhsValue + rhsValue)]
             case let (.float(lhsValue), .float(rhsValue)):
                 return [.float(lhsValue + rhsValue)]
+            case let (.string(lhsValue), .string(rhsValue)):
+                return [.string(lhsValue + rhsValue)]
             case let (.string(lhsValue), _):
                 return [.string(lhsValue + rhs.pretty())]
             case let (_, .string(rhsValue)):

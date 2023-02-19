@@ -6,7 +6,7 @@ extension Value: Pretty {
         case .float(let value):
             return String(value)
         case .string(let value):
-            return value
+            return "\"\(value)\""
         case .intRange(let range):
             return "\(range.lowerBound)..<\(range.upperBound)"
         case .floatRange(let range):
