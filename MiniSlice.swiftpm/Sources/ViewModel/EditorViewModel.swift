@@ -36,7 +36,7 @@ class EditorViewModel: ObservableObject {
     }
     @Published var rawRecipe: String = "" {
         didSet {
-            tokenizedRecipe = try tokenize(rawRecipe)
+            tokenizedRecipe = tokenize(rawRecipe)
         }
     }
     
