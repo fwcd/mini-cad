@@ -64,6 +64,7 @@
 		35E7582D29A1B657006043C3 /* Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582C29A1B656006043C3 /* Pretty.swift */; };
 		35E7582F29A1B6D7006043C3 /* Ranged+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */; };
 		35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583029A1B78E006043C3 /* Array+Pretty.swift */; };
+		35E7583529A1BE23006043C3 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583429A1BE23006043C3 /* CodeTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		35E7582C29A1B656006043C3 /* Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretty.swift; sourceTree = "<group>"; };
 		35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ranged+Pretty.swift"; sourceTree = "<group>"; };
 		35E7583029A1B78E006043C3 /* Array+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Pretty.swift"; sourceTree = "<group>"; };
+		35E7583429A1BE23006043C3 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +343,7 @@
 			children = (
 				354A4207299330E0004EA933 /* ContentView.swift */,
 				354A4201299330E0004EA933 /* CodeEditor.swift */,
+				35E7583429A1BE23006043C3 /* CodeTextView.swift */,
 				35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */,
 				354A4202299330E0004EA933 /* PreviewView.swift */,
 				354A4203299330E0004EA933 /* PreviewOverlay.swift */,
@@ -496,6 +499,7 @@
 				354A4210299330E0004EA933 /* VarBinding.swift in Sources */,
 				35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */,
 				354A420A299330E0004EA933 /* Options.swift in Sources */,
+				35E7583529A1BE23006043C3 /* CodeTextView.swift in Sources */,
 				354A420B299330E0004EA933 /* PreviewViewModel.swift in Sources */,
 				354A421D299330E0004EA933 /* Identified.swift in Sources */,
 				354A422D299330E0004EA933 /* PreviewView.swift in Sources */,

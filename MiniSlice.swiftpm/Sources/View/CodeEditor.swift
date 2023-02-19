@@ -8,6 +8,8 @@ struct CodeEditor: UIViewRepresentable {
     var fontSize: CGFloat = 16
     var autoIndent: Int? = 2
     
+    @Environment(\.undoManager) private var undoManager
+    
     var highlightedText: NSAttributedString {
         // We use NSString directly here to avoid costly linear-time index conversions
         let nsString = text as NSString
@@ -37,11 +39,13 @@ struct CodeEditor: UIViewRepresentable {
         return attributed
     }
     
-    func makeUIView(context: Context) -> UITextView {
-        UITextView()
+    func makeUIView(context: Context) -> CodeTextView {
+        CodeTextView()
     }
     
-    func updateUIView(_ uiView: UITextView, context: Context) {
+    func updateUIView(_ uiView: CodeTextView, context: Context) {
+        uiView._undoManager = undoManager
+        
         uiView.autocorrectionType = .no
         uiView.autocapitalizationType = .none
         uiView.spellCheckingType = .no
