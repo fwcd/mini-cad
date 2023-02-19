@@ -22,16 +22,21 @@ class EditorViewModel: ObservableObject {
             }
         }
     }
-    @Published var rawRecipe: String = "" {
+    @Published private(set) var tokenizedRecipe: [Token] = [] {
         didSet {
             do {
-                parsedRecipe = try parseRecipe(from: rawRecipe)
+                parsedRecipe = try parseRecipe(from: tokenizedRecipe)
                 parseError = nil
             } catch let error as ParseError {
                 parseError = error
             } catch {
                 log.warning("Unhandled parse error: \(error)")
             }
+        }
+    }
+    @Published var rawRecipe: String = "" {
+        didSet {
+            tokenizedRecipe = try tokenize(rawRecipe)
         }
     }
     

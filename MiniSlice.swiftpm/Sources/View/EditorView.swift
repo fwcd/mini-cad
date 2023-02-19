@@ -5,7 +5,7 @@ struct EditorView: View {
     
     var body: some View {
         VStack {
-            CodeEditor(text: $editor.rawRecipe)
+            CodeEditor(text: $editor.rawRecipe, tokens: editor.tokenizedRecipe)
             HStack {
                 if let error = editor.parseError {
                     ErrorView(error: error)

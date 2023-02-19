@@ -7,6 +7,7 @@ private let highlightRegex = try! NSRegularExpression(
 
 struct CodeEditor: UIViewRepresentable {
     @Binding var text: String
+    var tokens: [Token]
     var highlightColor: Color = .accentColor
     var textColor: Color = .primary
     var fontSize: CGFloat = 16
@@ -125,6 +126,6 @@ struct CodeEditor: UIViewRepresentable {
 
 struct CodeEditor_Previews: PreviewProvider {
     static var previews: some View {
-        CodeEditor(text: .constant("\(demoRecipe)"))
+        CodeEditor(text: .constant("\(demoRecipe)"), tokens: tokenize("\(demoRecipe)"))
     }
 }
