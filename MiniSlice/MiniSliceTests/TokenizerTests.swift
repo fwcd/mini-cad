@@ -24,7 +24,7 @@ final class TokenizerTests: XCTestCase {
         }
     }
     
-    private func assert(_ raw: String, tokenizesTo tokens: [Token], line: UInt = #line) throws {
-        XCTAssertEqual(tokenize(raw), tokens, line: line)
+    private func assert(_ raw: String, tokenizesTo tokens: [Token.Kind], line: UInt = #line) throws {
+        XCTAssertEqual(tokenize(raw).map(\.kind), tokens, line: line)
     }
 }
