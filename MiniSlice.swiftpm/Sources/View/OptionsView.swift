@@ -16,9 +16,12 @@ struct OptionsView: View {
                 Text("Export STL")
             }
             .buttonStyle(.borderedProminent)
-            .fileExporter(isPresented: $stlExporterShown, document: STLDocument(editor.meshes), contentType: .stlDocument) { _ in
-                // TODO
-            }
+            .fileExporter(
+                isPresented: $stlExporterShown,
+                document: STLDocument(editor.meshes),
+                contentType: .stlDocument,
+                defaultFilename: "Model.stl"
+            ) { _ in }
         }
     }
 }
