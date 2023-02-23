@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
+		3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */; };
+		3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18929A7DCD6009FDEA0 /* STLTests.swift */; };
+		3511D19029A7DCD6009FDEA0 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18A29A7DCD6009FDEA0 /* TokenizerTests.swift */; };
+		3511D19129A7DCD6009FDEA0 /* HashableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18B29A7DCD6009FDEA0 /* HashableVoid.swift */; };
+		3511D19229A7DCD6009FDEA0 /* ValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18C29A7DCD6009FDEA0 /* ValueTests.swift */; };
+		3511D19329A7DCD6009FDEA0 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18D29A7DCD6009FDEA0 /* ParserTests.swift */; };
 		352B9B1629A7BD2D007A7470 /* Range+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */; };
 		352B9B1729A7BD2D007A7470 /* Bool+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */; };
 		352B9B1829A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */; };
@@ -67,10 +73,8 @@
 		354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4206299330E0004EA933 /* PreviewSceneView.swift */; };
 		354A4232299330E0004EA933 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4207299330E0004EA933 /* ContentView.swift */; };
 		354A4233299330E0004EA933 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4208299330E0004EA933 /* ErrorView.swift */; };
-		35E7581B299FC3A6006043C3 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A415329932FA3004EA933 /* ParserTests.swift */; };
 		35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581C299FC84A006043C3 /* CallExpression.swift */; };
 		35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581E299FE671006043C3 /* BinaryOperator.swift */; };
-		35E75821299FF0E7006043C3 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E75820299FF0E7006043C3 /* TokenizerTests.swift */; };
 		35E7582329A12D2B006043C3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582229A12D2B006043C3 /* Box.swift */; };
 		35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */; };
 		35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */; };
@@ -94,6 +98,12 @@
 
 /* Begin PBXFileReference section */
 		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
+		3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
+		3511D18929A7DCD6009FDEA0 /* STLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
+		3511D18A29A7DCD6009FDEA0 /* TokenizerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
+		3511D18B29A7DCD6009FDEA0 /* HashableVoid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashableVoid.swift; sourceTree = "<group>"; };
+		3511D18C29A7DCD6009FDEA0 /* ValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTests.swift; sourceTree = "<group>"; };
+		3511D18D29A7DCD6009FDEA0 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 		352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Range+ValueConvertible.swift"; sourceTree = "<group>"; };
 		352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+ValueConvertible.swift"; sourceTree = "<group>"; };
 		352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClosedRange+ValueConvertible.swift"; sourceTree = "<group>"; };
@@ -115,7 +125,6 @@
 		354A414729932FA3004EA933 /* MiniSlice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniSlice.entitlements; sourceTree = "<group>"; };
 		354A414929932FA3004EA933 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		354A414F29932FA3004EA933 /* MiniSliceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniSliceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		354A415329932FA3004EA933 /* ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 		354A41D3299330E0004EA933 /* Preview.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Preview.scn; sourceTree = "<group>"; };
 		354A41D6299330E0004EA933 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		354A41D7299330E0004EA933 /* PreviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewModel.swift; sourceTree = "<group>"; };
@@ -159,7 +168,6 @@
 		354A4208299330E0004EA933 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		35E7581C299FC84A006043C3 /* CallExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallExpression.swift; sourceTree = "<group>"; };
 		35E7581E299FE671006043C3 /* BinaryOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperator.swift; sourceTree = "<group>"; };
-		35E75820299FF0E7006043C3 /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
 		35E7582229A12D2B006043C3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryOperator+Pretty.swift"; sourceTree = "<group>"; };
 		35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+HighlightColor.swift"; sourceTree = "<group>"; };
@@ -247,8 +255,12 @@
 		354A415229932FA3004EA933 /* MiniSliceTests */ = {
 			isa = PBXGroup;
 			children = (
-				354A415329932FA3004EA933 /* ParserTests.swift */,
-				35E75820299FF0E7006043C3 /* TokenizerTests.swift */,
+				3511D18B29A7DCD6009FDEA0 /* HashableVoid.swift */,
+				3511D18D29A7DCD6009FDEA0 /* ParserTests.swift */,
+				3511D18929A7DCD6009FDEA0 /* STLTests.swift */,
+				3511D18A29A7DCD6009FDEA0 /* TokenizerTests.swift */,
+				3511D18C29A7DCD6009FDEA0 /* ValueTests.swift */,
+				3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */,
 			);
 			path = MiniSliceTests;
 			sourceTree = "<group>";
@@ -588,8 +600,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35E7581B299FC3A6006043C3 /* ParserTests.swift in Sources */,
-				35E75821299FF0E7006043C3 /* TokenizerTests.swift in Sources */,
+				3511D19229A7DCD6009FDEA0 /* ValueTests.swift in Sources */,
+				3511D19029A7DCD6009FDEA0 /* TokenizerTests.swift in Sources */,
+				3511D19329A7DCD6009FDEA0 /* ParserTests.swift in Sources */,
+				3511D19129A7DCD6009FDEA0 /* HashableVoid.swift in Sources */,
+				3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */,
+				3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
