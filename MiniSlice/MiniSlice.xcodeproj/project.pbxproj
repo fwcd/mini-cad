@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
+		352B9B1629A7BD2D007A7470 /* Range+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */; };
+		352B9B1729A7BD2D007A7470 /* Bool+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */; };
+		352B9B1829A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */; };
+		352B9B1929A7BD2D007A7470 /* String+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1129A7BD2D007A7470 /* String+ValueConvertible.swift */; };
+		352B9B1A29A7BD2D007A7470 /* Double+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1229A7BD2D007A7470 /* Double+ValueConvertible.swift */; };
+		352B9B1B29A7BD2D007A7470 /* Int+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1329A7BD2D007A7470 /* Int+ValueConvertible.swift */; };
+		352B9B1C29A7BD2D007A7470 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1429A7BD2D007A7470 /* Value.swift */; };
+		352B9B1D29A7BD2D007A7470 /* ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1529A7BD2D007A7470 /* ValueConvertible.swift */; };
+		352B9B1F29A7BD45007A7470 /* DemoRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1E29A7BD45007A7470 /* DemoRecipe.swift */; };
+		352B9B2129A7BD8F007A7470 /* STLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2029A7BD8F007A7470 /* STLDocument.swift */; };
+		352B9B2829A7BE32007A7470 /* Cylinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2229A7BE32007A7470 /* Cylinder.swift */; };
+		352B9B2929A7BE32007A7470 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2329A7BE32007A7470 /* Mesh.swift */; };
+		352B9B2A29A7BE32007A7470 /* Mesh+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2429A7BE32007A7470 /* Mesh+STLConvertible.swift */; };
+		352B9B2B29A7BE32007A7470 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2529A7BE32007A7470 /* Quad.swift */; };
+		352B9B2C29A7BE32007A7470 /* STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2629A7BE32007A7470 /* STLConvertible.swift */; };
+		352B9B2D29A7BE32007A7470 /* Vec3+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2729A7BE32007A7470 /* Vec3+STLConvertible.swift */; };
 		354A414629932FA3004EA933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354A414529932FA3004EA933 /* Assets.xcassets */; };
 		354A414A29932FA3004EA933 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354A414929932FA3004EA933 /* Preview Assets.xcassets */; };
 		354A4209299330E0004EA933 /* Preview.scn in Resources */ = {isa = PBXBuildFile; fileRef = 354A41D3299330E0004EA933 /* Preview.scn */; };
@@ -18,11 +35,9 @@
 		354A420F299330E0004EA933 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41DE299330E0004EA933 /* Recipe.swift */; };
 		354A4210299330E0004EA933 /* VarBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41DF299330E0004EA933 /* VarBinding.swift */; };
 		354A4211299330E0004EA933 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E0299330E0004EA933 /* Expression.swift */; };
-		354A4212299330E0004EA933 /* DemoRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E1299330E0004EA933 /* DemoRecipe.swift */; };
 		354A4213299330E0004EA933 /* BinaryExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E2299330E0004EA933 /* BinaryExpression.swift */; };
 		354A4214299330E0004EA933 /* ForLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E3299330E0004EA933 /* ForLoop.swift */; };
 		354A4215299330E0004EA933 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E4299330E0004EA933 /* Statement.swift */; };
-		354A4216299330E0004EA933 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E5299330E0004EA933 /* Value.swift */; };
 		354A4217299330E0004EA933 /* ParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E7299330E0004EA933 /* ParseError.swift */; };
 		354A4218299330E0004EA933 /* TokenIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E8299330E0004EA933 /* TokenIterator.swift */; };
 		354A4219299330E0004EA933 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E9299330E0004EA933 /* Tokenizer.swift */; };
@@ -64,24 +79,7 @@
 		35E7582D29A1B657006043C3 /* Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582C29A1B656006043C3 /* Pretty.swift */; };
 		35E7582F29A1B6D7006043C3 /* Ranged+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */; };
 		35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583029A1B78E006043C3 /* Array+Pretty.swift */; };
-		35F03FFB29A27A8E00947124 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F03FFA29A27A8E00947124 /* Mesh.swift */; };
-		35F03FFF29A27B8B00947124 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F03FFE29A27B8B00947124 /* SCNGeometry+Mesh.swift */; };
-		35F0400129A27DA300947124 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400029A27DA300947124 /* Quad.swift */; };
-		35F0400329A2835600947124 /* STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400229A2835600947124 /* STLConvertible.swift */; };
-		35F0400529A2839100947124 /* Mesh+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400429A2839100947124 /* Mesh+STLConvertible.swift */; };
-		35F0400729A284AD00947124 /* Vec3+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400629A284AD00947124 /* Vec3+STLConvertible.swift */; };
-		35F0400929A28DBC00947124 /* HashableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400829A28DBC00947124 /* HashableVoid.swift */; };
-		35F0400B29A28FB600947124 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400A29A28FB600947124 /* STLTests.swift */; };
-		35F0400D29A294E000947124 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400C29A294E000947124 /* Vec3Tests.swift */; };
-		35F0400F29A299BA00947124 /* Cylinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0400E29A299BA00947124 /* Cylinder.swift */; };
-		35F0401129A2AEE500947124 /* ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401029A2AEE500947124 /* ValueConvertible.swift */; };
-		35F0401329A2AF1100947124 /* ClosedRange+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401229A2AF1100947124 /* ClosedRange+ValueConvertible.swift */; };
-		35F0401529A2AF6400947124 /* Int+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401429A2AF6400947124 /* Int+ValueConvertible.swift */; };
-		35F0401729A2AF8E00947124 /* Double+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401629A2AF8E00947124 /* Double+ValueConvertible.swift */; };
-		35F0401929A2AFAB00947124 /* String+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401829A2AFAB00947124 /* String+ValueConvertible.swift */; };
-		35F0401C29A2B05B00947124 /* Bool+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401B29A2B05B00947124 /* Bool+ValueConvertible.swift */; };
-		35F0401E29A2B20700947124 /* Range+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401D29A2B20600947124 /* Range+ValueConvertible.swift */; };
-		35F0402029A2B23C00947124 /* ValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0401F29A2B23C00947124 /* ValueTests.swift */; };
+		35E7583729A1BFED006043C3 /* RecipeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583629A1BFED006043C3 /* RecipeDocument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +93,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
+		352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Range+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClosedRange+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B1129A7BD2D007A7470 /* String+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B1229A7BD2D007A7470 /* Double+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B1329A7BD2D007A7470 /* Int+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B1429A7BD2D007A7470 /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		352B9B1529A7BD2D007A7470 /* ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueConvertible.swift; sourceTree = "<group>"; };
+		352B9B1E29A7BD45007A7470 /* DemoRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoRecipe.swift; sourceTree = "<group>"; };
+		352B9B2029A7BD8F007A7470 /* STLDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLDocument.swift; sourceTree = "<group>"; };
+		352B9B2229A7BE32007A7470 /* Cylinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cylinder.swift; sourceTree = "<group>"; };
+		352B9B2329A7BE32007A7470 /* Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
+		352B9B2429A7BE32007A7470 /* Mesh+STLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mesh+STLConvertible.swift"; sourceTree = "<group>"; };
+		352B9B2529A7BE32007A7470 /* Quad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		352B9B2629A7BE32007A7470 /* STLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLConvertible.swift; sourceTree = "<group>"; };
+		352B9B2729A7BE32007A7470 /* Vec3+STLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Vec3+STLConvertible.swift"; sourceTree = "<group>"; };
 		354A413E29932FA2004EA933 /* MiniSlice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSlice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		354A414529932FA3004EA933 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		354A414729932FA3004EA933 /* MiniSlice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniSlice.entitlements; sourceTree = "<group>"; };
@@ -110,11 +125,9 @@
 		354A41DE299330E0004EA933 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		354A41DF299330E0004EA933 /* VarBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VarBinding.swift; sourceTree = "<group>"; };
 		354A41E0299330E0004EA933 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
-		354A41E1299330E0004EA933 /* DemoRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoRecipe.swift; sourceTree = "<group>"; };
 		354A41E2299330E0004EA933 /* BinaryExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryExpression.swift; sourceTree = "<group>"; };
 		354A41E3299330E0004EA933 /* ForLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForLoop.swift; sourceTree = "<group>"; };
 		354A41E4299330E0004EA933 /* Statement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
-		354A41E5299330E0004EA933 /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
 		354A41E7299330E0004EA933 /* ParseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseError.swift; sourceTree = "<group>"; };
 		354A41E8299330E0004EA933 /* TokenIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenIterator.swift; sourceTree = "<group>"; };
 		354A41E9299330E0004EA933 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
@@ -155,24 +168,8 @@
 		35E7582C29A1B656006043C3 /* Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretty.swift; sourceTree = "<group>"; };
 		35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ranged+Pretty.swift"; sourceTree = "<group>"; };
 		35E7583029A1B78E006043C3 /* Array+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Pretty.swift"; sourceTree = "<group>"; };
-		35F03FFA29A27A8E00947124 /* Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
-		35F03FFE29A27B8B00947124 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
-		35F0400029A27DA300947124 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
-		35F0400229A2835600947124 /* STLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLConvertible.swift; sourceTree = "<group>"; };
-		35F0400429A2839100947124 /* Mesh+STLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+STLConvertible.swift"; sourceTree = "<group>"; };
-		35F0400629A284AD00947124 /* Vec3+STLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vec3+STLConvertible.swift"; sourceTree = "<group>"; };
-		35F0400829A28DBC00947124 /* HashableVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashableVoid.swift; sourceTree = "<group>"; };
-		35F0400A29A28FB600947124 /* STLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
-		35F0400C29A294E000947124 /* Vec3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
-		35F0400E29A299BA00947124 /* Cylinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cylinder.swift; sourceTree = "<group>"; };
-		35F0401029A2AEE500947124 /* ValueConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueConvertible.swift; sourceTree = "<group>"; };
-		35F0401229A2AF1100947124 /* ClosedRange+ValueConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClosedRange+ValueConvertible.swift"; sourceTree = "<group>"; };
-		35F0401429A2AF6400947124 /* Int+ValueConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+ValueConvertible.swift"; sourceTree = "<group>"; };
-		35F0401629A2AF8E00947124 /* Double+ValueConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+ValueConvertible.swift"; sourceTree = "<group>"; };
-		35F0401829A2AFAB00947124 /* String+ValueConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ValueConvertible.swift"; sourceTree = "<group>"; };
-		35F0401B29A2B05B00947124 /* Bool+ValueConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+ValueConvertible.swift"; sourceTree = "<group>"; };
-		35F0401D29A2B20600947124 /* Range+ValueConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Range+ValueConvertible.swift"; sourceTree = "<group>"; };
-		35F0401F29A2B23C00947124 /* ValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTests.swift; sourceTree = "<group>"; };
+		35E7583629A1BFED006043C3 /* RecipeDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDocument.swift; sourceTree = "<group>"; };
+		35E7583829A1C046006043C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +190,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		352B9B0D29A7BD2D007A7470 /* Value */ = {
+			isa = PBXGroup;
+			children = (
+				352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */,
+				352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */,
+				352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */,
+				352B9B1129A7BD2D007A7470 /* String+ValueConvertible.swift */,
+				352B9B1229A7BD2D007A7470 /* Double+ValueConvertible.swift */,
+				352B9B1329A7BD2D007A7470 /* Int+ValueConvertible.swift */,
+				352B9B1429A7BD2D007A7470 /* Value.swift */,
+				352B9B1529A7BD2D007A7470 /* ValueConvertible.swift */,
+			);
+			path = Value;
+			sourceTree = "<group>";
+		};
 		354A413529932FA2004EA933 = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +226,7 @@
 		354A414029932FA2004EA933 /* MiniSlice */ = {
 			isa = PBXGroup;
 			children = (
+				35E7583829A1C046006043C3 /* Info.plist */,
 				354A41D2299330E0004EA933 /* Resources */,
 				354A41D4299330E0004EA933 /* Sources */,
 				354A414529932FA3004EA933 /* Assets.xcassets */,
@@ -234,12 +247,8 @@
 		354A415229932FA3004EA933 /* MiniSliceTests */ = {
 			isa = PBXGroup;
 			children = (
-				35F0400829A28DBC00947124 /* HashableVoid.swift */,
 				354A415329932FA3004EA933 /* ParserTests.swift */,
-				35F0401F29A2B23C00947124 /* ValueTests.swift */,
-				35F0400A29A28FB600947124 /* STLTests.swift */,
 				35E75820299FF0E7006043C3 /* TokenizerTests.swift */,
-				35F0400C29A294E000947124 /* Vec3Tests.swift */,
 			);
 			path = MiniSliceTests;
 			sourceTree = "<group>";
@@ -271,6 +280,8 @@
 				354A41D9299330E0004EA933 /* Node */,
 				354A41D6299330E0004EA933 /* Options.swift */,
 				354A41D7299330E0004EA933 /* PreviewViewModel.swift */,
+				35E7583629A1BFED006043C3 /* RecipeDocument.swift */,
+				352B9B2029A7BD8F007A7470 /* STLDocument.swift */,
 				354A41D8299330E0004EA933 /* EditorViewModel.swift */,
 			);
 			path = ViewModel;
@@ -280,7 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				354A41DA299330E0004EA933 /* AxisNode.swift */,
-				35F03FFE29A27B8B00947124 /* SCNGeometry+Mesh.swift */,
+				3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */,
 			);
 			path = Node;
 			sourceTree = "<group>";
@@ -290,8 +301,8 @@
 			children = (
 				354A41EC299330E0004EA933 /* Utils */,
 				354A41FC299330E0004EA933 /* Geometry */,
-				35F0401A29A2AFF300947124 /* Value */,
 				354A41DD299330E0004EA933 /* Recipe */,
+				352B9B0D29A7BD2D007A7470 /* Value */,
 				354A41E6299330E0004EA933 /* Parse */,
 				354A41F3299330E0004EA933 /* Pretty */,
 				354A41EF299330E0004EA933 /* Interpret */,
@@ -317,12 +328,12 @@
 		354A41E6299330E0004EA933 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
+				352B9B1E29A7BD45007A7470 /* DemoRecipe.swift */,
 				354A41E7299330E0004EA933 /* ParseError.swift */,
 				354A41E8299330E0004EA933 /* TokenIterator.swift */,
 				354A41E9299330E0004EA933 /* Tokenizer.swift */,
 				354A41EA299330E0004EA933 /* Parser.swift */,
 				354A41EB299330E0004EA933 /* Token.swift */,
-				354A41E1299330E0004EA933 /* DemoRecipe.swift */,
 			);
 			path = Parse;
 			sourceTree = "<group>";
@@ -371,14 +382,14 @@
 		354A41FC299330E0004EA933 /* Geometry */ = {
 			isa = PBXGroup;
 			children = (
-				354A41FD299330E0004EA933 /* Vec3.swift */,
 				354A41FE299330E0004EA933 /* Cuboid.swift */,
-				35F0400E29A299BA00947124 /* Cylinder.swift */,
-				35F0400029A27DA300947124 /* Quad.swift */,
-				35F03FFA29A27A8E00947124 /* Mesh.swift */,
-				35F0400229A2835600947124 /* STLConvertible.swift */,
-				35F0400629A284AD00947124 /* Vec3+STLConvertible.swift */,
-				35F0400429A2839100947124 /* Mesh+STLConvertible.swift */,
+				352B9B2229A7BE32007A7470 /* Cylinder.swift */,
+				352B9B2329A7BE32007A7470 /* Mesh.swift */,
+				352B9B2429A7BE32007A7470 /* Mesh+STLConvertible.swift */,
+				352B9B2529A7BE32007A7470 /* Quad.swift */,
+				352B9B2629A7BE32007A7470 /* STLConvertible.swift */,
+				354A41FD299330E0004EA933 /* Vec3.swift */,
+				352B9B2729A7BE32007A7470 /* Vec3+STLConvertible.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -398,21 +409,6 @@
 				354A4200299330E0004EA933 /* ViewConstants.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		35F0401A29A2AFF300947124 /* Value */ = {
-			isa = PBXGroup;
-			children = (
-				354A41E5299330E0004EA933 /* Value.swift */,
-				35F0401029A2AEE500947124 /* ValueConvertible.swift */,
-				35F0401429A2AF6400947124 /* Int+ValueConvertible.swift */,
-				35F0401629A2AF8E00947124 /* Double+ValueConvertible.swift */,
-				35F0401829A2AFAB00947124 /* String+ValueConvertible.swift */,
-				35F0401B29A2B05B00947124 /* Bool+ValueConvertible.swift */,
-				35F0401D29A2B20600947124 /* Range+ValueConvertible.swift */,
-				35F0401229A2AF1100947124 /* ClosedRange+ValueConvertible.swift */,
-			);
-			path = Value;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,42 +515,42 @@
 			files = (
 				354A4226299330E0004EA933 /* BinaryExpression+Pretty.swift in Sources */,
 				35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */,
-				35F0400129A27DA300947124 /* Quad.swift in Sources */,
 				354A422E299330E0004EA933 /* PreviewOverlay.swift in Sources */,
-				35F0401929A2AFAB00947124 /* String+ValueConvertible.swift in Sources */,
 				354A4222299330E0004EA933 /* VarBinding+Pretty.swift in Sources */,
 				354A420D299330E0004EA933 /* AxisNode.swift in Sources */,
 				354A4218299330E0004EA933 /* TokenIterator.swift in Sources */,
 				354A420C299330E0004EA933 /* EditorViewModel.swift in Sources */,
+				352B9B2B29A7BE32007A7470 /* Quad.swift in Sources */,
 				35E7582D29A1B657006043C3 /* Pretty.swift in Sources */,
 				354A420E299330E0004EA933 /* MiniSliceApp.swift in Sources */,
+				352B9B1729A7BD2D007A7470 /* Bool+ValueConvertible.swift in Sources */,
 				35E7582929A1AE58006043C3 /* Ranged.swift in Sources */,
 				35E7582B29A1AFEF006043C3 /* SourceRange.swift in Sources */,
-				35F0401729A2AF8E00947124 /* Double+ValueConvertible.swift in Sources */,
-				35F03FFF29A27B8B00947124 /* SCNGeometry+Mesh.swift in Sources */,
+				3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */,
 				354A4215299330E0004EA933 /* Statement.swift in Sources */,
-				35F0400729A284AD00947124 /* Vec3+STLConvertible.swift in Sources */,
-				35F03FFB29A27A8E00947124 /* Mesh.swift in Sources */,
 				35E7582329A12D2B006043C3 /* Box.swift in Sources */,
-				35F0400529A2839100947124 /* Mesh+STLConvertible.swift in Sources */,
 				354A4228299330E0004EA933 /* Expression+Pretty.swift in Sources */,
+				352B9B2929A7BE32007A7470 /* Mesh.swift in Sources */,
 				354A422A299330E0004EA933 /* Cuboid.swift in Sources */,
+				352B9B1A29A7BD2D007A7470 /* Double+ValueConvertible.swift in Sources */,
+				352B9B2C29A7BE32007A7470 /* STLConvertible.swift in Sources */,
 				354A421F299330E0004EA933 /* BuiltIns.swift in Sources */,
 				354A4219299330E0004EA933 /* Tokenizer.swift in Sources */,
-				35F0400F29A299BA00947124 /* Cylinder.swift in Sources */,
 				354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */,
+				352B9B1829A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift in Sources */,
 				354A4211299330E0004EA933 /* Expression.swift in Sources */,
-				354A4212299330E0004EA933 /* DemoRecipe.swift in Sources */,
-				35F0400329A2835600947124 /* STLConvertible.swift in Sources */,
 				35E7582F29A1B6D7006043C3 /* Ranged+Pretty.swift in Sources */,
 				354A4221299330E0004EA933 /* Recipe+Pretty.swift in Sources */,
 				354A4227299330E0004EA933 /* Formatter.swift in Sources */,
 				354A421E299330E0004EA933 /* InterpretError.swift in Sources */,
 				354A422C299330E0004EA933 /* CodeEditor.swift in Sources */,
+				352B9B2A29A7BE32007A7470 /* Mesh+STLConvertible.swift in Sources */,
+				352B9B2129A7BD8F007A7470 /* STLDocument.swift in Sources */,
 				354A420F299330E0004EA933 /* Recipe.swift in Sources */,
+				352B9B2D29A7BE32007A7470 /* Vec3+STLConvertible.swift in Sources */,
+				352B9B1F29A7BD45007A7470 /* DemoRecipe.swift in Sources */,
 				35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */,
 				354A421B299330E0004EA933 /* Token.swift in Sources */,
-				35F0401529A2AF6400947124 /* Int+ValueConvertible.swift in Sources */,
 				354A4224299330E0004EA933 /* ForLoop+Pretty.swift in Sources */,
 				354A4230299330E0004EA933 /* EditorView.swift in Sources */,
 				354A4213299330E0004EA933 /* BinaryExpression.swift in Sources */,
@@ -563,25 +559,27 @@
 				354A4214299330E0004EA933 /* ForLoop.swift in Sources */,
 				35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */,
 				354A4220299330E0004EA933 /* Interpreter.swift in Sources */,
-				35F0401129A2AEE500947124 /* ValueConvertible.swift in Sources */,
 				354A4232299330E0004EA933 /* ContentView.swift in Sources */,
-				35F0401329A2AF1100947124 /* ClosedRange+ValueConvertible.swift in Sources */,
 				354A4229299330E0004EA933 /* Vec3.swift in Sources */,
+				352B9B1629A7BD2D007A7470 /* Range+ValueConvertible.swift in Sources */,
+				35E7583729A1BFED006043C3 /* RecipeDocument.swift in Sources */,
+				352B9B1929A7BD2D007A7470 /* String+ValueConvertible.swift in Sources */,
+				352B9B2829A7BE32007A7470 /* Cylinder.swift in Sources */,
 				354A4210299330E0004EA933 /* VarBinding.swift in Sources */,
 				35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */,
 				354A420A299330E0004EA933 /* Options.swift in Sources */,
 				354A420B299330E0004EA933 /* PreviewViewModel.swift in Sources */,
 				354A421D299330E0004EA933 /* Identified.swift in Sources */,
 				354A422D299330E0004EA933 /* PreviewView.swift in Sources */,
+				352B9B1B29A7BD2D007A7470 /* Int+ValueConvertible.swift in Sources */,
 				354A422F299330E0004EA933 /* OptionsView.swift in Sources */,
 				354A422B299330E0004EA933 /* ViewConstants.swift in Sources */,
 				354A421A299330E0004EA933 /* Parser.swift in Sources */,
+				352B9B1D29A7BD2D007A7470 /* ValueConvertible.swift in Sources */,
 				35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */,
 				354A421C299330E0004EA933 /* Array+Extensions.swift in Sources */,
-				35F0401E29A2B20700947124 /* Range+ValueConvertible.swift in Sources */,
+				352B9B1C29A7BD2D007A7470 /* Value.swift in Sources */,
 				354A4225299330E0004EA933 /* Value+Pretty.swift in Sources */,
-				35F0401C29A2B05B00947124 /* Bool+ValueConvertible.swift in Sources */,
-				354A4216299330E0004EA933 /* Value.swift in Sources */,
 				354A4223299330E0004EA933 /* Statement+Pretty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,11 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35E7581B299FC3A6006043C3 /* ParserTests.swift in Sources */,
-				35F0400D29A294E000947124 /* Vec3Tests.swift in Sources */,
-				35F0402029A2B23C00947124 /* ValueTests.swift in Sources */,
 				35E75821299FF0E7006043C3 /* TokenizerTests.swift in Sources */,
-				35F0400929A28DBC00947124 /* HashableVoid.swift in Sources */,
-				35F0400B29A28FB600947124 /* STLTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +726,7 @@
 				DEVELOPMENT_TEAM = SS8V8UGLY8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiniSlice/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -773,6 +768,7 @@
 				DEVELOPMENT_TEAM = SS8V8UGLY8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiniSlice/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

@@ -1,5 +1,7 @@
 /// A 3D polygon mesh represented as a set of triangular faces.
 struct Mesh: Hashable {
+    static var zero = Self()
+    
     var vertices: [Vec3] = []
     var faces: [Face] = []
     
@@ -37,7 +39,7 @@ struct Mesh: Hashable {
     func union(_ rhs: Self) -> Self {
         Mesh(
             vertices: vertices + rhs.vertices,
-            faces: faces + rhs.faces.map { $0 + faces.count }
+            faces: faces + rhs.faces.map { $0 + vertices.count }
         )
     }
 }
