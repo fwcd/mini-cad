@@ -3,6 +3,10 @@ struct Triangle: Hashable {
     var a: Vec3
     var b: Vec3
     var c: Vec3
+    
+    var normal: Vec3 {
+        (a - b).cross(c - b)
+    }
 }
 
 extension Mesh {

@@ -8,7 +8,7 @@ extension Mesh: STLEncodable {
             solid \(name)
             \(faces.map { face in
             """
-                facet normal \(normal(for: face).asAsciiStl)
+                facet normal \(unitNormal(for: face).asAsciiStl)
                     outer loop
                         vertex \(vertices[face.a].asAsciiStl)
                         vertex \(vertices[face.b].asAsciiStl)
@@ -27,7 +27,7 @@ extension Mesh: STLEncodable {
         data += header
         data.append(unsafeBytesOf: UInt32(faces.count).littleEndian)
         for face in faces {
-            data += normal(for: face).asBinaryStl
+            data += unitNormal(for: face).asBinaryStl
             data += vertices[face.a].asBinaryStl
             data += vertices[face.b].asBinaryStl
             data += vertices[face.c].asBinaryStl
