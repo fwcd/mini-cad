@@ -64,7 +64,7 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         return [.mesh(Mesh(octree: octree, aabb: aabb))]
     },
     "BoundingBox": { args, trailingBlock in
-        let mesh = (args + trailingBlock).compactMap(\.asMesh).disjointUnion
+        let mesh = trailingBlock.compactMap(\.asMesh).disjointUnion
         return [.mesh(Mesh(Cuboid(mesh.boundingBox)))]
     },
     "Translate": { args, trailingBlock in
