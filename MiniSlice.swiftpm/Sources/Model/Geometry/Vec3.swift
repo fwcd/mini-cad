@@ -61,6 +61,22 @@ struct Vec3: CustomStringConvertible, Hashable, AdditiveArithmetic {
     static prefix func -(lhs: Self) -> Self {
         lhs.map { -$0 }
     }
+    
+    static func >=(lhs: Self, rhs: Self) -> Bool {
+        lhs.x >= rhs.x && lhs.y >= rhs.y && lhs.z >= rhs.z
+    }
+    
+    static func <=(lhs: Self, rhs: Self) -> Bool {
+        lhs.x <= rhs.x && lhs.y <= rhs.y && lhs.z <= rhs.z
+    }
+    
+    static func >(lhs: Self, rhs: Self) -> Bool {
+        lhs.x > rhs.x && lhs.y > rhs.y && lhs.z > rhs.z
+    }
+    
+    static func <(lhs: Self, rhs: Self) -> Bool {
+        lhs.x < rhs.x && lhs.y < rhs.y && lhs.z < rhs.z
+    }
 }
 
 extension Vec3 {
