@@ -1,7 +1,7 @@
 import Combine
 import OSLog
 
-private let log = Logger(subsystem: "EditorViewModel", category: "MiniSlice")
+private let log = Logger(subsystem: "MiniSlice", category: "EditorViewModel")
 
 class EditorViewModel: ObservableObject {
     @Published private(set) var meshes: [Mesh] = [] {
