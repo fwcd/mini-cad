@@ -9,12 +9,14 @@ struct OptionsView: View {
     var body: some View {
         VStack {
             Toggle("Orthographic Camera", isOn: $preview.options.usesOrthographicProjection)
+                .help("Uses an orthographic camera projection (instead of the default perspective projection).")
             Button {
                 stlExporterShown = true
             } label: {
                 Image(systemName: "cube.transparent")
                 Text("Export STL")
             }
+            .help("Exports the current model to an STL file.")
             .buttonStyle(.borderedProminent)
             .fileExporter(
                 isPresented: $stlExporterShown,
