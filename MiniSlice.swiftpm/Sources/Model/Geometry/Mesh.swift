@@ -36,7 +36,7 @@ struct Mesh: Hashable {
         }
     }
     
-    func union(_ rhs: Self) -> Self {
+    func disjointUnion(_ rhs: Self) -> Self {
         Mesh(
             vertices: vertices + rhs.vertices,
             faces: faces + rhs.faces.map { $0 + vertices.count }

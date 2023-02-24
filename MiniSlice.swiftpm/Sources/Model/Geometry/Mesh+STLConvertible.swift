@@ -23,6 +23,6 @@ extension Mesh: STLConvertible {
 
 extension Array: STLConvertible where Element == Mesh {
     var asSTL: String {
-        reduce(Mesh()) { $0.union($1) }.asSTL
+        reduce(Mesh()) { $0.disjointUnion($1) }.asSTL
     }
 }
