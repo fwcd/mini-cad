@@ -57,8 +57,8 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         }
     },
     "BoundingBox": { args, trailingBlock in
-        let meshes = (args + trailingBlock).compactMap(\.asMesh)
-        return meshes.map { .mesh(Mesh(Cuboid($0.boundingBox))) }
+        let mesh = (args + trailingBlock).compactMap(\.asMesh).disjointUnion
+        return [.mesh(Mesh(Cuboid(mesh.boundingBox)))]
     },
     "Translate": { args, trailingBlock in
         let offset = parseVec3(from: args)
