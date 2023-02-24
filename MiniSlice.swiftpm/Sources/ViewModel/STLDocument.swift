@@ -11,7 +11,7 @@ struct STLDocument {
 
 extension STLDocument {
     init<T>(_ convertible: T) where T: STLConvertible {
-        self.init(raw: convertible.asSTL)
+        self.init(raw: convertible.asAsciiStl)
     }
 }
 

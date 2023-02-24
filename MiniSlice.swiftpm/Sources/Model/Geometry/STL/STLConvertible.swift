@@ -1,3 +1,3 @@
 protocol STLConvertible {
-    var asSTL: String { get }
+    var asAsciiStl: String { get }
 }

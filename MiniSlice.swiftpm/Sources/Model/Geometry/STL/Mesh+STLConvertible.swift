@@ -1,5 +1,5 @@
 extension Mesh: STLConvertible {
-    var asSTL: String {
+    var asAsciiStl: String {
         let name = "mesh"
         // TODO: Compute proper normals
         return
@@ -7,11 +7,11 @@ extension Mesh: STLConvertible {
             solid \(name)
             \(faces.map { face in
             """
-                facet normal \((vertices[face.a] - vertices[face.b]).cross(vertices[face.c] - vertices[face.b]).normalized.asSTL)
+                facet normal \((vertices[face.a] - vertices[face.b]).cross(vertices[face.c] - vertices[face.b]).normalized.asAsciiStl)
                     outer loop
-                        vertex \(vertices[face.a].asSTL)
-                        vertex \(vertices[face.b].asSTL)
-                        vertex \(vertices[face.c].asSTL)
+                        vertex \(vertices[face.a].asAsciiStl)
+                        vertex \(vertices[face.b].asAsciiStl)
+                        vertex \(vertices[face.c].asAsciiStl)
                     endloop
                 endfacet
             """
@@ -22,7 +22,7 @@ extension Mesh: STLConvertible {
 }
 
 extension Array: STLConvertible where Element == Mesh {
-    var asSTL: String {
-        reduce(Mesh()) { $0.disjointUnion($1) }.asSTL
+    var asAsciiStl: String {
+        reduce(Mesh()) { $0.disjointUnion($1) }.asAsciiStl
     }
 }

@@ -1,5 +1,5 @@
 extension Vec3: STLConvertible {
-    var asSTL: String {
+    var asAsciiStl: String {
         "\(x) \(y) \(z)"
     }
 }
