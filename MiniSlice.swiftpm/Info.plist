@@ -49,7 +49,7 @@
 				</array>
 				<key>public.mime-type</key>
 				<array>
-					<string>text/plain</string>
+					<string>model/stl</string>
 				</array>
 			</dict>
 		</dict>
