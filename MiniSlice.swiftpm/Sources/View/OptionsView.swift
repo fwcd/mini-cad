@@ -14,10 +14,11 @@ struct OptionsView: View {
                 stlExporterShown = true
             } label: {
                 Image(systemName: "cube.transparent")
-                Text("Export STL")
+                Text("Export STL (⌘ E)")
             }
             .help("Exports the current model to an STL file.")
             .buttonStyle(.borderedProminent)
+            .keyboardShortcut("e", modifiers: .command)
             .fileExporter(
                 isPresented: $stlExporterShown,
                 document: STLDocument(editor.meshes),
