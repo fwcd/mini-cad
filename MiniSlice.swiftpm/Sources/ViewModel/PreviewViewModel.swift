@@ -3,8 +3,14 @@ import SceneKit
 
 class PreviewViewModel: ObservableObject {
     @Published private(set) var scene: SCNScene
-    @Published var options: Options = .init()
+    @Published var options: Options = .init() {
+        didSet {
+            updateAxes()
+        }
+    }
     
+    private var axesVisible: Bool = false
+    private var axesNode: SCNNode
     private var meshesNode: SCNNode
     
     init() {
@@ -22,6 +28,9 @@ class PreviewViewModel: ObservableObject {
         
         meshesNode = SCNNode()
         root.addChildNode(meshesNode)
+        
+        axesNode = SCNNode()
+        root.addChildNode(axesNode)
         
         let camera = SCNCamera()
         camera.usesOrthographicProjection = options.usesOrthographicProjection
@@ -41,9 +50,22 @@ class PreviewViewModel: ObservableObject {
         dirLightNode.eulerAngles.y = .pi / 8
         cameraNode.addChildNode(dirLightNode)
         
-        root.addChildNode(AxisNode(direction: .init(x: 1)))
-        root.addChildNode(AxisNode(direction: .init(y: 1)))
-        root.addChildNode(AxisNode(direction: .init(z: 1)))
+        updateAxes()
+    }
+    
+    func updateAxes() {
+        guard axesVisible != options.showAxes else { return }
+        axesVisible = options.showAxes
+        
+        axesNode.enumerateChildNodes { (node, _) in
+            node.removeFromParentNode()
+        }
+        
+        if options.showAxes {
+            axesNode.addChildNode(AxisNode(direction: .init(x: 1)))
+            axesNode.addChildNode(AxisNode(direction: .init(y: 1)))
+            axesNode.addChildNode(AxisNode(direction: .init(z: 1)))
+        }
     }
     
     func update(meshes: [Mesh]) {
