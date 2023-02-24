@@ -201,6 +201,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3503AF0D29A8DE8100AF1188 /* STL */ = {
+			isa = PBXGroup;
+			children = (
+				352B9B2629A7BE32007A7470 /* STLConvertible.swift */,
+				352B9B2429A7BE32007A7470 /* Mesh+STLConvertible.swift */,
+				352B9B2729A7BE32007A7470 /* Vec3+STLConvertible.swift */,
+			);
+			path = STL;
+			sourceTree = "<group>";
+		};
 		352B9B0D29A7BD2D007A7470 /* Value */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,14 +407,12 @@
 		354A41FC299330E0004EA933 /* Geometry */ = {
 			isa = PBXGroup;
 			children = (
+				3503AF0D29A8DE8100AF1188 /* STL */,
 				354A41FE299330E0004EA933 /* Cuboid.swift */,
 				352B9B2229A7BE32007A7470 /* Cylinder.swift */,
 				352B9B2329A7BE32007A7470 /* Mesh.swift */,
-				352B9B2429A7BE32007A7470 /* Mesh+STLConvertible.swift */,
 				352B9B2529A7BE32007A7470 /* Quad.swift */,
-				352B9B2629A7BE32007A7470 /* STLConvertible.swift */,
 				354A41FD299330E0004EA933 /* Vec3.swift */,
-				352B9B2729A7BE32007A7470 /* Vec3+STLConvertible.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
