@@ -9,7 +9,7 @@ extension Mesh: STLConvertible {
             solid \(name)
             \(faces.map { face in
             """
-                facet normal \(normal(for: face))
+                facet normal \(normal(for: face).asAsciiStl)
                     outer loop
                         vertex \(vertices[face.a].asAsciiStl)
                         vertex \(vertices[face.b].asAsciiStl)
