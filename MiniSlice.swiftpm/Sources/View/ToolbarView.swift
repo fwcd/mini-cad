@@ -43,7 +43,7 @@ struct ToolbarView: View {
                 isPresented: $saveExporterShown,
                 document: RecipeDocument(raw: editor.rawRecipe),
                 contentType: .recipeDocument,
-                defaultFilename: "Recipe"
+                defaultFilename: "Model.recipe"
             ) { _ in }
             
             Button {
@@ -58,7 +58,7 @@ struct ToolbarView: View {
                 isPresented: $stlExporterShown,
                 document: STLDocument(editor.meshes),
                 contentType: .stlDocument,
-                defaultFilename: "Model"
+                defaultFilename: "Model.stl"
             ) { _ in }
         }
         .buttonStyle(.borderedProminent)
