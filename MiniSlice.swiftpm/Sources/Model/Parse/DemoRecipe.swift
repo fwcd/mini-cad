@@ -15,6 +15,12 @@ let rawDemoRecipe: String = """
       }
     }
     
+    // Add suzanne
+    
+    Translate(0, 5, 0) {
+      Suzanne()
+    }
+    
     // Generate pillars
     
     let n = 8
