@@ -12,6 +12,8 @@
 		3503AF1729A9125900AF1188 /* STLDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1629A9125900AF1188 /* STLDecodeError.swift */; };
 		3503AF1929A913EF00AF1188 /* STLDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1829A913EF00AF1188 /* STLDecodable.swift */; };
 		3503AF1B29A9197000AF1188 /* Suzanne.stl in Resources */ = {isa = PBXBuildFile; fileRef = 3503AF1A29A9182600AF1188 /* Suzanne.stl */; };
+		3503AF1D29A91DD900AF1188 /* TriangleOctree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1C29A91DD900AF1188 /* TriangleOctree.swift */; };
+		3503AF1F29A91E4E00AF1188 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1E29A91E4E00AF1188 /* Triangle.swift */; };
 		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
 		3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */; };
 		3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18929A7DCD6009FDEA0 /* STLTests.swift */; };
@@ -109,6 +111,8 @@
 		3503AF1629A9125900AF1188 /* STLDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLDecodeError.swift; sourceTree = "<group>"; };
 		3503AF1829A913EF00AF1188 /* STLDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLDecodable.swift; sourceTree = "<group>"; };
 		3503AF1A29A9182600AF1188 /* Suzanne.stl */ = {isa = PBXFileReference; lastKnownFileType = file; path = Suzanne.stl; sourceTree = "<group>"; };
+		3503AF1C29A91DD900AF1188 /* TriangleOctree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleOctree.swift; sourceTree = "<group>"; };
+		3503AF1E29A91E4E00AF1188 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
 		3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
 		3511D18929A7DCD6009FDEA0 /* STLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 		3503AF0F29A8DEB900AF1188 /* CSG */ = {
 			isa = PBXGroup;
 			children = (
+				3503AF1C29A91DD900AF1188 /* TriangleOctree.swift */,
 				3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */,
 			);
 			path = CSG;
@@ -435,6 +440,7 @@
 				352B9B2229A7BE32007A7470 /* Cylinder.swift */,
 				352B9B2329A7BE32007A7470 /* Mesh.swift */,
 				352B9B2529A7BE32007A7470 /* Quad.swift */,
+				3503AF1E29A91E4E00AF1188 /* Triangle.swift */,
 				354A41FD299330E0004EA933 /* Vec3.swift */,
 			);
 			path = Geometry;
@@ -603,6 +609,8 @@
 				352B9B1F29A7BD45007A7470 /* DemoRecipe.swift in Sources */,
 				35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */,
 				354A421B299330E0004EA933 /* Token.swift in Sources */,
+				3503AF1D29A91DD900AF1188 /* TriangleOctree.swift in Sources */,
+				3503AF1F29A91E4E00AF1188 /* Triangle.swift in Sources */,
 				354A4224299330E0004EA933 /* ForLoop+Pretty.swift in Sources */,
 				354A4230299330E0004EA933 /* EditorView.swift in Sources */,
 				354A4213299330E0004EA933 /* BinaryExpression.swift in Sources */,
