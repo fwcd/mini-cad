@@ -13,20 +13,6 @@ struct EditorView: View {
                     ErrorView(error: error, background: Color(red: 0.4, green: 0, blue: 0.4))
                 }
             }
-            // FIXME: Remove (or prettify) the following debug views
-            HStack(alignment: .top, spacing: 20) {
-                ScrollView(.vertical) {
-                    Text(String(describing: editor.parsedRecipe))
-                }
-                Group {
-                    List(editor.meshes.map { Identified(value: $0) }) {
-                        Text(String(describing: $0.value))
-                    }
-                }
-                .frame(maxWidth: .infinity)
-            }
-            .frame(maxHeight: 200)
-            .padding(10)
         }
     }
 }
