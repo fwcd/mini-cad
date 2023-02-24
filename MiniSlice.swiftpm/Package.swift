@@ -19,7 +19,7 @@ let package = Package(
             bundleIdentifier: "dev.fwcd.MiniSlice",
             displayVersion: "1.0",
             bundleVersion: "1",
-            appIcon: .placeholder(icon: .sandwich),
+            appIcon: .asset("AppIcon"),
             accentColor: .presetColor(.orange),
             supportedDeviceFamilies: [
                 .pad,

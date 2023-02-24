@@ -30,7 +30,7 @@
 		352B9B2B29A7BE32007A7470 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2529A7BE32007A7470 /* Quad.swift */; };
 		352B9B2C29A7BE32007A7470 /* STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2629A7BE32007A7470 /* STLConvertible.swift */; };
 		352B9B2D29A7BE32007A7470 /* Vec3+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2729A7BE32007A7470 /* Vec3+STLConvertible.swift */; };
-		354A414629932FA3004EA933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354A414529932FA3004EA933 /* Assets.xcassets */; };
+		3540FEAB29A84300005B2428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3540FEAA29A84300005B2428 /* Assets.xcassets */; };
 		354A414A29932FA3004EA933 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354A414929932FA3004EA933 /* Preview Assets.xcassets */; };
 		354A4209299330E0004EA933 /* Preview.scn in Resources */ = {isa = PBXBuildFile; fileRef = 354A41D3299330E0004EA933 /* Preview.scn */; };
 		354A420A299330E0004EA933 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41D6299330E0004EA933 /* Options.swift */; };
@@ -122,8 +122,8 @@
 		352B9B2529A7BE32007A7470 /* Quad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		352B9B2629A7BE32007A7470 /* STLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLConvertible.swift; sourceTree = "<group>"; };
 		352B9B2729A7BE32007A7470 /* Vec3+STLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Vec3+STLConvertible.swift"; sourceTree = "<group>"; };
+		3540FEAA29A84300005B2428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../MiniSlice.swiftpm/Assets.xcassets; sourceTree = "<group>"; };
 		354A413E29932FA2004EA933 /* MiniSlice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSlice.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		354A414529932FA3004EA933 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		354A414729932FA3004EA933 /* MiniSlice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniSlice.entitlements; sourceTree = "<group>"; };
 		354A414929932FA3004EA933 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		354A414F29932FA3004EA933 /* MiniSliceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniSliceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,9 +238,9 @@
 			isa = PBXGroup;
 			children = (
 				35EC358E29A83CB500D31DA8 /* Info.plist */,
+				3540FEAA29A84300005B2428 /* Assets.xcassets */,
 				354A41D2299330E0004EA933 /* Resources */,
 				354A41D4299330E0004EA933 /* Sources */,
-				354A414529932FA3004EA933 /* Assets.xcassets */,
 				354A414729932FA3004EA933 /* MiniSlice.entitlements */,
 				354A414829932FA3004EA933 /* Preview Content */,
 			);
@@ -511,8 +511,8 @@
 			files = (
 				35EC358F29A83CB500D31DA8 /* Info.plist in Resources */,
 				354A414A29932FA3004EA933 /* Preview Assets.xcassets in Resources */,
-				354A414629932FA3004EA933 /* Assets.xcassets in Resources */,
 				354A4209299330E0004EA933 /* Preview.scn in Resources */,
+				3540FEAB29A84300005B2428 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

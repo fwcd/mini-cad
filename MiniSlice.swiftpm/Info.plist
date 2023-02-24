@@ -10,16 +10,16 @@
 				<string>public.text</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>MiniSlice Source File</string>
+			<string>MiniSlice Recipe (Source File)</string>
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>dev.fwcd.MiniSlice.Recipe</string>
+			<string>dev.fwcd.MiniSlice.recipe</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>minislice</string>
+					<string>recipe</string>
 				</array>
 				<key>public.mime-type</key>
 				<array>
