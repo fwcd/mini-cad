@@ -15,6 +15,7 @@
 		3503AF1D29A91DD900AF1188 /* TriangleOctree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1C29A91DD900AF1188 /* TriangleOctree.swift */; };
 		3503AF1F29A91E4E00AF1188 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1E29A91E4E00AF1188 /* Triangle.swift */; };
 		3503AF2129A91F0500AF1188 /* Mesh+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */; };
+		3503AF2329A9209C00AF1188 /* AxisAlignedBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2229A9209C00AF1188 /* AxisAlignedBoundingBox.swift */; };
 		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
 		3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */; };
 		3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18929A7DCD6009FDEA0 /* STLTests.swift */; };
@@ -115,6 +116,7 @@
 		3503AF1C29A91DD900AF1188 /* TriangleOctree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleOctree.swift; sourceTree = "<group>"; };
 		3503AF1E29A91E4E00AF1188 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Sequence.swift"; sourceTree = "<group>"; };
+		3503AF2229A9209C00AF1188 /* AxisAlignedBoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisAlignedBoundingBox.swift; sourceTree = "<group>"; };
 		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
 		3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
 		3511D18929A7DCD6009FDEA0 /* STLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		3503AF0F29A8DEB900AF1188 /* CSG */ = {
 			isa = PBXGroup;
 			children = (
+				3503AF2229A9209C00AF1188 /* AxisAlignedBoundingBox.swift */,
 				3503AF1C29A91DD900AF1188 /* TriangleOctree.swift */,
 				3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */,
 			);
@@ -640,6 +643,7 @@
 				354A422F299330E0004EA933 /* OptionsView.swift in Sources */,
 				354A422B299330E0004EA933 /* ViewConstants.swift in Sources */,
 				354A421A299330E0004EA933 /* Parser.swift in Sources */,
+				3503AF2329A9209C00AF1188 /* AxisAlignedBoundingBox.swift in Sources */,
 				35EC358D29A837B700D31DA8 /* ToolbarView.swift in Sources */,
 				352B9B1D29A7BD2D007A7470 /* ValueConvertible.swift in Sources */,
 				35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */,
