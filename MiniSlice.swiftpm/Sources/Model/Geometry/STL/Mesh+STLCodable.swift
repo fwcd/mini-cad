@@ -40,7 +40,7 @@ extension Mesh: STLEncodable {
 extension Mesh: STLDecodable {
     init(binaryStl data: Data) throws {
         let faceBytes = 50
-        let vecBytes = 4
+        let vecBytes = 12
         let attributeBytes = 2
         
         var data = data.dropFirst(80)
@@ -81,6 +81,8 @@ extension Mesh: STLDecodable {
             let cIndex = append(vertex: c)
             faces.append(.init(a: aIndex, b: bIndex, c: cIndex))
         }
+        
+        assert(data.isEmpty)
         
         self.init(vertices: vertices, faces: faces)
     }
