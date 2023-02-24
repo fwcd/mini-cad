@@ -14,11 +14,11 @@ extension Vec3: STLEncodable {
 }
 
 extension Vec3: STLDecodable {
-    init(binaryStl: Data) throws {
-        binaryStl.withUnsafeBytes { ptr in
-            x = Double(Float32(bitPattern: UInt32(littleEndian: ptr.load(as: UInt32.self))))
-            y = Double(Float32(bitPattern: UInt32(littleEndian: ptr.load(as: UInt32.self).advanced(by: 1))))
-            z = Double(Float32(bitPattern: UInt32(littleEndian: ptr.load(as: UInt32.self).advanced(by: 2))))
+    init(binaryStl data: Data) throws {
+        data.withUnsafeBytes { ptr in
+            x = Double(Float32(bitPattern: UInt32(littleEndian: ptr.loadUnaligned(as: UInt32.self))))
+            y = Double(Float32(bitPattern: UInt32(littleEndian: ptr.loadUnaligned(fromByteOffset: 4, as: UInt32.self))))
+            z = Double(Float32(bitPattern: UInt32(littleEndian: ptr.loadUnaligned(fromByteOffset: 8, as: UInt32.self))))
         }
     }
 }

@@ -11,6 +11,7 @@
 		3503AF1529A90AAB00AF1188 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1429A90AAB00AF1188 /* Data+Extensions.swift */; };
 		3503AF1729A9125900AF1188 /* STLDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1629A9125900AF1188 /* STLDecodeError.swift */; };
 		3503AF1929A913EF00AF1188 /* STLDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1829A913EF00AF1188 /* STLDecodable.swift */; };
+		3503AF1B29A9197000AF1188 /* Suzanne.stl in Resources */ = {isa = PBXBuildFile; fileRef = 3503AF1A29A9182600AF1188 /* Suzanne.stl */; };
 		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
 		3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */; };
 		3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18929A7DCD6009FDEA0 /* STLTests.swift */; };
@@ -107,6 +108,7 @@
 		3503AF1429A90AAB00AF1188 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		3503AF1629A9125900AF1188 /* STLDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLDecodeError.swift; sourceTree = "<group>"; };
 		3503AF1829A913EF00AF1188 /* STLDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLDecodable.swift; sourceTree = "<group>"; };
+		3503AF1A29A9182600AF1188 /* Suzanne.stl */ = {isa = PBXFileReference; lastKnownFileType = file; path = Suzanne.stl; sourceTree = "<group>"; };
 		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
 		3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
 		3511D18929A7DCD6009FDEA0 /* STLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				354A41D3299330E0004EA933 /* Preview.scn */,
+				3503AF1A29A9182600AF1188 /* Suzanne.stl */,
 			);
 			name = Resources;
 			path = ../../MiniSlice.swiftpm/Resources;
@@ -537,6 +540,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3503AF1B29A9197000AF1188 /* Suzanne.stl in Resources */,
 				35EC358F29A83CB500D31DA8 /* Info.plist in Resources */,
 				354A414A29932FA3004EA933 /* Preview Assets.xcassets in Resources */,
 				354A4209299330E0004EA933 /* Preview.scn in Resources */,

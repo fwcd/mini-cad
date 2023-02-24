@@ -1,4 +1,7 @@
 import Foundation
+import OSLog
+
+private let log = Logger(subsystem: "MiniSlice", category: "BuiltIns")
 
 /// The built-in constants
 let builtInConstants: [String: [Value]] = [
@@ -36,6 +39,23 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         let sides = args[safely: 2]?.asInt ?? 8
         return [.mesh(Mesh(Cylinder(radius: radius, height: height, sides: sides)))]
     },
+    "Suzanne": { _, _ in
+        guard let url = Bundle.main.url(forResource: "Suzanne", withExtension: "stl") else {
+            log.error("Could not fetch bundle URL for suzanne")
+            return []
+        }
+        guard let data = try? Data(contentsOf: url) else {
+            log.error("Could not decode suzanne STL data")
+            return []
+        }
+        do {
+            let mesh = try Mesh(binaryStl: data)
+            return [.mesh(mesh)]
+        } catch {
+            log.error("Could not decode suzanne STL mesh: \(error)")
+            return []
+        }
+    },
     "Translate": { args, trailingBlock in
         let offset = parseVec3(from: args)
         let meshes = trailingBlock.compactMap(\.asMesh)
@@ -70,7 +90,7 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
     "sin": unaryFloatOperator(name: "sin", sin),
     "cos": unaryFloatOperator(name: "cos", cos),
     "exp": unaryFloatOperator(name: "exp", exp),
-    "log": unaryFloatOperator(name: "log", log),
+    "log": unaryFloatOperator(name: "log", Foundation.log),
     "sqrt": unaryFloatOperator(name: "sqrt", sqrt),
 ]
 

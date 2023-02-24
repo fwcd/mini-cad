@@ -37,6 +37,55 @@ extension Mesh: STLEncodable {
     }
 }
 
+extension Mesh: STLDecodable {
+    init(binaryStl data: Data) throws {
+        let faceBytes = 50
+        let vecBytes = 4
+        let attributeBytes = 2
+        
+        var data = data.dropFirst(80)
+        let count = data.withUnsafeBytes { ptr in
+            Int(UInt32(littleEndian: ptr.loadUnaligned(as: UInt32.self)))
+        }
+        data = data.dropFirst(4)
+        guard data.count == count * faceBytes else {
+            throw STLDecodeError.countDoesNotMatchSize
+        }
+        
+        var vertices = [Vec3]()
+        var vertexMapping = [Vec3: Int]()
+        var faces = [Face]()
+        
+        func append(vertex: Vec3) -> Int {
+            if let i = vertexMapping[vertex] {
+                return i
+            } else {
+                let i = vertices.count
+                vertices.append(vertex)
+                vertexMapping[vertex] = i
+                return i
+            }
+        }
+        
+        for _ in 0..<count {
+            _ = try Vec3(binaryStl: data) // We ignore the normal for now
+            data = data.dropFirst(vecBytes)
+            let a = try Vec3(binaryStl: data)
+            data = data.dropFirst(vecBytes)
+            let b = try Vec3(binaryStl: data)
+            data = data.dropFirst(vecBytes)
+            let c = try Vec3(binaryStl: data)
+            data = data.dropFirst(vecBytes + attributeBytes)
+            let aIndex = append(vertex: a)
+            let bIndex = append(vertex: b)
+            let cIndex = append(vertex: c)
+            faces.append(.init(a: aIndex, b: bIndex, c: cIndex))
+        }
+        
+        self.init(vertices: vertices, faces: faces)
+    }
+}
+
 extension Array: STLEncodable where Element == Mesh {
     var asAsciiStl: String {
         reduce(Mesh()) { $0.disjointUnion($1) }.asAsciiStl

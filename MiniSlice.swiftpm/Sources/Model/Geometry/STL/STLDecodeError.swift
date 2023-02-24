@@ -1,3 +1,3 @@
 enum STLDecodeError: Error {
-    case unexpectedEOF
+    case countDoesNotMatchSize
 }
