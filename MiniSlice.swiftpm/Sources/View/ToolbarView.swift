@@ -6,6 +6,7 @@ private let log = Logger(subsystem: "MiniSlice", category: "ToolbarView")
 struct ToolbarView: View {
     @EnvironmentObject private var editor: EditorViewModel
     @State private var openImporterShown: Bool = false
+    @State private var saveExporterShown: Bool = false
     @State private var stlExporterShown: Bool = false
     
     var body: some View {
@@ -31,6 +32,21 @@ struct ToolbarView: View {
             }
             
             Button {
+                saveExporterShown = true
+            } label: {
+                Image(systemName: "arrow.down.to.line")
+                Text("Save (⌘ S)")
+            }
+            .help("Saves to a source file (recipe)")
+            .keyboardShortcut("s", modifiers: .command)
+            .fileExporter(
+                isPresented: $saveExporterShown,
+                document: RecipeDocument(raw: editor.rawRecipe),
+                contentType: .recipeDocument,
+                defaultFilename: "Recipe"
+            ) { _ in }
+            
+            Button {
                 stlExporterShown = true
             } label: {
                 Image(systemName: "cube.transparent")
@@ -42,7 +58,7 @@ struct ToolbarView: View {
                 isPresented: $stlExporterShown,
                 document: STLDocument(editor.meshes),
                 contentType: .stlDocument,
-                defaultFilename: "Model.stl"
+                defaultFilename: "Model"
             ) { _ in }
         }
         .buttonStyle(.borderedProminent)
