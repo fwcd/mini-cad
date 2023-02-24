@@ -27,6 +27,9 @@
 		3503AF3629A9448E00AF1188 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3529A9448E00AF1188 /* Line.swift */; };
 		3503AF3829A944D100AF1188 /* Plane+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3729A944D100AF1188 /* Plane+Line.swift */; };
 		3503AF3A29A9482000AF1188 /* PlaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3929A9482000AF1188 /* PlaneTests.swift */; };
+		3503AF3E29A94C9B00AF1188 /* Plane+Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3D29A94C9B00AF1188 /* Plane+Triangle.swift */; };
+		3503AF4029A94CB000AF1188 /* Line+Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3F29A94CB000AF1188 /* Line+Plane.swift */; };
+		3503AF4229A94CCD00AF1188 /* Triangle+Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF4129A94CCD00AF1188 /* Triangle+Plane.swift */; };
 		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
 		3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */; };
 		3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18929A7DCD6009FDEA0 /* STLTests.swift */; };
@@ -139,6 +142,9 @@
 		3503AF3529A9448E00AF1188 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		3503AF3729A944D100AF1188 /* Plane+Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plane+Line.swift"; sourceTree = "<group>"; };
 		3503AF3929A9482000AF1188 /* PlaneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneTests.swift; sourceTree = "<group>"; };
+		3503AF3D29A94C9B00AF1188 /* Plane+Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plane+Triangle.swift"; sourceTree = "<group>"; };
+		3503AF3F29A94CB000AF1188 /* Line+Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Line+Plane.swift"; sourceTree = "<group>"; };
+		3503AF4129A94CCD00AF1188 /* Triangle+Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Triangle+Plane.swift"; sourceTree = "<group>"; };
 		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
 		3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
 		3511D18929A7DCD6009FDEA0 /* STLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
@@ -484,9 +490,12 @@
 				352B9B2329A7BE32007A7470 /* Mesh.swift */,
 				352B9B2529A7BE32007A7470 /* Quad.swift */,
 				3503AF1E29A91E4E00AF1188 /* Triangle.swift */,
+				3503AF4129A94CCD00AF1188 /* Triangle+Plane.swift */,
 				3503AF3329A9441E00AF1188 /* Plane.swift */,
 				3503AF3729A944D100AF1188 /* Plane+Line.swift */,
+				3503AF3D29A94C9B00AF1188 /* Plane+Triangle.swift */,
 				3503AF3529A9448E00AF1188 /* Line.swift */,
+				3503AF3F29A94CB000AF1188 /* Line+Plane.swift */,
 				3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */,
 				354A41FD299330E0004EA933 /* Vec3.swift */,
 			);
@@ -623,6 +632,7 @@
 				354A4222299330E0004EA933 /* VarBinding+Pretty.swift in Sources */,
 				354A420D299330E0004EA933 /* AxisNode.swift in Sources */,
 				354A4218299330E0004EA933 /* TokenIterator.swift in Sources */,
+				3503AF3E29A94C9B00AF1188 /* Plane+Triangle.swift in Sources */,
 				354A420C299330E0004EA933 /* EditorViewModel.swift in Sources */,
 				352B9B2B29A7BE32007A7470 /* Quad.swift in Sources */,
 				35E7582D29A1B657006043C3 /* Pretty.swift in Sources */,
@@ -684,7 +694,9 @@
 				35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */,
 				354A420A299330E0004EA933 /* Options.swift in Sources */,
 				354A420B299330E0004EA933 /* PreviewViewModel.swift in Sources */,
+				3503AF4029A94CB000AF1188 /* Line+Plane.swift in Sources */,
 				354A421D299330E0004EA933 /* Identified.swift in Sources */,
+				3503AF4229A94CCD00AF1188 /* Triangle+Plane.swift in Sources */,
 				354A422D299330E0004EA933 /* PreviewView.swift in Sources */,
 				352B9B1B29A7BD2D007A7470 /* Int+ValueConvertible.swift in Sources */,
 				354A422F299330E0004EA933 /* OptionsView.swift in Sources */,
