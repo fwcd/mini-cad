@@ -1,8 +1,11 @@
-//
-//  AlignedAlignedBoundingBox+Cuboid.swift
-//  MiniSlice
-//
-//  Created by Fredrik on 24.02.23.
-//
+extension AxisAlignedBoundingBox {
+    init(_ cuboid: Cuboid) {
+        self.init(corner: cuboid.center - (cuboid.size / 2), size: cuboid.size)
+    }
+}
 
-import Foundation
+extension Cuboid {
+    init(_ aabb: AxisAlignedBoundingBox) {
+        self.init(center: aabb.center, size: aabb.size)
+    }
+}
