@@ -37,12 +37,4 @@ struct AxisAlignedBoundingBox: Hashable {
             AxisAlignedBoundingBox(corner: corner + Vec3(x: r.x, y: r.y, z: r.z), size: radius),
         ]
     }
-    
-    func fullyContains(_ triangle: Triangle) -> Bool {
-        contains(triangle.a) && contains(triangle.b) && contains(triangle.c)
-    }
-    
-    func contains(_ point: Vec3) -> Bool {
-        point >= bottomLeft && point < topRight
-    }
 }
