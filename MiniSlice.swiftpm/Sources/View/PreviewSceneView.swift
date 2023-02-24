@@ -30,6 +30,12 @@ struct PreviewSceneView: UIViewRepresentable {
         } else {
             uiView.debugOptions.remove(.renderAsWireframe)
         }
+        
+        if viewModel.options.showBoundingBoxes {
+            uiView.debugOptions.insert(.showBoundingBoxes)
+        } else {
+            uiView.debugOptions.remove(.showBoundingBoxes)
+        }
     }
     
     func makeCoordinator() -> Coordinator {

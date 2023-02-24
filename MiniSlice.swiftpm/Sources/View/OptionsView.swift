@@ -10,6 +10,8 @@ struct OptionsView: View {
                 .help("Uses an orthographic camera projection (instead of the default perspective projection).")
             Toggle("Show Axes", isOn: $preview.options.showAxes)
                 .help("Display the coordinate axes")
+            Toggle("Show Bounding Boxes", isOn: $preview.options.showBoundingBoxes)
+                .help("Render bounding boxes of meshes")
             Toggle("Render as Wireframes", isOn: $preview.options.renderAsWireframes)
                 .help("Renders meshes as wireframes rather than as solids")
         }
