@@ -17,7 +17,7 @@
 		3503AF2129A91F0500AF1188 /* Mesh+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */; };
 		3503AF2329A9209C00AF1188 /* AxisAlignedBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2229A9209C00AF1188 /* AxisAlignedBoundingBox.swift */; };
 		3503AF2529A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2429A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift */; };
-		3503AF2829A9277C00AF1188 /* AxisAlignedBoundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2729A9277B00AF1188 /* AxisAlignedBoundable.swift */; };
+		3503AF2829A9277C00AF1188 /* AxisAlignedContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2729A9277B00AF1188 /* AxisAlignedContainable.swift */; };
 		3503AF2A29A927C900AF1188 /* Triangle+AxisAlignedBoundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2929A927C900AF1188 /* Triangle+AxisAlignedBoundable.swift */; };
 		3503AF2C29A927EE00AF1188 /* Vec3+AxisAlignedBoundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2B29A927EE00AF1188 /* Vec3+AxisAlignedBoundable.swift */; };
 		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
@@ -122,7 +122,7 @@
 		3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Sequence.swift"; sourceTree = "<group>"; };
 		3503AF2229A9209C00AF1188 /* AxisAlignedBoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisAlignedBoundingBox.swift; sourceTree = "<group>"; };
 		3503AF2429A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisAlignedBoundingBoxTests.swift; sourceTree = "<group>"; };
-		3503AF2729A9277B00AF1188 /* AxisAlignedBoundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisAlignedBoundable.swift; sourceTree = "<group>"; };
+		3503AF2729A9277B00AF1188 /* AxisAlignedContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisAlignedContainable.swift; sourceTree = "<group>"; };
 		3503AF2929A927C900AF1188 /* Triangle+AxisAlignedBoundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Triangle+AxisAlignedBoundable.swift"; sourceTree = "<group>"; };
 		3503AF2B29A927EE00AF1188 /* Vec3+AxisAlignedBoundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vec3+AxisAlignedBoundable.swift"; sourceTree = "<group>"; };
 		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				3503AF2229A9209C00AF1188 /* AxisAlignedBoundingBox.swift */,
-				3503AF2729A9277B00AF1188 /* AxisAlignedBoundable.swift */,
+				3503AF2729A9277B00AF1188 /* AxisAlignedContainable.swift */,
 				3503AF2B29A927EE00AF1188 /* Vec3+AxisAlignedBoundable.swift */,
 				3503AF2929A927C900AF1188 /* Triangle+AxisAlignedBoundable.swift */,
 				3503AF1C29A91DD900AF1188 /* Octree.swift */,
@@ -642,7 +642,7 @@
 				354A4213299330E0004EA933 /* BinaryExpression.swift in Sources */,
 				354A4217299330E0004EA933 /* ParseError.swift in Sources */,
 				354A4233299330E0004EA933 /* ErrorView.swift in Sources */,
-				3503AF2829A9277C00AF1188 /* AxisAlignedBoundable.swift in Sources */,
+				3503AF2829A9277C00AF1188 /* AxisAlignedContainable.swift in Sources */,
 				354A4214299330E0004EA933 /* ForLoop.swift in Sources */,
 				35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */,
 				354A4220299330E0004EA933 /* Interpreter.swift in Sources */,

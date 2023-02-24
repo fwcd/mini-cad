@@ -21,7 +21,7 @@ struct Octree<Value> {
     }
 }
 
-extension Octree.Node where Value: AxisAlignedBoundable {
+extension Octree.Node where Value: AxisAlignedContainable {
     mutating func insert(value: Value, aabb: AxisAlignedBoundingBox, remainingDepth: Int) {
         if remainingDepth <= 0 {
             let octants = aabb.octants
@@ -36,7 +36,7 @@ extension Octree.Node where Value: AxisAlignedBoundable {
     }
 }
 
-extension Octree where Value: AxisAlignedBoundable {
+extension Octree where Value: AxisAlignedContainable {
     mutating func insert(value: Value, aabb: AxisAlignedBoundingBox, maxDepth: Int) {
         root.insert(value: value, aabb: aabb, remainingDepth: maxDepth)
     }
