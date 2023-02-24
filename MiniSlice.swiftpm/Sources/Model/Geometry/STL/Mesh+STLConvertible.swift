@@ -3,7 +3,6 @@ import Foundation
 extension Mesh: STLConvertible {
     var asAsciiStl: String {
         let name = "mesh"
-        // TODO: Compute proper normals
         return
             """
             solid \(name)
