@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3503AF1129A8DEE000AF1188 /* Mesh+BooleanOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */; };
 		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
 		3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */; };
 		3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18929A7DCD6009FDEA0 /* STLTests.swift */; };
@@ -99,6 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+BooleanOperations.swift"; sourceTree = "<group>"; };
 		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
 		3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
 		3511D18929A7DCD6009FDEA0 /* STLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
@@ -209,6 +211,14 @@
 				352B9B2729A7BE32007A7470 /* Vec3+STLConvertible.swift */,
 			);
 			path = STL;
+			sourceTree = "<group>";
+		};
+		3503AF0F29A8DEB900AF1188 /* CSG */ = {
+			isa = PBXGroup;
+			children = (
+				3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */,
+			);
+			path = CSG;
 			sourceTree = "<group>";
 		};
 		352B9B0D29A7BD2D007A7470 /* Value */ = {
@@ -407,6 +417,7 @@
 		354A41FC299330E0004EA933 /* Geometry */ = {
 			isa = PBXGroup;
 			children = (
+				3503AF0F29A8DEB900AF1188 /* CSG */,
 				3503AF0D29A8DE8100AF1188 /* STL */,
 				354A41FE299330E0004EA933 /* Cuboid.swift */,
 				352B9B2229A7BE32007A7470 /* Cylinder.swift */,
@@ -538,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3503AF1129A8DEE000AF1188 /* Mesh+BooleanOperations.swift in Sources */,
 				354A4226299330E0004EA933 /* BinaryExpression+Pretty.swift in Sources */,
 				35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */,
 				354A422E299330E0004EA933 /* PreviewOverlay.swift in Sources */,

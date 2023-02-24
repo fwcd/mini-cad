@@ -41,6 +41,20 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         let meshes = trailingBlock.compactMap(\.asMesh)
         return meshes.map { .mesh($0 + offset) }
     },
+    "Union": { _, trailingBlock in
+        let meshes = trailingBlock.compactMap(\.asMesh)
+        return [.mesh(meshes.reduce(Mesh()) { $0.union($1) })]
+    },
+    "Intersection": { _, trailingBlock in
+        let meshes = trailingBlock.compactMap(\.asMesh)
+        guard let first = meshes.first else { return [.mesh(Mesh())] }
+        return [.mesh(meshes.reduce(first) { $0.intersection($1) })]
+    },
+    "Difference": { _, trailingBlock in
+        let meshes = trailingBlock.compactMap(\.asMesh)
+        guard let first = meshes.first else { return [.mesh(Mesh())] }
+        return [.mesh(meshes.reduce(first) { $0.subtracting($1) })]
+    },
     "Float": { args, _ in
         guard let x = args[safely: 0]?.asInt else {
             throw InterpretError.invalidArguments("Float", expected: "1 int", actual: "\(args)")
