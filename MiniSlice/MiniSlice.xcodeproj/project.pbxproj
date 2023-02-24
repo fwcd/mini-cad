@@ -16,6 +16,7 @@
 		3503AF1F29A91E4E00AF1188 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1E29A91E4E00AF1188 /* Triangle.swift */; };
 		3503AF2129A91F0500AF1188 /* Mesh+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */; };
 		3503AF2329A9209C00AF1188 /* AxisAlignedBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2229A9209C00AF1188 /* AxisAlignedBoundingBox.swift */; };
+		3503AF2529A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2429A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift */; };
 		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
 		3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */; };
 		3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18929A7DCD6009FDEA0 /* STLTests.swift */; };
@@ -117,6 +118,7 @@
 		3503AF1E29A91E4E00AF1188 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Sequence.swift"; sourceTree = "<group>"; };
 		3503AF2229A9209C00AF1188 /* AxisAlignedBoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisAlignedBoundingBox.swift; sourceTree = "<group>"; };
+		3503AF2429A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisAlignedBoundingBoxTests.swift; sourceTree = "<group>"; };
 		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
 		3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
 		3511D18929A7DCD6009FDEA0 /* STLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				3511D18B29A7DCD6009FDEA0 /* HashableVoid.swift */,
 				3511D18D29A7DCD6009FDEA0 /* ParserTests.swift */,
 				3511D18929A7DCD6009FDEA0 /* STLTests.swift */,
+				3503AF2429A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift */,
 				3511D18A29A7DCD6009FDEA0 /* TokenizerTests.swift */,
 				3511D18C29A7DCD6009FDEA0 /* ValueTests.swift */,
 				3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */,
@@ -661,6 +664,7 @@
 				3511D19229A7DCD6009FDEA0 /* ValueTests.swift in Sources */,
 				3511D19029A7DCD6009FDEA0 /* TokenizerTests.swift in Sources */,
 				3511D19329A7DCD6009FDEA0 /* ParserTests.swift in Sources */,
+				3503AF2529A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift in Sources */,
 				3511D19129A7DCD6009FDEA0 /* HashableVoid.swift in Sources */,
 				3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */,
 				3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */,

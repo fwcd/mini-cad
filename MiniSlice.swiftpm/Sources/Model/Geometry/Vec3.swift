@@ -63,6 +63,12 @@ struct Vec3: CustomStringConvertible, Hashable, AdditiveArithmetic {
     }
 }
 
+extension Vec3 {
+    init(all value: Double) {
+        self.init(x: value, y: value, z: value)
+    }
+}
+
 extension SCNVector3 {
     init(_ vec3: Vec3) {
         self.init(x: Float(vec3.x), y: Float(vec3.y), z: Float(vec3.z))

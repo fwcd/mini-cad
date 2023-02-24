@@ -20,7 +20,7 @@ struct TriangleOctree {
         }
     }
     
-    mutating func insert(triangle: Triangle) {
+    mutating func insert(triangle: Triangle, aabb: AxisAlignedBoundingBox) {
         
     }
 }
