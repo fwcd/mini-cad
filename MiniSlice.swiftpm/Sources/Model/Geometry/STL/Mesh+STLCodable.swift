@@ -1,6 +1,6 @@
 import Foundation
 
-extension Mesh: STLConvertible {
+extension Mesh: STLEncodable {
     var asAsciiStl: String {
         let name = "mesh"
         return
@@ -37,7 +37,7 @@ extension Mesh: STLConvertible {
     }
 }
 
-extension Array: STLConvertible where Element == Mesh {
+extension Array: STLEncodable where Element == Mesh {
     var asAsciiStl: String {
         reduce(Mesh()) { $0.disjointUnion($1) }.asAsciiStl
     }

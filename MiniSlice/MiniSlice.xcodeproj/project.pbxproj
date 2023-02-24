@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3503AF1129A8DEE000AF1188 /* Mesh+BooleanOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */; };
 		3503AF1529A90AAB00AF1188 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1429A90AAB00AF1188 /* Data+Extensions.swift */; };
+		3503AF1729A9125900AF1188 /* STLDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1629A9125900AF1188 /* STLDecodeError.swift */; };
+		3503AF1929A913EF00AF1188 /* STLDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1829A913EF00AF1188 /* STLDecodable.swift */; };
 		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
 		3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */; };
 		3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18929A7DCD6009FDEA0 /* STLTests.swift */; };
@@ -28,10 +30,10 @@
 		352B9B2129A7BD8F007A7470 /* STLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2029A7BD8F007A7470 /* STLDocument.swift */; };
 		352B9B2829A7BE32007A7470 /* Cylinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2229A7BE32007A7470 /* Cylinder.swift */; };
 		352B9B2929A7BE32007A7470 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2329A7BE32007A7470 /* Mesh.swift */; };
-		352B9B2A29A7BE32007A7470 /* Mesh+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2429A7BE32007A7470 /* Mesh+STLConvertible.swift */; };
+		352B9B2A29A7BE32007A7470 /* Mesh+STLCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2429A7BE32007A7470 /* Mesh+STLCodable.swift */; };
 		352B9B2B29A7BE32007A7470 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2529A7BE32007A7470 /* Quad.swift */; };
-		352B9B2C29A7BE32007A7470 /* STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2629A7BE32007A7470 /* STLConvertible.swift */; };
-		352B9B2D29A7BE32007A7470 /* Vec3+STLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2729A7BE32007A7470 /* Vec3+STLConvertible.swift */; };
+		352B9B2C29A7BE32007A7470 /* STLEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2629A7BE32007A7470 /* STLEncodable.swift */; };
+		352B9B2D29A7BE32007A7470 /* Vec3+STLCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2729A7BE32007A7470 /* Vec3+STLCodable.swift */; };
 		3540FEAB29A84300005B2428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3540FEAA29A84300005B2428 /* Assets.xcassets */; };
 		354A414A29932FA3004EA933 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354A414929932FA3004EA933 /* Preview Assets.xcassets */; };
 		354A4209299330E0004EA933 /* Preview.scn in Resources */ = {isa = PBXBuildFile; fileRef = 354A41D3299330E0004EA933 /* Preview.scn */; };
@@ -103,6 +105,8 @@
 /* Begin PBXFileReference section */
 		3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+BooleanOperations.swift"; sourceTree = "<group>"; };
 		3503AF1429A90AAB00AF1188 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		3503AF1629A9125900AF1188 /* STLDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLDecodeError.swift; sourceTree = "<group>"; };
+		3503AF1829A913EF00AF1188 /* STLDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLDecodable.swift; sourceTree = "<group>"; };
 		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
 		3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
 		3511D18929A7DCD6009FDEA0 /* STLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
@@ -122,10 +126,10 @@
 		352B9B2029A7BD8F007A7470 /* STLDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLDocument.swift; sourceTree = "<group>"; };
 		352B9B2229A7BE32007A7470 /* Cylinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cylinder.swift; sourceTree = "<group>"; };
 		352B9B2329A7BE32007A7470 /* Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
-		352B9B2429A7BE32007A7470 /* Mesh+STLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mesh+STLConvertible.swift"; sourceTree = "<group>"; };
+		352B9B2429A7BE32007A7470 /* Mesh+STLCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mesh+STLCodable.swift"; sourceTree = "<group>"; };
 		352B9B2529A7BE32007A7470 /* Quad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
-		352B9B2629A7BE32007A7470 /* STLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLConvertible.swift; sourceTree = "<group>"; };
-		352B9B2729A7BE32007A7470 /* Vec3+STLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Vec3+STLConvertible.swift"; sourceTree = "<group>"; };
+		352B9B2629A7BE32007A7470 /* STLEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLEncodable.swift; sourceTree = "<group>"; };
+		352B9B2729A7BE32007A7470 /* Vec3+STLCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Vec3+STLCodable.swift"; sourceTree = "<group>"; };
 		3540FEAA29A84300005B2428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../MiniSlice.swiftpm/Assets.xcassets; sourceTree = "<group>"; };
 		354A413E29932FA2004EA933 /* MiniSlice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSlice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		354A414729932FA3004EA933 /* MiniSlice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniSlice.entitlements; sourceTree = "<group>"; };
@@ -208,9 +212,11 @@
 		3503AF0D29A8DE8100AF1188 /* STL */ = {
 			isa = PBXGroup;
 			children = (
-				352B9B2629A7BE32007A7470 /* STLConvertible.swift */,
-				352B9B2429A7BE32007A7470 /* Mesh+STLConvertible.swift */,
-				352B9B2729A7BE32007A7470 /* Vec3+STLConvertible.swift */,
+				352B9B2629A7BE32007A7470 /* STLEncodable.swift */,
+				3503AF1829A913EF00AF1188 /* STLDecodable.swift */,
+				3503AF1629A9125900AF1188 /* STLDecodeError.swift */,
+				352B9B2429A7BE32007A7470 /* Mesh+STLCodable.swift */,
+				352B9B2729A7BE32007A7470 /* Vec3+STLCodable.swift */,
 			);
 			path = STL;
 			sourceTree = "<group>";
@@ -572,9 +578,10 @@
 				354A4228299330E0004EA933 /* Expression+Pretty.swift in Sources */,
 				3503AF1529A90AAB00AF1188 /* Data+Extensions.swift in Sources */,
 				352B9B2929A7BE32007A7470 /* Mesh.swift in Sources */,
+				3503AF1929A913EF00AF1188 /* STLDecodable.swift in Sources */,
 				354A422A299330E0004EA933 /* Cuboid.swift in Sources */,
 				352B9B1A29A7BD2D007A7470 /* Double+ValueConvertible.swift in Sources */,
-				352B9B2C29A7BE32007A7470 /* STLConvertible.swift in Sources */,
+				352B9B2C29A7BE32007A7470 /* STLEncodable.swift in Sources */,
 				354A421F299330E0004EA933 /* BuiltIns.swift in Sources */,
 				354A4219299330E0004EA933 /* Tokenizer.swift in Sources */,
 				354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */,
@@ -585,10 +592,10 @@
 				354A4227299330E0004EA933 /* Formatter.swift in Sources */,
 				354A421E299330E0004EA933 /* InterpretError.swift in Sources */,
 				354A422C299330E0004EA933 /* CodeEditor.swift in Sources */,
-				352B9B2A29A7BE32007A7470 /* Mesh+STLConvertible.swift in Sources */,
+				352B9B2A29A7BE32007A7470 /* Mesh+STLCodable.swift in Sources */,
 				352B9B2129A7BD8F007A7470 /* STLDocument.swift in Sources */,
 				354A420F299330E0004EA933 /* Recipe.swift in Sources */,
-				352B9B2D29A7BE32007A7470 /* Vec3+STLConvertible.swift in Sources */,
+				352B9B2D29A7BE32007A7470 /* Vec3+STLCodable.swift in Sources */,
 				352B9B1F29A7BD45007A7470 /* DemoRecipe.swift in Sources */,
 				35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */,
 				354A421B299330E0004EA933 /* Token.swift in Sources */,
@@ -600,6 +607,7 @@
 				354A4214299330E0004EA933 /* ForLoop.swift in Sources */,
 				35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */,
 				354A4220299330E0004EA933 /* Interpreter.swift in Sources */,
+				3503AF1729A9125900AF1188 /* STLDecodeError.swift in Sources */,
 				354A4232299330E0004EA933 /* ContentView.swift in Sources */,
 				354A4229299330E0004EA933 /* Vec3.swift in Sources */,
 				352B9B1629A7BD2D007A7470 /* Range+ValueConvertible.swift in Sources */,

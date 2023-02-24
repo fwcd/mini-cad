@@ -1,6 +1,6 @@
 import Foundation
 
-protocol STLConvertible {
+protocol STLEncodable {
     var asAsciiStl: String { get }
     var asBinaryStl: Data { get }
 }
