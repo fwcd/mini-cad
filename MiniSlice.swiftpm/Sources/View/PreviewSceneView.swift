@@ -24,6 +24,12 @@ struct PreviewSceneView: UIViewRepresentable {
     func updateUIView(_ uiView: SCNView, context: Context) {
         uiView.scene = viewModel.scene
         uiView.pointOfView?.camera?.usesOrthographicProjection = viewModel.options.usesOrthographicProjection
+        
+        if viewModel.options.renderAsWireframes {
+            uiView.debugOptions.insert(.renderAsWireframe)
+        } else {
+            uiView.debugOptions.remove(.renderAsWireframe)
+        }
     }
     
     func makeCoordinator() -> Coordinator {
