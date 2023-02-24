@@ -47,3 +47,9 @@ struct Mesh: Hashable {
         )
     }
 }
+
+extension Array where Element == Mesh {
+    var disjointUnion: Mesh {
+        reduce(Mesh()) { $0.disjointUnion($1) }
+    }
+}

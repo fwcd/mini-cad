@@ -90,9 +90,9 @@ extension Mesh: STLDecodable {
 
 extension Array: STLEncodable where Element == Mesh {
     var asAsciiStl: String {
-        reduce(Mesh()) { $0.disjointUnion($1) }.asAsciiStl
+        disjointUnion.asAsciiStl
     }
     var asBinaryStl: Data {
-        reduce(Mesh()) { $0.disjointUnion($1) }.asBinaryStl
+        disjointUnion.asBinaryStl
     }
 }
