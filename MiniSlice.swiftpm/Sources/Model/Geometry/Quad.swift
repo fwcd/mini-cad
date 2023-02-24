@@ -1,9 +1,9 @@
 /// A 3D quadrilateral defined by its four vertices.
 struct Quad: Hashable {
-    let a: Vec3
-    let b: Vec3
-    let c: Vec3
-    let d: Vec3
+    var a: Vec3
+    var b: Vec3
+    var c: Vec3
+    var d: Vec3
 }
 
 extension Mesh {
