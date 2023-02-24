@@ -2,7 +2,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 extension UTType {
-    static let recipeDocument = UTType(exportedAs: "dev.fwcd.MiniSlice.recipe")
+    static let recipeDocument = UTType(exportedAs: "dev.fwcd.MiniSlice.recipe2")
 }
 
 struct RecipeDocument {

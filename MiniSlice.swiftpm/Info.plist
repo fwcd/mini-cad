@@ -14,7 +14,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>dev.fwcd.MiniSlice.recipe</string>
+			<string>dev.fwcd.MiniSlice.recipe2</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
