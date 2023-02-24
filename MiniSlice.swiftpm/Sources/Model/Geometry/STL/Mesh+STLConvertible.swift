@@ -25,6 +25,7 @@ extension Mesh: STLConvertible {
         var data = Data()
         var header = "exported from MiniSlice".data(using: .utf8)!
         header += Data(count: 80 - header.count)
+        data += header
         data.append(unsafeBytesOf: UInt32(faces.count).littleEndian)
         for face in faces {
             data += normal(for: face).asBinaryStl

@@ -12,7 +12,7 @@ enum STLDocument {
 }
 
 extension STLDocument {
-    init<T>(_ convertible: T, useAscii: Bool = true) where T: STLConvertible {
+    init<T>(_ convertible: T, useAscii: Bool = false) where T: STLConvertible {
         if useAscii {
             self = .ascii(convertible.asAsciiStl)
         } else {

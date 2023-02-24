@@ -6,9 +6,9 @@ extension Vec3: STLConvertible {
     }
     var asBinaryStl: Data {
         var data = Data()
-        data.append(unsafeBytesOf: x.bitPattern.littleEndian)
-        data.append(unsafeBytesOf: y.bitPattern.littleEndian)
-        data.append(unsafeBytesOf: z.bitPattern.littleEndian)
+        data.append(unsafeBytesOf: Float32(x).bitPattern.littleEndian)
+        data.append(unsafeBytesOf: Float32(y).bitPattern.littleEndian)
+        data.append(unsafeBytesOf: Float32(z).bitPattern.littleEndian)
         return data
     }
 }
