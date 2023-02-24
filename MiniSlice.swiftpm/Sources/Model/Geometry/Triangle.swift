@@ -14,4 +14,12 @@ extension Mesh {
             ]
         )
     }
+    
+    func triangle(for face: Face) -> Triangle {
+        Triangle(
+            a: vertices[face.a],
+            b: vertices[face.b],
+            c: vertices[face.c]
+        )
+    }
 }
