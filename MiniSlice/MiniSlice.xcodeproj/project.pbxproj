@@ -84,6 +84,7 @@
 		35E7582F29A1B6D7006043C3 /* Ranged+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */; };
 		35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583029A1B78E006043C3 /* Array+Pretty.swift */; };
 		35E7583729A1BFED006043C3 /* RecipeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583629A1BFED006043C3 /* RecipeDocument.swift */; };
+		35EC358D29A837B700D31DA8 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC358C29A837B700D31DA8 /* ToolbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +179,7 @@
 		35E7583029A1B78E006043C3 /* Array+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Pretty.swift"; sourceTree = "<group>"; };
 		35E7583629A1BFED006043C3 /* RecipeDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDocument.swift; sourceTree = "<group>"; };
 		35E7583829A1C046006043C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		35EC358C29A837B700D31DA8 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,6 +417,7 @@
 				354A4202299330E0004EA933 /* PreviewView.swift */,
 				354A4203299330E0004EA933 /* PreviewOverlay.swift */,
 				354A4204299330E0004EA933 /* OptionsView.swift */,
+				35EC358C29A837B700D31DA8 /* ToolbarView.swift */,
 				354A4205299330E0004EA933 /* EditorView.swift */,
 				354A4206299330E0004EA933 /* PreviewSceneView.swift */,
 				354A4208299330E0004EA933 /* ErrorView.swift */,
@@ -587,6 +590,7 @@
 				354A422F299330E0004EA933 /* OptionsView.swift in Sources */,
 				354A422B299330E0004EA933 /* ViewConstants.swift in Sources */,
 				354A421A299330E0004EA933 /* Parser.swift in Sources */,
+				35EC358D29A837B700D31DA8 /* ToolbarView.swift in Sources */,
 				352B9B1D29A7BD2D007A7470 /* ValueConvertible.swift in Sources */,
 				35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */,
 				354A421C299330E0004EA933 /* Array+Extensions.swift in Sources */,
