@@ -1,6 +1,8 @@
 struct AxisAlignedBoundingBox: Hashable {
-    var corner: Vec3 = Vec3(all: -0.5)
-    var size: Vec3 = Vec3(all: 1)
+    static var zero: AxisAlignedBoundingBox = .init()
+    
+    var corner: Vec3 = .zero
+    var size: Vec3 = .zero
     
     var volume: Double { size.x * size.y * size.z }
     

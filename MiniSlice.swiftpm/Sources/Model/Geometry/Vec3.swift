@@ -38,6 +38,14 @@ struct Vec3: CustomStringConvertible, Hashable, AdditiveArithmetic {
         )
     }
     
+    func max(_ rhs: Self) -> Self {
+        zip(rhs, Swift.max)
+    }
+    
+    func min(_ rhs: Self) -> Self {
+        zip(rhs, Swift.min)
+    }
+    
     static func +(lhs: Self, rhs: Self) -> Self {
         lhs.zip(rhs, +)
     }
