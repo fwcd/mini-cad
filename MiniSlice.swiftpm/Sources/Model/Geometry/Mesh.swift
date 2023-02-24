@@ -36,6 +36,10 @@ struct Mesh: Hashable {
         }
     }
     
+    func normal(for face: Face) -> Vec3 {
+        (vertices[face.a] - vertices[face.b]).cross(vertices[face.c] - vertices[face.b]).normalized
+    }
+    
     func disjointUnion(_ rhs: Self) -> Self {
         Mesh(
             vertices: vertices + rhs.vertices,

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3503AF1129A8DEE000AF1188 /* Mesh+BooleanOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */; };
+		3503AF1529A90AAB00AF1188 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1429A90AAB00AF1188 /* Data+Extensions.swift */; };
 		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
 		3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */; };
 		3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18929A7DCD6009FDEA0 /* STLTests.swift */; };
@@ -101,6 +102,7 @@
 
 /* Begin PBXFileReference section */
 		3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+BooleanOperations.swift"; sourceTree = "<group>"; };
+		3503AF1429A90AAB00AF1188 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
 		3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
 		3511D18929A7DCD6009FDEA0 /* STLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				354A41ED299330E0004EA933 /* Array+Extensions.swift */,
+				3503AF1429A90AAB00AF1188 /* Data+Extensions.swift */,
 				354A41EE299330E0004EA933 /* Identified.swift */,
 				35E7582229A12D2B006043C3 /* Box.swift */,
 				35E7582A29A1AFEF006043C3 /* SourceRange.swift */,
@@ -567,6 +570,7 @@
 				354A4215299330E0004EA933 /* Statement.swift in Sources */,
 				35E7582329A12D2B006043C3 /* Box.swift in Sources */,
 				354A4228299330E0004EA933 /* Expression+Pretty.swift in Sources */,
+				3503AF1529A90AAB00AF1188 /* Data+Extensions.swift in Sources */,
 				352B9B2929A7BE32007A7470 /* Mesh.swift in Sources */,
 				354A422A299330E0004EA933 /* Cuboid.swift in Sources */,
 				352B9B1A29A7BD2D007A7470 /* Double+ValueConvertible.swift in Sources */,
