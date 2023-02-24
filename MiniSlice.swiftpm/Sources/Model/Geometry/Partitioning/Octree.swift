@@ -23,10 +23,13 @@ struct Octree<Value> {
 
 extension Octree.Node where Value: AxisAlignedContainable {
     mutating func insert(value: Value, aabb: AxisAlignedBoundingBox, remainingDepth: Int) {
-        if remainingDepth <= 0 {
+        if remainingDepth > 0 {
             let octants = aabb.octants
             for (i, octant) in octants.enumerated() {
                 if octant.contains(value) {
+                    if children.isEmpty {
+                        children = Array(repeating: .init(), count: 8)
+                    }
                     children[i].insert(value: value, aabb: octant, remainingDepth: remainingDepth - 1)
                     return
                 }

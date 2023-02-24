@@ -56,6 +56,13 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
             return []
         }
     },
+    "Octree": { args, trailingBlock in
+        let maxDepth = args[safely: 0]?.asInt ?? 8
+        let mesh = trailingBlock.compactMap(\.asMesh).disjointUnion
+        let aabb = mesh.boundingBox
+        let octree = Octree(mesh: mesh, aabb: aabb, maxDepth: maxDepth)
+        return [.mesh(Mesh(octree: octree, aabb: aabb))]
+    },
     "BoundingBox": { args, trailingBlock in
         let mesh = (args + trailingBlock).compactMap(\.asMesh).disjointUnion
         return [.mesh(Mesh(Cuboid(mesh.boundingBox)))]
