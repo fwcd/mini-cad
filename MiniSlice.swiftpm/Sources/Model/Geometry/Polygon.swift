@@ -1,3 +1,7 @@
+import OSLog
+
+private let log = Logger(subsystem: "MiniSlice", category: "Polygon")
+
 /// A flat/planar polygon in 3D space (i.e. all the points are assumed lie within a plane).
 struct Polygon {
     var vertices: [Vec3] = []
@@ -47,7 +51,8 @@ extension Mesh {
                 }
             }
             
-            fatalError("Could not cut ear")
+            log.error("Could not cut ear from \(String(describing: remaining.map(\.element))), no convex vertices found.")
+            break
             // TODO: We should probably do a throwing initializer instead
         }
         

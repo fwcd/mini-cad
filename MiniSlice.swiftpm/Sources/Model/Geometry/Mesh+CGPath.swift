@@ -8,25 +8,32 @@ extension Mesh {
         var vertices: [Vec3] = []
         var polygons: [Polygon] = []
         
+        func closePath() {
+            if vertices.count >= 3 {
+                polygons.append(.init(vertices: vertices.reversed()))
+            }
+            vertices = []
+        }
+        
         path.applyWithBlock { elementPointer in
             let element = elementPointer.pointee
             switch element.type {
-            case .moveToPoint, .addLineToPoint:
-                if !vertices.isEmpty {
-                    polygons.append(.init(vertices: vertices))
-                }
+            case .moveToPoint:
+                closePath()
+                vertices.append(Vec3(element.points[0]))
+            case .addLineToPoint:
                 vertices.append(Vec3(element.points[0]))
             case .addQuadCurveToPoint:
                 vertices.append(Vec3(element.points[0]))
                 vertices.append(Vec3(element.points[1]))
+            case .closeSubpath:
+                closePath()
             default:
                 log.error("Conversion of CGPathElementType \(String(describing: element.type)) is unsupported")
             }
         }
         
-        if !vertices.isEmpty {
-            polygons.append(.init(vertices: vertices))
-        }
+        closePath()
         
         self = polygons.map(Mesh.init).disjointUnion
     }
