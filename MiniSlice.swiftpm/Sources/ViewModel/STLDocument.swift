@@ -9,6 +9,7 @@ extension UTType {
 enum STLDocument {
     case ascii(String)
     case binary(Data)
+    case lazy(any STLEncodable)
 }
 
 extension STLDocument {
@@ -46,6 +47,8 @@ extension STLDocument: FileDocument {
                 throw CocoaError(.fileWriteInapplicableStringEncoding)
             }
             return FileWrapper(regularFileWithContents: data)
+        case .lazy(let convertible):
+            return try STLDocument(convertible).fileWrapper(configuration: configuration)
         }
     }
 }

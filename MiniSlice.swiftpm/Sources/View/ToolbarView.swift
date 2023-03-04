@@ -56,7 +56,7 @@ struct ToolbarView: View {
             .keyboardShortcut("e", modifiers: .command)
             .fileExporter(
                 isPresented: $stlExporterShown,
-                document: STLDocument(editor.meshes), // TODO: Make this lazy?
+                document: STLDocument.lazy(editor.meshes),
                 contentType: .stlDocument,
                 defaultFilename: "Model.stl"
             ) { _ in }

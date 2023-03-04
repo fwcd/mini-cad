@@ -42,7 +42,8 @@ extension Mesh {
                 
                 let d1 = p1 - p
                 let d2 = p2 - p
-                let isConvex = d1.cross(d2).dot(plane.normal) > 0
+                let d = d1.cross(d2).dot(plane.normal)
+                let isConvex = d > 0
                 
                 if isConvex {
                     faces.append(.init(a: j1, b: j, c: j2))
@@ -51,9 +52,9 @@ extension Mesh {
                 }
             }
             
+            // TODO: We should probably do a throwing initializer instead
             log.error("Could not cut ear from \(String(describing: remaining.map(\.element))), no convex vertices found.")
             break
-            // TODO: We should probably do a throwing initializer instead
         }
         
         faces.append(.init(a: remaining[0].offset, b: remaining[1].offset, c: remaining[2].offset))
