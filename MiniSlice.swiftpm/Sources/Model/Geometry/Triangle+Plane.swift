@@ -7,10 +7,4 @@ extension Triangle {
     func project(_ point: Vec3) -> Vec3 {
         Plane(self).project(point)
     }
-    
-    /// Whether triangle contains the given point after projection to the plane.
-    func planarContains(_ point: Vec3) -> Bool {
-        let projected = project(point)
-        return false // TODO
-    }
 }

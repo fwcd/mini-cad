@@ -47,11 +47,12 @@ extension Mesh {
                 
                 if isConvex {
                     let triangle = Triangle(a: p1, b: p, c: p2)
-                    if !remaining.contains(where: { triangle.planarContains($0.element) }) {
+                    // TODO: Does this triangle check help us at all?
+                    if !remaining.enumerated().contains(where: { ($0.offset < i || $0.offset > i + 2) && triangle.contains($0.element.element) }) {
                         faces.append(.init(a: j1, b: j, c: j2))
+                        remaining.remove(at: i + 1)
+                        continue outer
                     }
-                    remaining.remove(at: i + 1)
-                    continue outer
                 }
             }
             

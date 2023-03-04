@@ -20,6 +20,12 @@ struct Triangle: Hashable {
         let lambda2 = 1 - lambda1 - lambda3
         return Vec3(x: lambda1, y: lambda2, z: lambda3)
     }
+    
+    /// Whether triangle contains the given point (asummed to be on the plane).
+    func contains(_ point: Vec3) -> Bool {
+        let barycentric = toBarycentric(point: point)
+        return barycentric >= .zero
+    }
 }
 
 extension Mesh {
