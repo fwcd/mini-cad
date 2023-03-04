@@ -46,7 +46,10 @@ extension Mesh {
                 let isConvex = d > 0
                 
                 if isConvex {
-                    faces.append(.init(a: j1, b: j, c: j2))
+                    let triangle = Triangle(a: p1, b: p, c: p2)
+                    if !remaining.contains(where: { triangle.planarContains($0.element) }) {
+                        faces.append(.init(a: j1, b: j, c: j2))
+                    }
                     remaining.remove(at: i + 1)
                     continue outer
                 }

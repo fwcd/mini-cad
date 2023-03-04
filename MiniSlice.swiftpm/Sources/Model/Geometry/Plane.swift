@@ -9,10 +9,21 @@ struct Plane: Hashable {
         (a - b).cross(c - b)
     }
     
+    /// The unit normal vector of the plane.
+    var unitNormal: Vec3 {
+        normal.normalized
+    }
+    
     /// Normalizes the spanning vectors (a - b) and (c - b) to unit length. Causes the normal to be a unit normal too.
     var normalized: Self {
         let d1 = (a - b).normalized
         let d2 = (c - b).normalized
         return Self(a: b + d1, b: b, c: b + d2)
+    }
+    
+    /// Projects the given point onto the plane.
+    func project(_ point: Vec3) -> Vec3 {
+        let unitNormal = self.unitNormal
+        return point - (point - b).dot(unitNormal) * unitNormal
     }
 }
