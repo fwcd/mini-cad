@@ -33,6 +33,10 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
             return []
         }
     },
+    "Text": { args, _ in
+        let content = args[safely: 0]?.asString ?? ""
+        return [.mesh(Mesh(TextLabel(content: content)))]
+    },
     "Octree": { args, trailingBlock in
         let maxDepth = args[safely: 0]?.asInt ?? 8
         let mesh = trailingBlock.compactMap(\.asMesh).disjointUnion

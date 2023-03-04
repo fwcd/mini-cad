@@ -40,6 +40,8 @@
 		352678C529B3688A002A81B3 /* BuiltInOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678C429B3688A002A81B3 /* BuiltInOperators.swift */; };
 		352678C729B368BC002A81B3 /* BuiltInConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678C629B368BC002A81B3 /* BuiltInConstants.swift */; };
 		352678C929B368E1002A81B3 /* BuiltInUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678C829B368E1002A81B3 /* BuiltInUtils.swift */; };
+		352678CB29B36A9E002A81B3 /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678CA29B36A9E002A81B3 /* TextLabel.swift */; };
+		352678CD29B373F6002A81B3 /* Mesh+CGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */; };
 		352B9B1629A7BD2D007A7470 /* Range+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */; };
 		352B9B1729A7BD2D007A7470 /* Bool+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */; };
 		352B9B1829A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */; };
@@ -158,6 +160,8 @@
 		352678C429B3688A002A81B3 /* BuiltInOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInOperators.swift; sourceTree = "<group>"; };
 		352678C629B368BC002A81B3 /* BuiltInConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInConstants.swift; sourceTree = "<group>"; };
 		352678C829B368E1002A81B3 /* BuiltInUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInUtils.swift; sourceTree = "<group>"; };
+		352678CA29B36A9E002A81B3 /* TextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
+		352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+CGPath.swift"; sourceTree = "<group>"; };
 		352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Range+ValueConvertible.swift"; sourceTree = "<group>"; };
 		352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+ValueConvertible.swift"; sourceTree = "<group>"; };
 		352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClosedRange+ValueConvertible.swift"; sourceTree = "<group>"; };
@@ -504,6 +508,8 @@
 				3503AF0D29A8DE8100AF1188 /* STL */,
 				354A41FE299330E0004EA933 /* Cuboid.swift */,
 				352B9B2229A7BE32007A7470 /* Cylinder.swift */,
+				352678CA29B36A9E002A81B3 /* TextLabel.swift */,
+				352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */,
 				352B9B2329A7BE32007A7470 /* Mesh.swift */,
 				352B9B2529A7BE32007A7470 /* Quad.swift */,
 				3503AF1E29A91E4E00AF1188 /* Triangle.swift */,
@@ -664,6 +670,7 @@
 				354A4228299330E0004EA933 /* Expression+Pretty.swift in Sources */,
 				3503AF1529A90AAB00AF1188 /* Data+Extensions.swift in Sources */,
 				352B9B2929A7BE32007A7470 /* Mesh.swift in Sources */,
+				352678CD29B373F6002A81B3 /* Mesh+CGPath.swift in Sources */,
 				3503AF1929A913EF00AF1188 /* STLDecodable.swift in Sources */,
 				354A422A299330E0004EA933 /* Cuboid.swift in Sources */,
 				352B9B1A29A7BD2D007A7470 /* Double+ValueConvertible.swift in Sources */,
@@ -702,6 +709,7 @@
 				3503AF1729A9125900AF1188 /* STLDecodeError.swift in Sources */,
 				354A4232299330E0004EA933 /* ContentView.swift in Sources */,
 				354A4229299330E0004EA933 /* Vec3.swift in Sources */,
+				352678CB29B36A9E002A81B3 /* TextLabel.swift in Sources */,
 				352B9B1629A7BD2D007A7470 /* Range+ValueConvertible.swift in Sources */,
 				35E7583729A1BFED006043C3 /* RecipeDocument.swift in Sources */,
 				352B9B1929A7BD2D007A7470 /* String+ValueConvertible.swift in Sources */,

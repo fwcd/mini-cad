@@ -21,6 +21,10 @@ let rawDemoRecipe: String = """
       Suzanne()
     }
     
+    Translate(0, 6, 0) {
+      Text("Suzanne")
+    }
+    
     // Generate pillars
     
     let n = 8
@@ -34,5 +38,6 @@ let rawDemoRecipe: String = """
         Cylinder(radius, height)
       }
     }
+    
     """
 let demoRecipe: Recipe = try! parseRecipe(from: rawDemoRecipe)
