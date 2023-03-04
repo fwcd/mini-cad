@@ -45,6 +45,8 @@ struct CodeEditor: UIViewRepresentable {
         uiView.autocorrectionType = .no
         uiView.autocapitalizationType = .none
         uiView.spellCheckingType = .no
+        uiView.smartDashesType = .no
+        uiView.smartQuotesType = .no
         
         uiView.delegate = context.coordinator
         
