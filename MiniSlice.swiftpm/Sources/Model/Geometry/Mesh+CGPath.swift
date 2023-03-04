@@ -3,14 +3,14 @@ import OSLog
 
 private let log = Logger(subsystem: "MiniSlice", category: "Mesh+CGPath")
 
-extension Mesh {
+extension Array where Element == Mesh {
     init(_ path: CGPath) {
         var vertices: [Vec3] = []
-        var polygons: [Polygon] = []
+        var meshes: [Mesh] = []
         
         func closePath() {
             if vertices.count >= 3 {
-                polygons.append(.init(vertices: vertices.reversed()))
+                meshes.append(Mesh(Polygon(vertices: vertices.reversed())))
             }
             vertices = []
         }
@@ -35,6 +35,12 @@ extension Mesh {
         
         closePath()
         
-        self = polygons.map(Mesh.init).disjointUnion
+        self = meshes
+    }
+}
+
+extension Mesh {
+    init(_ path: CGPath) {
+        self = [Mesh](path).disjointUnion
     }
 }

@@ -31,13 +31,13 @@ extension Mesh {
             for (glyph, position) in zip(glyphs, positions) {
                 var transform = CGAffineTransform(translationX: position.x, y: position.y)
                 if let glyphPath = CTFontCreatePathForGlyph(font, glyph, &transform) {
-                    meshes.append(Mesh(glyphPath).planarExtrude(by: Vec3(z: -label.thickness)))
+                    meshes += [Mesh](glyphPath)
                 } else {
                     log.warning("Could not create path for glyph \(glyph)")
                 }
             }
         }
         
-        self = meshes.disjointUnion
+        self = meshes.map { $0.planarExtrude(by: Vec3(z: -label.thickness)) }.disjointUnion
     }
 }
