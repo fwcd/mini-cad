@@ -46,6 +46,20 @@ struct Mesh: Hashable {
             faces: faces + rhs.faces.map { $0 + vertices.count }
         )
     }
+    
+    /// Extrudes this mesh (assuming it is planar).
+    func planarExtrude(by delta: Vec3) -> Self {
+        let extrudedVertices = vertices.map { $0 + delta }
+        let newVertices = vertices + extrudedVertices
+        let topDownFaces = faces + faces.map { ($0 + vertices.count).flipped }
+        let sideFaces = vertices.indices.flatMap { i in [
+            Mesh.Face(a: i, b: (i + 1) % vertices.count + vertices.count, c: i + vertices.count),
+            Mesh.Face(a: i, b: (i + 1) % vertices.count, c: (i + 1) % vertices.count + vertices.count),
+        ].map(\.flipped) }
+        // TODO: We might need to flip them depending on the extrusion orientation
+        let newFaces = topDownFaces + sideFaces
+        return Self(vertices: newVertices, faces: newFaces)
+    }
 }
 
 extension Sequence where Element == Mesh {

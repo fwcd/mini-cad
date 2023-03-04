@@ -9,7 +9,8 @@ struct TextLabel: Hashable {
     var content: String
     var center: Vec3 = .zero
     var fontName: String = "Helvetica"
-    var fontSize: Double = 24
+    var fontSize: Double = 12
+    var thickness: Double = 1
 }
 
 extension Mesh {
@@ -18,7 +19,7 @@ extension Mesh {
         let attributes: [NSAttributedString.Key: Any] = [.font: font]
         let attributedString = NSAttributedString(string: label.content, attributes: attributes)
         let line = CTLineCreateWithAttributedString(attributedString)
-        let path = CGMutablePath()
+        var meshes: [Mesh] = []
         
         for run in CTLineGetGlyphRuns(line) as! [CTRun] {
             var glyphs = [CGGlyph](repeating: 0, count: CTRunGetGlyphCount(run))
@@ -30,13 +31,13 @@ extension Mesh {
             for (glyph, position) in zip(glyphs, positions) {
                 var transform = CGAffineTransform(translationX: position.x, y: position.y)
                 if let glyphPath = CTFontCreatePathForGlyph(font, glyph, &transform) {
-                    path.addPath(glyphPath)
+                    meshes.append(Mesh(glyphPath).planarExtrude(by: Vec3(z: -label.thickness)))
                 } else {
                     log.warning("Could not create path for glyph \(glyph)")
                 }
             }
         }
         
-        self.init(path)
+        self = meshes.disjointUnion
     }
 }
