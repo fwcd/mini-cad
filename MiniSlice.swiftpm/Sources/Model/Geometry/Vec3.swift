@@ -113,4 +113,8 @@ extension Vec3 {
     init(_ scnVec: SCNVector4) {
         self.init(x: Double(scnVec.x), y: Double(scnVec.y), z: Double(scnVec.z))
     }
+    
+    init(_ point: CGPoint) {
+        self.init(x: Double(point.x), y: Double(point.y))
+    }
 }
