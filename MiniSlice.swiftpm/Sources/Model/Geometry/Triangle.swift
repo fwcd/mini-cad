@@ -4,6 +4,7 @@ struct Triangle: Hashable {
     var b: Vec3
     var c: Vec3
     
+    /// The normal vector indicating the orientation of the triangle.
     var normal: Vec3 {
         (a - b).cross(c - b)
     }

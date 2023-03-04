@@ -42,6 +42,8 @@
 		352678C929B368E1002A81B3 /* BuiltInUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678C829B368E1002A81B3 /* BuiltInUtils.swift */; };
 		352678CB29B36A9E002A81B3 /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678CA29B36A9E002A81B3 /* TextLabel.swift */; };
 		352678CD29B373F6002A81B3 /* Mesh+CGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */; };
+		352678CF29B3785D002A81B3 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678CE29B3785D002A81B3 /* Polygon.swift */; };
+		352678D129B38D52002A81B3 /* PolygonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678D029B38D52002A81B3 /* PolygonTests.swift */; };
 		352B9B1629A7BD2D007A7470 /* Range+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */; };
 		352B9B1729A7BD2D007A7470 /* Bool+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */; };
 		352B9B1829A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */; };
@@ -162,6 +164,8 @@
 		352678C829B368E1002A81B3 /* BuiltInUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInUtils.swift; sourceTree = "<group>"; };
 		352678CA29B36A9E002A81B3 /* TextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
 		352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+CGPath.swift"; sourceTree = "<group>"; };
+		352678CE29B3785D002A81B3 /* Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
+		352678D029B38D52002A81B3 /* PolygonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonTests.swift; sourceTree = "<group>"; };
 		352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Range+ValueConvertible.swift"; sourceTree = "<group>"; };
 		352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+ValueConvertible.swift"; sourceTree = "<group>"; };
 		352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClosedRange+ValueConvertible.swift"; sourceTree = "<group>"; };
@@ -364,6 +368,7 @@
 				3511D18D29A7DCD6009FDEA0 /* ParserTests.swift */,
 				3511D18929A7DCD6009FDEA0 /* STLTests.swift */,
 				3503AF3929A9482000AF1188 /* PlaneTests.swift */,
+				352678D029B38D52002A81B3 /* PolygonTests.swift */,
 				3503AF2429A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift */,
 				3511D18A29A7DCD6009FDEA0 /* TokenizerTests.swift */,
 				3511D18C29A7DCD6009FDEA0 /* ValueTests.swift */,
@@ -510,6 +515,7 @@
 				352B9B2229A7BE32007A7470 /* Cylinder.swift */,
 				352678CA29B36A9E002A81B3 /* TextLabel.swift */,
 				352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */,
+				352678CE29B3785D002A81B3 /* Polygon.swift */,
 				352B9B2329A7BE32007A7470 /* Mesh.swift */,
 				352B9B2529A7BE32007A7470 /* Quad.swift */,
 				3503AF1E29A91E4E00AF1188 /* Triangle.swift */,
@@ -653,6 +659,7 @@
 				354A4226299330E0004EA933 /* BinaryExpression+Pretty.swift in Sources */,
 				35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */,
 				354A422E299330E0004EA933 /* PreviewOverlay.swift in Sources */,
+				352678CF29B3785D002A81B3 /* Polygon.swift in Sources */,
 				354A4222299330E0004EA933 /* VarBinding+Pretty.swift in Sources */,
 				354A420D299330E0004EA933 /* AxisNode.swift in Sources */,
 				354A4218299330E0004EA933 /* TokenIterator.swift in Sources */,
@@ -748,6 +755,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				352678D129B38D52002A81B3 /* PolygonTests.swift in Sources */,
 				3511D19229A7DCD6009FDEA0 /* ValueTests.swift in Sources */,
 				3511D19029A7DCD6009FDEA0 /* TokenizerTests.swift in Sources */,
 				3511D19329A7DCD6009FDEA0 /* ParserTests.swift in Sources */,
