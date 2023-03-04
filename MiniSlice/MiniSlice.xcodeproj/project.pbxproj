@@ -44,6 +44,7 @@
 		352678CD29B373F6002A81B3 /* Mesh+CGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */; };
 		352678CF29B3785D002A81B3 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678CE29B3785D002A81B3 /* Polygon.swift */; };
 		352678D129B38D52002A81B3 /* PolygonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678D029B38D52002A81B3 /* PolygonTests.swift */; };
+		352678D529B3A6AC002A81B3 /* TriangleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678D429B3A6AC002A81B3 /* TriangleTests.swift */; };
 		352B9B1629A7BD2D007A7470 /* Range+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */; };
 		352B9B1729A7BD2D007A7470 /* Bool+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */; };
 		352B9B1829A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */; };
@@ -166,6 +167,7 @@
 		352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+CGPath.swift"; sourceTree = "<group>"; };
 		352678CE29B3785D002A81B3 /* Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
 		352678D029B38D52002A81B3 /* PolygonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonTests.swift; sourceTree = "<group>"; };
+		352678D429B3A6AC002A81B3 /* TriangleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleTests.swift; sourceTree = "<group>"; };
 		352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Range+ValueConvertible.swift"; sourceTree = "<group>"; };
 		352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+ValueConvertible.swift"; sourceTree = "<group>"; };
 		352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClosedRange+ValueConvertible.swift"; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				3511D18D29A7DCD6009FDEA0 /* ParserTests.swift */,
 				3511D18929A7DCD6009FDEA0 /* STLTests.swift */,
 				3503AF3929A9482000AF1188 /* PlaneTests.swift */,
+				352678D429B3A6AC002A81B3 /* TriangleTests.swift */,
 				352678D029B38D52002A81B3 /* PolygonTests.swift */,
 				3503AF2429A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift */,
 				3511D18A29A7DCD6009FDEA0 /* TokenizerTests.swift */,
@@ -763,6 +766,7 @@
 				3511D19129A7DCD6009FDEA0 /* HashableVoid.swift in Sources */,
 				3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */,
 				3503AF3A29A9482000AF1188 /* PlaneTests.swift in Sources */,
+				352678D529B3A6AC002A81B3 /* TriangleTests.swift in Sources */,
 				3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
