@@ -1,8 +1,8 @@
-# MiniSlice
+# MiniCAD
 
-A parameteric 3D modeller and slicer for macOS and iOS featuring a Swift-inspired Domain Specific Language (DSL) for modeling.
+A parameteric 3D modeller for macOS and iOS featuring a Swift-inspired Domain Specific Language (DSL) for modeling.
 
-The implemented algorithm for Boolean mesh operations is loosely based on "Efficient Boolean algorithms for triangulated meshes of geometric modeling" by Jiang et al.
+<!-- TODO: Implement mesh operations -->
 
 ## See also
 

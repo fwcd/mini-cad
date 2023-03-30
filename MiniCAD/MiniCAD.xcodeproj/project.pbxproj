@@ -1,0 +1,1060 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3503AF1129A8DEE000AF1188 /* Mesh+BooleanOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */; };
+		3503AF1529A90AAB00AF1188 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1429A90AAB00AF1188 /* Data+Extensions.swift */; };
+		3503AF1729A9125900AF1188 /* STLDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1629A9125900AF1188 /* STLDecodeError.swift */; };
+		3503AF1929A913EF00AF1188 /* STLDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1829A913EF00AF1188 /* STLDecodable.swift */; };
+		3503AF1B29A9197000AF1188 /* Suzanne.stl in Resources */ = {isa = PBXBuildFile; fileRef = 3503AF1A29A9182600AF1188 /* Suzanne.stl */; };
+		3503AF1D29A91DD900AF1188 /* Octree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1C29A91DD900AF1188 /* Octree.swift */; };
+		3503AF1F29A91E4E00AF1188 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF1E29A91E4E00AF1188 /* Triangle.swift */; };
+		3503AF2129A91F0500AF1188 /* Mesh+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */; };
+		3503AF2329A9209C00AF1188 /* AxisAlignedBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2229A9209C00AF1188 /* AxisAlignedBoundingBox.swift */; };
+		3503AF2529A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2429A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift */; };
+		3503AF2829A9277C00AF1188 /* AxisAlignedContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2729A9277B00AF1188 /* AxisAlignedContainable.swift */; };
+		3503AF2A29A927C900AF1188 /* Triangle+AxisAlignedBoundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2929A927C900AF1188 /* Triangle+AxisAlignedBoundable.swift */; };
+		3503AF2C29A927EE00AF1188 /* Vec3+AxisAlignedBoundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2B29A927EE00AF1188 /* Vec3+AxisAlignedBoundable.swift */; };
+		3503AF2E29A9295D00AF1188 /* Mesh+AxisAlignedBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2D29A9295D00AF1188 /* Mesh+AxisAlignedBoundingBox.swift */; };
+		3503AF3029A92BBA00AF1188 /* AlignedAlignedBoundingBox+Cuboid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF2F29A92BBA00AF1188 /* AlignedAlignedBoundingBox+Cuboid.swift */; };
+		3503AF3229A934C100AF1188 /* Octree+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3129A934C100AF1188 /* Octree+Mesh.swift */; };
+		3503AF3429A9441F00AF1188 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3329A9441E00AF1188 /* Plane.swift */; };
+		3503AF3629A9448E00AF1188 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3529A9448E00AF1188 /* Line.swift */; };
+		3503AF3829A944D100AF1188 /* Plane+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3729A944D100AF1188 /* Plane+Line.swift */; };
+		3503AF3A29A9482000AF1188 /* PlaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3929A9482000AF1188 /* PlaneTests.swift */; };
+		3503AF3E29A94C9B00AF1188 /* Plane+Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3D29A94C9B00AF1188 /* Plane+Triangle.swift */; };
+		3503AF4029A94CB000AF1188 /* Line+Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF3F29A94CB000AF1188 /* Line+Plane.swift */; };
+		3503AF4229A94CCD00AF1188 /* Triangle+Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503AF4129A94CCD00AF1188 /* Triangle+Plane.swift */; };
+		3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */; };
+		3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */; };
+		3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18929A7DCD6009FDEA0 /* STLTests.swift */; };
+		3511D19029A7DCD6009FDEA0 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18A29A7DCD6009FDEA0 /* TokenizerTests.swift */; };
+		3511D19129A7DCD6009FDEA0 /* HashableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18B29A7DCD6009FDEA0 /* HashableVoid.swift */; };
+		3511D19229A7DCD6009FDEA0 /* ValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18C29A7DCD6009FDEA0 /* ValueTests.swift */; };
+		3511D19329A7DCD6009FDEA0 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511D18D29A7DCD6009FDEA0 /* ParserTests.swift */; };
+		352678C529B3688A002A81B3 /* BuiltInOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678C429B3688A002A81B3 /* BuiltInOperators.swift */; };
+		352678C729B368BC002A81B3 /* BuiltInConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678C629B368BC002A81B3 /* BuiltInConstants.swift */; };
+		352678C929B368E1002A81B3 /* BuiltInUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678C829B368E1002A81B3 /* BuiltInUtils.swift */; };
+		352678CB29B36A9E002A81B3 /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678CA29B36A9E002A81B3 /* TextLabel.swift */; };
+		352678CD29B373F6002A81B3 /* Mesh+CGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */; };
+		352678CF29B3785D002A81B3 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678CE29B3785D002A81B3 /* Polygon.swift */; };
+		352678D129B38D52002A81B3 /* PolygonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678D029B38D52002A81B3 /* PolygonTests.swift */; };
+		352678D529B3A6AC002A81B3 /* TriangleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352678D429B3A6AC002A81B3 /* TriangleTests.swift */; };
+		352B9B1629A7BD2D007A7470 /* Range+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */; };
+		352B9B1729A7BD2D007A7470 /* Bool+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */; };
+		352B9B1829A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */; };
+		352B9B1929A7BD2D007A7470 /* String+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1129A7BD2D007A7470 /* String+ValueConvertible.swift */; };
+		352B9B1A29A7BD2D007A7470 /* Double+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1229A7BD2D007A7470 /* Double+ValueConvertible.swift */; };
+		352B9B1B29A7BD2D007A7470 /* Int+ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1329A7BD2D007A7470 /* Int+ValueConvertible.swift */; };
+		352B9B1C29A7BD2D007A7470 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1429A7BD2D007A7470 /* Value.swift */; };
+		352B9B1D29A7BD2D007A7470 /* ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1529A7BD2D007A7470 /* ValueConvertible.swift */; };
+		352B9B1F29A7BD45007A7470 /* DemoRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B1E29A7BD45007A7470 /* DemoRecipe.swift */; };
+		352B9B2129A7BD8F007A7470 /* STLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2029A7BD8F007A7470 /* STLDocument.swift */; };
+		352B9B2829A7BE32007A7470 /* Cylinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2229A7BE32007A7470 /* Cylinder.swift */; };
+		352B9B2929A7BE32007A7470 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2329A7BE32007A7470 /* Mesh.swift */; };
+		352B9B2A29A7BE32007A7470 /* Mesh+STLCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2429A7BE32007A7470 /* Mesh+STLCodable.swift */; };
+		352B9B2B29A7BE32007A7470 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2529A7BE32007A7470 /* Quad.swift */; };
+		352B9B2C29A7BE32007A7470 /* STLEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2629A7BE32007A7470 /* STLEncodable.swift */; };
+		352B9B2D29A7BE32007A7470 /* Vec3+STLCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B9B2729A7BE32007A7470 /* Vec3+STLCodable.swift */; };
+		3540FEAB29A84300005B2428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3540FEAA29A84300005B2428 /* Assets.xcassets */; };
+		354A414A29932FA3004EA933 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354A414929932FA3004EA933 /* Preview Assets.xcassets */; };
+		354A4209299330E0004EA933 /* Preview.scn in Resources */ = {isa = PBXBuildFile; fileRef = 354A41D3299330E0004EA933 /* Preview.scn */; };
+		354A420A299330E0004EA933 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41D6299330E0004EA933 /* Options.swift */; };
+		354A420B299330E0004EA933 /* PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41D7299330E0004EA933 /* PreviewViewModel.swift */; };
+		354A420C299330E0004EA933 /* EditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41D8299330E0004EA933 /* EditorViewModel.swift */; };
+		354A420D299330E0004EA933 /* AxisNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41DA299330E0004EA933 /* AxisNode.swift */; };
+		354A420E299330E0004EA933 /* MiniCADApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41DB299330E0004EA933 /* MiniCADApp.swift */; };
+		354A420F299330E0004EA933 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41DE299330E0004EA933 /* Recipe.swift */; };
+		354A4210299330E0004EA933 /* VarBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41DF299330E0004EA933 /* VarBinding.swift */; };
+		354A4211299330E0004EA933 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E0299330E0004EA933 /* Expression.swift */; };
+		354A4213299330E0004EA933 /* BinaryExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E2299330E0004EA933 /* BinaryExpression.swift */; };
+		354A4214299330E0004EA933 /* ForLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E3299330E0004EA933 /* ForLoop.swift */; };
+		354A4215299330E0004EA933 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E4299330E0004EA933 /* Statement.swift */; };
+		354A4217299330E0004EA933 /* ParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E7299330E0004EA933 /* ParseError.swift */; };
+		354A4218299330E0004EA933 /* TokenIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E8299330E0004EA933 /* TokenIterator.swift */; };
+		354A4219299330E0004EA933 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41E9299330E0004EA933 /* Tokenizer.swift */; };
+		354A421A299330E0004EA933 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41EA299330E0004EA933 /* Parser.swift */; };
+		354A421B299330E0004EA933 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41EB299330E0004EA933 /* Token.swift */; };
+		354A421C299330E0004EA933 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41ED299330E0004EA933 /* Array+Extensions.swift */; };
+		354A421D299330E0004EA933 /* Identified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41EE299330E0004EA933 /* Identified.swift */; };
+		354A421E299330E0004EA933 /* InterpretError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F0299330E0004EA933 /* InterpretError.swift */; };
+		354A421F299330E0004EA933 /* BuiltInFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F1299330E0004EA933 /* BuiltInFunctions.swift */; };
+		354A4220299330E0004EA933 /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F2299330E0004EA933 /* Interpreter.swift */; };
+		354A4221299330E0004EA933 /* Recipe+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F4299330E0004EA933 /* Recipe+Pretty.swift */; };
+		354A4222299330E0004EA933 /* VarBinding+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F5299330E0004EA933 /* VarBinding+Pretty.swift */; };
+		354A4223299330E0004EA933 /* Statement+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F6299330E0004EA933 /* Statement+Pretty.swift */; };
+		354A4224299330E0004EA933 /* ForLoop+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F7299330E0004EA933 /* ForLoop+Pretty.swift */; };
+		354A4225299330E0004EA933 /* Value+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F8299330E0004EA933 /* Value+Pretty.swift */; };
+		354A4226299330E0004EA933 /* BinaryExpression+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41F9299330E0004EA933 /* BinaryExpression+Pretty.swift */; };
+		354A4227299330E0004EA933 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41FA299330E0004EA933 /* Formatter.swift */; };
+		354A4228299330E0004EA933 /* Expression+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41FB299330E0004EA933 /* Expression+Pretty.swift */; };
+		354A4229299330E0004EA933 /* Vec3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41FD299330E0004EA933 /* Vec3.swift */; };
+		354A422A299330E0004EA933 /* Cuboid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A41FE299330E0004EA933 /* Cuboid.swift */; };
+		354A422B299330E0004EA933 /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4200299330E0004EA933 /* ViewConstants.swift */; };
+		354A422C299330E0004EA933 /* CodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4201299330E0004EA933 /* CodeEditor.swift */; };
+		354A422D299330E0004EA933 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4202299330E0004EA933 /* PreviewView.swift */; };
+		354A422E299330E0004EA933 /* PreviewOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4203299330E0004EA933 /* PreviewOverlay.swift */; };
+		354A422F299330E0004EA933 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4204299330E0004EA933 /* OptionsView.swift */; };
+		354A4230299330E0004EA933 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4205299330E0004EA933 /* EditorView.swift */; };
+		354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4206299330E0004EA933 /* PreviewSceneView.swift */; };
+		354A4232299330E0004EA933 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4207299330E0004EA933 /* ContentView.swift */; };
+		354A4233299330E0004EA933 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4208299330E0004EA933 /* ErrorView.swift */; };
+		35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581C299FC84A006043C3 /* CallExpression.swift */; };
+		35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581E299FE671006043C3 /* BinaryOperator.swift */; };
+		35E7582329A12D2B006043C3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582229A12D2B006043C3 /* Box.swift */; };
+		35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */; };
+		35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */; };
+		35E7582929A1AE58006043C3 /* Ranged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582829A1AE58006043C3 /* Ranged.swift */; };
+		35E7582B29A1AFEF006043C3 /* SourceRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582A29A1AFEF006043C3 /* SourceRange.swift */; };
+		35E7582D29A1B657006043C3 /* Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582C29A1B656006043C3 /* Pretty.swift */; };
+		35E7582F29A1B6D7006043C3 /* Ranged+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */; };
+		35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583029A1B78E006043C3 /* Array+Pretty.swift */; };
+		35E7583729A1BFED006043C3 /* RecipeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7583629A1BFED006043C3 /* RecipeDocument.swift */; };
+		35EC358D29A837B700D31DA8 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC358C29A837B700D31DA8 /* ToolbarView.swift */; };
+		35EC358F29A83CB500D31DA8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35EC358E29A83CB500D31DA8 /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		354A415029932FA3004EA933 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 354A413629932FA2004EA933 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 354A413D29932FA2004EA933;
+			remoteInfo = MiniCAD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+BooleanOperations.swift"; sourceTree = "<group>"; };
+		3503AF1429A90AAB00AF1188 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		3503AF1629A9125900AF1188 /* STLDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLDecodeError.swift; sourceTree = "<group>"; };
+		3503AF1829A913EF00AF1188 /* STLDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLDecodable.swift; sourceTree = "<group>"; };
+		3503AF1A29A9182600AF1188 /* Suzanne.stl */ = {isa = PBXFileReference; lastKnownFileType = file; path = Suzanne.stl; sourceTree = "<group>"; };
+		3503AF1C29A91DD900AF1188 /* Octree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Octree.swift; sourceTree = "<group>"; };
+		3503AF1E29A91E4E00AF1188 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Sequence.swift"; sourceTree = "<group>"; };
+		3503AF2229A9209C00AF1188 /* AxisAlignedBoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisAlignedBoundingBox.swift; sourceTree = "<group>"; };
+		3503AF2429A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisAlignedBoundingBoxTests.swift; sourceTree = "<group>"; };
+		3503AF2729A9277B00AF1188 /* AxisAlignedContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisAlignedContainable.swift; sourceTree = "<group>"; };
+		3503AF2929A927C900AF1188 /* Triangle+AxisAlignedBoundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Triangle+AxisAlignedBoundable.swift"; sourceTree = "<group>"; };
+		3503AF2B29A927EE00AF1188 /* Vec3+AxisAlignedBoundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vec3+AxisAlignedBoundable.swift"; sourceTree = "<group>"; };
+		3503AF2D29A9295D00AF1188 /* Mesh+AxisAlignedBoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+AxisAlignedBoundingBox.swift"; sourceTree = "<group>"; };
+		3503AF2F29A92BBA00AF1188 /* AlignedAlignedBoundingBox+Cuboid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlignedAlignedBoundingBox+Cuboid.swift"; sourceTree = "<group>"; };
+		3503AF3129A934C100AF1188 /* Octree+Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Octree+Mesh.swift"; sourceTree = "<group>"; };
+		3503AF3329A9441E00AF1188 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		3503AF3529A9448E00AF1188 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		3503AF3729A944D100AF1188 /* Plane+Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plane+Line.swift"; sourceTree = "<group>"; };
+		3503AF3929A9482000AF1188 /* PlaneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneTests.swift; sourceTree = "<group>"; };
+		3503AF3D29A94C9B00AF1188 /* Plane+Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plane+Triangle.swift"; sourceTree = "<group>"; };
+		3503AF3F29A94CB000AF1188 /* Line+Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Line+Plane.swift"; sourceTree = "<group>"; };
+		3503AF4129A94CCD00AF1188 /* Triangle+Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Triangle+Plane.swift"; sourceTree = "<group>"; };
+		3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Mesh.swift"; sourceTree = "<group>"; };
+		3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec3Tests.swift; sourceTree = "<group>"; };
+		3511D18929A7DCD6009FDEA0 /* STLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLTests.swift; sourceTree = "<group>"; };
+		3511D18A29A7DCD6009FDEA0 /* TokenizerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
+		3511D18B29A7DCD6009FDEA0 /* HashableVoid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashableVoid.swift; sourceTree = "<group>"; };
+		3511D18C29A7DCD6009FDEA0 /* ValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTests.swift; sourceTree = "<group>"; };
+		3511D18D29A7DCD6009FDEA0 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		352678C429B3688A002A81B3 /* BuiltInOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInOperators.swift; sourceTree = "<group>"; };
+		352678C629B368BC002A81B3 /* BuiltInConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInConstants.swift; sourceTree = "<group>"; };
+		352678C829B368E1002A81B3 /* BuiltInUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltInUtils.swift; sourceTree = "<group>"; };
+		352678CA29B36A9E002A81B3 /* TextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
+		352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+CGPath.swift"; sourceTree = "<group>"; };
+		352678CE29B3785D002A81B3 /* Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
+		352678D029B38D52002A81B3 /* PolygonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonTests.swift; sourceTree = "<group>"; };
+		352678D429B3A6AC002A81B3 /* TriangleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleTests.swift; sourceTree = "<group>"; };
+		352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Range+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClosedRange+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B1129A7BD2D007A7470 /* String+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B1229A7BD2D007A7470 /* Double+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B1329A7BD2D007A7470 /* Int+ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+ValueConvertible.swift"; sourceTree = "<group>"; };
+		352B9B1429A7BD2D007A7470 /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		352B9B1529A7BD2D007A7470 /* ValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueConvertible.swift; sourceTree = "<group>"; };
+		352B9B1E29A7BD45007A7470 /* DemoRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoRecipe.swift; sourceTree = "<group>"; };
+		352B9B2029A7BD8F007A7470 /* STLDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLDocument.swift; sourceTree = "<group>"; };
+		352B9B2229A7BE32007A7470 /* Cylinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cylinder.swift; sourceTree = "<group>"; };
+		352B9B2329A7BE32007A7470 /* Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
+		352B9B2429A7BE32007A7470 /* Mesh+STLCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mesh+STLCodable.swift"; sourceTree = "<group>"; };
+		352B9B2529A7BE32007A7470 /* Quad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		352B9B2629A7BE32007A7470 /* STLEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLEncodable.swift; sourceTree = "<group>"; };
+		352B9B2729A7BE32007A7470 /* Vec3+STLCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Vec3+STLCodable.swift"; sourceTree = "<group>"; };
+		3540FEAA29A84300005B2428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../MiniCAD.swiftpm/Assets.xcassets; sourceTree = "<group>"; };
+		354A413E29932FA2004EA933 /* MiniCAD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniCAD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		354A414729932FA3004EA933 /* MiniCAD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniCAD.entitlements; sourceTree = "<group>"; };
+		354A414929932FA3004EA933 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		354A414F29932FA3004EA933 /* MiniCADTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniCADTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		354A41D3299330E0004EA933 /* Preview.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Preview.scn; sourceTree = "<group>"; };
+		354A41D6299330E0004EA933 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		354A41D7299330E0004EA933 /* PreviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewModel.swift; sourceTree = "<group>"; };
+		354A41D8299330E0004EA933 /* EditorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewModel.swift; sourceTree = "<group>"; };
+		354A41DA299330E0004EA933 /* AxisNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxisNode.swift; sourceTree = "<group>"; };
+		354A41DB299330E0004EA933 /* MiniCADApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniCADApp.swift; sourceTree = "<group>"; };
+		354A41DE299330E0004EA933 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		354A41DF299330E0004EA933 /* VarBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VarBinding.swift; sourceTree = "<group>"; };
+		354A41E0299330E0004EA933 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
+		354A41E2299330E0004EA933 /* BinaryExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryExpression.swift; sourceTree = "<group>"; };
+		354A41E3299330E0004EA933 /* ForLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForLoop.swift; sourceTree = "<group>"; };
+		354A41E4299330E0004EA933 /* Statement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
+		354A41E7299330E0004EA933 /* ParseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseError.swift; sourceTree = "<group>"; };
+		354A41E8299330E0004EA933 /* TokenIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenIterator.swift; sourceTree = "<group>"; };
+		354A41E9299330E0004EA933 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
+		354A41EA299330E0004EA933 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		354A41EB299330E0004EA933 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		354A41ED299330E0004EA933 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		354A41EE299330E0004EA933 /* Identified.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identified.swift; sourceTree = "<group>"; };
+		354A41F0299330E0004EA933 /* InterpretError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterpretError.swift; sourceTree = "<group>"; };
+		354A41F1299330E0004EA933 /* BuiltInFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuiltInFunctions.swift; sourceTree = "<group>"; };
+		354A41F2299330E0004EA933 /* Interpreter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
+		354A41F4299330E0004EA933 /* Recipe+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipe+Pretty.swift"; sourceTree = "<group>"; };
+		354A41F5299330E0004EA933 /* VarBinding+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VarBinding+Pretty.swift"; sourceTree = "<group>"; };
+		354A41F6299330E0004EA933 /* Statement+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Statement+Pretty.swift"; sourceTree = "<group>"; };
+		354A41F7299330E0004EA933 /* ForLoop+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ForLoop+Pretty.swift"; sourceTree = "<group>"; };
+		354A41F8299330E0004EA933 /* Value+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+Pretty.swift"; sourceTree = "<group>"; };
+		354A41F9299330E0004EA933 /* BinaryExpression+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BinaryExpression+Pretty.swift"; sourceTree = "<group>"; };
+		354A41FA299330E0004EA933 /* Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		354A41FB299330E0004EA933 /* Expression+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Expression+Pretty.swift"; sourceTree = "<group>"; };
+		354A41FD299330E0004EA933 /* Vec3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec3.swift; sourceTree = "<group>"; };
+		354A41FE299330E0004EA933 /* Cuboid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cuboid.swift; sourceTree = "<group>"; };
+		354A4200299330E0004EA933 /* ViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
+		354A4201299330E0004EA933 /* CodeEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeEditor.swift; sourceTree = "<group>"; };
+		354A4202299330E0004EA933 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		354A4203299330E0004EA933 /* PreviewOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewOverlay.swift; sourceTree = "<group>"; };
+		354A4204299330E0004EA933 /* OptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		354A4205299330E0004EA933 /* EditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		354A4206299330E0004EA933 /* PreviewSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewSceneView.swift; sourceTree = "<group>"; };
+		354A4207299330E0004EA933 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		354A4208299330E0004EA933 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		35E7581C299FC84A006043C3 /* CallExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallExpression.swift; sourceTree = "<group>"; };
+		35E7581E299FE671006043C3 /* BinaryOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperator.swift; sourceTree = "<group>"; };
+		35E7582229A12D2B006043C3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryOperator+Pretty.swift"; sourceTree = "<group>"; };
+		35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+HighlightColor.swift"; sourceTree = "<group>"; };
+		35E7582829A1AE58006043C3 /* Ranged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranged.swift; sourceTree = "<group>"; };
+		35E7582A29A1AFEF006043C3 /* SourceRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceRange.swift; sourceTree = "<group>"; };
+		35E7582C29A1B656006043C3 /* Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretty.swift; sourceTree = "<group>"; };
+		35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ranged+Pretty.swift"; sourceTree = "<group>"; };
+		35E7583029A1B78E006043C3 /* Array+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Pretty.swift"; sourceTree = "<group>"; };
+		35E7583629A1BFED006043C3 /* RecipeDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDocument.swift; sourceTree = "<group>"; };
+		35EC358C29A837B700D31DA8 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		35EC358E29A83CB500D31DA8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../MiniCAD.swiftpm/Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		354A413B29932FA2004EA933 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		354A414C29932FA3004EA933 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3503AF0D29A8DE8100AF1188 /* STL */ = {
+			isa = PBXGroup;
+			children = (
+				352B9B2629A7BE32007A7470 /* STLEncodable.swift */,
+				3503AF1829A913EF00AF1188 /* STLDecodable.swift */,
+				3503AF1629A9125900AF1188 /* STLDecodeError.swift */,
+				352B9B2429A7BE32007A7470 /* Mesh+STLCodable.swift */,
+				352B9B2729A7BE32007A7470 /* Vec3+STLCodable.swift */,
+			);
+			path = STL;
+			sourceTree = "<group>";
+		};
+		3503AF0F29A8DEB900AF1188 /* CSG */ = {
+			isa = PBXGroup;
+			children = (
+				3503AF1029A8DEE000AF1188 /* Mesh+BooleanOperations.swift */,
+			);
+			path = CSG;
+			sourceTree = "<group>";
+		};
+		3503AF2629A9274400AF1188 /* Partitioning */ = {
+			isa = PBXGroup;
+			children = (
+				3503AF2229A9209C00AF1188 /* AxisAlignedBoundingBox.swift */,
+				3503AF2F29A92BBA00AF1188 /* AlignedAlignedBoundingBox+Cuboid.swift */,
+				3503AF2729A9277B00AF1188 /* AxisAlignedContainable.swift */,
+				3503AF2D29A9295D00AF1188 /* Mesh+AxisAlignedBoundingBox.swift */,
+				3503AF2B29A927EE00AF1188 /* Vec3+AxisAlignedBoundable.swift */,
+				3503AF2929A927C900AF1188 /* Triangle+AxisAlignedBoundable.swift */,
+				3503AF1C29A91DD900AF1188 /* Octree.swift */,
+				3503AF3129A934C100AF1188 /* Octree+Mesh.swift */,
+			);
+			path = Partitioning;
+			sourceTree = "<group>";
+		};
+		352678C329B36877002A81B3 /* BuiltIn */ = {
+			isa = PBXGroup;
+			children = (
+				352678C629B368BC002A81B3 /* BuiltInConstants.swift */,
+				354A41F1299330E0004EA933 /* BuiltInFunctions.swift */,
+				352678C429B3688A002A81B3 /* BuiltInOperators.swift */,
+				352678C829B368E1002A81B3 /* BuiltInUtils.swift */,
+			);
+			path = BuiltIn;
+			sourceTree = "<group>";
+		};
+		352B9B0D29A7BD2D007A7470 /* Value */ = {
+			isa = PBXGroup;
+			children = (
+				352B9B0E29A7BD2D007A7470 /* Range+ValueConvertible.swift */,
+				352B9B0F29A7BD2D007A7470 /* Bool+ValueConvertible.swift */,
+				352B9B1029A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift */,
+				352B9B1129A7BD2D007A7470 /* String+ValueConvertible.swift */,
+				352B9B1229A7BD2D007A7470 /* Double+ValueConvertible.swift */,
+				352B9B1329A7BD2D007A7470 /* Int+ValueConvertible.swift */,
+				352B9B1429A7BD2D007A7470 /* Value.swift */,
+				352B9B1529A7BD2D007A7470 /* ValueConvertible.swift */,
+			);
+			path = Value;
+			sourceTree = "<group>";
+		};
+		354A413529932FA2004EA933 = {
+			isa = PBXGroup;
+			children = (
+				354A414029932FA2004EA933 /* MiniCAD */,
+				354A415229932FA3004EA933 /* MiniCADTests */,
+				354A413F29932FA2004EA933 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		354A413F29932FA2004EA933 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				354A413E29932FA2004EA933 /* MiniCAD.app */,
+				354A414F29932FA3004EA933 /* MiniCADTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		354A414029932FA2004EA933 /* MiniCAD */ = {
+			isa = PBXGroup;
+			children = (
+				35EC358E29A83CB500D31DA8 /* Info.plist */,
+				3540FEAA29A84300005B2428 /* Assets.xcassets */,
+				354A41D2299330E0004EA933 /* Resources */,
+				354A41D4299330E0004EA933 /* Sources */,
+				354A414729932FA3004EA933 /* MiniCAD.entitlements */,
+				354A414829932FA3004EA933 /* Preview Content */,
+			);
+			path = MiniCAD;
+			sourceTree = "<group>";
+		};
+		354A414829932FA3004EA933 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				354A414929932FA3004EA933 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		354A415229932FA3004EA933 /* MiniCADTests */ = {
+			isa = PBXGroup;
+			children = (
+				3511D18B29A7DCD6009FDEA0 /* HashableVoid.swift */,
+				3511D18D29A7DCD6009FDEA0 /* ParserTests.swift */,
+				3511D18929A7DCD6009FDEA0 /* STLTests.swift */,
+				3503AF3929A9482000AF1188 /* PlaneTests.swift */,
+				352678D429B3A6AC002A81B3 /* TriangleTests.swift */,
+				352678D029B38D52002A81B3 /* PolygonTests.swift */,
+				3503AF2429A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift */,
+				3511D18A29A7DCD6009FDEA0 /* TokenizerTests.swift */,
+				3511D18C29A7DCD6009FDEA0 /* ValueTests.swift */,
+				3511D18829A7DCD6009FDEA0 /* Vec3Tests.swift */,
+			);
+			path = MiniCADTests;
+			sourceTree = "<group>";
+		};
+		354A41D2299330E0004EA933 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				354A41D3299330E0004EA933 /* Preview.scn */,
+				3503AF1A29A9182600AF1188 /* Suzanne.stl */,
+			);
+			name = Resources;
+			path = ../../MiniCAD.swiftpm/Resources;
+			sourceTree = "<group>";
+		};
+		354A41D4299330E0004EA933 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				354A41DB299330E0004EA933 /* MiniCADApp.swift */,
+				354A41DC299330E0004EA933 /* Model */,
+				354A41D5299330E0004EA933 /* ViewModel */,
+				354A41FF299330E0004EA933 /* View */,
+			);
+			name = Sources;
+			path = ../../MiniCAD.swiftpm/Sources;
+			sourceTree = "<group>";
+		};
+		354A41D5299330E0004EA933 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				354A41D9299330E0004EA933 /* Node */,
+				354A41D6299330E0004EA933 /* Options.swift */,
+				354A41D7299330E0004EA933 /* PreviewViewModel.swift */,
+				35E7583629A1BFED006043C3 /* RecipeDocument.swift */,
+				352B9B2029A7BD8F007A7470 /* STLDocument.swift */,
+				354A41D8299330E0004EA933 /* EditorViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		354A41D9299330E0004EA933 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				354A41DA299330E0004EA933 /* AxisNode.swift */,
+				3511D18629A7D830009FDEA0 /* SCNGeometry+Mesh.swift */,
+			);
+			path = Node;
+			sourceTree = "<group>";
+		};
+		354A41DC299330E0004EA933 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				354A41EC299330E0004EA933 /* Utils */,
+				354A41FC299330E0004EA933 /* Geometry */,
+				354A41DD299330E0004EA933 /* Recipe */,
+				352B9B0D29A7BD2D007A7470 /* Value */,
+				354A41E6299330E0004EA933 /* Parse */,
+				354A41F3299330E0004EA933 /* Pretty */,
+				354A41EF299330E0004EA933 /* Interpret */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		354A41DD299330E0004EA933 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				354A41DE299330E0004EA933 /* Recipe.swift */,
+				354A41E0299330E0004EA933 /* Expression.swift */,
+				354A41E2299330E0004EA933 /* BinaryExpression.swift */,
+				354A41DF299330E0004EA933 /* VarBinding.swift */,
+				35E7581E299FE671006043C3 /* BinaryOperator.swift */,
+				35E7581C299FC84A006043C3 /* CallExpression.swift */,
+				354A41E3299330E0004EA933 /* ForLoop.swift */,
+				354A41E4299330E0004EA933 /* Statement.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		354A41E6299330E0004EA933 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				352B9B1E29A7BD45007A7470 /* DemoRecipe.swift */,
+				354A41E7299330E0004EA933 /* ParseError.swift */,
+				354A41E8299330E0004EA933 /* TokenIterator.swift */,
+				354A41E9299330E0004EA933 /* Tokenizer.swift */,
+				354A41EA299330E0004EA933 /* Parser.swift */,
+				354A41EB299330E0004EA933 /* Token.swift */,
+			);
+			path = Parse;
+			sourceTree = "<group>";
+		};
+		354A41EC299330E0004EA933 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				354A41ED299330E0004EA933 /* Array+Extensions.swift */,
+				3503AF1429A90AAB00AF1188 /* Data+Extensions.swift */,
+				354A41EE299330E0004EA933 /* Identified.swift */,
+				35E7582229A12D2B006043C3 /* Box.swift */,
+				35E7582A29A1AFEF006043C3 /* SourceRange.swift */,
+				35E7582829A1AE58006043C3 /* Ranged.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		354A41EF299330E0004EA933 /* Interpret */ = {
+			isa = PBXGroup;
+			children = (
+				352678C329B36877002A81B3 /* BuiltIn */,
+				354A41F0299330E0004EA933 /* InterpretError.swift */,
+				354A41F2299330E0004EA933 /* Interpreter.swift */,
+			);
+			path = Interpret;
+			sourceTree = "<group>";
+		};
+		354A41F3299330E0004EA933 /* Pretty */ = {
+			isa = PBXGroup;
+			children = (
+				35E7582C29A1B656006043C3 /* Pretty.swift */,
+				354A41FA299330E0004EA933 /* Formatter.swift */,
+				35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */,
+				35E7583029A1B78E006043C3 /* Array+Pretty.swift */,
+				354A41F4299330E0004EA933 /* Recipe+Pretty.swift */,
+				354A41F5299330E0004EA933 /* VarBinding+Pretty.swift */,
+				354A41F6299330E0004EA933 /* Statement+Pretty.swift */,
+				354A41F7299330E0004EA933 /* ForLoop+Pretty.swift */,
+				354A41F8299330E0004EA933 /* Value+Pretty.swift */,
+				354A41FB299330E0004EA933 /* Expression+Pretty.swift */,
+				354A41F9299330E0004EA933 /* BinaryExpression+Pretty.swift */,
+				35E7582429A12F4E006043C3 /* BinaryOperator+Pretty.swift */,
+			);
+			path = Pretty;
+			sourceTree = "<group>";
+		};
+		354A41FC299330E0004EA933 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				3503AF2629A9274400AF1188 /* Partitioning */,
+				3503AF0F29A8DEB900AF1188 /* CSG */,
+				3503AF0D29A8DE8100AF1188 /* STL */,
+				354A41FE299330E0004EA933 /* Cuboid.swift */,
+				352B9B2229A7BE32007A7470 /* Cylinder.swift */,
+				352678CA29B36A9E002A81B3 /* TextLabel.swift */,
+				352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */,
+				352678CE29B3785D002A81B3 /* Polygon.swift */,
+				352B9B2329A7BE32007A7470 /* Mesh.swift */,
+				352B9B2529A7BE32007A7470 /* Quad.swift */,
+				3503AF1E29A91E4E00AF1188 /* Triangle.swift */,
+				3503AF4129A94CCD00AF1188 /* Triangle+Plane.swift */,
+				3503AF3329A9441E00AF1188 /* Plane.swift */,
+				3503AF3729A944D100AF1188 /* Plane+Line.swift */,
+				3503AF3D29A94C9B00AF1188 /* Plane+Triangle.swift */,
+				3503AF3529A9448E00AF1188 /* Line.swift */,
+				3503AF3F29A94CB000AF1188 /* Line+Plane.swift */,
+				3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */,
+				354A41FD299330E0004EA933 /* Vec3.swift */,
+			);
+			path = Geometry;
+			sourceTree = "<group>";
+		};
+		354A41FF299330E0004EA933 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				354A4207299330E0004EA933 /* ContentView.swift */,
+				354A4201299330E0004EA933 /* CodeEditor.swift */,
+				35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */,
+				354A4202299330E0004EA933 /* PreviewView.swift */,
+				354A4203299330E0004EA933 /* PreviewOverlay.swift */,
+				354A4204299330E0004EA933 /* OptionsView.swift */,
+				35EC358C29A837B700D31DA8 /* ToolbarView.swift */,
+				354A4205299330E0004EA933 /* EditorView.swift */,
+				354A4206299330E0004EA933 /* PreviewSceneView.swift */,
+				354A4208299330E0004EA933 /* ErrorView.swift */,
+				354A4200299330E0004EA933 /* ViewConstants.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		354A413D29932FA2004EA933 /* MiniCAD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 354A416329932FA3004EA933 /* Build configuration list for PBXNativeTarget "MiniCAD" */;
+			buildPhases = (
+				354A413A29932FA2004EA933 /* Sources */,
+				354A413B29932FA2004EA933 /* Frameworks */,
+				354A413C29932FA2004EA933 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MiniCAD;
+			productName = MiniCAD;
+			productReference = 354A413E29932FA2004EA933 /* MiniCAD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		354A414E29932FA3004EA933 /* MiniCADTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 354A416629932FA3004EA933 /* Build configuration list for PBXNativeTarget "MiniCADTests" */;
+			buildPhases = (
+				354A414B29932FA3004EA933 /* Sources */,
+				354A414C29932FA3004EA933 /* Frameworks */,
+				354A414D29932FA3004EA933 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				354A415129932FA3004EA933 /* PBXTargetDependency */,
+			);
+			name = MiniCADTests;
+			productName = MiniCADTests;
+			productReference = 354A414F29932FA3004EA933 /* MiniCADTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		354A413629932FA2004EA933 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					354A413D29932FA2004EA933 = {
+						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
+					};
+					354A414E29932FA3004EA933 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 354A413D29932FA2004EA933;
+					};
+				};
+			};
+			buildConfigurationList = 354A413929932FA2004EA933 /* Build configuration list for PBXProject "MiniCAD" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 354A413529932FA2004EA933;
+			productRefGroup = 354A413F29932FA2004EA933 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				354A413D29932FA2004EA933 /* MiniCAD */,
+				354A414E29932FA3004EA933 /* MiniCADTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		354A413C29932FA2004EA933 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3503AF1B29A9197000AF1188 /* Suzanne.stl in Resources */,
+				35EC358F29A83CB500D31DA8 /* Info.plist in Resources */,
+				354A414A29932FA3004EA933 /* Preview Assets.xcassets in Resources */,
+				354A4209299330E0004EA933 /* Preview.scn in Resources */,
+				3540FEAB29A84300005B2428 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		354A414D29932FA3004EA933 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		354A413A29932FA2004EA933 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3503AF1129A8DEE000AF1188 /* Mesh+BooleanOperations.swift in Sources */,
+				352678C929B368E1002A81B3 /* BuiltInUtils.swift in Sources */,
+				3503AF3029A92BBA00AF1188 /* AlignedAlignedBoundingBox+Cuboid.swift in Sources */,
+				354A4226299330E0004EA933 /* BinaryExpression+Pretty.swift in Sources */,
+				35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */,
+				354A422E299330E0004EA933 /* PreviewOverlay.swift in Sources */,
+				352678CF29B3785D002A81B3 /* Polygon.swift in Sources */,
+				354A4222299330E0004EA933 /* VarBinding+Pretty.swift in Sources */,
+				354A420D299330E0004EA933 /* AxisNode.swift in Sources */,
+				354A4218299330E0004EA933 /* TokenIterator.swift in Sources */,
+				3503AF3E29A94C9B00AF1188 /* Plane+Triangle.swift in Sources */,
+				354A420C299330E0004EA933 /* EditorViewModel.swift in Sources */,
+				352B9B2B29A7BE32007A7470 /* Quad.swift in Sources */,
+				35E7582D29A1B657006043C3 /* Pretty.swift in Sources */,
+				354A420E299330E0004EA933 /* MiniCADApp.swift in Sources */,
+				352B9B1729A7BD2D007A7470 /* Bool+ValueConvertible.swift in Sources */,
+				35E7582929A1AE58006043C3 /* Ranged.swift in Sources */,
+				35E7582B29A1AFEF006043C3 /* SourceRange.swift in Sources */,
+				3511D18729A7D830009FDEA0 /* SCNGeometry+Mesh.swift in Sources */,
+				354A4215299330E0004EA933 /* Statement.swift in Sources */,
+				35E7582329A12D2B006043C3 /* Box.swift in Sources */,
+				354A4228299330E0004EA933 /* Expression+Pretty.swift in Sources */,
+				3503AF1529A90AAB00AF1188 /* Data+Extensions.swift in Sources */,
+				352B9B2929A7BE32007A7470 /* Mesh.swift in Sources */,
+				352678CD29B373F6002A81B3 /* Mesh+CGPath.swift in Sources */,
+				3503AF1929A913EF00AF1188 /* STLDecodable.swift in Sources */,
+				354A422A299330E0004EA933 /* Cuboid.swift in Sources */,
+				352B9B1A29A7BD2D007A7470 /* Double+ValueConvertible.swift in Sources */,
+				352B9B2C29A7BE32007A7470 /* STLEncodable.swift in Sources */,
+				354A421F299330E0004EA933 /* BuiltInFunctions.swift in Sources */,
+				354A4219299330E0004EA933 /* Tokenizer.swift in Sources */,
+				354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */,
+				352B9B1829A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift in Sources */,
+				354A4211299330E0004EA933 /* Expression.swift in Sources */,
+				35E7582F29A1B6D7006043C3 /* Ranged+Pretty.swift in Sources */,
+				354A4221299330E0004EA933 /* Recipe+Pretty.swift in Sources */,
+				354A4227299330E0004EA933 /* Formatter.swift in Sources */,
+				354A421E299330E0004EA933 /* InterpretError.swift in Sources */,
+				3503AF3429A9441F00AF1188 /* Plane.swift in Sources */,
+				354A422C299330E0004EA933 /* CodeEditor.swift in Sources */,
+				352B9B2A29A7BE32007A7470 /* Mesh+STLCodable.swift in Sources */,
+				352B9B2129A7BD8F007A7470 /* STLDocument.swift in Sources */,
+				354A420F299330E0004EA933 /* Recipe.swift in Sources */,
+				352B9B2D29A7BE32007A7470 /* Vec3+STLCodable.swift in Sources */,
+				352B9B1F29A7BD45007A7470 /* DemoRecipe.swift in Sources */,
+				35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */,
+				354A421B299330E0004EA933 /* Token.swift in Sources */,
+				3503AF1D29A91DD900AF1188 /* Octree.swift in Sources */,
+				3503AF1F29A91E4E00AF1188 /* Triangle.swift in Sources */,
+				354A4224299330E0004EA933 /* ForLoop+Pretty.swift in Sources */,
+				354A4230299330E0004EA933 /* EditorView.swift in Sources */,
+				354A4213299330E0004EA933 /* BinaryExpression.swift in Sources */,
+				354A4217299330E0004EA933 /* ParseError.swift in Sources */,
+				354A4233299330E0004EA933 /* ErrorView.swift in Sources */,
+				3503AF2829A9277C00AF1188 /* AxisAlignedContainable.swift in Sources */,
+				354A4214299330E0004EA933 /* ForLoop.swift in Sources */,
+				35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */,
+				354A4220299330E0004EA933 /* Interpreter.swift in Sources */,
+				3503AF2E29A9295D00AF1188 /* Mesh+AxisAlignedBoundingBox.swift in Sources */,
+				3503AF3229A934C100AF1188 /* Octree+Mesh.swift in Sources */,
+				3503AF1729A9125900AF1188 /* STLDecodeError.swift in Sources */,
+				354A4232299330E0004EA933 /* ContentView.swift in Sources */,
+				354A4229299330E0004EA933 /* Vec3.swift in Sources */,
+				352678CB29B36A9E002A81B3 /* TextLabel.swift in Sources */,
+				352B9B1629A7BD2D007A7470 /* Range+ValueConvertible.swift in Sources */,
+				35E7583729A1BFED006043C3 /* RecipeDocument.swift in Sources */,
+				352B9B1929A7BD2D007A7470 /* String+ValueConvertible.swift in Sources */,
+				352B9B2829A7BE32007A7470 /* Cylinder.swift in Sources */,
+				3503AF2C29A927EE00AF1188 /* Vec3+AxisAlignedBoundable.swift in Sources */,
+				354A4210299330E0004EA933 /* VarBinding.swift in Sources */,
+				3503AF2129A91F0500AF1188 /* Mesh+Sequence.swift in Sources */,
+				35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */,
+				354A420A299330E0004EA933 /* Options.swift in Sources */,
+				354A420B299330E0004EA933 /* PreviewViewModel.swift in Sources */,
+				3503AF4029A94CB000AF1188 /* Line+Plane.swift in Sources */,
+				354A421D299330E0004EA933 /* Identified.swift in Sources */,
+				3503AF4229A94CCD00AF1188 /* Triangle+Plane.swift in Sources */,
+				354A422D299330E0004EA933 /* PreviewView.swift in Sources */,
+				352B9B1B29A7BD2D007A7470 /* Int+ValueConvertible.swift in Sources */,
+				354A422F299330E0004EA933 /* OptionsView.swift in Sources */,
+				354A422B299330E0004EA933 /* ViewConstants.swift in Sources */,
+				3503AF2A29A927C900AF1188 /* Triangle+AxisAlignedBoundable.swift in Sources */,
+				354A421A299330E0004EA933 /* Parser.swift in Sources */,
+				3503AF2329A9209C00AF1188 /* AxisAlignedBoundingBox.swift in Sources */,
+				352678C729B368BC002A81B3 /* BuiltInConstants.swift in Sources */,
+				35EC358D29A837B700D31DA8 /* ToolbarView.swift in Sources */,
+				3503AF3829A944D100AF1188 /* Plane+Line.swift in Sources */,
+				352B9B1D29A7BD2D007A7470 /* ValueConvertible.swift in Sources */,
+				3503AF3629A9448E00AF1188 /* Line.swift in Sources */,
+				35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */,
+				354A421C299330E0004EA933 /* Array+Extensions.swift in Sources */,
+				352B9B1C29A7BD2D007A7470 /* Value.swift in Sources */,
+				354A4225299330E0004EA933 /* Value+Pretty.swift in Sources */,
+				354A4223299330E0004EA933 /* Statement+Pretty.swift in Sources */,
+				352678C529B3688A002A81B3 /* BuiltInOperators.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		354A414B29932FA3004EA933 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				352678D129B38D52002A81B3 /* PolygonTests.swift in Sources */,
+				3511D19229A7DCD6009FDEA0 /* ValueTests.swift in Sources */,
+				3511D19029A7DCD6009FDEA0 /* TokenizerTests.swift in Sources */,
+				3511D19329A7DCD6009FDEA0 /* ParserTests.swift in Sources */,
+				3503AF2529A922E500AF1188 /* AxisAlignedBoundingBoxTests.swift in Sources */,
+				3511D19129A7DCD6009FDEA0 /* HashableVoid.swift in Sources */,
+				3511D18E29A7DCD6009FDEA0 /* Vec3Tests.swift in Sources */,
+				3503AF3A29A9482000AF1188 /* PlaneTests.swift in Sources */,
+				352678D529B3A6AC002A81B3 /* TriangleTests.swift in Sources */,
+				3511D18F29A7DCD6009FDEA0 /* STLTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		354A415129932FA3004EA933 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 354A413D29932FA2004EA933 /* MiniCAD */;
+			targetProxy = 354A415029932FA3004EA933 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		354A416129932FA3004EA933 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		354A416229932FA3004EA933 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		354A416429932FA3004EA933 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MiniCAD/MiniCAD.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MiniCAD/Preview Content\"";
+				DEVELOPMENT_TEAM = SS8V8UGLY8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ../MiniCAD.swiftpm/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fwcd.MiniCAD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		354A416529932FA3004EA933 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MiniCAD/MiniCAD.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MiniCAD/Preview Content\"";
+				DEVELOPMENT_TEAM = SS8V8UGLY8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ../MiniCAD.swiftpm/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fwcd.MiniCAD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		354A416729932FA3004EA933 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SS8V8UGLY8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fwcd.MiniCADTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiniCAD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MiniCAD";
+			};
+			name = Debug;
+		};
+		354A416829932FA3004EA933 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SS8V8UGLY8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fwcd.MiniCADTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiniCAD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MiniCAD";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		354A413929932FA2004EA933 /* Build configuration list for PBXProject "MiniCAD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				354A416129932FA3004EA933 /* Debug */,
+				354A416229932FA3004EA933 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		354A416329932FA3004EA933 /* Build configuration list for PBXNativeTarget "MiniCAD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				354A416429932FA3004EA933 /* Debug */,
+				354A416529932FA3004EA933 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		354A416629932FA3004EA933 /* Build configuration list for PBXNativeTarget "MiniCADTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				354A416729932FA3004EA933 /* Debug */,
+				354A416829932FA3004EA933 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 354A413629932FA2004EA933 /* Project object */;
+}
