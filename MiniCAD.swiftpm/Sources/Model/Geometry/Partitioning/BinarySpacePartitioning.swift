@@ -1,4 +1,4 @@
-// Inspired by MIT-licensed code from https://github.com/evanw/csg.js
+// Based on MIT-licensed code from https://github.com/evanw/csg.js
 // Copyright (c) 2011 Evan Wallace (http://madebyevan.com/)
 
 /// A binary space partitioning node used to perform CSG operations.

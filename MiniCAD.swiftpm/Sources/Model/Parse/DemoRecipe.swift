@@ -1,8 +1,22 @@
 // DEBUG
 let rawDemoRecipe: String = """
-    Difference {
+    Translate(-3) {
+      Difference {
+        Cuboid()
+        Cylinder(0.3, 1.4)
+      }
+    }
+    
+    Union {
       Cuboid()
       Cylinder(0.3, 1.4)
+    }
+    
+    Translate(3) {
+      Intersection {
+        Cuboid()
+        Cylinder(0.3, 1.4)
+      }
     }
     """
 //let rawDemoRecipe: String = """
