@@ -12,6 +12,11 @@ struct BinarySpacePartitioning {
     /// Polygons within the plane.
     private(set) var polygons: [Polygon] = []
     
+    /// All of the polygons that are recursively contained in this BSP tree.
+    var allPolygons: [Polygon] {
+        polygons + (front?.allPolygons ?? []) + (back?.allPolygons ?? [])
+    }
+    
     /// Inserts the given polygons.
     mutating func insert(polygons insertedPolygons: [Polygon]) {
         guard let firstPolygon = insertedPolygons.first else { return }
@@ -52,6 +57,50 @@ struct BinarySpacePartitioning {
             }
             back!.insert(polygons: backPolygons)
         }
+    }
+    
+    /// Remove all polygons in this BSP that are inside the other BSP tree.
+    mutating func clip(to bsp: BinarySpacePartitioning) {
+        polygons = bsp.clip(polygons: polygons)
+        if front != nil {
+            front!.clip(to: bsp)
+        }
+        if back != nil {
+            back!.clip(to: bsp)
+        }
+    }
+    
+    /// Filter out all of the given polygons that are inside this BSP tree.
+    private func clip(polygons clippedPolygons: [Polygon]) -> [Polygon] {
+        guard let plane = self.plane else {
+            return polygons
+        }
+        
+        var frontPolygons: [Polygon] = []
+        var backPolygons: [Polygon] = []
+        var coplanarFront: [Polygon] = []
+        var coplanarBack: [Polygon] = []
+        
+        for polygon in clippedPolygons {
+            plane.split(
+                polygon: polygon,
+                coplanarFront: &coplanarFront,
+                coplanarBack: &coplanarBack,
+                front: &frontPolygons,
+                back: &backPolygons
+            )
+        }
+        
+        if let front = self.front {
+            frontPolygons = front.clip(polygons: frontPolygons)
+        }
+        if let back = self.back {
+            backPolygons = back.clip(polygons: backPolygons)
+        } else {
+            backPolygons = []
+        }
+        
+        return frontPolygons + backPolygons
     }
 }
 
