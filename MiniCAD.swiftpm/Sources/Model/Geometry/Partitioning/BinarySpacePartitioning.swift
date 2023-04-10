@@ -111,6 +111,13 @@ struct BinarySpacePartitioning {
     }
 }
 
+extension BinarySpacePartitioning {
+    init(inserting polygons: [Polygon]) {
+        self.init()
+        insert(polygons: polygons)
+    }
+}
+
 private struct Classification: OptionSet {
     let rawValue: UInt8
     

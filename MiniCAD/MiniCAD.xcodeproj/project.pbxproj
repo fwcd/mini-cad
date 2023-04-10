@@ -105,6 +105,8 @@
 		354A4232299330E0004EA933 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4207299330E0004EA933 /* ContentView.swift */; };
 		354A4233299330E0004EA933 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4208299330E0004EA933 /* ErrorView.swift */; };
 		3550612729E219F0006B5019 /* BinarySpacePartitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612629E219F0006B5019 /* BinarySpacePartitioning.swift */; };
+		3550612929E43E2D006B5019 /* Mesh+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612829E43E2D006B5019 /* Mesh+Polygon.swift */; };
+		3550612B29E43E92006B5019 /* Plane+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612A29E43E92006B5019 /* Plane+Polygon.swift */; };
 		35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581C299FC84A006043C3 /* CallExpression.swift */; };
 		35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581E299FE671006043C3 /* BinaryOperator.swift */; };
 		35E7582329A12D2B006043C3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582229A12D2B006043C3 /* Box.swift */; };
@@ -232,6 +234,8 @@
 		354A4207299330E0004EA933 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		354A4208299330E0004EA933 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		3550612629E219F0006B5019 /* BinarySpacePartitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySpacePartitioning.swift; sourceTree = "<group>"; };
+		3550612829E43E2D006B5019 /* Mesh+Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Polygon.swift"; sourceTree = "<group>"; };
+		3550612A29E43E92006B5019 /* Plane+Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plane+Polygon.swift"; sourceTree = "<group>"; };
 		35E7581C299FC84A006043C3 /* CallExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallExpression.swift; sourceTree = "<group>"; };
 		35E7581E299FE671006043C3 /* BinaryOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperator.swift; sourceTree = "<group>"; };
 		35E7582229A12D2B006043C3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -521,6 +525,7 @@
 				352B9B2229A7BE32007A7470 /* Cylinder.swift */,
 				352678CA29B36A9E002A81B3 /* TextLabel.swift */,
 				352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */,
+				3550612829E43E2D006B5019 /* Mesh+Polygon.swift */,
 				352678CE29B3785D002A81B3 /* Polygon.swift */,
 				352B9B2329A7BE32007A7470 /* Mesh.swift */,
 				352B9B2529A7BE32007A7470 /* Quad.swift */,
@@ -529,6 +534,7 @@
 				3503AF3329A9441E00AF1188 /* Plane.swift */,
 				3503AF3729A944D100AF1188 /* Plane+Line.swift */,
 				3503AF3D29A94C9B00AF1188 /* Plane+Triangle.swift */,
+				3550612A29E43E92006B5019 /* Plane+Polygon.swift */,
 				3503AF3529A9448E00AF1188 /* Line.swift */,
 				3503AF3F29A94CB000AF1188 /* Line+Plane.swift */,
 				3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */,
@@ -714,6 +720,7 @@
 				354A4217299330E0004EA933 /* ParseError.swift in Sources */,
 				354A4233299330E0004EA933 /* ErrorView.swift in Sources */,
 				3503AF2829A9277C00AF1188 /* AxisAlignedContainable.swift in Sources */,
+				3550612929E43E2D006B5019 /* Mesh+Polygon.swift in Sources */,
 				354A4214299330E0004EA933 /* ForLoop.swift in Sources */,
 				35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */,
 				354A4220299330E0004EA933 /* Interpreter.swift in Sources */,
@@ -727,6 +734,7 @@
 				35E7583729A1BFED006043C3 /* RecipeDocument.swift in Sources */,
 				352B9B1929A7BD2D007A7470 /* String+ValueConvertible.swift in Sources */,
 				352B9B2829A7BE32007A7470 /* Cylinder.swift in Sources */,
+				3550612B29E43E92006B5019 /* Plane+Polygon.swift in Sources */,
 				3503AF2C29A927EE00AF1188 /* Vec3+AxisAlignedBoundable.swift in Sources */,
 				354A4210299330E0004EA933 /* VarBinding.swift in Sources */,
 				3503AF2129A91F0500AF1188 /* Mesh+Sequence.swift in Sources */,
