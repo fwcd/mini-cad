@@ -153,9 +153,9 @@ extension Plane {
         for vertex in polygon.vertices {
             let t = normal.dot(vertex) - offset
             let vertexClass: Classification = (t < -epsilon)
-                ? .back
+                ? .front
                 : (t > epsilon)
-                    ? .front
+                    ? .back
                     : .coplanar
             polygonClass.insert(vertexClass)
             vertexClasses.append(vertexClass)
