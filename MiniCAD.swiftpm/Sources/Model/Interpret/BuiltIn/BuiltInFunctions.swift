@@ -48,6 +48,10 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         let mesh = trailingBlock.compactMap(\.asMesh).disjointUnion
         return [.mesh(Mesh(Cuboid(mesh.boundingBox)))]
     },
+    "PolygonRoundtrip": { args, trailingBlock in
+        let mesh = trailingBlock.compactMap(\.asMesh).disjointUnion
+        return [.mesh(Mesh(mesh.facePolygons))]
+    },
     "Translate": { args, trailingBlock in
         let offset = parseVec3(from: args)
         let meshes = trailingBlock.compactMap(\.asMesh)
