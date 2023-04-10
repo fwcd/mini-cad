@@ -61,6 +61,6 @@ struct ToolbarView: View {
                 defaultFilename: "Model.stl"
             ) { _ in }
         }
-        .buttonStyle(.borderedProminent)
+        .buttonStyle(.bordered)
     }
 }
