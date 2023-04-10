@@ -104,6 +104,7 @@
 		354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4206299330E0004EA933 /* PreviewSceneView.swift */; };
 		354A4232299330E0004EA933 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4207299330E0004EA933 /* ContentView.swift */; };
 		354A4233299330E0004EA933 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4208299330E0004EA933 /* ErrorView.swift */; };
+		3550612729E219F0006B5019 /* BinarySpacePartitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612629E219F0006B5019 /* BinarySpacePartitioning.swift */; };
 		35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581C299FC84A006043C3 /* CallExpression.swift */; };
 		35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581E299FE671006043C3 /* BinaryOperator.swift */; };
 		35E7582329A12D2B006043C3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582229A12D2B006043C3 /* Box.swift */; };
@@ -230,6 +231,7 @@
 		354A4206299330E0004EA933 /* PreviewSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewSceneView.swift; sourceTree = "<group>"; };
 		354A4207299330E0004EA933 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		354A4208299330E0004EA933 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		3550612629E219F0006B5019 /* BinarySpacePartitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySpacePartitioning.swift; sourceTree = "<group>"; };
 		35E7581C299FC84A006043C3 /* CallExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallExpression.swift; sourceTree = "<group>"; };
 		35E7581E299FE671006043C3 /* BinaryOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperator.swift; sourceTree = "<group>"; };
 		35E7582229A12D2B006043C3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				3503AF2929A927C900AF1188 /* Triangle+AxisAlignedBoundable.swift */,
 				3503AF1C29A91DD900AF1188 /* Octree.swift */,
 				3503AF3129A934C100AF1188 /* Octree+Mesh.swift */,
+				3550612629E219F0006B5019 /* BinarySpacePartitioning.swift */,
 			);
 			path = Partitioning;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				3503AF2129A91F0500AF1188 /* Mesh+Sequence.swift in Sources */,
 				35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */,
 				354A420A299330E0004EA933 /* Options.swift in Sources */,
+				3550612729E219F0006B5019 /* BinarySpacePartitioning.swift in Sources */,
 				354A420B299330E0004EA933 /* PreviewViewModel.swift in Sources */,
 				3503AF4029A94CB000AF1188 /* Line+Plane.swift in Sources */,
 				354A421D299330E0004EA933 /* Identified.swift in Sources */,

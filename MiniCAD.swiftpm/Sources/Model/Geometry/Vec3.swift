@@ -46,6 +46,12 @@ struct Vec3: CustomStringConvertible, Hashable, AdditiveArithmetic {
         zip(rhs, Swift.min)
     }
     
+    func interpolate(_ rhs: Self, _ lambda: Double) -> Self {
+        zip(rhs) {
+            $0 * (1 - lambda) + $1 * lambda
+        }
+    }
+    
     static func +(lhs: Self, rhs: Self) -> Self {
         lhs.zip(rhs, +)
     }
