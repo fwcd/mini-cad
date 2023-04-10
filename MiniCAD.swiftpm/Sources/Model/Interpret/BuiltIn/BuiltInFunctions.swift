@@ -52,6 +52,11 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         let mesh = trailingBlock.compactMap(\.asMesh).disjointUnion
         return [.mesh(Mesh(mesh.facePolygons))]
     },
+    "BSPRoundtrip": { args, trailingBlock in
+        let mesh = trailingBlock.compactMap(\.asMesh).disjointUnion
+        let bsp = BinarySpacePartitioning(inserting: mesh.facePolygons)
+        return [.mesh(Mesh(bsp.allPolygons))]
+    },
     "Translate": { args, trailingBlock in
         let offset = parseVec3(from: args)
         let meshes = trailingBlock.compactMap(\.asMesh)
