@@ -18,8 +18,8 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
     },
     "Sphere": { args, _ in
         let radius = args[safely: 0]?.asFloat ?? 1
-        let latSteps = args[safely: 1]?.asInt ?? 8
-        let lonSteps = args[safely: 2]?.asInt ?? 8
+        let latSteps = args[safely: 1]?.asInt ?? 16
+        let lonSteps = args[safely: 2]?.asInt ?? 16
         return [.mesh(Mesh(Sphere(radius: radius, latitudeSteps: latSteps, longitudeSteps: lonSteps)))]
     },
     "Suzanne": { _, _ in
