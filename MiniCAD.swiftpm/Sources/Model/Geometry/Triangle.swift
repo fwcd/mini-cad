@@ -27,22 +27,3 @@ struct Triangle: Hashable {
         return barycentric >= .zero
     }
 }
-
-extension Mesh {
-    init(_ tri: Triangle) {
-        self.init(
-            vertices: [tri.a, tri.b, tri.c],
-            faces: [
-                .init(a: 0, b: 1, c: 2),
-            ]
-        )
-    }
-    
-    func triangle(for face: Face) -> Triangle {
-        Triangle(
-            a: vertices[face.a],
-            b: vertices[face.b],
-            c: vertices[face.c]
-        )
-    }
-}

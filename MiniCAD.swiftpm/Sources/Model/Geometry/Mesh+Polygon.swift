@@ -17,6 +17,10 @@ extension AnnotatedVertex {
 }
 
 extension Mesh {
+    var facePolygons: [Polygon] {
+        faceTriangles.map { Polygon($0) }
+    }
+    
     /// Creates a planar mesh by triangulating the given polygon.
     init(_ polygon: Polygon) {
         assert(polygon.vertices.count >= 3)

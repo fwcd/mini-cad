@@ -1,4 +1,27 @@
 extension Mesh {
+    var faceTriangles: [Triangle] {
+        faces.map { triangle(for: $0) }
+    }
+    
+    init(_ tri: Triangle) {
+        self.init(
+            vertices: [tri.a, tri.b, tri.c],
+            faces: [
+                .init(a: 0, b: 1, c: 2),
+            ]
+        )
+    }
+    
+    func triangle(for face: Face) -> Triangle {
+        Triangle(
+            a: vertices[face.a],
+            b: vertices[face.b],
+            c: vertices[face.c]
+        )
+    }
+}
+
+extension Mesh {
     init(_ faceTriangles: [Triangle], epsilon: Double = 0.001) {
         // TODO: Use an efficient space-partitioning map (e.g. an octree)
         var vertices: [Vec3] = []
