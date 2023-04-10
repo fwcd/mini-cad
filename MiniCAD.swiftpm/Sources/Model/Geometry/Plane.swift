@@ -21,9 +21,19 @@ struct Plane: Hashable {
         return Self(a: b + d1, b: b, c: b + d2)
     }
     
+    /// The flipped plane.
+    var flipped: Self {
+        Self(a: c, b: b, c: a)
+    }
+    
     /// Projects the given point onto the plane.
     func project(_ point: Vec3) -> Vec3 {
         let unitNormal = self.unitNormal
         return point - (point - b).dot(unitNormal) * unitNormal
+    }
+    
+    /// Flips the orientation of the plane.
+    mutating func flip() {
+        self = flipped
     }
 }

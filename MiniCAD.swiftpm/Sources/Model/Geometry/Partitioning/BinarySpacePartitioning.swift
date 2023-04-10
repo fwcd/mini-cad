@@ -17,6 +17,17 @@ struct BinarySpacePartitioning {
         polygons + (front?.allPolygons ?? []) + (back?.allPolygons ?? [])
     }
     
+    /// Convert solid to empty space and vice versa.
+    mutating func invert() {
+        for i in polygons.indices {
+            polygons[i].flip()
+        }
+        plane?.flip()
+        front?.invert()
+        back?.invert()
+        (front, back) = (back, front)
+    }
+    
     /// Inserts the given polygons.
     mutating func insert(polygons insertedPolygons: [Polygon]) {
         guard let firstPolygon = insertedPolygons.first else { return }
@@ -62,12 +73,8 @@ struct BinarySpacePartitioning {
     /// Remove all polygons in this BSP that are inside the other BSP tree.
     mutating func clip(to bsp: BinarySpacePartitioning) {
         polygons = bsp.clip(polygons: polygons)
-        if front != nil {
-            front!.clip(to: bsp)
-        }
-        if back != nil {
-            back!.clip(to: bsp)
-        }
+        front?.clip(to: bsp)
+        back?.clip(to: bsp)
     }
     
     /// Filter out all of the given polygons that are inside this BSP tree.
