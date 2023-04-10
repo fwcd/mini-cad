@@ -17,6 +17,7 @@ extension AnnotatedVertex {
 }
 
 extension Mesh {
+    /// Creates a planar mesh by triangulating the given polygon.
     init(_ polygon: Polygon) {
         assert(polygon.vertices.count >= 3)
         let vertices = polygon.vertices
@@ -59,5 +60,12 @@ extension Mesh {
         faces.append(.init(a: remaining[0].offset, b: remaining[1].offset, c: remaining[2].offset))
         
         self.init(vertices: vertices, faces: faces)
+    }
+    
+    /// Creates a mesh by triangulating and merging the given polygons.
+    init(_ polygons: [Polygon]) {
+        let triangulatedFaceMeshes = polygons.map { Mesh($0) }
+        self = triangulatedFaceMeshes.disjointUnion
+        // TODO: Merge vertices
     }
 }
