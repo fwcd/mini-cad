@@ -98,6 +98,9 @@ struct BinarySpacePartitioning {
             )
         }
         
+        frontPolygons += coplanarFront
+        backPolygons += coplanarBack
+        
         if let front = self.front {
             frontPolygons = front.clip(polygons: frontPolygons)
         }
