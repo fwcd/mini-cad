@@ -107,6 +107,7 @@
 		3550612729E219F0006B5019 /* BinarySpacePartitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612629E219F0006B5019 /* BinarySpacePartitioning.swift */; };
 		3550612929E43E2D006B5019 /* Mesh+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612829E43E2D006B5019 /* Mesh+Polygon.swift */; };
 		3550612B29E43E92006B5019 /* Plane+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612A29E43E92006B5019 /* Plane+Polygon.swift */; };
+		3550612D29E44024006B5019 /* Mesh+Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612C29E44024006B5019 /* Mesh+Triangle.swift */; };
 		35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581C299FC84A006043C3 /* CallExpression.swift */; };
 		35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581E299FE671006043C3 /* BinaryOperator.swift */; };
 		35E7582329A12D2B006043C3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582229A12D2B006043C3 /* Box.swift */; };
@@ -236,6 +237,7 @@
 		3550612629E219F0006B5019 /* BinarySpacePartitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySpacePartitioning.swift; sourceTree = "<group>"; };
 		3550612829E43E2D006B5019 /* Mesh+Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Polygon.swift"; sourceTree = "<group>"; };
 		3550612A29E43E92006B5019 /* Plane+Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plane+Polygon.swift"; sourceTree = "<group>"; };
+		3550612C29E44024006B5019 /* Mesh+Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Triangle.swift"; sourceTree = "<group>"; };
 		35E7581C299FC84A006043C3 /* CallExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallExpression.swift; sourceTree = "<group>"; };
 		35E7581E299FE671006043C3 /* BinaryOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperator.swift; sourceTree = "<group>"; };
 		35E7582229A12D2B006043C3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 				352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */,
 				3550612829E43E2D006B5019 /* Mesh+Polygon.swift */,
 				3503AF2029A91F0500AF1188 /* Mesh+Sequence.swift */,
+				3550612C29E44024006B5019 /* Mesh+Triangle.swift */,
 				352B9B2529A7BE32007A7470 /* Quad.swift */,
 				3503AF1E29A91E4E00AF1188 /* Triangle.swift */,
 				3503AF4129A94CCD00AF1188 /* Triangle+Plane.swift */,
@@ -710,6 +713,7 @@
 				354A420F299330E0004EA933 /* Recipe.swift in Sources */,
 				352B9B2D29A7BE32007A7470 /* Vec3+STLCodable.swift in Sources */,
 				352B9B1F29A7BD45007A7470 /* DemoRecipe.swift in Sources */,
+				3550612D29E44024006B5019 /* Mesh+Triangle.swift in Sources */,
 				35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */,
 				354A421B299330E0004EA933 /* Token.swift in Sources */,
 				3503AF1D29A91DD900AF1188 /* Octree.swift in Sources */,
