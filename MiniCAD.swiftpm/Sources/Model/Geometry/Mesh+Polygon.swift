@@ -25,7 +25,7 @@ extension Mesh {
     init(_ polygon: Polygon) {
         assert(polygon.vertices.count >= 3)
         let vertices = polygon.vertices
-        let plane = Plane(a: vertices[0], b: vertices[1], c: vertices[2]).normalized // 'Fit' a plane
+        let plane = Plane(polygon).normalized // 'Fit' a plane
         
         // Triangulate the polygon using ear clipping (i.e. by repeatedly pruning "ears" = sets of 3 consecutive, convex vertices)
         // Loosely based on https://wiki.delphigl.com/index.php/Ear_Clipping_Triangulierung
