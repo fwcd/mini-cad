@@ -25,6 +25,7 @@ struct Token: Hashable {
         case identifier(String)
         case comment
         case string(String)
+        case colon
         
         var isKeyword: Bool {
             switch self {

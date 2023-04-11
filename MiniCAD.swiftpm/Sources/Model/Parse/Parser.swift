@@ -138,14 +138,26 @@ func parsePrimaryExpression(from tokens: inout TokenIterator, allowTrailing: Boo
     }
 }
 
+/// Statefully parses an argument label from the given tokens. Throws a `ParseError` if unsuccessful.
+func parseArgLabel(from tokens: inout TokenIterator) throws -> String {
+    let ident = try parseIdentifier(from: &tokens)
+    try tokens.expect(.colon)
+    return ident
+}
+
 /// Statefully parses a function argument list from the given tokens. Throws a `ParseError` if unsuccessful.
-func parseArgs(from tokens: inout TokenIterator) throws -> [Expression<SourceRange?>] {
+func parseArgs(from tokens: inout TokenIterator) throws -> [CallArgument<SourceRange?>] {
     try tokens.expect(.leftParen)
     
-    var args: [Expression<SourceRange?>] = []
+    var args: [CallArgument<SourceRange?>] = []
     while tokens.peek()?.kind != .rightParen {
-        let arg = try parseExpression(from: &tokens)
-        args.append(arg)
+        var labelTokens = tokens
+        let label = try? parseArgLabel(from: &labelTokens)
+        if label != nil {
+            tokens = labelTokens
+        }
+        let value = try parseExpression(from: &tokens)
+        args.append(.init(label: label, value: value))
         if tokens.peek()?.kind != .rightParen {
             try tokens.expect(.comma)
         }

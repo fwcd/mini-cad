@@ -18,6 +18,7 @@ private let basePatterns: [TokenPattern] = [
     ("float", { raw in .float(String(raw)) }, "-?\\d+\\.\\d+"),
     ("int", { raw in .int(String(raw)) }, "-?\\d+"),
     ("identifier", { raw in .identifier(String(raw)) }, "\\w+"),
+    ("colon", { _ in .colon }, ":"),
 ]
 
 private let operatorPatterns: [TokenPattern] = BinaryOperator.allCases.enumerated().map { (i, op) in

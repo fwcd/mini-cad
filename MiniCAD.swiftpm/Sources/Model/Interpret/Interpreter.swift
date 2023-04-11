@@ -69,7 +69,7 @@ class Interpreter {
             return try evaluate(binaryExpression: binaryExpr)
         case .call(let callExpr):
             // Evaluate the arguments (strictly)
-            let evaluatedArgs = try callExpr.args.flatMap { try evaluate(expression: $0) }
+            let evaluatedArgs = try callExpr.args.flatMap { try evaluate(expression: $0.value) }
             
             // Interpret the trailing block in its own interpreter that
             // inherits the current scope but cannot change it.

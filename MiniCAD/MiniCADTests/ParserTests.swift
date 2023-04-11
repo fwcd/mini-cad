@@ -79,6 +79,16 @@ final class ParserTests: XCTestCase {
         ])
     }
     
+    func testArgumentLabels() throws {
+        try assert(#"test(foo: 23, bar: "abc", -9)"#, parsesTo: [
+            .expression(.call(.init(identifier: "test", args: [
+                .init(label: "foo", value: 23),
+                .init(label: "bar", value: .literal(.string("abc"))),
+                -9,
+            ], trailingBlock: []))),
+        ])
+    }
+    
     private func assert(_ raw: String, parsesTo recipe: Recipe<Void>, line: UInt = #line) throws {
         XCTAssertEqual(try parseRecipe(from: raw).map { _ in HashableVoid() }, recipe.map { _ in HashableVoid() }, line: line)
     }

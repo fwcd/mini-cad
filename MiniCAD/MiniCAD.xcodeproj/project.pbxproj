@@ -110,6 +110,8 @@
 		3550612D29E44024006B5019 /* Mesh+Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612C29E44024006B5019 /* Mesh+Triangle.swift */; };
 		3550612F29E44498006B5019 /* Polygon+Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612E29E44498006B5019 /* Polygon+Triangle.swift */; };
 		3550613129E474A9006B5019 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550613029E474A9006B5019 /* Sphere.swift */; };
+		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
+		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581C299FC84A006043C3 /* CallExpression.swift */; };
 		35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581E299FE671006043C3 /* BinaryOperator.swift */; };
 		35E7582329A12D2B006043C3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582229A12D2B006043C3 /* Box.swift */; };
@@ -242,6 +244,8 @@
 		3550612C29E44024006B5019 /* Mesh+Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Triangle.swift"; sourceTree = "<group>"; };
 		3550612E29E44498006B5019 /* Polygon+Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polygon+Triangle.swift"; sourceTree = "<group>"; };
 		3550613029E474A9006B5019 /* Sphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
+		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
+		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35E7581C299FC84A006043C3 /* CallExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallExpression.swift; sourceTree = "<group>"; };
 		35E7581E299FE671006043C3 /* BinaryOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperator.swift; sourceTree = "<group>"; };
 		35E7582229A12D2B006043C3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -460,6 +464,7 @@
 				354A41DF299330E0004EA933 /* VarBinding.swift */,
 				35E7581E299FE671006043C3 /* BinaryOperator.swift */,
 				35E7581C299FC84A006043C3 /* CallExpression.swift */,
+				35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */,
 				354A41E3299330E0004EA933 /* ForLoop.swift */,
 				354A41E4299330E0004EA933 /* Statement.swift */,
 			);
@@ -508,6 +513,7 @@
 				35E7582C29A1B656006043C3 /* Pretty.swift */,
 				354A41FA299330E0004EA933 /* Formatter.swift */,
 				35E7582E29A1B6D6006043C3 /* Ranged+Pretty.swift */,
+				35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */,
 				35E7583029A1B78E006043C3 /* Array+Pretty.swift */,
 				354A41F4299330E0004EA933 /* Recipe+Pretty.swift */,
 				354A41F5299330E0004EA933 /* VarBinding+Pretty.swift */,
@@ -686,6 +692,7 @@
 				354A420D299330E0004EA933 /* AxisNode.swift in Sources */,
 				354A4218299330E0004EA933 /* TokenIterator.swift in Sources */,
 				3503AF3E29A94C9B00AF1188 /* Plane+Triangle.swift in Sources */,
+				35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */,
 				354A420C299330E0004EA933 /* EditorViewModel.swift in Sources */,
 				352B9B2B29A7BE32007A7470 /* Quad.swift in Sources */,
 				35E7582D29A1B657006043C3 /* Pretty.swift in Sources */,
@@ -754,6 +761,7 @@
 				354A420A299330E0004EA933 /* Options.swift in Sources */,
 				3550612729E219F0006B5019 /* BinarySpacePartitioning.swift in Sources */,
 				354A420B299330E0004EA933 /* PreviewViewModel.swift in Sources */,
+				35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */,
 				3503AF4029A94CB000AF1188 /* Line+Plane.swift in Sources */,
 				354A421D299330E0004EA933 /* Identified.swift in Sources */,
 				3503AF4229A94CCD00AF1188 /* Triangle+Plane.swift in Sources */,

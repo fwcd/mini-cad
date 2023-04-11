@@ -1,7 +1,7 @@
 /// The syntax-tree for a (function) call expression.
 struct CallExpression<Attachment> {
     var identifier: String
-    var args: [Expression<Attachment>] = []
+    var args: [CallArgument<Attachment>] = []
     var trailingBlock: [Statement<Attachment>] = []
     var attachment: Attachment
     
@@ -30,7 +30,7 @@ extension CallExpression: ExpressibleByStringLiteral where Attachment == Void {
 }
 
 extension CallExpression where Attachment == Void {
-    init(identifier: String, args: [Expression<Void>], trailingBlock: [Statement<Void>]) {
+    init(identifier: String, args: [CallArgument<Void>], trailingBlock: [Statement<Void>]) {
         self.init(identifier: identifier, args: args, trailingBlock: trailingBlock, attachment: ())
     }
 }
