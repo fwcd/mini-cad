@@ -112,6 +112,7 @@
 		3550613129E474A9006B5019 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550613029E474A9006B5019 /* Sphere.swift */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
+		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
 		35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581C299FC84A006043C3 /* CallExpression.swift */; };
 		35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7581E299FE671006043C3 /* BinaryOperator.swift */; };
 		35E7582329A12D2B006043C3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7582229A12D2B006043C3 /* Box.swift */; };
@@ -246,6 +247,7 @@
 		3550613029E474A9006B5019 /* Sphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
+		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
 		35E7581C299FC84A006043C3 /* CallExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallExpression.swift; sourceTree = "<group>"; };
 		35E7581E299FE671006043C3 /* BinaryOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperator.swift; sourceTree = "<group>"; };
 		35E7582229A12D2B006043C3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 				354A4203299330E0004EA933 /* PreviewOverlay.swift */,
 				354A4204299330E0004EA933 /* OptionsView.swift */,
 				35EC358C29A837B700D31DA8 /* ToolbarView.swift */,
+				35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */,
 				354A4205299330E0004EA933 /* EditorView.swift */,
 				354A4206299330E0004EA933 /* PreviewSceneView.swift */,
 				354A4208299330E0004EA933 /* ErrorView.swift */,
@@ -739,6 +742,7 @@
 				354A4233299330E0004EA933 /* ErrorView.swift in Sources */,
 				3503AF2829A9277C00AF1188 /* AxisAlignedContainable.swift in Sources */,
 				3550612929E43E2D006B5019 /* Mesh+Polygon.swift in Sources */,
+				35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */,
 				354A4214299330E0004EA933 /* ForLoop.swift in Sources */,
 				35E7582729A1ABA7006043C3 /* Token+HighlightColor.swift in Sources */,
 				354A4220299330E0004EA933 /* Interpreter.swift in Sources */,

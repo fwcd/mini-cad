@@ -12,7 +12,11 @@ struct ContentView: View {
                 PreviewView()
             }
             // TODO: Figure out a more elegant way to integrate the sidebar toggle button
-            .toolbar(columnVisibility == .all ? .hidden : .visible, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarView()
+                }
+            }
         }
     }
 }
