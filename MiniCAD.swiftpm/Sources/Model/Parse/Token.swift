@@ -25,14 +25,15 @@ struct Token: Hashable {
         case comma
         case float(String)
         case int(String)
+        case bool(Bool)
         case identifier(String)
         case comment
         case string(String)
         case colon
         
-        var isKeyword: Bool {
+        var isKeywordLike: Bool {
             switch self {
-            case .let, .for, .in, .if, .else, .func: return true
+            case .let, .for, .in, .if, .else, .func, .bool(_): return true
             default: return false
             }
         }

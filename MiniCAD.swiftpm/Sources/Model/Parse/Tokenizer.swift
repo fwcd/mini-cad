@@ -20,6 +20,8 @@ private let basePatterns: [TokenPattern] = [
     ("comma", { _ in .comma }, ","),
     ("float", { raw in .float(String(raw)) }, "-?\\d+\\.\\d+"),
     ("int", { raw in .int(String(raw)) }, "-?\\d+"),
+    ("true", { _ in .bool(true) }, "\\btrue\\b"),
+    ("false", { _ in .bool(false) }, "\\bfalse\\b"),
     ("identifier", { raw in .identifier(String(raw)) }, "\\w+"),
     ("colon", { _ in .colon }, ":"),
 ]

@@ -134,8 +134,14 @@ final class ParserTests: XCTestCase {
         ])
     }
     
-    private func assert(_ raw: String, parsesTo recipe: Recipe<Void>, line: UInt = #line) throws {
-        XCTAssertEqual(try parseRecipe(from: raw).map { _ in HashableVoid() }, recipe.map { _ in HashableVoid() }, line: line)
+    private func assert(_ raw: String, parsesTo recipe: Recipe<Void>, debugDump: Bool = false, line: UInt = #line) throws {
+        let actual = try parseRecipe(from: raw).map { _ in HashableVoid() }
+        let expected = recipe.map { _ in HashableVoid() }
+        if debugDump {
+            dump(expected)
+            dump(actual)
+        }
+        XCTAssertEqual(expected, actual, line: line)
     }
     
     private func assert(_ raw: String, throws expectedError: ParseError, line: UInt = #line) throws {

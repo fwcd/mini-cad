@@ -73,7 +73,7 @@ func parseForLoop(from tokens: inout TokenIterator) throws -> ForLoop<SourceRang
 /// Statefully parses an if-else statement from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseIfElse(from tokens: inout TokenIterator) throws -> IfElse<SourceRange?> {
     try tokens.expect(.if)
-    let condition = try parseExpression(from: &tokens)
+    let condition = try parseExpression(from: &tokens, allowTrailing: false)
     let ifBlock = try parseBlock(from: &tokens)
     var elseBlock: [Statement<SourceRange?>]? = nil
     if tokens.peek()?.kind == .else {
@@ -118,8 +118,8 @@ func parseIdentifier(from tokens: inout TokenIterator) throws -> String {
 // https://en.wikipedia.org/wiki/Operator-precedence_parser#Pseudocode
 
 /// Statefully parses an expression from the given tokens. Throws a `ParseError` if unsuccessful.
-func parseExpression(from tokens: inout TokenIterator) throws -> Expression<SourceRange?> {
-    let lhs = try parsePrimaryExpression(from: &tokens, allowTrailing: true)
+func parseExpression(from tokens: inout TokenIterator, allowTrailing: Bool = true) throws -> Expression<SourceRange?> {
+    let lhs = try parsePrimaryExpression(from: &tokens, allowTrailing: allowTrailing)
     if case .call(let call) = lhs, !call.trailingBlock.isEmpty {
         // We are done parsing this expression after a trailing block
         return lhs
@@ -159,6 +159,9 @@ func parsePrimaryExpression(from tokens: inout TokenIterator, allowTrailing: Boo
     case .string(let value):
         tokens.next()
         return .literal(.string(value))
+    case .bool(let value):
+        tokens.next()
+        return .literal(.bool(value))
     case .identifier(let ident):
         tokens.next()
         switch tokens.peek()?.kind {

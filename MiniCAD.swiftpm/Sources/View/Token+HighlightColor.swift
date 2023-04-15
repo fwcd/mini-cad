@@ -2,7 +2,7 @@ import SwiftUI
 
 extension Token.Kind {
     func highlightColor(colorScheme: ColorScheme) -> Color? {
-        if isKeyword {
+        if isKeywordLike {
             switch colorScheme {
             case .light: return Color(red: 0.6, green: 0.3, blue: 0.2)
             default: return .accentColor
