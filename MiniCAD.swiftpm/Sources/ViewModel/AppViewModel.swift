@@ -4,7 +4,18 @@ import Foundation
 class AppViewModel: ObservableObject {
     @Published var examples: [NamedDocument] = []
     @Published var selectedDocument: NamedDocument? = nil {
+        willSet {
+            // Save contents of document when switching
+            guard let id = selectedDocument?.id else { return }
+            for i in examples.indices {
+                if examples[i].id == id {
+                    examples[i].document.raw = editor.rawRecipe
+                    break
+                }
+            }
+        }
         didSet {
+            // Load contents of new document
             editor.rawRecipe = selectedDocument?.document.raw ?? ""
         }
     }
