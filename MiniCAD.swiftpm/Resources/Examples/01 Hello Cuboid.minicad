@@ -1,0 +1,10 @@
+// Welcome to MiniCAD, a Swift-like programming language
+// for creating 3D models programmatically!
+
+// To get started, let's create a cuboid of size 5x4x3:
+
+Cuboid(5, 4, 3)
+
+// Code in this editor will automatically be interpreted
+// as you type and previewed on the right. Try it out
+// by tweaking the size of the cuboid!
