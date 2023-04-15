@@ -11,14 +11,23 @@ class EditorViewModel: ObservableObject {
     }
     @Published private(set) var parsedRecipe: Recipe<SourceRange?> = .init() {
         didSet {
-            do {
-                let values = try interpret(recipe: parsedRecipe)
-                meshes = values.compactMap(\.asMesh)
-                interpretError = nil
-            } catch let error as InterpretError {
-                interpretError = error
-            } catch {
-                log.warning("Unhandled interpret error: \(error)")
+            interpretationTask?.cancel()
+            interpretationTask = Task {
+                do {
+                    let values = try interpret(recipe: parsedRecipe)
+                    Task.detached { @MainActor in
+                        self.meshes = values.compactMap(\.asMesh)
+                        self.interpretError = nil
+                    }
+                } catch let error as InterpretError {
+                    Task.detached { @MainActor in
+                        self.interpretError = error
+                    }
+                } catch _ as CancellationError {
+                    log.info("Interpretation cancelled")
+                } catch {
+                    log.warning("Unhandled interpretation error: \(error)")
+                }
             }
         }
     }
@@ -42,6 +51,8 @@ class EditorViewModel: ObservableObject {
     
     @Published private(set) var parseError: ParseError? = nil
     @Published private(set) var interpretError: InterpretError? = nil
+    
+    private var interpretationTask: Task<Void, Never>? = nil
     
     private var preview: PreviewViewModel
     

@@ -27,13 +27,17 @@ class Interpreter {
     
     /// Interprets the given recipe. Throws an `InterpretError` if unsuccessful.
     func interpret<T>(recipe: Recipe<T>) throws -> [Value] {
-        try interpret(statements: recipe.statements)
+        try Task.checkCancellation()
+        
+        return try interpret(statements: recipe.statements)
     }
     
     // TODO: We could probably also use interpret(statement:) to make a nice REPL
     
     /// Interprets the given statements. Throws an `InterpretError` if unsuccessful.
     func interpret<T>(statements: [Statement<T>]) throws -> [Value] {
+        try Task.checkCancellation()
+        
         var values: [Value] = []
         
         for statement in statements {
@@ -45,6 +49,8 @@ class Interpreter {
     
     /// Interprets the given statement. Throws an `InterpretError` if unsuccessful.
     func interpret<T>(statement: Statement<T>) throws -> [Value] {
+        try Task.checkCancellation()
+        
         var values: [Value] = []
         
         switch statement {
@@ -113,6 +119,8 @@ class Interpreter {
     
     /// Evaluates the given expression. Throws an `InterpretError` if unsuccessful.
     func evaluate<T>(expression: Expression<T>) throws -> [Value] {
+        try Task.checkCancellation()
+        
         switch expression {
         case .literal(let value):
             return [value]
@@ -176,6 +184,8 @@ class Interpreter {
     
     /// Resolves the given variable name. Starts in the current scope and works its way up the chain of parent scopes, eventually throwing a `.variableNotInScope` if the variable is unbound.
     func resolve(name: String) throws -> [Value] {
+        try Task.checkCancellation()
+        
         if let values = variables[name] {
             return values
         } else if let parent = parent {
