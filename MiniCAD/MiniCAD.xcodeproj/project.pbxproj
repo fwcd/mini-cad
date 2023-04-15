@@ -116,11 +116,11 @@
 		3582D0AB29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0AA29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift */; };
 		3582D0AF29EB03CA00D28706 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0AE29EB03CA00D28706 /* Function.swift */; };
 		3582D0B129EB14B200D28706 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0B029EB14B200D28706 /* AppViewModel.swift */; };
-		3582D0B529EB153800D28706 /* 02 Demo.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0B429EB153800D28706 /* 02 Demo.minicad */; };
+		3582D0B529EB153800D28706 /* 03 Demo.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0B429EB153800D28706 /* 03 Demo.minicad */; };
 		3582D0B729EB173500D28706 /* NamedDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0B629EB173500D28706 /* NamedDocument.swift */; };
 		3582D0B929EB1AAB00D28706 /* 01 Hello Cuboid.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0B829EB1A6300D28706 /* 01 Hello Cuboid.minicad */; };
 		3582D0BD29EB28E300D28706 /* Cone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0BC29EB28E200D28706 /* Cone.swift */; };
-		3582D0BF29EB364800D28706 /* 00 Sierpinski.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0BE29EB364800D28706 /* 00 Sierpinski.minicad */; };
+		3582D0BF29EB364800D28706 /* 02 Sierpinski.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0BE29EB364800D28706 /* 02 Sierpinski.minicad */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
@@ -262,11 +262,11 @@
 		3582D0AA29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FuncDeclaration+Pretty.swift"; sourceTree = "<group>"; };
 		3582D0AE29EB03CA00D28706 /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		3582D0B029EB14B200D28706 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
-		3582D0B429EB153800D28706 /* 02 Demo.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "02 Demo.minicad"; sourceTree = "<group>"; tabWidth = 2; };
+		3582D0B429EB153800D28706 /* 03 Demo.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "03 Demo.minicad"; sourceTree = "<group>"; tabWidth = 2; };
 		3582D0B629EB173500D28706 /* NamedDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedDocument.swift; sourceTree = "<group>"; };
 		3582D0B829EB1A6300D28706 /* 01 Hello Cuboid.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "01 Hello Cuboid.minicad"; sourceTree = "<group>"; tabWidth = 2; };
 		3582D0BC29EB28E200D28706 /* Cone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cone.swift; sourceTree = "<group>"; };
-		3582D0BE29EB364800D28706 /* 00 Sierpinski.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "00 Sierpinski.minicad"; sourceTree = "<group>"; tabWidth = 2; };
+		3582D0BE29EB364800D28706 /* 02 Sierpinski.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "02 Sierpinski.minicad"; sourceTree = "<group>"; tabWidth = 2; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
@@ -613,9 +613,9 @@
 		3582D0B329EB151500D28706 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				3582D0BE29EB364800D28706 /* 00 Sierpinski.minicad */,
 				3582D0B829EB1A6300D28706 /* 01 Hello Cuboid.minicad */,
-				3582D0B429EB153800D28706 /* 02 Demo.minicad */,
+				3582D0BE29EB364800D28706 /* 02 Sierpinski.minicad */,
+				3582D0B429EB153800D28706 /* 03 Demo.minicad */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -705,9 +705,9 @@
 				3503AF1B29A9197000AF1188 /* Suzanne.stl in Resources */,
 				35EC358F29A83CB500D31DA8 /* Info.plist in Resources */,
 				354A414A29932FA3004EA933 /* Preview Assets.xcassets in Resources */,
-				3582D0BF29EB364800D28706 /* 00 Sierpinski.minicad in Resources */,
+				3582D0BF29EB364800D28706 /* 02 Sierpinski.minicad in Resources */,
 				354A4209299330E0004EA933 /* Preview.scn in Resources */,
-				3582D0B529EB153800D28706 /* 02 Demo.minicad in Resources */,
+				3582D0B529EB153800D28706 /* 03 Demo.minicad in Resources */,
 				3540FEAB29A84300005B2428 /* Assets.xcassets in Resources */,
 				3582D0B929EB1AAB00D28706 /* 01 Hello Cuboid.minicad in Resources */,
 			);

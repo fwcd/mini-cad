@@ -1,0 +1,38 @@
+let radiusToHeight = 1 + cos(TAU / 6)
+
+/// Generate a Sierpinski pyramid
+func Sierpinski(height, depth) {
+  let radius = height / radiusToHeight
+  let a = height / 2
+  let b = height - radius
+  
+  if depth > 0 {
+    // Recurse only once due to self-similarity
+    let subPyramid = Sierpinski(height / 2, depth - 1)
+    
+    // Generate the three pyramids on the bottom
+    for i in 0..<3 {
+      let angle = i * (TAU / 3)
+      let inner = radius / 2
+      let dx = cos(angle) * inner
+      let dz = sin(angle) * inner
+      Translate(dx, a / -2, dz) {
+        subPyramid
+      }
+    }
+    
+    // Generate the top pyramid
+    Translate(0, a / 2, 0) {
+      subPyramid
+    }
+  } else {
+    // Generate tetrahedrons at leaf nodes
+    Cone(radius, height, 3)
+  }
+}
+
+let depth = 5
+let height = 10.0
+
+Sierpinski(height, depth)
+

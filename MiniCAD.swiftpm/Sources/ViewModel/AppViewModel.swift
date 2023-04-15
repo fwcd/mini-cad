@@ -25,15 +25,17 @@ class AppViewModel: ObservableObject {
     init(editor: EditorViewModel) {
         self.editor = editor
         
-        examples = (Bundle.main.urls(forResourcesWithExtension: "minicad", subdirectory: nil) ?? []).compactMap { url -> NamedDocument? in
-            guard let raw = try? String(contentsOf: url) else {
-                return nil
+        examples = (Bundle.main.urls(forResourcesWithExtension: "minicad", subdirectory: nil) ?? [])
+            .compactMap { url -> NamedDocument? in
+                guard let raw = try? String(contentsOf: url) else {
+                    return nil
+                }
+                return NamedDocument(
+                    name: String(url.lastPathComponent.split(separator: ".")[0]),
+                    document: RecipeDocument(raw: raw)
+                )
             }
-            return NamedDocument(
-                name: String(url.lastPathComponent.split(separator: ".")[0]),
-                document: RecipeDocument(raw: raw)
-            )
-        }
+            .sorted { $0.name < $1.name }
         selectedDocument = examples.first
     }
 }
