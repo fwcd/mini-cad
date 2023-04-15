@@ -1,11 +1,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var columnVisibility: NavigationSplitViewVisibility = .all
     @EnvironmentObject private var app: AppViewModel
     
     var body: some View {
-        NavigationSplitView(columnVisibility: $columnVisibility) {
+        NavigationView {
             List(selection: $app.selectedDocument) {
                 Section(header: Text("Examples")) {
                     ForEach(app.examples) { document in
@@ -14,7 +13,6 @@ struct ContentView: View {
                     }
                 }
             }
-        } detail: {
             HStack {
                 EditorView()
                 PreviewView()
