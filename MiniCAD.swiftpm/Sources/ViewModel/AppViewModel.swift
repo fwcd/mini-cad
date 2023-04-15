@@ -2,10 +2,9 @@ import Combine
 import Foundation
 
 class AppViewModel: ObservableObject {
-    @Published var documents: [NamedDocument] = []
+    @Published var examples: [NamedDocument] = []
     @Published var selectedDocument: NamedDocument? = nil {
         didSet {
-            print("Setting")
             editor.rawRecipe = selectedDocument?.document.raw ?? ""
         }
     }
@@ -15,7 +14,7 @@ class AppViewModel: ObservableObject {
     init(editor: EditorViewModel) {
         self.editor = editor
         
-        documents = (Bundle.main.urls(forResourcesWithExtension: "minicad", subdirectory: nil) ?? []).compactMap { url -> NamedDocument? in
+        examples = (Bundle.main.urls(forResourcesWithExtension: "minicad", subdirectory: nil) ?? []).compactMap { url -> NamedDocument? in
             guard let raw = try? String(contentsOf: url) else {
                 return nil
             }
@@ -24,6 +23,6 @@ class AppViewModel: ObservableObject {
                 document: RecipeDocument(raw: raw)
             )
         }
-        selectedDocument = documents.first
+        selectedDocument = examples.first
     }
 }

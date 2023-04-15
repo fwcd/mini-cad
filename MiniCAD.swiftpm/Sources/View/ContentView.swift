@@ -7,8 +7,8 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
             List(selection: $app.selectedDocument) {
-                Section(header: Text("Documents")) {
-                    ForEach(app.documents.sorted { $0.name < $1.name }) { document in
+                Section(header: Text("Examples")) {
+                    ForEach(app.examples.sorted { $0.name < $1.name }) { document in
                         Label(document.name, systemImage: "doc.text")
                             .tag(document)
                     }
