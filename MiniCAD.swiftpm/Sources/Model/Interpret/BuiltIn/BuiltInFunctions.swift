@@ -74,7 +74,7 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         let meshes = trailingBlock.compactMap(\.asMesh)
         return meshes.map { .mesh($0 + offset) }
     },
-    "Rotation": { args, trailingBlock in
+    "Rotate": { args, trailingBlock in
         let eulerAngles = parseVec3(from: args)
         let rotationMatrix = Mat3(xyzEuler: eulerAngles)
         let meshes = trailingBlock.compactMap(\.asMesh)
