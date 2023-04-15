@@ -3,9 +3,9 @@ import Foundation
 /// An identified function with identity-based equality semantics.
 struct Function: Identifiable, Hashable {
     let id: UUID = UUID()
-    let implementation: ([Value]) -> Value
+    let implementation: ([Value], Interpreter) throws -> [Value]
     
-    init(_ implementation: @escaping  ([Value]) -> Value) {
+    init(_ implementation: @escaping  ([Value], Interpreter) throws -> [Value]) {
         self.implementation = implementation
     }
     

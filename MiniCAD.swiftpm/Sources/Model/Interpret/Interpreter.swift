@@ -52,9 +52,35 @@ class Interpreter {
                 throw InterpretError.cannotIterate(loop.sequence.map { $0 as Any })
             }
         case let .ifElse(ifElse):
-            fatalError("TODO: Interpreting if-else is not implemented")
+            let evaluatedCondition = try evaluateUniquely(expression: ifElse.condition)
+            switch evaluatedCondition {
+            case let .bool(condition):
+                if condition {
+                    let blockInterpreter = Interpreter(parent: self)
+                    values += try blockInterpreter.interpret(statements: ifElse.ifBlock)
+                } else if let elseBlock = ifElse.elseBlock {
+                    let blockInterpreter = Interpreter(parent: self)
+                    values += try blockInterpreter.interpret(statements: elseBlock)
+                }
+            default:
+                throw InterpretError.cannotBranch(ifElse.condition.map { $0 as Any })
+            }
         case let .funcDeclaration(decl):
-            fatalError("TODO: Interpreting functions is not implemented")
+            let name = decl.name
+            let paramNames = decl.paramNames
+            let statements = decl.block
+            guard Set(paramNames).count == paramNames.count else {
+                throw InterpretError.duplicateParamNames(name)
+            }
+            variables[decl.name] = [.function(Function { values, parent in
+                guard paramNames.count == values.count else {
+                    throw InterpretError.argumentCountMismatch(name, expected: paramNames.count, actual: values.count)
+                }
+                let args = Dictionary(uniqueKeysWithValues: zip(paramNames, values.map { [$0] }))
+                let blockInterpreter = Interpreter(variables: args, parent: parent)
+                let values = try blockInterpreter.interpret(statements: statements)
+                return values
+            })]
         case .blank:
             break
         }
@@ -78,10 +104,15 @@ class Interpreter {
             // Interpret the trailing block in its own interpreter that
             // inherits the current scope but cannot change it.
             let blockInterpreter = Interpreter(parent: self)
-            let evaluatedBlock = try blockInterpreter.interpret(statements: callExpr.trailingBlock)
             
             // Invoke the function if it exists
-            if let builtIn = builtInFunctions[callExpr.identifier] {
+            if let function = try? resolveFunction(name: callExpr.identifier) {
+                guard callExpr.trailingBlock.isEmpty else {
+                    throw InterpretError.trailingBlockOnlySupportedOnBuiltIns(callExpr.identifier)
+                }
+                return try function.implementation(evaluatedArgs, self)
+            } else if let builtIn = builtInFunctions[callExpr.identifier] {
+                let evaluatedBlock = try blockInterpreter.interpret(statements: callExpr.trailingBlock)
                 return try builtIn(evaluatedArgs, evaluatedBlock)
             } else {
                 throw InterpretError.functionNotInScope(callExpr.identifier)
@@ -106,6 +137,18 @@ class Interpreter {
             throw InterpretError.ambiguousExpression(expression.map { $0 as Any }, values)
         }
         return values[0]
+    }
+    
+    /// Resolves the given function name uniquely.
+    func resolveFunction(name: String) throws -> Function {
+        let candidates = try resolve(name: name)
+        guard candidates.count == 1 else {
+            throw InterpretError.ambiguousFunction(name)
+        }
+        guard case let .function(function) = candidates[0] else {
+            throw InterpretError.notAFunction(name)
+        }
+        return function
     }
     
     /// Resolves the given variable name. Starts in the current scope and works its way up the chain of parent scopes, eventually throwing a `.variableNotInScope` if the variable is unbound.
