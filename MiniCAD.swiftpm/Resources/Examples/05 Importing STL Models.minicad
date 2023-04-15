@@ -1,0 +1,7 @@
+// MiniCAD is also capable of loading existing STL
+// models. Currently only bundled models due to
+// sandboxing restrictions, but this is easy to extend!
+
+// Here, for example, is one of Blender's demo meshes:
+
+Suzanne()

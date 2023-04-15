@@ -1,7 +1,7 @@
 // MiniCAD offers a range of primitives for constructing
-// models. Since we don't want them all to be centered
-// around the origin, we use the Translate function to
-// shift them by a defined offset.
+// models, also known as meshes. Since we don't want
+// them all to be centered around the origin, we use the
+// Translate function to shift them by a defined offset.
 
 Translate(-3, 0, 0) {
   Cuboid()

@@ -2,6 +2,8 @@
 
 A parameteric 3D modeller for macOS and iOS featuring a Swift-inspired Domain Specific Language (DSL) for modeling.
 
+![Screenshot](Screenshots/App.png)
+
 <!-- TODO: Implement mesh operations -->
 
 ## Open Source

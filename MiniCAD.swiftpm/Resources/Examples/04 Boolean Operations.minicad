@@ -1,0 +1,29 @@
+// The true power of MiniCAD comes from the ability to perform
+// so-called boolean operations on meshes. The idea is simple:
+// Take classic set operations and apply them to solids in
+// three-dimensional space. MiniCAD provides three such
+// operations: Union, difference and intersection.
+
+let first = Cuboid()
+let second = Cylinder(0.3, 2)
+
+Translate(-2, 0, 0) {
+  Union {
+    first
+    second
+  }
+}
+
+Translate(0, 0, 0) {
+  Difference {
+    first
+    second
+  }
+}
+
+Translate(2, 0, 0) {
+  Intersection {
+    first
+    second
+  }
+}
