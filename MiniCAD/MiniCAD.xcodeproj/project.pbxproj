@@ -119,6 +119,7 @@
 		3582D0B529EB153800D28706 /* 02 Demo.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0B429EB153800D28706 /* 02 Demo.minicad */; };
 		3582D0B729EB173500D28706 /* NamedDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0B629EB173500D28706 /* NamedDocument.swift */; };
 		3582D0B929EB1AAB00D28706 /* 01 Hello Cuboid.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0B829EB1A6300D28706 /* 01 Hello Cuboid.minicad */; };
+		3582D0BD29EB28E300D28706 /* Cone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0BC29EB28E200D28706 /* Cone.swift */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
@@ -263,6 +264,7 @@
 		3582D0B429EB153800D28706 /* 02 Demo.minicad */ = {isa = PBXFileReference; lastKnownFileType = text; path = "02 Demo.minicad"; sourceTree = "<group>"; };
 		3582D0B629EB173500D28706 /* NamedDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedDocument.swift; sourceTree = "<group>"; };
 		3582D0B829EB1A6300D28706 /* 01 Hello Cuboid.minicad */ = {isa = PBXFileReference; lastKnownFileType = text; path = "01 Hello Cuboid.minicad"; sourceTree = "<group>"; };
+		3582D0BC29EB28E200D28706 /* Cone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cone.swift; sourceTree = "<group>"; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
@@ -563,6 +565,7 @@
 				3503AF0D29A8DE8100AF1188 /* STL */,
 				354A41FE299330E0004EA933 /* Cuboid.swift */,
 				352B9B2229A7BE32007A7470 /* Cylinder.swift */,
+				3582D0BC29EB28E200D28706 /* Cone.swift */,
 				3550613029E474A9006B5019 /* Sphere.swift */,
 				352678CA29B36A9E002A81B3 /* TextLabel.swift */,
 				352678CE29B3785D002A81B3 /* Polygon.swift */,
@@ -803,6 +806,7 @@
 				3503AF2C29A927EE00AF1188 /* Vec3+AxisAlignedBoundable.swift in Sources */,
 				354A4210299330E0004EA933 /* VarBinding.swift in Sources */,
 				3550612F29E44498006B5019 /* Polygon+Triangle.swift in Sources */,
+				3582D0BD29EB28E300D28706 /* Cone.swift in Sources */,
 				3503AF2129A91F0500AF1188 /* Mesh+Sequence.swift in Sources */,
 				35E7583129A1B78E006043C3 /* Array+Pretty.swift in Sources */,
 				354A420A299330E0004EA933 /* Options.swift in Sources */,

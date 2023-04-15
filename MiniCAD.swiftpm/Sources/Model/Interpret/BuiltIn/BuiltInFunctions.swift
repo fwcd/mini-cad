@@ -16,6 +16,12 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         let sides = args[safely: 2]?.asInt ?? 8
         return [.mesh(Mesh(Cylinder(radius: radius, height: height, sides: sides)))]
     },
+    "Cone": { args, _ in
+        let radius = args[safely: 0]?.asFloat ?? 1
+        let height = args[safely: 1]?.asFloat ?? 1
+        let sides = args[safely: 2]?.asInt ?? 8
+        return [.mesh(Mesh(Cone(radius: radius, height: height, sides: sides)))]
+    },
     "Sphere": { args, _ in
         let radius = args[safely: 0]?.asFloat ?? 1
         let latSteps = args[safely: 1]?.asInt ?? 16
