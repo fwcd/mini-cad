@@ -125,6 +125,7 @@
 		3582D0C329EB4B9500D28706 /* 03 Sierpinski.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0C029EB47A600D28706 /* 03 Sierpinski.minicad */; };
 		3582D0C529EB4CD200D28706 /* 05 Importing STL Models.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0C429EB4CCC00D28706 /* 05 Importing STL Models.minicad */; };
 		3582D0C729EB4F1000D28706 /* 04 Boolean Operations.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0C629EB4D9400D28706 /* 04 Boolean Operations.minicad */; };
+		3582D0CB29EB5D5500D28706 /* Mat3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0CA29EB5D5500D28706 /* Mat3.swift */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
@@ -275,6 +276,7 @@
 		3582D0C129EB492F00D28706 /* GeometryDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryDefaults.swift; sourceTree = "<group>"; };
 		3582D0C429EB4CCC00D28706 /* 05 Importing STL Models.minicad */ = {isa = PBXFileReference; lastKnownFileType = text; path = "05 Importing STL Models.minicad"; sourceTree = "<group>"; };
 		3582D0C629EB4D9400D28706 /* 04 Boolean Operations.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "04 Boolean Operations.minicad"; sourceTree = "<group>"; tabWidth = 2; };
+		3582D0CA29EB5D5500D28706 /* Mat3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mat3.swift; sourceTree = "<group>"; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 				3503AF3529A9448E00AF1188 /* Line.swift */,
 				3503AF3F29A94CB000AF1188 /* Line+Plane.swift */,
 				354A41FD299330E0004EA933 /* Vec3.swift */,
+				3582D0CA29EB5D5500D28706 /* Mat3.swift */,
 				3582D0C129EB492F00D28706 /* GeometryDefaults.swift */,
 			);
 			path = Geometry;
@@ -806,6 +809,7 @@
 				354A4217299330E0004EA933 /* ParseError.swift in Sources */,
 				354A4233299330E0004EA933 /* ErrorView.swift in Sources */,
 				3503AF2829A9277C00AF1188 /* AxisAlignedContainable.swift in Sources */,
+				3582D0CB29EB5D5500D28706 /* Mat3.swift in Sources */,
 				3550612929E43E2D006B5019 /* Mesh+Polygon.swift in Sources */,
 				35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */,
 				354A4214299330E0004EA933 /* ForLoop.swift in Sources */,

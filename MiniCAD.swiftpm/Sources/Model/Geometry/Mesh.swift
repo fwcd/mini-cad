@@ -26,6 +26,12 @@ struct Mesh: Hashable {
         }
     }
     
+    func mapVertices(_ f: (Vec3) -> Vec3) -> Self {
+        var mesh = self
+        mesh.vertices = mesh.vertices.map(f)
+        return mesh
+    }
+    
     static func +(lhs: Self, rhs: Vec3) -> Self {
         Self(vertices: lhs.vertices.map { $0 + rhs }, faces: lhs.faces)
     }
