@@ -66,7 +66,7 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
     },
     "BSPRoundtrip": { args, trailingBlock in
         let mesh = trailingBlock.compactMap(\.asMesh).disjointUnion
-        let bsp = BinarySpacePartitioning(inserting: mesh.facePolygons)
+        let bsp = try BinarySpacePartitioning(inserting: mesh.facePolygons)
         return [.mesh(Mesh(bsp.allPolygons))]
     },
     "Translate": { args, trailingBlock in
@@ -89,17 +89,17 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
     "Union": { _, trailingBlock in
         let meshes = trailingBlock.compactMap(\.asMesh)
         guard let first = meshes.first else { return [.mesh(Mesh())] }
-        return [.mesh(meshes[1...].reduce(first) { $0.union($1) })]
+        return [.mesh(try meshes[1...].reduce(first) { try $0.union($1) })]
     },
     "Intersection": { _, trailingBlock in
         let meshes = trailingBlock.compactMap(\.asMesh)
         guard let first = meshes.first else { return [.mesh(Mesh())] }
-        return [.mesh(meshes[1...].reduce(first) { $0.intersection($1) })]
+        return [.mesh(try meshes[1...].reduce(first) { try $0.intersection($1) })]
     },
     "Difference": { _, trailingBlock in
         let meshes = trailingBlock.compactMap(\.asMesh)
         guard let first = meshes.first else { return [.mesh(Mesh())] }
-        return [.mesh(meshes[1...].reduce(first) { $0.subtracting($1) })]
+        return [.mesh(try meshes[1...].reduce(first) { try $0.subtracting($1) })]
     },
     "Float": { args, _ in
         guard let x = args[safely: 0]?.asInt else {

@@ -57,15 +57,15 @@ extension Mesh {
     ///          |       |            |       |
     ///          +-------+            +-------+
     ///
-    func union(_ rhs: Self) -> Self {
-        var a = BinarySpacePartitioning(inserting: facePolygons)
-        var b = BinarySpacePartitioning(inserting: rhs.facePolygons)
-        a.clip(to: b)
-        b.clip(to: a)
-        b.invert()
-        b.clip(to: a)
-        b.invert()
-        a.insert(polygons: b.allPolygons)
+    func union(_ rhs: Self) throws -> Self {
+        var a = try BinarySpacePartitioning(inserting: facePolygons)
+        var b = try BinarySpacePartitioning(inserting: rhs.facePolygons)
+        try a.clip(to: b)
+        try b.clip(to: a)
+        try b.invert()
+        try b.clip(to: a)
+        try b.invert()
+        try a.insert(polygons: b.allPolygons)
         return Mesh(a.allPolygons)
     }
     
@@ -83,17 +83,17 @@ extension Mesh {
     ///          |       |
     ///          +-------+
     ///
-    func intersection(_ rhs: Self) -> Self {
-        var a = BinarySpacePartitioning(inserting: facePolygons)
-        var b = BinarySpacePartitioning(inserting: rhs.facePolygons)
-        a.invert()
-        b.clip(to: a)
-        b.invert()
-        a.clip(to: b)
-        b.clip(to: a)
-        a.insert(polygons: b.allPolygons)
-        a.invert()
-        return Mesh(a.allPolygons)
+    func intersection(_ rhs: Self) throws -> Self {
+        var a = try BinarySpacePartitioning(inserting: facePolygons)
+        var b = try BinarySpacePartitioning(inserting: rhs.facePolygons)
+        try a.invert()
+        try b.clip(to: a)
+        try b.invert()
+        try a.clip(to: b)
+        try b.clip(to: a)
+        try a.insert(polygons: b.allPolygons)
+        try a.invert()
+        return try Mesh(a.allPolygons)
     }
     
     /// Return a new CSG solid representing space in this solid but not in the
@@ -110,17 +110,17 @@ extension Mesh {
     ///          |       |
     ///          +-------+
     ///
-    func subtracting(_ rhs: Self) -> Self {
-        var a = BinarySpacePartitioning(inserting: facePolygons)
-        var b = BinarySpacePartitioning(inserting: rhs.facePolygons)
-        a.invert()
-        a.clip(to: b)
-        b.clip(to: a)
-        b.invert()
-        b.clip(to: a)
-        b.invert()
-        a.insert(polygons: b.allPolygons)
-        a.invert()
-        return Mesh(a.allPolygons)
+    func subtracting(_ rhs: Self) throws -> Self {
+        var a = try BinarySpacePartitioning(inserting: facePolygons)
+        var b = try BinarySpacePartitioning(inserting: rhs.facePolygons)
+        try a.invert()
+        try a.clip(to: b)
+        try b.clip(to: a)
+        try b.invert()
+        try b.clip(to: a)
+        try b.invert()
+        try a.insert(polygons: b.allPolygons)
+        try a.invert()
+        return try Mesh(a.allPolygons)
     }
 }

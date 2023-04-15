@@ -29,7 +29,9 @@ struct BinarySpacePartitioning {
     }
     
     /// Inserts the given polygons.
-    mutating func insert(polygons insertedPolygons: [Polygon]) {
+    mutating func insert(polygons insertedPolygons: [Polygon]) throws {
+        try Task.checkCancellation()
+        
         guard let firstPolygon = insertedPolygons.first else { return }
         
         if plane == nil {
@@ -43,7 +45,7 @@ struct BinarySpacePartitioning {
         
         // Classify polygons into coplanar and front/back
         for polygon in insertedPolygons {
-            plane!.split(
+            try plane!.split(
                 polygon: polygon,
                 coplanarFront: &coplanarFront,
                 coplanarBack: &coplanarBack,
@@ -60,25 +62,25 @@ struct BinarySpacePartitioning {
             if front == nil {
                 front = BinarySpacePartitioning()
             }
-            front!.insert(polygons: frontPolygons)
+            try front!.insert(polygons: frontPolygons)
         }
         if !backPolygons.isEmpty {
             if back == nil {
                 back = BinarySpacePartitioning()
             }
-            back!.insert(polygons: backPolygons)
+            try back!.insert(polygons: backPolygons)
         }
     }
     
     /// Remove all polygons in this BSP that are inside the other BSP tree.
-    mutating func clip(to bsp: BinarySpacePartitioning) {
-        polygons = bsp.clip(polygons: polygons)
-        front?.clip(to: bsp)
-        back?.clip(to: bsp)
+    mutating func clip(to bsp: BinarySpacePartitioning) throws {
+        polygons = try bsp.clip(polygons: polygons)
+        try front?.clip(to: bsp)
+        try back?.clip(to: bsp)
     }
     
     /// Filter out all of the given polygons that are inside this BSP tree.
-    private func clip(polygons clippedPolygons: [Polygon]) -> [Polygon] {
+    private func clip(polygons clippedPolygons: [Polygon]) throws -> [Polygon] {
         guard let plane = self.plane else {
             return polygons
         }
@@ -89,7 +91,7 @@ struct BinarySpacePartitioning {
         var coplanarBack: [Polygon] = []
         
         for polygon in clippedPolygons {
-            plane.split(
+            try plane.split(
                 polygon: polygon,
                 coplanarFront: &coplanarFront,
                 coplanarBack: &coplanarBack,
@@ -102,10 +104,10 @@ struct BinarySpacePartitioning {
         backPolygons += coplanarBack
         
         if let front = self.front {
-            frontPolygons = front.clip(polygons: frontPolygons)
+            frontPolygons = try front.clip(polygons: frontPolygons)
         }
         if let back = self.back {
-            backPolygons = back.clip(polygons: backPolygons)
+            backPolygons = try back.clip(polygons: backPolygons)
         } else {
             backPolygons = []
         }
@@ -115,9 +117,9 @@ struct BinarySpacePartitioning {
 }
 
 extension BinarySpacePartitioning {
-    init(inserting polygons: [Polygon]) {
+    init(inserting polygons: [Polygon]) throws {
         self.init()
-        insert(polygons: polygons)
+        try insert(polygons: polygons)
     }
 }
 
@@ -138,7 +140,9 @@ extension Plane {
         coplanarBack: inout [Polygon],
         front: inout [Polygon],
         back: inout [Polygon]
-    ) {
+    ) throws {
+        try Task.checkCancellation()
+        
         guard polygon.vertices.count >= 3 else { return }
         
         // Classification tolerance
