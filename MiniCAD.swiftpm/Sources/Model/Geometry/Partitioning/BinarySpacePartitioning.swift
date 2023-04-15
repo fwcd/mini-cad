@@ -142,7 +142,7 @@ extension Plane {
         guard polygon.vertices.count >= 3 else { return }
         
         // Classification tolerance
-        let epsilon = 0.00001
+        let epsilon = GeometryDefaults.epsilon
         
         // Classify each point as well as the entire polygon
         var polygonClass: Classification = []

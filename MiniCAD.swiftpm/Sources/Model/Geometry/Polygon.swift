@@ -11,4 +11,16 @@ struct Polygon {
     mutating func flip() {
         self = flipped
     }
+    
+    func mergingCloseVertices(epsilon: Double = GeometryDefaults.epsilon) -> Self {
+        var polygon = Polygon()
+        var last: Vec3? = nil
+        for vertex in vertices {
+            if (last.map({ ($0 - vertex).magnitude }) ?? .infinity) >= epsilon {
+                polygon.vertices.append(vertex)
+            }
+            last = vertex
+        }
+        return polygon
+    }
 }

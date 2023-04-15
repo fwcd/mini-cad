@@ -68,8 +68,10 @@ extension Mesh {
     
     /// Creates a mesh by triangulating and merging the given polygons.
     init(_ polygons: [Polygon]) {
-        let triangulatedFaceMeshes = polygons.map { Mesh($0) }
+        let triangulatedFaceMeshes = polygons
+            .map { $0.mergingCloseVertices() }
+            .filter { $0.vertices.count >= 3 }
+            .map { Mesh($0) }
         self = triangulatedFaceMeshes.disjointUnion
-        // TODO: Merge vertices
     }
 }
