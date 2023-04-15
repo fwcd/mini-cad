@@ -4,11 +4,17 @@ A parameteric 3D modeller for macOS and iOS featuring a Swift-inspired Domain Sp
 
 ![Screenshot](Screenshots/App.png)
 
-<!-- TODO: Implement mesh operations -->
+## Description
+
+MiniCAD is a parametric 3D modeling program that lets users construct models with a Swift-like domain-specific language (DSL), thereby drawing inspiration from apps like OpenSCAD, Blender and Swift Playgrounds. The core idea is simple: Use geometric primitives and combine them with unions, differences and intersections to create complex shapes. The programming-centered approach provides the ability to work abstractly in terms of variables and functions, all while using a familiar syntax in a highly interactive envrionment.
+
+On a more technical level, the app is implemented using SwiftUI and SceneKit. It uses its own parser and interpreter for the DSL and an implementation of Computational Solid Geometry (CSG) based on Binary Space Partitioning (BSP) for the mesh operations. The app also supports exporting to the Standard Tesselated Geometry (STL) file format, which can be used to open models in other apps such as Preview or even to slice and 3D-print them.
 
 ## Open Source
 
-<!-- TODO: Mention suzanne https://de.m.wikipedia.org/wiki/Datei:Suzanne.png and csg.js -->
+The app includes the `Suzanne.stl` model, a demo model from the open-source 3D modeling application Blender, to showcase the import of external STL models.
+
+Also the implementation of CSG is based on a port of the wonderfully simple and elegant JavaScript implementation by Evan Wallace: https://github.com/evanw/csg.js/ This code is MIT-licensed with Copyright (c) 2011 Evan Wallace (http://madebyevan.com/).
 
 ## See also
 
