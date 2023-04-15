@@ -14,12 +14,12 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>dev.fwcd.MiniCAD.recipe2</string>
+			<string>dev.fwcd.MiniCAD.recipe3</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>recipe</string>
+					<string>minicad</string>
 				</array>
 				<key>public.mime-type</key>
 				<array>

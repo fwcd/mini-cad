@@ -2,7 +2,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 extension UTType {
-    static let recipeDocument = UTType(exportedAs: "dev.fwcd.MiniCAD.recipe2")
+    static let recipeDocument = UTType(exportedAs: "dev.fwcd.MiniCAD.recipe3")
 }
 
 struct RecipeDocument {

@@ -36,13 +36,13 @@ struct ToolbarView: View {
                 Image(systemName: "arrow.down.to.line")
                 Text("Save (⌘ S)")
             }
-            .help("Saves to a source file (recipe)")
+            .help("Saves to a source file (.minicad)")
             .keyboardShortcut("s", modifiers: .command)
             .fileExporter(
                 isPresented: $saveExporterShown,
                 document: RecipeDocument(raw: editor.rawRecipe),
                 contentType: .recipeDocument,
-                defaultFilename: "Model.recipe"
+                defaultFilename: "Model.minicad"
             ) { _ in }
         }
         .buttonStyle(.bordered)
