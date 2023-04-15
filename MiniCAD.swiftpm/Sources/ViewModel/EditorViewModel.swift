@@ -11,6 +11,7 @@ class EditorViewModel: ObservableObject {
     }
     @Published private(set) var parsedRecipe: Recipe<SourceRange?> = .init() {
         didSet {
+            isRunning = true
             interpretationTask?.cancel()
             interpretationTask = Task {
                 do {
@@ -18,10 +19,12 @@ class EditorViewModel: ObservableObject {
                     Task.detached { @MainActor in
                         self.meshes = values.compactMap(\.asMesh)
                         self.interpretError = nil
+                        self.isRunning = false
                     }
                 } catch let error as InterpretError {
                     Task.detached { @MainActor in
                         self.interpretError = error
+                        self.isRunning = false
                     }
                 } catch _ as CancellationError {
                     log.info("Interpretation cancelled")
@@ -49,6 +52,7 @@ class EditorViewModel: ObservableObject {
         }
     }
     
+    @Published private(set) var isRunning: Bool = false
     @Published private(set) var parseError: ParseError? = nil
     @Published private(set) var interpretError: InterpretError? = nil
     

@@ -7,10 +7,13 @@ struct EditorView: View {
         VStack {
             CodeEditor(text: $editor.rawRecipe, tokens: editor.tokenizedRecipe)
             HStack {
-                if let error = editor.parseError {
-                    ErrorView(error: error)
+                if editor.isRunning {
+                    ProgressView()
+                        .padding(10)
+                } else if let error = editor.parseError {
+                    StatusBar(error: error)
                 } else if let error = editor.interpretError {
-                    ErrorView(error: error, background: Color(red: 0.4, green: 0, blue: 0.4))
+                    StatusBar(error: error, background: Color(red: 0.4, green: 0, blue: 0.4))
                 }
             }
         }

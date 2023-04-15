@@ -103,7 +103,7 @@
 		354A4230299330E0004EA933 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4205299330E0004EA933 /* EditorView.swift */; };
 		354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4206299330E0004EA933 /* PreviewSceneView.swift */; };
 		354A4232299330E0004EA933 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4207299330E0004EA933 /* ContentView.swift */; };
-		354A4233299330E0004EA933 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4208299330E0004EA933 /* ErrorView.swift */; };
+		354A4233299330E0004EA933 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A4208299330E0004EA933 /* StatusBar.swift */; };
 		3550612729E219F0006B5019 /* BinarySpacePartitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612629E219F0006B5019 /* BinarySpacePartitioning.swift */; };
 		3550612929E43E2D006B5019 /* Mesh+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612829E43E2D006B5019 /* Mesh+Polygon.swift */; };
 		3550612B29E43E92006B5019 /* Plane+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612A29E43E92006B5019 /* Plane+Polygon.swift */; };
@@ -255,7 +255,7 @@
 		354A4205299330E0004EA933 /* EditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		354A4206299330E0004EA933 /* PreviewSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewSceneView.swift; sourceTree = "<group>"; };
 		354A4207299330E0004EA933 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		354A4208299330E0004EA933 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		354A4208299330E0004EA933 /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		3550612629E219F0006B5019 /* BinarySpacePartitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySpacePartitioning.swift; sourceTree = "<group>"; };
 		3550612829E43E2D006B5019 /* Mesh+Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Polygon.swift"; sourceTree = "<group>"; };
 		3550612A29E43E92006B5019 /* Plane+Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plane+Polygon.swift"; sourceTree = "<group>"; };
@@ -618,7 +618,7 @@
 				35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */,
 				354A4205299330E0004EA933 /* EditorView.swift */,
 				354A4206299330E0004EA933 /* PreviewSceneView.swift */,
-				354A4208299330E0004EA933 /* ErrorView.swift */,
+				354A4208299330E0004EA933 /* StatusBar.swift */,
 				354A4200299330E0004EA933 /* ViewConstants.swift */,
 			);
 			path = View;
@@ -811,7 +811,7 @@
 				3582D0A529EAFC5100D28706 /* IfElse.swift in Sources */,
 				354A4213299330E0004EA933 /* BinaryExpression.swift in Sources */,
 				354A4217299330E0004EA933 /* ParseError.swift in Sources */,
-				354A4233299330E0004EA933 /* ErrorView.swift in Sources */,
+				354A4233299330E0004EA933 /* StatusBar.swift in Sources */,
 				3503AF2829A9277C00AF1188 /* AxisAlignedContainable.swift in Sources */,
 				3582D0CB29EB5D5500D28706 /* Mat3.swift in Sources */,
 				3550612929E43E2D006B5019 /* Mesh+Polygon.swift in Sources */,
