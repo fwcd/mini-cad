@@ -44,6 +44,16 @@ func binaryIntOperator<T>(name: String, _ f: @escaping (Int, Int) -> T) -> ([Val
     }
 }
 
+func binaryBoolOperator<T>(name: String, _ f: @escaping (Bool, Bool) -> T) -> ([Value], [Value]) throws -> [Value] where T: ValueConvertible {
+    return { args, _ in
+        guard let x = args[safely: 0]?.asBool,
+              let y = args[safely: 1]?.asBool else {
+            throw InterpretError.invalidArguments(name, expected: "2 bools", actual: "\(args)")
+        }
+        return [Value(f(x, y))]
+    }
+}
+
 func binaryValueOperator<T>(name: String, _ f: @escaping (Value, Value) -> T) -> ([Value], [Value]) throws -> [Value] where T: ValueConvertible {
     return { args, _ in
         guard let x = args[safely: 0],

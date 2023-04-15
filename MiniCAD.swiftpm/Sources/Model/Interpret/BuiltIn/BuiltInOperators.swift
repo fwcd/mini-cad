@@ -13,5 +13,7 @@ let builtInOperators: [BinaryOperator: ([Value], [Value]) throws -> [Value]] = [
     .lessOrEqual: binaryFloatOrIntOperator(name: "<=", <=, <=),
     .toExclusive: binaryFloatOrIntOperator(name: "..<", ..<, ..<),
     .toInclusive: binaryFloatOrIntOperator(name: "...", ..., ...),
+    .logicalAnd: binaryBoolOperator(name: "&&") { $0 && $1 },
+    .logicalOr: binaryBoolOperator(name: "||") { $0 || $1 },
 ]
 
