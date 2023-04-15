@@ -1,0 +1,20 @@
+// MiniCAD offers a range of primitives for constructing
+// models. Since we don't want them all to be centered
+// around the origin, we use the Translate function to
+// shift them by a defined offset.
+
+Translate(-3, 0, 0) {
+  Cuboid()
+}
+
+Translate(3, 0, 0) {
+  Sphere()
+}
+
+Translate(0, 0, -3) {
+  Cone()
+}
+
+Translate(0, 0, 3) {
+  Cylinder()
+}

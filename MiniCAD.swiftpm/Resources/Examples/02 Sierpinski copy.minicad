@@ -1,6 +1,11 @@
+// MiniCAD's powerful domain-specific language also
+// lets you use classic programming constructs such
+// as variables, loops, conditions and functions.
+// Here is an example that generates a Sierpinski
+// pyramid using a recursive algorithm.
+
 let radiusToHeight = 1 + cos(TAU / 6)
 
-/// Generate a Sierpinski pyramid
 func Sierpinski(height, depth) {
   let radius = height / radiusToHeight
   let a = height / 2
