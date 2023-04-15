@@ -40,3 +40,9 @@ extension Expression: ExpressibleByFloatLiteral {
         self = .literal(.float(value))
     }
 }
+
+extension Expression: ExpressibleByBooleanLiteral {
+    init(booleanLiteral value: Bool) {
+        self = .literal(.bool(value))
+    }
+}

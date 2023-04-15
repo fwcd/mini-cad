@@ -58,6 +58,24 @@ final class ParserTests: XCTestCase {
         try assert("func identity(x) { x }", parsesTo: [.funcDeclaration(.init(name: "identity", paramNames: ["x"], block: [.expression("x")]))])
     }
     
+    func testIfElse() throws {
+        try assert("if x { x }", parsesTo: [.ifElse(.init(condition: "x", ifBlock: [.expression("x")]))])
+        try assert("if true { x }", parsesTo: [.ifElse(.init(condition: true, ifBlock: [.expression("x")]))])
+        try assert("""
+            if false && true {
+                x
+            } else {
+                test()
+            }
+        """, parsesTo: [
+            .ifElse(.init(condition: .binary(.logicalAnd(false, true)), ifBlock: [
+                .expression("x"),
+            ], elseBlock: [
+                .expression(.call("test")),
+            ])),
+        ])
+    }
+    
     func testFullPrograms() throws {
         try assert("""
             let w = 3
