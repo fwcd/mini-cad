@@ -12,6 +12,9 @@ struct Token: Hashable {
         case `let`
         case `for`
         case `in`
+        case `if`
+        case `else`
+        case `func`
         case binaryOperator(BinaryOperator)
         case assign
         case newline
@@ -29,7 +32,7 @@ struct Token: Hashable {
         
         var isKeyword: Bool {
             switch self {
-            case .let, .for, .in: return true
+            case .let, .for, .in, .if, .else, .func: return true
             default: return false
             }
         }

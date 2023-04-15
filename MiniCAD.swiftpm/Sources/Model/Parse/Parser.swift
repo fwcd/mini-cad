@@ -42,6 +42,10 @@ func parseStatement(from tokens: inout TokenIterator) throws -> Statement<Source
         return .varBinding(try parseVarBinding(from: &tokens))
     case .for:
         return .forLoop(try parseForLoop(from: &tokens))
+    case .if:
+        return .ifElse(try parseIfElse(from: &tokens))
+    case .func:
+        return .funcDeclaration(try parseFuncDeclaration(from: &tokens))
     default:
         return .expression(try parseExpression(from: &tokens))
     }
@@ -64,6 +68,44 @@ func parseForLoop(from tokens: inout TokenIterator) throws -> ForLoop<SourceRang
     let sequence = try parseExpression(from: &tokens)
     let block = try parseBlock(from: &tokens)
     return ForLoop(name: name, sequence: sequence, block: block, attachment: nil) // TODO: Source range
+}
+
+/// Statefully parses an if-else statement from the given tokens. Throws a `ParseError` if unsuccessful.
+func parseIfElse(from tokens: inout TokenIterator) throws -> IfElse<SourceRange?> {
+    try tokens.expect(.if)
+    let condition = try parseExpression(from: &tokens)
+    let ifBlock = try parseBlock(from: &tokens)
+    var elseBlock: [Statement<SourceRange?>]? = nil
+    if tokens.peek()?.kind == .else {
+        tokens.next()
+        elseBlock = try parseBlock(from: &tokens)
+    }
+    return IfElse(condition: condition, ifBlock: ifBlock, elseBlock: elseBlock, attachment: nil)
+}
+
+/// Statefully parses a function declaration from the given tokens. Throws a `ParseError` if unsuccessful.
+func parseFuncDeclaration(from tokens: inout TokenIterator) throws -> FuncDeclaration<SourceRange?> {
+    try tokens.expect(.func)
+    let name = try parseIdentifier(from: &tokens)
+    let paramNames = try parseFuncParams(from: &tokens)
+    let block = try parseBlock(from: &tokens)
+    return FuncDeclaration(name: name, paramNames: paramNames, block: block, attachment: nil)
+}
+
+func parseFuncParams(from tokens: inout TokenIterator) throws -> [String] {
+    try tokens.expect(.leftParen)
+    
+    var params: [String] = []
+    while tokens.peek()?.kind != .rightParen {
+        let ident = try parseIdentifier(from: &tokens)
+        params.append(ident)
+        if tokens.peek()?.kind != .rightParen {
+            try tokens.expect(.comma)
+        }
+    }
+    
+    try tokens.expect(.rightParen)
+    return params
 }
 
 /// Statefully parses an identifier from the given tokens. Throws a `ParseError` if unsuccessful.
