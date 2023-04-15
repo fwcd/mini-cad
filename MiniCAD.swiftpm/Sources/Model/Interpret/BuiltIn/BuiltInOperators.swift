@@ -3,7 +3,13 @@ let builtInOperators: [BinaryOperator: ([Value], [Value]) throws -> [Value]] = [
     .add: binaryFloatOrIntOperator(name: "+", +, +), // TODO: Add string concatenation again
     .subtract: binaryFloatOrIntOperator(name: "-", -, -),
     .multiply: binaryFloatOrIntOperator(name: "*", *, *),
-    .divide: binaryFloatOrIntOperator(name: "/", /, /),
+    .divide: binaryFloatOrIntOperator(name: "/", {
+        guard $1 != 0 else { throw InterpretError.divisionByZero }
+        return $0 / $1
+    }, {
+        guard $1 != 0 else { throw InterpretError.divisionByZero }
+        return $0 / $1
+    }),
     .remainder: binaryIntOperator(name: "%", %),
     .equal: binaryValueOperator(name: "==", ==),
     .notEqual: binaryValueOperator(name: "!=", !=),

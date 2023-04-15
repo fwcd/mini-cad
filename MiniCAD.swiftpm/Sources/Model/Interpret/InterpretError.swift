@@ -15,6 +15,7 @@ enum InterpretError: Error, CustomStringConvertible {
     case duplicateParamNames(String)
     case maxRecursionDepthExceeded(Int)
     case maxIterationCountExceeded(Int, Int)
+    case divisionByZero
     
     var description: String {
         switch self {
@@ -50,6 +51,8 @@ enum InterpretError: Error, CustomStringConvertible {
             return "The maximum recursion depth of \(maxRecursionDepth) has been exceeded"
         case .maxIterationCountExceeded(let iterationCount, let maxIterationCount):
             return "\(iterationCount) exceeds the maximum iteration count of \(maxIterationCount)"
+        case .divisionByZero:
+            return "Cannot divide by zero"
         }
     }
 }
