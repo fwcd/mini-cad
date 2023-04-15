@@ -13,6 +13,8 @@ enum InterpretError: Error, CustomStringConvertible {
     case invalidArguments(String, expected: String, actual: String)
     case argumentCountMismatch(String, expected: Int, actual: Int)
     case duplicateParamNames(String)
+    case maxRecursionDepthExceeded(Int)
+    case maxIterationCountExceeded(Int, Int)
     
     var description: String {
         switch self {
@@ -44,6 +46,10 @@ enum InterpretError: Error, CustomStringConvertible {
             return "\(funcName) expected \(expected) argument\(expected == 1 ? "" : "s"), but got \(actual)"
         case .duplicateParamNames(let funcName):
             return "The function \(funcName) has duplicate parameters"
+        case .maxRecursionDepthExceeded(let maxRecursionDepth):
+            return "The maximum recursion depth of \(maxRecursionDepth) has been exceeded"
+        case .maxIterationCountExceeded(let iterationCount, let maxIterationCount):
+            return "\(iterationCount) exceeds the maximum iteration count of \(maxIterationCount)"
         }
     }
 }

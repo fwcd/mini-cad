@@ -1,11 +1,28 @@
 /// A (possibly nested) variable scope in which recipes, statements and expressions can be interpreted.
 class Interpreter {
-    private var variables: [String: [Value]]
-    private var parent: Interpreter?
+    private let parent: Interpreter?
+    private let depth: Int
     
-    init(variables: [String: [Value]] = [:], parent: Interpreter? = nil) {
-        self.variables = variables
+    private var variables: [String: [Value]]
+    private var maxRecursionDepth: Int
+    private var maxIterationCount: Int
+    
+    init(
+        parent: Interpreter? = nil,
+        depth: Int? = nil,
+        variables: [String: [Value]] = [:],
+        maxRecursionDepth: Int = 100,
+        maxIterationCount: Int = 5_000
+    ) throws {
         self.parent = parent
+        self.depth = depth ?? parent?.depth ?? 0
+        self.variables = variables
+        self.maxRecursionDepth = maxRecursionDepth
+        self.maxIterationCount = maxIterationCount
+        
+        guard self.depth <= maxRecursionDepth else {
+            throw InterpretError.maxRecursionDepthExceeded(maxRecursionDepth)
+        }
     }
     
     /// Interprets the given recipe. Throws an `InterpretError` if unsuccessful.
@@ -39,13 +56,19 @@ class Interpreter {
             let evaluatedCollection = try evaluateUniquely(expression: loop.sequence)
             switch evaluatedCollection {
             case let .intRange(range):
+                guard range.count <= maxIterationCount else {
+                    throw InterpretError.maxIterationCountExceeded(range.count, maxIterationCount)
+                }
                 for value in range {
-                    let blockInterpreter = Interpreter(variables: [loop.name: [.int(value)]], parent: self)
+                    let blockInterpreter = try Interpreter(parent: self, variables: [loop.name: [.int(value)]])
                     values += try blockInterpreter.interpret(statements: loop.block)
                 }
             case let .closedIntRange(range):
+                guard range.count <= maxIterationCount else {
+                    throw InterpretError.maxIterationCountExceeded(range.count, maxIterationCount)
+                }
                 for value in range {
-                    let blockInterpreter = Interpreter(variables: [loop.name: [.int(value)]], parent: self)
+                    let blockInterpreter = try Interpreter(parent: self, variables: [loop.name: [.int(value)]])
                     values += try blockInterpreter.interpret(statements: loop.block)
                 }
             default:
@@ -56,10 +79,10 @@ class Interpreter {
             switch evaluatedCondition {
             case let .bool(condition):
                 if condition {
-                    let blockInterpreter = Interpreter(parent: self)
+                    let blockInterpreter = try Interpreter(parent: self)
                     values += try blockInterpreter.interpret(statements: ifElse.ifBlock)
                 } else if let elseBlock = ifElse.elseBlock {
-                    let blockInterpreter = Interpreter(parent: self)
+                    let blockInterpreter = try Interpreter(parent: self)
                     values += try blockInterpreter.interpret(statements: elseBlock)
                 }
             default:
@@ -77,7 +100,7 @@ class Interpreter {
                     throw InterpretError.argumentCountMismatch(name, expected: paramNames.count, actual: values.count)
                 }
                 let args = Dictionary(uniqueKeysWithValues: zip(paramNames, values.map { [$0] }))
-                let blockInterpreter = Interpreter(variables: args, parent: parent)
+                let blockInterpreter = try Interpreter(parent: parent, depth: parent.depth + 1, variables: args)
                 let values = try blockInterpreter.interpret(statements: statements)
                 return values
             })]
@@ -103,7 +126,7 @@ class Interpreter {
             
             // Interpret the trailing block in its own interpreter that
             // inherits the current scope but cannot change it.
-            let blockInterpreter = Interpreter(parent: self)
+            let blockInterpreter = try Interpreter(parent: self)
             
             // Invoke the function if it exists
             if let function = try? resolveFunction(name: callExpr.identifier) {
