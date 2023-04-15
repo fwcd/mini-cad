@@ -80,6 +80,12 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         let meshes = trailingBlock.compactMap(\.asMesh)
         return meshes.map { .mesh($0.mapVertices { rotationMatrix * $0 }) }
     },
+    "Scale": { args, trailingBlock in
+        let scaling = parseVec3(from: args)
+        let scalingMatrix = Mat3(diagonal: scaling)
+        let meshes = trailingBlock.compactMap(\.asMesh)
+        return meshes.map { .mesh($0.mapVertices { scalingMatrix * $0 }) }
+    },
     "Union": { _, trailingBlock in
         let meshes = trailingBlock.compactMap(\.asMesh)
         guard let first = meshes.first else { return [.mesh(Mesh())] }
