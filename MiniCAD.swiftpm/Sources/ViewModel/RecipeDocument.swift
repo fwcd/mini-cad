@@ -5,7 +5,7 @@ extension UTType {
     static let recipeDocument = UTType(exportedAs: "dev.fwcd.MiniCAD.recipe3")
 }
 
-struct RecipeDocument {
+struct RecipeDocument: Hashable {
     var raw: String = ""
 }
 

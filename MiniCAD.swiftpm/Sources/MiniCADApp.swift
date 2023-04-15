@@ -1,7 +1,8 @@
 import SwiftUI
 
-private var preview = PreviewViewModel()
-private var editor = EditorViewModel(preview: preview)
+private let preview = PreviewViewModel()
+private let editor = EditorViewModel(preview: preview)
+private let app = AppViewModel(editor: editor)
 
 @main
 struct MiniCADApp: App {
@@ -10,6 +11,7 @@ struct MiniCADApp: App {
             ContentView()
                 .environmentObject(preview)
                 .environmentObject(editor)
+                .environmentObject(app)
         }
     }
 }
