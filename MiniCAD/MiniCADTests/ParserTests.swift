@@ -53,6 +53,11 @@ final class ParserTests: XCTestCase {
         try assert("for i in 0..<4 {}", parsesTo: [.forLoop(.init(name: "i", sequence: .binary(.range(0, 4))))])
     }
     
+    func testFuncDeclarations() throws {
+        try assert("func test() {}", parsesTo: [.funcDeclaration(.init(name: "test"))])
+        try assert("func identity(x) { x }", parsesTo: [.funcDeclaration(.init(name: "identity", paramNames: ["x"], block: [.expression("x")]))])
+    }
+    
     func testFullPrograms() throws {
         try assert("""
             let w = 3
@@ -65,6 +70,17 @@ final class ParserTests: XCTestCase {
                 }
               }
             }
+        
+            func noArgs() {}
+        
+            func oneArg(arg) {
+              hello()
+            }
+            
+            func twoArgs(x, y) {
+              x + y
+              func nested() {}
+            }
         """, parsesTo: [
             .varBinding(.init(name: "w", value: 3)),
             .varBinding(.init(name: "h", value: 4)),
@@ -75,6 +91,17 @@ final class ParserTests: XCTestCase {
                         .expression(.call("Cuboid"))
                     ]))),
                 ])),
+            ])),
+            .blank,
+            .funcDeclaration(.init(name: "noArgs")),
+            .blank,
+            .funcDeclaration(.init(name: "oneArg", paramNames: ["arg"], block: [
+                .expression(.call("hello")),
+            ])),
+            .blank,
+            .funcDeclaration(.init(name: "twoArgs", paramNames: ["x", "y"], block: [
+                .expression(.binary(.add("x", "y"))),
+                .funcDeclaration(.init(name: "nested")),
             ])),
         ])
     }
