@@ -3,7 +3,7 @@ import Foundation
 /// A 3D sphere.
 struct Sphere: Hashable {
     var center: Vec3 = .zero
-    var radius: Double = 1
+    var radius: Double = 0.5
     var latitudeSteps: Int = GeometryDefaults.circleSides
     var longitudeSteps: Int = GeometryDefaults.circleSides
 }

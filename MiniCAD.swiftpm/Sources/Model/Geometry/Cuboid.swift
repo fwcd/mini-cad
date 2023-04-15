@@ -1,7 +1,7 @@
 /// A 3D cuboid.
 struct Cuboid: Hashable {
     var center: Vec3 = .zero
-    var size: Vec3 = .init(x: 2, y: 2, z: 2)
+    var size: Vec3 = .init(x: 1, y: 1, z: 1)
 }
 
 extension Mesh {

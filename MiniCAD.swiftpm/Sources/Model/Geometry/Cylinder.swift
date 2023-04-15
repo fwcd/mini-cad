@@ -3,7 +3,7 @@ import Foundation
 /// A 3D cylinder.
 struct Cylinder: Hashable {
     var center: Vec3 = .zero
-    var radius: Double = 1
+    var radius: Double = 0.5
     var height: Double = 1
     var sides: Int = GeometryDefaults.circleSides
 }

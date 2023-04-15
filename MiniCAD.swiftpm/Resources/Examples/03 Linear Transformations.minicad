@@ -1,0 +1,32 @@
+// Besides translations, MiniCAD also supports linear
+// operations, namely scaling and rotation. Rotations
+// use Euler angles, specifically the XYZ Euler mode.
+
+Translate(-3, 0, 0) {
+  // Rotate a cuboid PI / 8 radians around the x-axis,
+  // then PI / 4 radians around the y-axis.
+  Rotate(PI, PI / 4, 0) {
+    Cuboid()
+  }
+}
+
+Translate(3, 0, 0) {
+  // Add an untransformed cuboid for comparison.
+  Cuboid()
+}
+
+Translate(0, 0, -3) {
+  // Scale a cuboid by a factor of 1.5 along the x-axis
+  // and a factor of 0.5 along the z-axis.
+  Scale(1.5, 1, 0.5) {
+    Cuboid()
+  }
+}
+
+Translate(0, 0, 3) {
+  // Rotate a cylinder of radius 0.5 by PI / 8
+  // radians around every axis.
+  Rotate(PI / 8, PI / 8, PI / 8) {
+    Cylinder(0.5)
+  }
+}
