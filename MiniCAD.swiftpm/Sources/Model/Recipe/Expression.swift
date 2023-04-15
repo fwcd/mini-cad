@@ -2,6 +2,7 @@
 enum Expression<Attachment> {
     case identifier(String)
     case literal(Value)
+    case prefix(PrefixExpression<Attachment>)
     case binary(BinaryExpression<Attachment>)
     case call(CallExpression<Attachment>)
     
@@ -11,6 +12,8 @@ enum Expression<Attachment> {
             return .identifier(string)
         case .literal(let value):
             return .literal(value)
+        case .prefix(let prefixExpression):
+            return .prefix(try prefixExpression.map(transform))
         case .binary(let binaryExpression):
             return .binary(try binaryExpression.map(transform))
         case .call(let callExpression):

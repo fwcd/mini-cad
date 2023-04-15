@@ -126,6 +126,8 @@ class Interpreter {
             return [value]
         case .identifier(let name):
             return try resolve(name: name)
+        case .prefix(let prefixExpr):
+            return try evaluate(prefixExpression: prefixExpr)
         case .binary(let binaryExpr):
             return try evaluate(binaryExpression: binaryExpr)
         case .call(let callExpr):
@@ -151,11 +153,20 @@ class Interpreter {
         }
     }
     
+    /// Evaluates the given prefix expression. Throws an `InterpretError` if unsuccessful.
+    func evaluate<T>(prefixExpression: PrefixExpression<T>) throws -> [Value] {
+        let rhs = try evaluateUniquely(expression: prefixExpression.rhs)
+        guard let builtIn = builtInPrefixOperators[prefixExpression.op] else {
+            throw InterpretError.prefixOperatorNotImplemented(prefixExpression.op)
+        }
+        return try builtIn([rhs], [])
+    }
+    
     /// Evaluates the given binary expression. Throws an `InterpretError` if unsuccessful.
     func evaluate<T>(binaryExpression: BinaryExpression<T>) throws -> [Value] {
         let lhs = try evaluateUniquely(expression: binaryExpression.lhs)
         let rhs = try evaluateUniquely(expression: binaryExpression.rhs)
-        guard let builtIn = builtInOperators[binaryExpression.op] else {
+        guard let builtIn = builtInBinaryOperators[binaryExpression.op] else {
             throw InterpretError.binaryOperatorNotImplemented(binaryExpression.op)
         }
         return try builtIn([lhs, rhs], [])

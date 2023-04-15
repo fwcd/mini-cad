@@ -5,6 +5,7 @@ enum InterpretError: Error, CustomStringConvertible {
     case cannotBranch(Expression<Any>)
     case binaryOperationTypesMismatch(Value, Value)
     case binaryOperatorNotImplemented(BinaryOperator)
+    case prefixOperatorNotImplemented(PrefixOperator)
     case ambiguousExpression(Expression<Any>, [Value])
     case ambiguousFunction(String)
     case notAFunction(String)
@@ -31,6 +32,8 @@ enum InterpretError: Error, CustomStringConvertible {
             return "The types in the binary operation don't match: \(lhs) vs \(rhs)"
         case .binaryOperatorNotImplemented(let op):
             return "The binary operator \(op.pretty()) is not implemented yet"
+        case .prefixOperatorNotImplemented(let op):
+            return "The prefix operator \(op.pretty()) is not implemented yet"
         case .ambiguousExpression(let expr, let values):
             return "The expression \(expr) does not uniquely evaluate to one result: \(values)"
         case .ambiguousFunction(let name):

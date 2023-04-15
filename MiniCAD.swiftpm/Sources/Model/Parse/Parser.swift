@@ -119,7 +119,7 @@ func parseIdentifier(from tokens: inout TokenIterator) throws -> String {
 
 /// Statefully parses an expression from the given tokens. Throws a `ParseError` if unsuccessful.
 func parseExpression(from tokens: inout TokenIterator, allowTrailing: Bool = true) throws -> Expression<SourceRange?> {
-    let lhs = try parsePrimaryExpression(from: &tokens, allowTrailing: allowTrailing)
+    let lhs = try parsePrefixExpression(from: &tokens, allowTrailing: allowTrailing)
     if case .call(let call) = lhs, !call.trailingBlock.isEmpty {
         // We are done parsing this expression after a trailing block
         return lhs
@@ -132,7 +132,7 @@ func parseExpression(from tokens: inout TokenIterator, lhs: Expression<SourceRan
     var lhs = lhs
     while case let .binaryOperator(op)? = tokens.peek()?.kind, op.precedence >= minPrecedence {
         tokens.next()
-        var rhs = try parsePrimaryExpression(from: &tokens, allowTrailing: false)
+        var rhs = try parsePrefixExpression(from: &tokens, allowTrailing: false)
         while case let .binaryOperator(nextOp)? = tokens.peek()?.kind,
               nextOp.precedence > op.precedence || (nextOp.associativity == .right && nextOp.precedence == op.precedence) {
             rhs = try parseExpression(from: &tokens, lhs: rhs, minPrecedence: op.precedence + (nextOp.precedence - op.precedence).signum())
@@ -140,6 +140,17 @@ func parseExpression(from tokens: inout TokenIterator, lhs: Expression<SourceRan
         lhs = .binary(.init(lhs: lhs, op: op, rhs: rhs, attachment: nil)) // TODO: Source range
     }
     return lhs
+}
+
+/// Statefully parses a non-operated-on, possibly prefix expression from the given tokens. Throws a `ParseError` if unsuccessful.
+func parsePrefixExpression(from tokens: inout TokenIterator, allowTrailing: Bool) throws -> Expression<SourceRange?> {
+    var ops: [PrefixOperator] = []
+    while case let .prefixOperator(op) = tokens.peek()?.kind {
+        tokens.next()
+        ops.append(op)
+    }
+    let primaryExpr = try parsePrimaryExpression(from: &tokens, allowTrailing: allowTrailing)
+    return ops.reversed().reduce(primaryExpr) { .prefix(.init(op: $1, rhs: $0, attachment: nil)) }
 }
     
 /// Statefully parses a non-operated-on expression from the given tokens. Throws a `ParseError` if unsuccessful.

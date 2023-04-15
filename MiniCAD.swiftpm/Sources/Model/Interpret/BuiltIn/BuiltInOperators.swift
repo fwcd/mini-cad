@@ -1,5 +1,11 @@
-/// The built-in operators.
-let builtInOperators: [BinaryOperator: ([Value], [Value]) throws -> [Value]] = [
+/// The built-in prefix operators.
+let builtInPrefixOperators: [PrefixOperator: ([Value], [Value]) throws -> [Value]] = [
+    .logicalNot: unaryBoolOperator(name: "!", { !$0 }),
+    .negation: unaryFloatOrIntOperator(name: "-", { -$0 }, { -$0 }),
+]
+
+/// The built-in binary operators.
+let builtInBinaryOperators: [BinaryOperator: ([Value], [Value]) throws -> [Value]] = [
     .add: binaryFloatOrIntOperator(name: "+", +, +), // TODO: Add string concatenation again
     .subtract: binaryFloatOrIntOperator(name: "-", -, -),
     .multiply: binaryFloatOrIntOperator(name: "*", *, *),

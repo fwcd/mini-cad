@@ -16,6 +16,7 @@ struct Token: Hashable {
         case `else`
         case `func`
         case binaryOperator(BinaryOperator)
+        case prefixOperator(PrefixOperator)
         case assign
         case newline
         case leftParen

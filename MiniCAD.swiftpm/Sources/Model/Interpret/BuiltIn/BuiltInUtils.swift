@@ -1,3 +1,25 @@
+func unaryBoolOperator<T>(name: String, _ f: @escaping (Bool) -> T) -> ([Value], [Value]) throws -> [Value] where T: ValueConvertible {
+    return { args, _ in
+        guard let x = args[safely: 0]?.asBool else {
+            throw InterpretError.invalidArguments(name, expected: "1 bool", actual: "\(args)")
+        }
+        return [Value(f(x))]
+    }
+}
+
+func unaryFloatOrIntOperator<T, U>(name: String, _ f: @escaping (Double) -> T, _ g: @escaping (Int) -> U) -> ([Value], [Value]) throws -> [Value] where T: ValueConvertible, U: ValueConvertible {
+    return { args, _ in
+        switch args[safely: 0] {
+        case let .int(x)?:
+            return [Value(g(x))]
+        case let .float(x)?:
+            return [Value(f(x))]
+        default:
+            throw InterpretError.invalidArguments(name, expected: "1 float or int", actual: "\(args)")
+        }
+    }
+}
+
 func unaryFloatOperator<T>(name: String, _ f: @escaping (Double) -> T) -> ([Value], [Value]) throws -> [Value] where T: ValueConvertible {
     return { args, _ in
         guard let x = args[safely: 0]?.asFloat else {

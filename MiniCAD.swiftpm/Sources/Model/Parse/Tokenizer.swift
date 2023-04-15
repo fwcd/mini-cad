@@ -26,9 +26,13 @@ private let basePatterns: [TokenPattern] = [
     ("colon", { _ in .colon }, ":"),
 ]
 
-private let operatorPatterns: [TokenPattern] = BinaryOperator.allCases.enumerated().map { (i, op) in
-    ("op\(i)", { _ in .binaryOperator(op) }, NSRegularExpression.escapedPattern(for: op.pretty()))
+private let binaryOperatorPatterns: [TokenPattern] = BinaryOperator.allCases.enumerated().map { (i, op) in
+    ("bo\(i)", { _ in .binaryOperator(op) }, NSRegularExpression.escapedPattern(for: op.pretty()))
 }
+private let prefixOperatorPatterns: [TokenPattern] = PrefixOperator.allCases.enumerated().map { (i, op) in
+    ("po\(i)", { _ in .prefixOperator(op) }, NSRegularExpression.escapedPattern(for: op.pretty()))
+}
+private let operatorPatterns: [TokenPattern] = prefixOperatorPatterns + binaryOperatorPatterns
 
 private let patterns: [TokenPattern] = basePatterns + operatorPatterns
 

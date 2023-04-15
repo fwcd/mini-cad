@@ -5,6 +5,8 @@ extension Expression: Pretty {
             return ident
         case let .literal(value):
             return value.pretty(formatter: formatter)
+        case let .prefix(prefix):
+            return prefix.pretty(formatter: formatter)
         case let .binary(binary):
             return binary.pretty(formatter: formatter)
         case let .call(call):
