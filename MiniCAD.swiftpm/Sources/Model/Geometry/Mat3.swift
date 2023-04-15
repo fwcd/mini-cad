@@ -79,4 +79,8 @@ extension Mat3 {
             k: Vec3(x: sj * cc + ss, y: sj * cs - sc, z: cj * ci)
         )
     }
+    
+    init(diagonal: Vec3) {
+        self.init(i: .init(x: diagonal.x), j: .init(y: diagonal.y), k: .init(z: diagonal.z))
+    }
 }
