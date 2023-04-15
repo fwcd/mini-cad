@@ -4,6 +4,10 @@ A parameteric 3D modeller for macOS and iOS featuring a Swift-inspired Domain Sp
 
 <!-- TODO: Implement mesh operations -->
 
+## Open Source
+
+<!-- TODO: Mention suzanne https://de.m.wikipedia.org/wiki/Datei:Suzanne.png and csg.js -->
+
 ## See also
 
 * [MiniBlocks](https://github.com/fwcd/mini-blocks), an open-world sandbox game built with SceneKit (my 2022 project)
