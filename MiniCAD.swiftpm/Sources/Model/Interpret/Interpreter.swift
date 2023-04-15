@@ -51,6 +51,10 @@ class Interpreter {
             default:
                 throw InterpretError.cannotIterate(loop.sequence.map { $0 as Any })
             }
+        case let .ifElse(ifElse):
+            fatalError("TODO: Interpreting if-else is not implemented")
+        case let .funcDeclaration(decl):
+            fatalError("TODO: Interpreting functions is not implemented")
         case .blank:
             break
         }

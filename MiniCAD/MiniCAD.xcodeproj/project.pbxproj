@@ -110,6 +110,10 @@
 		3550612D29E44024006B5019 /* Mesh+Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612C29E44024006B5019 /* Mesh+Triangle.swift */; };
 		3550612F29E44498006B5019 /* Polygon+Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550612E29E44498006B5019 /* Polygon+Triangle.swift */; };
 		3550613129E474A9006B5019 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3550613029E474A9006B5019 /* Sphere.swift */; };
+		3582D0A529EAFC5100D28706 /* IfElse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0A429EAFC5100D28706 /* IfElse.swift */; };
+		3582D0A729EAFCD600D28706 /* FuncDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0A629EAFCD600D28706 /* FuncDeclaration.swift */; };
+		3582D0A929EAFD5C00D28706 /* IfElse+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0A829EAFD5C00D28706 /* IfElse+Pretty.swift */; };
+		3582D0AB29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0AA29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
@@ -245,6 +249,10 @@
 		3550612C29E44024006B5019 /* Mesh+Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Triangle.swift"; sourceTree = "<group>"; };
 		3550612E29E44498006B5019 /* Polygon+Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polygon+Triangle.swift"; sourceTree = "<group>"; };
 		3550613029E474A9006B5019 /* Sphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
+		3582D0A429EAFC5100D28706 /* IfElse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfElse.swift; sourceTree = "<group>"; };
+		3582D0A629EAFCD600D28706 /* FuncDeclaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncDeclaration.swift; sourceTree = "<group>"; };
+		3582D0A829EAFD5C00D28706 /* IfElse+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IfElse+Pretty.swift"; sourceTree = "<group>"; };
+		3582D0AA29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FuncDeclaration+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
@@ -468,6 +476,8 @@
 				35E7581C299FC84A006043C3 /* CallExpression.swift */,
 				35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */,
 				354A41E3299330E0004EA933 /* ForLoop.swift */,
+				3582D0A429EAFC5100D28706 /* IfElse.swift */,
+				3582D0A629EAFCD600D28706 /* FuncDeclaration.swift */,
 				354A41E4299330E0004EA933 /* Statement.swift */,
 			);
 			path = Recipe;
@@ -521,6 +531,8 @@
 				354A41F5299330E0004EA933 /* VarBinding+Pretty.swift */,
 				354A41F6299330E0004EA933 /* Statement+Pretty.swift */,
 				354A41F7299330E0004EA933 /* ForLoop+Pretty.swift */,
+				3582D0A829EAFD5C00D28706 /* IfElse+Pretty.swift */,
+				3582D0AA29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift */,
 				354A41F8299330E0004EA933 /* Value+Pretty.swift */,
 				354A41FB299330E0004EA933 /* Expression+Pretty.swift */,
 				354A41F9299330E0004EA933 /* BinaryExpression+Pretty.swift */,
@@ -729,14 +741,17 @@
 				352B9B2129A7BD8F007A7470 /* STLDocument.swift in Sources */,
 				354A420F299330E0004EA933 /* Recipe.swift in Sources */,
 				352B9B2D29A7BE32007A7470 /* Vec3+STLCodable.swift in Sources */,
+				3582D0A929EAFD5C00D28706 /* IfElse+Pretty.swift in Sources */,
 				352B9B1F29A7BD45007A7470 /* DemoRecipe.swift in Sources */,
 				3550612D29E44024006B5019 /* Mesh+Triangle.swift in Sources */,
+				3582D0AB29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift in Sources */,
 				35E7582529A12F4E006043C3 /* BinaryOperator+Pretty.swift in Sources */,
 				354A421B299330E0004EA933 /* Token.swift in Sources */,
 				3503AF1D29A91DD900AF1188 /* Octree.swift in Sources */,
 				3503AF1F29A91E4E00AF1188 /* Triangle.swift in Sources */,
 				354A4224299330E0004EA933 /* ForLoop+Pretty.swift in Sources */,
 				354A4230299330E0004EA933 /* EditorView.swift in Sources */,
+				3582D0A529EAFC5100D28706 /* IfElse.swift in Sources */,
 				354A4213299330E0004EA933 /* BinaryExpression.swift in Sources */,
 				354A4217299330E0004EA933 /* ParseError.swift in Sources */,
 				354A4233299330E0004EA933 /* ErrorView.swift in Sources */,
@@ -767,6 +782,7 @@
 				354A420B299330E0004EA933 /* PreviewViewModel.swift in Sources */,
 				35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */,
 				3503AF4029A94CB000AF1188 /* Line+Plane.swift in Sources */,
+				3582D0A729EAFCD600D28706 /* FuncDeclaration.swift in Sources */,
 				354A421D299330E0004EA933 /* Identified.swift in Sources */,
 				3503AF4229A94CCD00AF1188 /* Triangle+Plane.swift in Sources */,
 				354A422D299330E0004EA933 /* PreviewView.swift in Sources */,

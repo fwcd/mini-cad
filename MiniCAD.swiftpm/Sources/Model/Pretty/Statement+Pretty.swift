@@ -7,6 +7,10 @@ extension Statement: Pretty {
             return expr.pretty(formatter: formatter)
         case let .forLoop(loop):
             return loop.pretty(formatter: formatter)
+        case let .ifElse(ifElse):
+            return ifElse.pretty(formatter: formatter)
+        case let .funcDeclaration(decl):
+            return decl.pretty(formatter: formatter)
         case .blank:
             return ""
         }
