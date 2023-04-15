@@ -100,6 +100,10 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
     "exp": unaryFloatOperator(name: "exp", exp),
     "log": unaryFloatOperator(name: "log", Foundation.log),
     "sqrt": unaryFloatOperator(name: "sqrt", sqrt),
+    "print": { args, _ in
+        print(args)
+        return []
+    }
 ]
 
 private func parseVec3(from args: [Value], default: Vec3 = .zero) -> Vec3 {
