@@ -114,6 +114,7 @@
 		3582D0A729EAFCD600D28706 /* FuncDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0A629EAFCD600D28706 /* FuncDeclaration.swift */; };
 		3582D0A929EAFD5C00D28706 /* IfElse+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0A829EAFD5C00D28706 /* IfElse+Pretty.swift */; };
 		3582D0AB29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0AA29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift */; };
+		3582D0AF29EB03CA00D28706 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0AE29EB03CA00D28706 /* Function.swift */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
@@ -253,6 +254,7 @@
 		3582D0A629EAFCD600D28706 /* FuncDeclaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncDeclaration.swift; sourceTree = "<group>"; };
 		3582D0A829EAFD5C00D28706 /* IfElse+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IfElse+Pretty.swift"; sourceTree = "<group>"; };
 		3582D0AA29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FuncDeclaration+Pretty.swift"; sourceTree = "<group>"; };
+		3582D0AE29EB03CA00D28706 /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				352B9B1129A7BD2D007A7470 /* String+ValueConvertible.swift */,
 				352B9B1229A7BD2D007A7470 /* Double+ValueConvertible.swift */,
 				352B9B1329A7BD2D007A7470 /* Int+ValueConvertible.swift */,
+				3582D0AE29EB03CA00D28706 /* Function.swift */,
 				352B9B1429A7BD2D007A7470 /* Value.swift */,
 				352B9B1529A7BD2D007A7470 /* ValueConvertible.swift */,
 			);
@@ -711,6 +714,7 @@
 				354A420C299330E0004EA933 /* EditorViewModel.swift in Sources */,
 				352B9B2B29A7BE32007A7470 /* Quad.swift in Sources */,
 				35E7582D29A1B657006043C3 /* Pretty.swift in Sources */,
+				3582D0AF29EB03CA00D28706 /* Function.swift in Sources */,
 				354A420E299330E0004EA933 /* MiniCADApp.swift in Sources */,
 				352B9B1729A7BD2D007A7470 /* Bool+ValueConvertible.swift in Sources */,
 				35E7582929A1AE58006043C3 /* Ranged.swift in Sources */,

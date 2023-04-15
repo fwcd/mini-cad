@@ -17,6 +17,8 @@ extension Value: Pretty {
             return "\(range.lowerBound)...\(range.upperBound)"
         case .closedFloatRange(let range):
             return "\(range.lowerBound)...\(range.upperBound)"
+        case .function(let function):
+            return "<function \(function.id)>"
         case .mesh(let value):
             // TODO: Produce a prettier description
             return String(describing: value)

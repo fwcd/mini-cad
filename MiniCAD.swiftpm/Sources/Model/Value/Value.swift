@@ -8,6 +8,7 @@ enum Value: Hashable {
     case floatRange(Range<Double>)
     case closedIntRange(ClosedRange<Int>)
     case closedFloatRange(ClosedRange<Double>)
+    case function(Function)
     case mesh(Mesh)
     
     // TODO: Move the convenience properties below into the T+ValueConvertible source files or (ideally) remove them alltogether
