@@ -4,8 +4,8 @@ import Foundation
 struct Sphere: Hashable {
     var center: Vec3 = .zero
     var radius: Double = 1
-    var latitudeSteps: Int = 16
-    var longitudeSteps: Int = 16
+    var latitudeSteps: Int = GeometryDefaults.circleSides
+    var longitudeSteps: Int = GeometryDefaults.circleSides
 }
 
 extension Mesh {

@@ -5,7 +5,7 @@ struct Cylinder: Hashable {
     var center: Vec3 = .zero
     var radius: Double = 1
     var height: Double = 1
-    var sides: Int = 8
+    var sides: Int = GeometryDefaults.circleSides
 }
 
 extension Mesh {

@@ -121,6 +121,7 @@
 		3582D0B929EB1AAB00D28706 /* 01 Hello Cuboid.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0B829EB1A6300D28706 /* 01 Hello Cuboid.minicad */; };
 		3582D0BD29EB28E300D28706 /* Cone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0BC29EB28E200D28706 /* Cone.swift */; };
 		3582D0BF29EB364800D28706 /* 02 Simple Geometry.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0BE29EB364800D28706 /* 02 Simple Geometry.minicad */; };
+		3582D0C229EB492F00D28706 /* GeometryDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0C129EB492F00D28706 /* GeometryDefaults.swift */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
@@ -268,6 +269,7 @@
 		3582D0BC29EB28E200D28706 /* Cone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cone.swift; sourceTree = "<group>"; };
 		3582D0BE29EB364800D28706 /* 02 Simple Geometry.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "02 Simple Geometry.minicad"; sourceTree = "<group>"; tabWidth = 2; };
 		3582D0C029EB47A600D28706 /* 02 Sierpinski copy.minicad */ = {isa = PBXFileReference; lastKnownFileType = text; path = "02 Sierpinski copy.minicad"; sourceTree = "<group>"; };
+		3582D0C129EB492F00D28706 /* GeometryDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryDefaults.swift; sourceTree = "<group>"; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 				3503AF3529A9448E00AF1188 /* Line.swift */,
 				3503AF3F29A94CB000AF1188 /* Line+Plane.swift */,
 				354A41FD299330E0004EA933 /* Vec3.swift */,
+				3582D0C129EB492F00D28706 /* GeometryDefaults.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 				3503AF3629A9448E00AF1188 /* Line.swift in Sources */,
 				35E7581D299FC84A006043C3 /* CallExpression.swift in Sources */,
 				354A421C299330E0004EA933 /* Array+Extensions.swift in Sources */,
+				3582D0C229EB492F00D28706 /* GeometryDefaults.swift in Sources */,
 				352B9B1C29A7BD2D007A7470 /* Value.swift in Sources */,
 				354A4225299330E0004EA933 /* Value+Pretty.swift in Sources */,
 				354A4223299330E0004EA933 /* Statement+Pretty.swift in Sources */,

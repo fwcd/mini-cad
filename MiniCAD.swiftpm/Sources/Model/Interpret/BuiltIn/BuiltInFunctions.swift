@@ -13,19 +13,19 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
     "Cylinder": { args, _ in
         let radius = args[safely: 0]?.asFloat ?? 1
         let height = args[safely: 1]?.asFloat ?? 1
-        let sides = args[safely: 2]?.asInt ?? 8
+        let sides = args[safely: 2]?.asInt ?? GeometryDefaults.circleSides
         return [.mesh(Mesh(Cylinder(radius: radius, height: height, sides: sides)))]
     },
     "Cone": { args, _ in
         let radius = args[safely: 0]?.asFloat ?? 1
         let height = args[safely: 1]?.asFloat ?? 1
-        let sides = args[safely: 2]?.asInt ?? 8
+        let sides = args[safely: 2]?.asInt ?? GeometryDefaults.circleSides
         return [.mesh(Mesh(Cone(radius: radius, height: height, sides: sides)))]
     },
     "Sphere": { args, _ in
         let radius = args[safely: 0]?.asFloat ?? 1
-        let latSteps = args[safely: 1]?.asInt ?? 16
-        let lonSteps = args[safely: 2]?.asInt ?? 16
+        let latSteps = args[safely: 1]?.asInt ?? GeometryDefaults.circleSides
+        let lonSteps = args[safely: 2]?.asInt ?? GeometryDefaults.circleSides
         return [.mesh(Mesh(Sphere(radius: radius, latitudeSteps: latSteps, longitudeSteps: lonSteps)))]
     },
     "Suzanne": { _, _ in
