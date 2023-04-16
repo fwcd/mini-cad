@@ -96,17 +96,17 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
     "FlipX": { args, trailingBlock in
         let flipMatrix = Mat3.flipX
         let meshes = trailingBlock.compactMap(\.asMesh)
-        return meshes.map { .mesh($0.mapVertices { flipMatrix * $0 }) }
+        return meshes.map { .mesh($0.mapVertices { flipMatrix * $0 }.flipped) }
     },
     "FlipY": { args, trailingBlock in
         let flipMatrix = Mat3.flipY
         let meshes = trailingBlock.compactMap(\.asMesh)
-        return meshes.map { .mesh($0.mapVertices { flipMatrix * $0 }) }
+        return meshes.map { .mesh($0.mapVertices { flipMatrix * $0 }.flipped) }
     },
     "FlipZ": { args, trailingBlock in
         let flipMatrix = Mat3.flipZ
         let meshes = trailingBlock.compactMap(\.asMesh)
-        return meshes.map { .mesh($0.mapVertices { flipMatrix * $0 }) }
+        return meshes.map { .mesh($0.mapVertices { flipMatrix * $0 }.flipped) }
     },
     "Identity": { args, trailingBlock in
         args + trailingBlock

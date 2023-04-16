@@ -10,6 +10,13 @@ struct Mesh: Hashable {
     /// A flat representation of the faces.
     var facesFlat: [Int] { faces.flatMap { [$0.a, $0.b, $0.c] } }
     
+    /// The mesh with flipped faces.
+    var flipped: Self {
+        var mesh = self
+        mesh.faces = mesh.faces.map(\.flipped)
+        return mesh
+    }
+    
     /// A triangular face defined by its 3 vertex indices. Per standard convention, the vertices are wound in counter-clockwise order (from the viewing direction).
     struct Face: Hashable {
         let a: Int
