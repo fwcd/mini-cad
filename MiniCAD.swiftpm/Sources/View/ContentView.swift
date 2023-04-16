@@ -17,6 +17,12 @@ struct ContentView: View {
                     ForEach(app.models) { document in
                         DocumentSnippet(document: document)
                     }
+                    .onMove { offsets, target in
+                        app.models.move(fromOffsets: offsets, toOffset: target)
+                    }
+                    .onDelete { offsets in
+                        app.models.remove(atOffsets: offsets)
+                    }
                 } header: {
                     Text("Models")
                     Button {
