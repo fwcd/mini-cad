@@ -145,7 +145,7 @@ func parseExpression(from tokens: inout TokenIterator, lhs: Expression<SourceRan
 /// Statefully parses a non-operated-on, possibly prefix expression from the given tokens. Throws a `ParseError` if unsuccessful.
 func parsePrefixExpression(from tokens: inout TokenIterator, allowTrailing: Bool) throws -> Expression<SourceRange?> {
     var ops: [PrefixOperator] = []
-    while case let .prefixOperator(op) = tokens.peek()?.kind {
+    while let op = tokens.peek()?.kind.asPrefixOperator {
         tokens.next()
         ops.append(op)
     }

@@ -19,13 +19,13 @@ final class TokenizerTests: XCTestCase {
     }
     
     func testBinaryOperators() throws {
-        for op in BinaryOperator.allCases where op != .subtract {
+        for op in BinaryOperator.allCases {
             try assert(op.pretty(), tokenizesTo: [.binaryOperator(op)])
         }
     }
     
     func testPrefixOperators() throws {
-        for op in PrefixOperator.allCases {
+        for op in PrefixOperator.allCases where op != .negation {
             try assert(op.pretty(), tokenizesTo: [.prefixOperator(op)])
         }
     }

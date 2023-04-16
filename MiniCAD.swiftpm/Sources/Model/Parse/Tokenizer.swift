@@ -32,7 +32,7 @@ private let binaryOperatorPatterns: [TokenPattern] = BinaryOperator.allCases.enu
 private let prefixOperatorPatterns: [TokenPattern] = PrefixOperator.allCases.enumerated().map { (i, op) in
     ("po\(i)", { _ in .prefixOperator(op) }, NSRegularExpression.escapedPattern(for: op.pretty()))
 }
-private let operatorPatterns: [TokenPattern] = prefixOperatorPatterns + binaryOperatorPatterns
+private let operatorPatterns: [TokenPattern] = binaryOperatorPatterns + prefixOperatorPatterns // Order matters, e.g. to prefer != over !
 
 private let patterns: [TokenPattern] = basePatterns + operatorPatterns
 

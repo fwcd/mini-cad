@@ -50,6 +50,14 @@ struct Token: Hashable {
             }
         }
         
+        var asPrefixOperator: PrefixOperator? {
+            switch self {
+            case .prefixOperator(let op): return op
+            case .binaryOperator(.subtract): return .negation // We need to disambiguate this one unfortunately
+            default: return nil
+            }
+        }
+        
         var asBinaryOperator: BinaryOperator? {
             switch self {
             case .binaryOperator(let op): return op
