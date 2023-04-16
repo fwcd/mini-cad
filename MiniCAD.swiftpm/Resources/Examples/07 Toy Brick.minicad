@@ -2,11 +2,14 @@
 // to ones you might find to be made by a Danish company.
 
 let size = 4.0
-let height = 3.0
+let height = 2.0
 
 let tabRadius = size / 5.0
 let tabOffset = size / 4.0
 let tabHeight = size / 6.0
+
+let socketRadius = size / 3.0
+let socketHeight = height * 0.7
 
 let padding = 0.5
 let innerSize = size - padding
@@ -24,6 +27,15 @@ func Tab() {
   Cylinder(tabRadius, tabHeight)
 }
 
+func Socket() {
+  Translate(0, height / 2 - socketHeight / 2, 0) {
+    Difference {
+      Cylinder(socketRadius, socketHeight)
+      Cylinder(socketRadius - padding / 2, socketHeight)
+    }
+  }
+}
+
 func Brick() {
   Union {
     BaseBrick()
@@ -38,6 +50,7 @@ func Brick() {
         }
       }
     }
+    Socket()
   }
 }
 
