@@ -23,6 +23,11 @@ struct ContentView: View {
                     .onDelete { offsets in
                         app.models.remove(atOffsets: offsets)
                     }
+                    if app.models.isEmpty {
+                        Text("Create a model by tapping +")
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.gray.opacity(0.6))
+                    }
                 } header: {
                     Text("Models")
                     Button {
