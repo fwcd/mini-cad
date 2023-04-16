@@ -2,13 +2,13 @@
 // to ones you might find to be made by a Danish company.
 
 let size = 4.0
-let height = 2.0
+let height = 2.5
 
 let tabRadius = size / 5.0
 let tabOffset = size / 4.0
 let tabHeight = size / 6.0
 
-let socketRadius = size / 3.0
+let socketRadius = size / 4.0
 let socketHeight = height * 0.7
 
 let padding = 0.5
