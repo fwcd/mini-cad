@@ -121,7 +121,7 @@
 		3582D0C229EB492F00D28706 /* GeometryDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0C129EB492F00D28706 /* GeometryDefaults.swift */; };
 		3582D0CB29EB5D5500D28706 /* Mat3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0CA29EB5D5500D28706 /* Mat3.swift */; };
 		3582D0CE29EB61B400D28706 /* 04 Sierpinski.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0C029EB47A600D28706 /* 04 Sierpinski.minicad */; };
-		3582D0CF29EB61B400D28706 /* 07 Demo.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0B429EB153800D28706 /* 07 Demo.minicad */; };
+		3582D0CF29EB61B400D28706 /* 08 Demo.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0B429EB153800D28706 /* 08 Demo.minicad */; };
 		3582D0D029EB61B400D28706 /* 02 Geometry Primitives.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0BE29EB364800D28706 /* 02 Geometry Primitives.minicad */; };
 		3582D0D129EB61B400D28706 /* 06 Importing STL Models.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0C429EB4CCC00D28706 /* 06 Importing STL Models.minicad */; };
 		3582D0D229EB61B400D28706 /* 01 Hello Cuboid.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0B829EB1A6300D28706 /* 01 Hello Cuboid.minicad */; };
@@ -135,6 +135,7 @@
 		3582D0E229EB776100D28706 /* AddModelDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0E129EB776100D28706 /* AddModelDialog.swift */; };
 		3582D0E429EB7A0E00D28706 /* AutoFocusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0E329EB7A0E00D28706 /* AutoFocusTextField.swift */; };
 		3582D0E629EB7C4600D28706 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0E529EB7C4600D28706 /* String+Extensions.swift */; };
+		3582D0E829EB8B8F00D28706 /* 07 Text.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0E729EB8B8600D28706 /* 07 Text.minicad */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
@@ -276,7 +277,7 @@
 		3582D0AA29EAFE2B00D28706 /* FuncDeclaration+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FuncDeclaration+Pretty.swift"; sourceTree = "<group>"; };
 		3582D0AE29EB03CA00D28706 /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		3582D0B029EB14B200D28706 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
-		3582D0B429EB153800D28706 /* 07 Demo.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "07 Demo.minicad"; sourceTree = "<group>"; tabWidth = 2; };
+		3582D0B429EB153800D28706 /* 08 Demo.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "08 Demo.minicad"; sourceTree = "<group>"; tabWidth = 2; };
 		3582D0B629EB173500D28706 /* NamedDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedDocument.swift; sourceTree = "<group>"; };
 		3582D0B829EB1A6300D28706 /* 01 Hello Cuboid.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "01 Hello Cuboid.minicad"; sourceTree = "<group>"; tabWidth = 2; };
 		3582D0BC29EB28E200D28706 /* Cone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cone.swift; sourceTree = "<group>"; };
@@ -295,6 +296,7 @@
 		3582D0E129EB776100D28706 /* AddModelDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModelDialog.swift; sourceTree = "<group>"; };
 		3582D0E329EB7A0E00D28706 /* AutoFocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFocusTextField.swift; sourceTree = "<group>"; };
 		3582D0E529EB7C4600D28706 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		3582D0E729EB8B8600D28706 /* 07 Text.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "07 Text.minicad"; sourceTree = "<group>"; tabWidth = 2; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
@@ -657,7 +659,8 @@
 				3582D0C029EB47A600D28706 /* 04 Sierpinski.minicad */,
 				3582D0C629EB4D9400D28706 /* 05 Boolean Operations.minicad */,
 				3582D0C429EB4CCC00D28706 /* 06 Importing STL Models.minicad */,
-				3582D0B429EB153800D28706 /* 07 Demo.minicad */,
+				3582D0E729EB8B8600D28706 /* 07 Text.minicad */,
+				3582D0B429EB153800D28706 /* 08 Demo.minicad */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -745,8 +748,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3503AF1B29A9197000AF1188 /* Suzanne.stl in Resources */,
-				3582D0CF29EB61B400D28706 /* 07 Demo.minicad in Resources */,
+				3582D0CF29EB61B400D28706 /* 08 Demo.minicad in Resources */,
 				35EC358F29A83CB500D31DA8 /* Info.plist in Resources */,
+				3582D0E829EB8B8F00D28706 /* 07 Text.minicad in Resources */,
 				3582D0D029EB61B400D28706 /* 02 Geometry Primitives.minicad in Resources */,
 				354A414A29932FA3004EA933 /* Preview Assets.xcassets in Resources */,
 				3582D0D229EB61B400D28706 /* 01 Hello Cuboid.minicad in Resources */,
