@@ -12,6 +12,13 @@ struct MiniCADApp: App {
                 .environmentObject(preview)
                 .environmentObject(editor)
                 .environmentObject(app)
+                .onAppear {
+                    #if targetEnvironment(macCatalyst) && canImport(UIKit)
+                    if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                        scene.sizeRestrictions?.minimumSize = CGSize(width: 1600, height: 700)
+                    }
+                    #endif
+                }
         }
     }
 }
