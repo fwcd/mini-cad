@@ -48,6 +48,8 @@ final class ParserTests: XCTestCase {
         
         try assert("3 + 5 - 9", parsesTo: [.expression(.binary(.subtract(.binary(.add(3, 5)), 9)))])
         try assert("9 - 1 - 3", parsesTo: [.expression(.binary(.subtract(.binary(.subtract(9, 1)), 3)))])
+        try assert("9 - -1 - 3", parsesTo: [.expression(.binary(.subtract(.binary(.subtract(9, -1)), 3)))])
+        try assert("9 - --1 - 3", parsesTo: [.expression(.binary(.subtract(.binary(.subtract(9, .prefix(.negation(-1)))), 3)))])
     }
     
     func testBindings() throws {
