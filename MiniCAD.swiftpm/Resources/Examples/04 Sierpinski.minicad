@@ -20,7 +20,7 @@ func Sierpinski(height, depth) {
       let inner = radius / 2
       let dx = cos(angle) * inner
       let dz = sin(angle) * inner
-      Translate(dx, a / -2, dz) {
+      Translate(dx, -a / 2, dz) {
         subPyramid
       }
     }
