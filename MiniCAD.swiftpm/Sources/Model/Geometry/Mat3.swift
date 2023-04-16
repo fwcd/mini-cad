@@ -4,6 +4,9 @@ import SceneKit
 struct Mat3: CustomStringConvertible, Hashable, AdditiveArithmetic {
     static let zero = Self(i: .init(), j: .init(), k: .init())
     static let identity = Self()
+    static let flipX = Self(i: .init(x: -1))
+    static let flipY = Self(j: .init(y: -1))
+    static let flipZ = Self(k: .init(z: -1))
     
     var i: Vec3 = .init(x: 1)
     var j: Vec3 = .init(y: 1)

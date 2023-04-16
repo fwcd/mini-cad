@@ -93,6 +93,24 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         let meshes = trailingBlock.compactMap(\.asMesh)
         return meshes.map { .mesh($0.mapVertices { shearMatrix * $0 }) }
     },
+    "FlipX": { args, trailingBlock in
+        let flipMatrix = Mat3.flipX
+        let meshes = trailingBlock.compactMap(\.asMesh)
+        return meshes.map { .mesh($0.mapVertices { flipMatrix * $0 }) }
+    },
+    "FlipY": { args, trailingBlock in
+        let flipMatrix = Mat3.flipY
+        let meshes = trailingBlock.compactMap(\.asMesh)
+        return meshes.map { .mesh($0.mapVertices { flipMatrix * $0 }) }
+    },
+    "FlipZ": { args, trailingBlock in
+        let flipMatrix = Mat3.flipZ
+        let meshes = trailingBlock.compactMap(\.asMesh)
+        return meshes.map { .mesh($0.mapVertices { flipMatrix * $0 }) }
+    },
+    "Identity": { args, trailingBlock in
+        args + trailingBlock
+    },
     "Union": { _, trailingBlock in
         let meshes = trailingBlock.compactMap(\.asMesh)
         guard let first = meshes.first else { return [.mesh(Mesh())] }
