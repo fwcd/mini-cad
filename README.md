@@ -16,8 +16,6 @@ The app includes the `Suzanne.stl` model, a demo model from the open-source 3D m
 
 Also the implementation of CSG is based on a port of the wonderfully simple and elegant JavaScript implementation by Evan Wallace: https://github.com/evanw/csg.js/ This code is MIT-licensed with Copyright (c) 2011 Evan Wallace (http://madebyevan.com/).
 
-<!-- TODO: Link the interesting source files (tringulation, text rendering, BSP, CSG etc.) -->
-
 ## See also
 
 * [MiniBlocks](https://github.com/fwcd/mini-blocks), an open-world sandbox game built with SceneKit (my 2022 project)
