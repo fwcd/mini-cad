@@ -38,3 +38,5 @@ for i in 0..<n {
     Cylinder(radius, height)
   }
 }
+
+print("Oh, and there's a print function too, for debugging!")
