@@ -45,7 +45,7 @@ struct ContentView: View {
                     .popover(isPresented: $newModelSheetShown) {
                         AddModelDialog { modelName in
                             newModelSheetShown = false
-                            app.models.append(.init(name: modelName, document: .init(raw: "// Add some code here")))
+                            app.models.append(.init(name: modelName.nilIfEmpty ?? "Untitled Model", document: .init(raw: "// Add some code here")))
                         }
                     }
                 }
