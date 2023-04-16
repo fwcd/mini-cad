@@ -49,6 +49,14 @@ struct Token: Hashable {
             default: return false
             }
         }
+        
+        var asBinaryOperator: BinaryOperator? {
+            switch self {
+            case .binaryOperator(let op): return op
+            case .prefixOperator(.negation): return .subtract // We need to disambiguate this one unfortunately
+            default: return nil
+            }
+        }
     }
 }
 

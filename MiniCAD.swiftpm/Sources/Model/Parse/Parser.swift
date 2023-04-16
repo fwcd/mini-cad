@@ -130,10 +130,10 @@ func parseExpression(from tokens: inout TokenIterator, allowTrailing: Bool = tru
 /// Statefully parses an infix expression starting at the operator. Throws a `ParseError` if unsuccessful.
 func parseExpression(from tokens: inout TokenIterator, lhs: Expression<SourceRange?>, minPrecedence: Int) throws -> Expression<SourceRange?> {
     var lhs = lhs
-    while case let .binaryOperator(op)? = tokens.peek()?.kind, op.precedence >= minPrecedence {
+    while let op = tokens.peek()?.kind.asBinaryOperator, op.precedence >= minPrecedence {
         tokens.next()
         var rhs = try parsePrefixExpression(from: &tokens, allowTrailing: false)
-        while case let .binaryOperator(nextOp)? = tokens.peek()?.kind,
+        while let nextOp = tokens.peek()?.kind.asBinaryOperator,
               nextOp.precedence > op.precedence || (nextOp.associativity == .right && nextOp.precedence == op.precedence) {
             rhs = try parseExpression(from: &tokens, lhs: rhs, minPrecedence: op.precedence + (nextOp.precedence - op.precedence).signum())
         }
