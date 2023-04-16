@@ -3,6 +3,7 @@ import Foundation
 
 class AppViewModel: ObservableObject {
     @Published var examples: [NamedDocument] = []
+    @Published var models: [NamedDocument] = []
     @Published var selectedDocument: NamedDocument? = nil {
         willSet {
             // Save contents of document when switching
@@ -10,7 +11,13 @@ class AppViewModel: ObservableObject {
             for i in examples.indices {
                 if examples[i].id == id {
                     examples[i].document.raw = editor.rawRecipe
-                    break
+                    return
+                }
+            }
+            for i in models.indices {
+                if models[i].id == id {
+                    models[i].document.raw = editor.rawRecipe
+                    return
                 }
             }
         }

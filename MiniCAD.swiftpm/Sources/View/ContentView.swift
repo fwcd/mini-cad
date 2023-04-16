@@ -2,14 +2,33 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject private var app: AppViewModel
+    @State private var newModelSheetShown: Bool = false
+    @State private var newModelName: String = ""
     
     var body: some View {
         NavigationView {
             List(selection: $app.selectedDocument) {
                 Section(header: Text("Examples")) {
                     ForEach(app.examples) { document in
-                        Label(document.name, systemImage: "doc.text")
-                            .tag(document)
+                        DocumentSnippet(document: document)
+                    }
+                }
+                Section {
+                    ForEach(app.models) { document in
+                        DocumentSnippet(document: document)
+                    }
+                } header: {
+                    Text("Models")
+                    Button {
+                        newModelSheetShown = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .popover(isPresented: $newModelSheetShown) {
+                        AddModelDialog { modelName in
+                            newModelSheetShown = false
+                            app.models.append(.init(name: modelName, document: .init(raw: "// Add some code here")))
+                        }
                     }
                 }
             }

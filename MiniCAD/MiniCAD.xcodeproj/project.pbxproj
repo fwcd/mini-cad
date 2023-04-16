@@ -131,6 +131,8 @@
 		3582D0D829EB6C9500D28706 /* PrefixOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0D729EB6C9500D28706 /* PrefixOperator.swift */; };
 		3582D0DC29EB6D5000D28706 /* PrefixOperator+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0DB29EB6D5000D28706 /* PrefixOperator+Pretty.swift */; };
 		3582D0DE29EB6D8B00D28706 /* PrefixExpression+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0DD29EB6D8B00D28706 /* PrefixExpression+Pretty.swift */; };
+		3582D0E029EB766100D28706 /* DocumentSnippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0DF29EB766100D28706 /* DocumentSnippet.swift */; };
+		3582D0E229EB776100D28706 /* AddModelDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0E129EB776100D28706 /* AddModelDialog.swift */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
@@ -287,6 +289,8 @@
 		3582D0D729EB6C9500D28706 /* PrefixOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixOperator.swift; sourceTree = "<group>"; };
 		3582D0DB29EB6D5000D28706 /* PrefixOperator+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrefixOperator+Pretty.swift"; sourceTree = "<group>"; };
 		3582D0DD29EB6D8B00D28706 /* PrefixExpression+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrefixExpression+Pretty.swift"; sourceTree = "<group>"; };
+		3582D0DF29EB766100D28706 /* DocumentSnippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSnippet.swift; sourceTree = "<group>"; };
+		3582D0E129EB776100D28706 /* AddModelDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModelDialog.swift; sourceTree = "<group>"; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
@@ -621,6 +625,8 @@
 			isa = PBXGroup;
 			children = (
 				354A4207299330E0004EA933 /* ContentView.swift */,
+				3582D0DF29EB766100D28706 /* DocumentSnippet.swift */,
+				3582D0E129EB776100D28706 /* AddModelDialog.swift */,
 				354A4201299330E0004EA933 /* CodeEditor.swift */,
 				35E7582629A1ABA7006043C3 /* Token+HighlightColor.swift */,
 				354A4202299330E0004EA933 /* PreviewView.swift */,
@@ -762,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3503AF1129A8DEE000AF1188 /* Mesh+BooleanOperations.swift in Sources */,
+				3582D0E229EB776100D28706 /* AddModelDialog.swift in Sources */,
 				352678C929B368E1002A81B3 /* BuiltInUtils.swift in Sources */,
 				3503AF3029A92BBA00AF1188 /* AlignedAlignedBoundingBox+Cuboid.swift in Sources */,
 				354A4226299330E0004EA933 /* BinaryExpression+Pretty.swift in Sources */,
@@ -869,6 +876,7 @@
 				3503AF2329A9209C00AF1188 /* AxisAlignedBoundingBox.swift in Sources */,
 				352678C729B368BC002A81B3 /* BuiltInConstants.swift in Sources */,
 				35EC358D29A837B700D31DA8 /* ToolbarView.swift in Sources */,
+				3582D0E029EB766100D28706 /* DocumentSnippet.swift in Sources */,
 				3503AF3829A944D100AF1188 /* Plane+Line.swift in Sources */,
 				352B9B1D29A7BD2D007A7470 /* ValueConvertible.swift in Sources */,
 				3503AF3629A9448E00AF1188 /* Line.swift in Sources */,
