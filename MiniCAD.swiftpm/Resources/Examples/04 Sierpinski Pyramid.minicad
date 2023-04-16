@@ -1,7 +1,7 @@
 // MiniCAD's powerful domain-specific language also includes
 // classic programming constructs such as variables, loops,
 // conditionals and functions. Here is an example that
-// generates a Sierpinski pyramid recursively.
+// generates the fractal Sierpinski pyramid recursively.
 
 let radiusToHeight = 1 + cos(TAU / 6)
 

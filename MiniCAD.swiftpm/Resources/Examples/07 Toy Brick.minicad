@@ -1,0 +1,44 @@
+// Here's an example of an interlocking toy brick, similar
+// to ones you might find to be made by a Danish company.
+
+let size = 8.0
+let height = 5.0
+
+let tabRadius = size / 5.0
+let tabOffset = size / 4.0
+let tabHeight = size / 6.0
+
+let padding = 1.0
+let innerSize = size - padding
+
+func BaseBrick() {
+  Difference {
+    Cuboid(size, height, size)
+    Translate(0, -padding, 0) {
+      Cuboid(innerSize, height, innerSize)
+    }
+  }
+}
+
+func Tab() {
+  Cylinder(tabRadius, tabHeight)
+}
+
+func Brick() {
+  Union {
+    BaseBrick()
+    Translate(0, height / 2, 0) {
+      for i in 0...1 {
+        for j in 0...1 {
+          let fi = 2 * i - 1
+          let fj = 2 * j - 1
+          Translate(fi * tabOffset, 0, fj * tabOffset) {
+            Tab()
+          }
+        }
+      }
+    }
+  }
+}
+
+Brick()
