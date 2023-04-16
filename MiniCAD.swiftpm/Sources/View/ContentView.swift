@@ -16,6 +16,13 @@ struct ContentView: View {
                 Section {
                     ForEach(app.models) { document in
                         DocumentSnippet(document: document)
+                            .contextMenu {
+                                Button {
+                                    app.models.removeAll { $0.id == document.id }
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+                                }
+                            }
                     }
                     .onMove { offsets, target in
                         app.models.move(fromOffsets: offsets, toOffset: target)
