@@ -28,6 +28,14 @@ final class ParserTests: XCTestCase {
         }
     }
     
+    func testPrefixExpression() throws {
+        try assert("!true", parsesTo: [.expression(.prefix(.logicalNot(true)))])
+        try assert("!!false", parsesTo: [.expression(.prefix(.logicalNot(.prefix(.logicalNot(false)))))])
+        try assert("-9", parsesTo: [.expression(-9)])
+        try assert("--9", parsesTo: [.expression(.prefix(.negation(-9)))])
+        try assert("!--9", parsesTo: [.expression(.prefix(.logicalNot(.prefix(.negation(-9)))))])
+    }
+    
     func testBinaryExpressions() throws {
         let ops: [(String, (Expression, Expression) -> BinaryExpression)] = [
             ("+", { .add($0, $1) }),
