@@ -68,6 +68,21 @@ extension Mesh {
         self.init(vertices: vertices, faces: faces)
     }
     
+    /// Creates a planar mesh by triangulating the given multi-polygon.
+    init(_ multiPolygon: MultiPolygon) {
+        guard let polygon = multiPolygon.paths.last else {
+            self.init()
+            return
+        }
+        let plane = Plane(polygon)
+        let holes = multiPolygon.paths.dropLast()
+            .map { (path: $0, plane: Plane($0)) }
+            .filter { $0.plane.normal.dot(plane.normal) > 0 }
+        
+        // TODO: Cut out holes
+        self.init(polygon)
+    }
+    
     /// Creates a mesh by triangulating and merging the given polygons.
     init(_ polygons: [Polygon]) {
         let triangulatedFaceMeshes = polygons
