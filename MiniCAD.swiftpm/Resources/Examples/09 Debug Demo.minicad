@@ -1,28 +1,21 @@
-// Here is a slightly more complex demo model that
-// was useful to test the different features during
-// development. Not really of practical use, but
-// maybe of academic interest.
+// Here is a another demo model that was useful to
+// test some features during development. Not really
+// of practical use, but maybe of academic interest.
 
 // Generate staircase
 
 let w = 3
 let h = 4
 
-for i in 0..<w {
-  for j in 0..<h {
-    Translate(i, i, j) {
+for i in -(w / 2)...(w / 2) {
+  for j in -(h / 2)...(h / 2) {
+    Translate(i, i + w / 2, j) {
       Difference {
         Cuboid()
         Cylinder(0.3, 1.4)
       }
     }
   }
-}
-
-// Add suzanne
-
-Translate(0, 5, 0) {
-  Suzanne()
 }
 
 // Generate pillars

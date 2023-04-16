@@ -1,14 +1,14 @@
 // Here's an example of an interlocking toy brick, similar
 // to ones you might find to be made by a Danish company.
 
-let size = 8.0
-let height = 5.0
+let size = 4.0
+let height = 3.0
 
 let tabRadius = size / 5.0
 let tabOffset = size / 4.0
 let tabHeight = size / 6.0
 
-let padding = 1.0
+let padding = 0.5
 let innerSize = size - padding
 
 func BaseBrick() {
