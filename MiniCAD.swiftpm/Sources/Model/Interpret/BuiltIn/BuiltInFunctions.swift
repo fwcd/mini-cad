@@ -86,6 +86,13 @@ let builtInFunctions: [String: ([Value], [Value]) throws -> [Value]] = [
         let meshes = trailingBlock.compactMap(\.asMesh)
         return meshes.map { .mesh($0.mapVertices { scalingMatrix * $0 }) }
     },
+    "Shear": { args, trailingBlock in
+        let shearX = args[safely: 0]?.asFloat ?? 0
+        let shearZ = args[safely: 1]?.asFloat ?? 0
+        let shearMatrix = Mat3(shearX: shearX, z: shearZ)
+        let meshes = trailingBlock.compactMap(\.asMesh)
+        return meshes.map { .mesh($0.mapVertices { shearMatrix * $0 }) }
+    },
     "Union": { _, trailingBlock in
         let meshes = trailingBlock.compactMap(\.asMesh)
         guard let first = meshes.first else { return [.mesh(Mesh())] }

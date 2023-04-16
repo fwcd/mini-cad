@@ -83,4 +83,8 @@ extension Mat3 {
     init(diagonal: Vec3) {
         self.init(i: .init(x: diagonal.x), j: .init(y: diagonal.y), k: .init(z: diagonal.z))
     }
+    
+    init(shearX x: Double, z: Double) {
+        self.init(j: .init(x: x, y: 1, z: z))
+    }
 }

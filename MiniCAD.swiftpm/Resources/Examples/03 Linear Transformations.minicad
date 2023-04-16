@@ -11,8 +11,11 @@ Translate(-3, 0, 0) {
 }
 
 Translate(3, 0, 0) {
-  // Add an untransformed cuboid for comparison.
-  Cuboid()
+  // Shear a cuboid by 0.3 along the x-axis and 0.4
+  // along the z-axis.
+  Shear(0.3, 0.4) {
+    Cuboid()
+  }
 }
 
 Translate(0, 0, -3) {
