@@ -4,6 +4,7 @@ import OSLog
 private let log = Logger(subsystem: "MiniCAD", category: "ToolbarView")
 
 struct ToolbarView: View {
+    @EnvironmentObject private var app: AppViewModel
     @EnvironmentObject private var editor: EditorViewModel
     @State private var openImporterShown: Bool = false
     @State private var saveExporterShown: Bool = false
@@ -24,7 +25,9 @@ struct ToolbarView: View {
             ) { result in
                 guard case let .success(url) = result else { return }
                 do {
-                    editor.rawRecipe = try String(contentsOf: url)
+                    let document = try NamedDocument(contentsOf: url)
+                    app.models.append(document)
+                    app.selectedDocument = document
                 } catch {
                     log.error("Could not read file: \(error)")
                 }
