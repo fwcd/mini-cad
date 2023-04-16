@@ -136,6 +136,8 @@
 		3582D0E429EB7A0E00D28706 /* AutoFocusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0E329EB7A0E00D28706 /* AutoFocusTextField.swift */; };
 		3582D0E629EB7C4600D28706 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0E529EB7C4600D28706 /* String+Extensions.swift */; };
 		3582D0E829EB8B8F00D28706 /* 07 Text.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0E729EB8B8600D28706 /* 07 Text.minicad */; };
+		3582D0EA29EC414000D28706 /* MultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0E929EC414000D28706 /* MultiPolygon.swift */; };
+		3582D0EC29EC41A200D28706 /* MultiPolygon+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0EB29EC41A100D28706 /* MultiPolygon+Polygon.swift */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
@@ -297,6 +299,8 @@
 		3582D0E329EB7A0E00D28706 /* AutoFocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFocusTextField.swift; sourceTree = "<group>"; };
 		3582D0E529EB7C4600D28706 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		3582D0E729EB8B8600D28706 /* 07 Text.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "07 Text.minicad"; sourceTree = "<group>"; tabWidth = 2; };
+		3582D0E929EC414000D28706 /* MultiPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPolygon.swift; sourceTree = "<group>"; };
+		3582D0EB29EC41A100D28706 /* MultiPolygon+Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultiPolygon+Polygon.swift"; sourceTree = "<group>"; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
@@ -607,6 +611,8 @@
 				352678CA29B36A9E002A81B3 /* TextLabel.swift */,
 				352678CE29B3785D002A81B3 /* Polygon.swift */,
 				3550612E29E44498006B5019 /* Polygon+Triangle.swift */,
+				3582D0E929EC414000D28706 /* MultiPolygon.swift */,
+				3582D0EB29EC41A100D28706 /* MultiPolygon+Polygon.swift */,
 				352B9B2329A7BE32007A7470 /* Mesh.swift */,
 				352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */,
 				3550612829E43E2D006B5019 /* Mesh+Polygon.swift */,
@@ -784,6 +790,7 @@
 				354A4226299330E0004EA933 /* BinaryExpression+Pretty.swift in Sources */,
 				35E7581F299FE671006043C3 /* BinaryOperator.swift in Sources */,
 				354A422E299330E0004EA933 /* PreviewOverlay.swift in Sources */,
+				3582D0EC29EC41A200D28706 /* MultiPolygon+Polygon.swift in Sources */,
 				352678CF29B3785D002A81B3 /* Polygon.swift in Sources */,
 				3550613129E474A9006B5019 /* Sphere.swift in Sources */,
 				354A4222299330E0004EA933 /* VarBinding+Pretty.swift in Sources */,
@@ -815,6 +822,7 @@
 				354A421F299330E0004EA933 /* BuiltInFunctions.swift in Sources */,
 				3582D0DC29EB6D5000D28706 /* PrefixOperator+Pretty.swift in Sources */,
 				354A4219299330E0004EA933 /* Tokenizer.swift in Sources */,
+				3582D0EA29EC414000D28706 /* MultiPolygon.swift in Sources */,
 				354A4231299330E0004EA933 /* PreviewSceneView.swift in Sources */,
 				352B9B1829A7BD2D007A7470 /* ClosedRange+ValueConvertible.swift in Sources */,
 				354A4211299330E0004EA933 /* Expression.swift in Sources */,
