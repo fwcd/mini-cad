@@ -35,22 +35,24 @@ extension Mesh {
         
         outer:
         while remaining.count > 3 {
-            for i in 0..<(remaining.count - 2) {
-                let (j1, p1) = remaining[i]
-                let (j, p) = remaining[i + 1]
-                let (j2, p2) = remaining[i + 2]
+            for i in 0..<remaining.count {
+                let i0 = i
+                let i1 = (i + 1) % remaining.count
+                let i2 = (i + 2) % remaining.count
+                let (j0, p0) = remaining[i0]
+                let (j1, p1) = remaining[i1]
+                let (j2, p2) = remaining[i2]
                 
-                let d1 = p1 - p
-                let d2 = p2 - p
-                let d = d1.cross(d2).dot(plane.normal)
-                let isConvex = d > 0
+                let d0 = p0 - p1
+                let d2 = p2 - p1
+                let d = d0.cross(d2).dot(plane.normal)
+                let isConvex = d >= 0
                 
                 if isConvex {
-                    let triangle = Triangle(a: p1, b: p, c: p2)
-                    // TODO: Does this triangle check help us at all?
-                    if !remaining.enumerated().contains(where: { ($0.offset < i || $0.offset > i + 2) && triangle.contains($0.element.element) }) {
-                        faces.append(.init(a: j1, b: j, c: j2))
-                        remaining.remove(at: i + 1)
+                    let triangle = Triangle(a: p0, b: p1, c: p2)
+                    if !remaining.enumerated().contains(where: { ($0.offset != i0 && $0.offset != i1 && $0.offset != i2 ) && triangle.contains($0.element.element) }) {
+                        faces.append(.init(a: j0, b: j1, c: j2))
+                        remaining.remove(at: i1)
                         continue outer
                     }
                 }
