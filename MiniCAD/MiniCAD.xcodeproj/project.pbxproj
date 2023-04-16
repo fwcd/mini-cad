@@ -138,6 +138,7 @@
 		3582D0E829EB8B8F00D28706 /* 07 Text.minicad in Resources */ = {isa = PBXBuildFile; fileRef = 3582D0E729EB8B8600D28706 /* 07 Text.minicad */; };
 		3582D0EA29EC414000D28706 /* MultiPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0E929EC414000D28706 /* MultiPolygon.swift */; };
 		3582D0EC29EC41A200D28706 /* MultiPolygon+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0EB29EC41A100D28706 /* MultiPolygon+Polygon.swift */; };
+		3582D0EE29EC41CD00D28706 /* MultiPolygon+CGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0ED29EC41CC00D28706 /* MultiPolygon+CGPath.swift */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
@@ -301,6 +302,7 @@
 		3582D0E729EB8B8600D28706 /* 07 Text.minicad */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = "07 Text.minicad"; sourceTree = "<group>"; tabWidth = 2; };
 		3582D0E929EC414000D28706 /* MultiPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPolygon.swift; sourceTree = "<group>"; };
 		3582D0EB29EC41A100D28706 /* MultiPolygon+Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultiPolygon+Polygon.swift"; sourceTree = "<group>"; };
+		3582D0ED29EC41CC00D28706 /* MultiPolygon+CGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultiPolygon+CGPath.swift"; sourceTree = "<group>"; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 				3550612E29E44498006B5019 /* Polygon+Triangle.swift */,
 				3582D0E929EC414000D28706 /* MultiPolygon.swift */,
 				3582D0EB29EC41A100D28706 /* MultiPolygon+Polygon.swift */,
+				3582D0ED29EC41CC00D28706 /* MultiPolygon+CGPath.swift */,
 				352B9B2329A7BE32007A7470 /* Mesh.swift */,
 				352678CC29B373F6002A81B3 /* Mesh+CGPath.swift */,
 				3550612829E43E2D006B5019 /* Mesh+Polygon.swift */,
@@ -784,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3503AF1129A8DEE000AF1188 /* Mesh+BooleanOperations.swift in Sources */,
+				3582D0EE29EC41CD00D28706 /* MultiPolygon+CGPath.swift in Sources */,
 				3582D0E229EB776100D28706 /* AddModelDialog.swift in Sources */,
 				352678C929B368E1002A81B3 /* BuiltInUtils.swift in Sources */,
 				3503AF3029A92BBA00AF1188 /* AlignedAlignedBoundingBox+Cuboid.swift in Sources */,
