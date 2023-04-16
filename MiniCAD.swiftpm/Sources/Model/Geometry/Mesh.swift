@@ -1,6 +1,6 @@
 /// A 3D polygon mesh represented as a set of triangular faces.
 struct Mesh: Hashable {
-    static var zero = Self()
+    static let zero = Self()
     
     var vertices: [Vec3] = []
     var faces: [Face] = []

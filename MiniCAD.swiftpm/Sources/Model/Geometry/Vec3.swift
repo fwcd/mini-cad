@@ -2,7 +2,7 @@ import SceneKit
 
 /// A vector in (continuous) 3D space.
 struct Vec3: CustomStringConvertible, Hashable, AdditiveArithmetic {
-    static var zero = Self()
+    static let zero = Self()
     
     var x: Double = 0
     var y: Double = 0

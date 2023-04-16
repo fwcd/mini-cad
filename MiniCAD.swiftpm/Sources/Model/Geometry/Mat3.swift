@@ -1,8 +1,8 @@
 import SceneKit
 
-/// A 3x3 matrix.
+/// A 3x3 matrix representing a linear transformation in 3D space.
 struct Mat3: CustomStringConvertible, Hashable, AdditiveArithmetic {
-    static var zero = Self()
+    static let zero = Self()
     
     var i: Vec3 = .init(x: 1)
     var j: Vec3 = .init(y: 1)
