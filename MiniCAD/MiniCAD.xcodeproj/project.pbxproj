@@ -133,6 +133,7 @@
 		3582D0DE29EB6D8B00D28706 /* PrefixExpression+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0DD29EB6D8B00D28706 /* PrefixExpression+Pretty.swift */; };
 		3582D0E029EB766100D28706 /* DocumentSnippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0DF29EB766100D28706 /* DocumentSnippet.swift */; };
 		3582D0E229EB776100D28706 /* AddModelDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0E129EB776100D28706 /* AddModelDialog.swift */; };
+		3582D0E429EB7A0E00D28706 /* AutoFocusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D0E329EB7A0E00D28706 /* AutoFocusTextField.swift */; };
 		35DFAC5729E5A3D9004A39F9 /* CallArgument+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */; };
 		35DFAC5929E5A3FA004A39F9 /* CallArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */; };
 		35DFAC5B29E5AE41004A39F9 /* PreviewToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */; };
@@ -291,6 +292,7 @@
 		3582D0DD29EB6D8B00D28706 /* PrefixExpression+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrefixExpression+Pretty.swift"; sourceTree = "<group>"; };
 		3582D0DF29EB766100D28706 /* DocumentSnippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSnippet.swift; sourceTree = "<group>"; };
 		3582D0E129EB776100D28706 /* AddModelDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModelDialog.swift; sourceTree = "<group>"; };
+		3582D0E329EB7A0E00D28706 /* AutoFocusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFocusTextField.swift; sourceTree = "<group>"; };
 		35DFAC5629E5A3D9004A39F9 /* CallArgument+Pretty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallArgument+Pretty.swift"; sourceTree = "<group>"; };
 		35DFAC5829E5A3FA004A39F9 /* CallArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallArgument.swift; sourceTree = "<group>"; };
 		35DFAC5A29E5AE41004A39F9 /* PreviewToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToolbarView.swift; sourceTree = "<group>"; };
@@ -638,6 +640,7 @@
 				354A4206299330E0004EA933 /* PreviewSceneView.swift */,
 				354A4208299330E0004EA933 /* StatusBar.swift */,
 				354A4200299330E0004EA933 /* ViewConstants.swift */,
+				3582D0E329EB7A0E00D28706 /* AutoFocusTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -832,6 +835,7 @@
 				354A4213299330E0004EA933 /* PrefixExpression.swift in Sources */,
 				354A4217299330E0004EA933 /* ParseError.swift in Sources */,
 				354A4233299330E0004EA933 /* StatusBar.swift in Sources */,
+				3582D0E429EB7A0E00D28706 /* AutoFocusTextField.swift in Sources */,
 				3503AF2829A9277C00AF1188 /* AxisAlignedContainable.swift in Sources */,
 				3582D0CB29EB5D5500D28706 /* Mat3.swift in Sources */,
 				3550612929E43E2D006B5019 /* Mesh+Polygon.swift in Sources */,

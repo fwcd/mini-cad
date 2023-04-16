@@ -7,13 +7,10 @@ struct AddModelDialog: View {
     
     var body: some View {
         HStack {
-            TextField(text: $modelName) {
-                Text("Model Name")
-            }
-            .frame(width: 300)
-            .onSubmit {
+            AutoFocusTextField(placeholder: "Model Name", text: $modelName) {
                 onSubmit(modelName)
             }
+            .frame(width: 300)
             Button {
                 onSubmit(modelName)
             } label: {
