@@ -93,7 +93,7 @@ extension Mesh {
         try b.clip(to: a)
         try a.insert(polygons: b.allPolygons)
         try a.invert()
-        return try Mesh(a.allPolygons)
+        return Mesh(a.allPolygons)
     }
     
     /// Return a new CSG solid representing space in this solid but not in the
@@ -121,6 +121,6 @@ extension Mesh {
         try b.invert()
         try a.insert(polygons: b.allPolygons)
         try a.invert()
-        return try Mesh(a.allPolygons)
+        return Mesh(a.allPolygons)
     }
 }

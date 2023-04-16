@@ -18,13 +18,15 @@ struct BinarySpacePartitioning {
     }
     
     /// Convert solid to empty space and vice versa.
-    mutating func invert() {
+    mutating func invert() throws {
+        try Task.checkCancellation()
+        
         for i in polygons.indices {
             polygons[i].flip()
         }
         plane?.flip()
-        front?.invert()
-        back?.invert()
+        try front?.invert()
+        try back?.invert()
         (front, back) = (back, front)
     }
     
